@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card, CardHeader, CardBody } from '@/ui'
-import { DefaultHeader } from '@/ui/card/stories/CardHeader.stories'
-import { DefaultBody } from '@/ui/card/stories/CardBody.stories'
 
 const meta: Meta = {
 	title: 'UI/Card',
@@ -13,12 +11,23 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	render: (args) => (
-		<Card {...args}>
-			<CardHeader {...DefaultHeader.args} />
-			<CardBody {...DefaultBody.args} />
-		</Card>
-	),
+	args: {
+		children: (
+			<>
+				<CardHeader title='Card Title' />
+				<CardBody>
+					<p>Card body content</p>
+				</CardBody>
+			</>
+		),
+	},
+}
+
+export const LightTheme: Story = {
+	...Default.args,
+	args: {
+		theme: 'light',
+	},
 }
 
 /* const meta: Meta = {

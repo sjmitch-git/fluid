@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 import type { StorybookConfig } from '@storybook/nextjs'
 
