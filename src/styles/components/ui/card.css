@@ -3,12 +3,12 @@
 		@apply relative flex flex-col rounded border shadow-lg;
 
 		.card-header {
-			@apply font-bold;
+			@apply font-bold p-2;
 		}
 
 		.card-body {
 			p {
-				@apply line-clamp-2;
+				@apply line-clamp-2 p-2;
 			}
 		}
 
