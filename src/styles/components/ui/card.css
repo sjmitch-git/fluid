@@ -1,0 +1,19 @@
+@layer components {
+	.card {
+		@apply relative flex flex-col rounded border shadow-lg;
+
+		.card-header {
+			@apply font-bold;
+		}
+
+		.card-body {
+			p {
+				@apply line-clamp-2;
+			}
+		}
+
+		.card-image {
+			@apply relative;
+		}
+	}
+}
