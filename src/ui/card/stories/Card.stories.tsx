@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card, CardHeader, CardBody } from '@/ui'
+import { Card, CardHeader, CardBody, CardImage } from '@/ui'
 
 const meta: Meta = {
 	title: 'UI/Card',
@@ -15,6 +15,10 @@ export const Default: Story = {
 		children: (
 			<>
 				<CardHeader title='Card Title' />
+				<CardImage
+					title='Akita'
+					src='../public/img/dogs/akita.jpg'
+				/>
 				<CardBody>
 					<p>Card body content</p>
 				</CardBody>
@@ -24,30 +28,15 @@ export const Default: Story = {
 }
 
 export const LightTheme: Story = {
-	...Default.args,
 	args: {
+		...Default.args,
 		theme: 'light',
-	},
-}
-
-/* const meta: Meta = {
-	title: 'Components/Card',
-	component: Card,
-	tags: ['autodocs'],
-} satisfies Meta<typeof Card>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
-export const LightTheme: Story = {
-	args: {
-		theme: 'light',
-		children: Title,
 	},
 }
 
 export const DarkTheme: Story = {
 	args: {
+		...Default.args,
 		theme: 'dark',
 	},
-} */
+}
