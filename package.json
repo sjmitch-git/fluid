@@ -14,7 +14,7 @@
 		"prettier": "prettier --write .",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"chromatic": "npx chromatic --exit-zero-on-changes"
+		"chromatic": "chromatic --only-changed --untraced=package.json --untraced=yarn.lock --exit-zero-on-changes"
 	},
 	"dependencies": {
 		"@types/node": "20.6.0",

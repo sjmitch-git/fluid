@@ -17,7 +17,7 @@ export const Default: Story = {
 				<CardHeader title='Card Title' />
 				<CardImage
 					title='Akita'
-					src='../public/img/dogs/akita.jpg'
+					src='/img/dogs/akita.jpg'
 				/>
 				<CardBody>
 					<p>Card body content</p>
