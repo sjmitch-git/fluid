@@ -5,7 +5,7 @@
 		"name": "sjmitch-git",
 		"email": "sjmitch20@outlook.com"
 	},
-	"private": true,
+	"private": false,
 	"scripts": {
 		"dev": "next dev",
 		"copy-ui": "cp -r UI dist",
