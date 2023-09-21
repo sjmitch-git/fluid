@@ -3,10 +3,6 @@
 	"version": "0.0.1",
 	"description": "A React ui-component libray.",
 	"main": "index.js",
-	"scripts": {
-		"build": "your-build-script-here",
-		"test": "your-test-script-here"
-	},
 	"keywords": [
 		"ui",
 		"library"
@@ -15,7 +11,6 @@
 	"license": "MIT",
 	"files": [
 		"lib",
-		"LICENSE",
 		"package.json",
 		"README.md",
 		"!lib/**/stories"
