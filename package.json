@@ -1,11 +1,11 @@
 {
-	"name": "fluid",
+	"name": "@smitch/fluid",
 	"version": "0.1.2",
 	"author": {
 		"name": "sjmitch-git",
 		"email": "sjmitch20@outlook.com"
 	},
-	"private": true,
+	"private": false,
 	"scripts": {
 		"dev": "next dev",
 		"copy-ui": "cp -r UI dist",
