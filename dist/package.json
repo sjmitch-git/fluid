@@ -1,0 +1,29 @@
+{
+	"name": "@smitch/fluid-ui",
+	"version": "0.0.1",
+	"description": "A React ui-component libray.",
+	"main": "index.js",
+	"scripts": {
+		"build": "your-build-script-here",
+		"test": "your-test-script-here"
+	},
+	"keywords": [
+		"ui",
+		"library"
+	],
+	"author": "Stephen Mitchell",
+	"license": "MIT",
+	"files": [
+		"lib",
+		"LICENSE",
+		"package.json",
+		"README.md",
+		"!lib/**/stories"
+	],
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0"
+	}
+}

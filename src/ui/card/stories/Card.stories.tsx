@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@/ui'
 
-import * as HeaderStories from './CardHeader.stories'
+// import * as HeaderStories from './CardHeader.stories'
 
+import Data from '@/data/dogs.json'
+console.log('data', Data)
 const meta: Meta = {
 	title: 'UI/Card',
 	component: Card,
@@ -12,13 +14,15 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const data = {
+/* const data = {
 	name: 'husky',
 	src: '/img/dogs/husky.jpg',
 	description:
 		'The Alaskan husky is a breed of medium-sized working sled dog, developed specifically for its performance as such.',
 	link: 'https://en.wikipedia.org/wiki/Alaskan_husky',
-}
+} */
+
+const data = Data[0]
 
 export const Default: Story = {
 	args: {
@@ -40,13 +44,6 @@ export const Default: Story = {
 				</CardBody>
 			</>
 		),
-	},
-}
-
-export const LoggedIn: Story = {
-	args: {
-		...HeaderStories.CardTitle.args,
-		...Default.args,
 	},
 }
 
