@@ -1,23 +1,52 @@
-import { Card, CardHeader, CardBody, CardFooter, CardImage } from '@/ui';
+import { Card, CardHeader, CardBody, CardFooter, CardImage } from '@/ui'
 
 import Dogs from '@/data/dogs.json'
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-      <div className='mb-12 grid gap-4 md:grid-cols-4 lg:grid-cols-6'>
+	return (
+		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
+			<div className='mb-12 grid gap-4 md:grid-cols-4 lg:grid-cols-6'>
 				{Dogs.map((dog, _index) => (
 					<Card key={dog.name}>
-            <CardHeader title={dog.name} />
-            <CardImage title={dog.name} src={dog.src} />
-              <CardBody><p>{dog.description}</p></CardBody>
-              <CardFooter link={dog.link} linkLabel={dog.name}>Footer content here</CardFooter>
-          </Card>
+						<CardImage
+							title={dog.name}
+							src={dog.src}
+						/>
+						<CardBody>
+							<CardHeader title={dog.name} />
+							<p>{dog.description}</p>
+							<CardFooter
+								link={dog.link}
+								linkLabel={dog.name}
+							/>
+						</CardBody>
+					</Card>
 				))}
 			</div>
 
+			<div className='mb-12 grid gap-4 md:grid-cols-3'>
+				{Dogs.map((dog, _index) => (
+					<Card
+						key={dog.name}
+						theme='dark'
+						layout='row'
+					>
+						<CardImage
+							title={dog.name}
+							src={dog.src}
+						/>
 
-    </main>
-  )
+						<CardBody>
+							<CardHeader title={dog.name} />
+							<p>{dog.description}</p>
+							<CardFooter
+								link={dog.link}
+								linkLabel={dog.name}
+							/>
+						</CardBody>
+					</Card>
+				))}
+			</div>
+		</main>
+	)
 }
