@@ -22,7 +22,7 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
 
             - name: Install dependencies and build
-              working-directory: dist
+              working-directory: ${{ github.workspace }}
               run: |
                   npm ci
                   npm run build
