@@ -21,11 +21,5 @@ jobs:
               run: npm ci && npm run build
             - name: Publish package on NPM 📦
               run: npm publish
-                  if npm publish; then
-                  echo "npm publish succeeded!"
-                  else
-                  echo "npm publish failed!"
-                  exit 1
-                  fi
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
