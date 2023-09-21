@@ -1,5 +1,5 @@
 {
-	"name": "@smitch/fluid",
+	"name": "@smitch/fluid-ui",
 	"version": "0.0.1",
 	"description": "A React ui-component libray.",
 	"main": "index.js",
