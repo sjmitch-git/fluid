@@ -8,7 +8,6 @@
 	"private": false,
 	"scripts": {
 		"dev": "next dev",
-		"copy-ui": "cp -r UI dist",
 		"build": "cp -r src/ui dist/lib && next build",
 		"start": "next start",
 		"lint": "next lint",
