@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { CardHeaderProps } from './types'
 
 const defaultStyles = 'p-0'

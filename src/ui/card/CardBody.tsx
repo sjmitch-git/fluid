@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { CardBodyProps } from './types'
 
 const defaultStyles =
