@@ -1,11 +1,18 @@
-import { CardHeaderProps } from "./types";
+import { CardHeaderProps } from './types'
 
-const CardHeader = ({ title }: CardHeaderProps) => {
-  return (
-    <header className="card-header">
-      <h4>{title}</h4>
-    </header>
-  );
-};
+const defaultStyles = 'p-0'
+const titleStyles = 'font-bold opacity-80 capitalize mb-2'
 
-export default CardHeader;
+const CardHeader = ({
+	className = defaultStyles,
+	title,
+	titlestyles = titleStyles,
+}: CardHeaderProps) => {
+	return (
+		<header className={`card-header ${className}`}>
+			<h4 className={`card-title ${titlestyles}`}>{title}</h4>
+		</header>
+	)
+}
+
+export default CardHeader

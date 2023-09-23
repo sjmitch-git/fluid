@@ -1,7 +1,10 @@
-import { CardBodyProps } from "./types";
+import { CardBodyProps } from './types'
 
-const CardBody = ({ children }: CardBodyProps) => {
-  return <div className="card-body">{children}</div>;
-};
+const defaultStyles =
+	'relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3'
 
-export default CardBody;
+const CardBody = ({ className = defaultStyles, children }: CardBodyProps) => {
+	return <div className={`card-body ${className}`}>{children}</div>
+}
+
+export default CardBody

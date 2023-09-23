@@ -14,14 +14,6 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-/* const data = {
-	name: 'husky',
-	src: '/img/dogs/husky.jpg',
-	description:
-		'The Alaskan husky is a breed of medium-sized working sled dog, developed specifically for its performance as such.',
-	link: 'https://en.wikipedia.org/wiki/Alaskan_husky',
-} */
-
 const data = Data[0]
 
 export const Default: Story = {
@@ -36,7 +28,7 @@ export const Default: Story = {
 
 				<CardBody>
 					<CardHeader title={data.name} />
-					<p>{data.description}</p>
+					<p className='line-clamp-2'>{data.description}</p>
 					<CardFooter
 						link={data.link}
 						linkLabel={data.name}
