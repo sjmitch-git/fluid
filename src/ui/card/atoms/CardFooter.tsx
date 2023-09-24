@@ -2,7 +2,7 @@ import React from 'react'
 
 import Link from 'next/link'
 
-import { CardFooterProps } from './types'
+import { CardFooterProps } from '../types'
 
 const defaultStyles = 'flex px-2 pt-4 items-center mt-auto'
 

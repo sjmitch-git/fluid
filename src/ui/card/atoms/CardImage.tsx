@@ -2,7 +2,7 @@ import React from 'react'
 
 import Image from 'next/image'
 
-import { CardImageProps } from './types'
+import { CardImageProps } from '../types'
 
 const defaultStyles = 'relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto'
 

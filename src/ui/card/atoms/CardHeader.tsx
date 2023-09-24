@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CardHeaderProps } from './types'
+import { CardHeaderProps } from '../types'
 
 const defaultStyles = 'p-0'
 const titleStyles = 'font-bold opacity-80 capitalize mb-2'
