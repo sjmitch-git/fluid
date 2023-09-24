@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CardBodyProps } from './types'
+import { CardBodyProps } from '../types'
 
 const defaultStyles =
 	'relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3'

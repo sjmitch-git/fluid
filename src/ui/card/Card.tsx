@@ -27,7 +27,10 @@ const Card = ({
 	let themeClasses = themes[theme]
 	let layoutClasses = layouts[layout]
 	return (
-		<div className={`card group relative grid ${className} ${themeClasses} ${layoutClasses}`}>
+		<div
+			className={`card group relative grid ${className} ${themeClasses} ${layoutClasses}`}
+			data-testid='card'
+		>
 			{children}
 		</div>
 	)

@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@/ui'
 // import * as HeaderStories from './CardHeader.stories'
 
 import Data from '@/data/dogs.json'
-console.log('data', Data)
+
 const meta: Meta = {
 	title: 'UI/Card',
 	component: Card,

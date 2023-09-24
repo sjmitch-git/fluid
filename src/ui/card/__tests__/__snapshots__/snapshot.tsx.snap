@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Card unchanged 1`] = `
+<div>
+  <div
+    class="card group relative grid rounded border shadow-lg bg-dark text-light col grid-cols-1"
+    data-testid="card"
+  >
+    <div
+      class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+    >
+      <figure
+        class="card-figure relative aspect-landscape"
+      >
+        <img
+          alt="akita"
+          class="img object-cover"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          src="/_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=3840&q=75"
+          srcset="/_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+        />
+      </figure>
+    </div>
+    <div
+      class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+    >
+      <header
+        class="card-header p-0"
+      >
+        <h4
+          class="card-title font-bold opacity-80 capitalize mb-2"
+        >
+          akita
+        </h4>
+      </header>
+      <p
+        class="line-clamp-2"
+      >
+        The Akita is a Japanese dog breed of large size. Originating from the mountains of northern Japan, the Akita has a short double coat similar to that of many other northern spitz breeds. Historically, they were used by samurai for guarding, fighting and the hunting of bears.
+      </p>
+      <footer
+        class="card-footer flex px-2 pt-4 items-center mt-auto"
+      >
+        <a
+          class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+          href="https://en.wikipedia.org/wiki/Akita_(dog)"
+          target="_blank"
+        >
+          akita
+        </a>
+      </footer>
+    </div>
+  </div>
+</div>
+`;
