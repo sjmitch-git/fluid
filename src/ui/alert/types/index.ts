@@ -4,5 +4,5 @@ export interface AlertProps {
 	status?: 'info' | 'success' | 'warning' | 'error'
 	message: string
 	layout?: 'default' | 'solid' | 'outline'
-	onClick?: () => void
+	onClick?: (e: any) => void
 }

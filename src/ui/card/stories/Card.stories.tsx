@@ -8,6 +8,13 @@ import Data from '@/data/dogs.json'
 const meta: Meta = {
 	title: 'UI/Card',
 	component: Card,
+	argTypes: {
+		children: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Card>
 

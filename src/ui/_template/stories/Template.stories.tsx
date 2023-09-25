@@ -8,6 +8,13 @@ console.log('data', Data)
 const meta: Meta = {
 	title: 'template',
 	component: Template,
+	argTypes: {
+		children: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Template>
 
