@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { logRoles } from '@testing-library/dom'
 
-import { Button, ButtonBody } from '..'
+import { Button } from '..'
 
 //import Data from '@/data/dogs.json'
 
@@ -13,18 +13,12 @@ let body: HTMLElement
 
 describe('Button Component', () => {
 	beforeEach(() => {
-		render(
-			<Button>
-				<ButtonBody>Test content</ButtonBody>
-			</Button>
-		)
+		render(<Button>Click!</Button>)
 		component = screen.getByTestId('button')
-		body = screen.getByTestId('body')
-		// logRoles(component)
+		logRoles(component)
 	})
 
 	it('should render all elements', () => {
 		expect(component).toBeInTheDocument()
-		expect(body).toBeInTheDocument()
 	})
 })
