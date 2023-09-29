@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CardImage } from '@/ui'
 
 const meta: Meta = {
-	title: 'UI/Card/Card Image',
+	title: 'Fluid UI/Card/Card Image',
 	component: CardImage,
 	args: {
 		title: 'Akita',

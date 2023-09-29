@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CardHeader } from '@/ui'
 
 const meta: Meta = {
-	title: 'UI/Card/Card Header',
+	title: 'Fluid UI/Card/Card Header',
 	component: CardHeader,
 	tags: ['autodocs'],
 } satisfies Meta<typeof CardHeader>

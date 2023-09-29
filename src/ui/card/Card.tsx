@@ -12,10 +12,7 @@ const layouts = {
 const themes = {
 	light: 'bg-light text-dark test',
 	dark: 'bg-dark text-light',
-	primary: 'bg-primary text-light',
-	info: 'bg-info text-light',
-	warning: 'bg-warning text-light',
-	error: 'bg-error text-light',
+	transparent: 'bg-inherit text-inherit',
 }
 
 const Card = ({

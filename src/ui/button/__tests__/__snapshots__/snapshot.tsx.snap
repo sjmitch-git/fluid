@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Button unchanged 1`] = `
+<div>
+  <button
+    class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring font-semibold uppercase tracking-widest text-base p-3 bg-primary text-white  "
+    data-testid="button"
+    role="button"
+    title="Click"
+    type="button"
+  >
+    Click!
+  </button>
+</div>
+`;

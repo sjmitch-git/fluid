@@ -1,15 +1,8 @@
-/* import { render } from '@testing-library/react'
-import { Button, ButtonBody } from '..'
+import { render } from '@testing-library/react'
+import { Button } from '..'
 
-import Data from '@/data/dogs.json'
-const data = Data[0]
-
-it('renders Card unchanged', () => {
-	const { container } = render(
-		<Button>
-			<ButtonBody>Test content</ButtonBody>
-		</Button>
-	)
+it('renders Button unchanged', () => {
+	const { container } = render(<Button>Click!</Button>)
 
 	expect(container).toMatchSnapshot()
-}) */
+})

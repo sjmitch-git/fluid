@@ -8,7 +8,7 @@ const defaultStyles = 'flex px-2 pt-4 items-center mt-auto'
 
 const CardFooter = ({ className = defaultStyles, link, linkLabel, children }: CardFooterProps) => {
 	return (
-		<footer className={`card-footer ${className}`}>
+		<div className={`card-footer ${className}`}>
 			{children}
 			{link && (
 				<Link
@@ -19,7 +19,7 @@ const CardFooter = ({ className = defaultStyles, link, linkLabel, children }: Ca
 					{linkLabel}
 				</Link>
 			)}
-		</footer>
+		</div>
 	)
 }
 

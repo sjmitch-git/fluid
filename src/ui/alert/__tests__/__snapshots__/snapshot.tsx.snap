@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Card unchanged 1`] = `
+<div>
+  <blockquote
+    class="alert group relative  text-base px-4 py-1 border-error bg-[var(--error-color-25)] text-error border-s-8"
+    data-testid="alert"
+    role="alert"
+  >
+    <h4
+      class="mt-2 mb-0 uppercase font-bold group-[.solid]:text-light"
+      role="heading"
+    >
+      error
+    </h4>
+    <div
+      class="text-size-inherit mb-4 mt-4 text-dark group-[.solid]:text-light"
+    >
+      <p>
+        <strong>
+          Ugh umami
+        </strong>
+         bacon butcher 
+        <a
+          href="#"
+        >
+          pickled kogi
+        </a>
+         stumptown, 
+        <em>
+          subway tile
+        </em>
+         gatekeep flexitarian.
+      </p>
+    </div>
+  </blockquote>
+</div>
+`;

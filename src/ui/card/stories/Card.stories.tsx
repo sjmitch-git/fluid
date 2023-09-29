@@ -6,7 +6,7 @@ import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@/ui'
 import Data from '@/data/dogs.json'
 
 const meta: Meta = {
-	title: 'UI/Card',
+	title: 'Fluid UI/Card',
 	component: Card,
 	argTypes: {
 		children: {

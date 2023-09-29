@@ -4,7 +4,7 @@ import { Template, TemplateBody } from '..'
 import Data from '@/data/dogs.json'
 const data = Data[0]
 
-it('renders Card unchanged', () => {
+it('renders Template unchanged', () => {
 	const { container } = render(
 		<Template>
 			<TemplateBody>Test content</TemplateBody>

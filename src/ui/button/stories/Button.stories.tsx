@@ -1,11 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PlusIcon } from '@heroicons/react/24/solid'
+import { FaPlus, FaTrashAlt } from 'react-icons/fa'
 import { Button } from '..'
 
 const meta: Meta = {
 	title: 'Fluid UI/Button',
 	component: Button,
+	args: {
+		layout: 'default',
+		background: 'primary',
+		color: 'light',
+		size: 'lg',
+		disabled: false,
+		outline: false,
+	},
 	argTypes: {
+		disabled: {
+			options: [false, true],
+			control: { type: 'radio' },
+		},
+		outline: {
+			options: [false, true],
+			control: { type: 'radio' },
+		},
 		role: {
 			table: {
 				disable: true,
@@ -22,6 +38,11 @@ const meta: Meta = {
 			},
 		},
 		type: {
+			table: {
+				disable: true,
+			},
+		},
+		title: {
 			table: {
 				disable: true,
 			},
@@ -50,7 +71,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	args: {
-		children: <>Click!</>,
+		children: 'Click!',
 	},
 }
 
@@ -58,12 +79,11 @@ export const Icon: Story = {
 	args: {
 		children: (
 			<>
-				<PlusIcon className='aspect-square text-current w-8 group-[.text-sm]:w-6 group-[.text-lg]:w-10' />
+				<FaPlus />
 				<span className='sr-only'>Add Item</span>
 			</>
 		),
 		layout: 'circle',
-		theme: 'info',
 	},
 }
 
@@ -71,11 +91,26 @@ export const IconAndLabel: Story = {
 	args: {
 		children: (
 			<>
-				<PlusIcon className='aspect-square text-current w-8 group-[.text-sm]:w-6 group-[.text-lg]:w-10' />
+				<FaPlus />
 				Add Item
 			</>
 		),
 		layout: 'pill',
-		theme: 'info',
+	},
+}
+
+export const DeleteButton: Story = {
+	args: {
+		children: (
+			<>
+				<FaTrashAlt />
+				<span className='sr-only'>Delete Item</span>
+			</>
+		),
+		layout: 'circle',
+		background: 'light',
+		color: 'danger',
+		outline: true,
+		title: 'Delete Item?',
 	},
 }

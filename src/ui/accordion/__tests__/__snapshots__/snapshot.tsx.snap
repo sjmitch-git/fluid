@@ -1,0 +1,521 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Accordion unchanged 1`] = `
+<div>
+  <div
+    class="accordion group  text-base"
+    data-testid="accordion"
+  >
+    <div
+      class="border border-x-0 border-t-0 last:border-b-0 bg-light text-dark border-neutral"
+    >
+      <h3
+        class="peer m-0 flex cursor-pointer items-center justify-between text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize open"
+      >
+        akita
+        <button
+          class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring text-info shadow-none !p-0 text-base p-3 bg-transparent text-current aspect-square rounded-full "
+          data-testid="button"
+          role="button"
+          title="Click"
+          type="button"
+        >
+          <svg
+            class="aspect-square text-current w-6 group-[.text-sm]:w-4 group-[.text-lg]:w-8"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+          <span
+            class="sr-only"
+          >
+            Toggle section
+          </span>
+        </button>
+      </h3>
+      <section
+        class="max-h-0 peer-[.open]:max-h-56 overflow-y-auto transition-all duration-500"
+        role="section"
+      >
+        <div
+          class="card group relative grid p-2 bg-light text-dark test row grid-cols-4"
+          data-testid="card"
+        >
+          <div
+            class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+          >
+            <figure
+              class="card-figure relative aspect-square"
+            >
+              <img
+                alt="akita"
+                class="img object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                src="/_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=3840&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fakita.jpg&w=3840&q=75 3840w"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </figure>
+          </div>
+          <div
+            class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+          >
+            <p
+              class="line-clamp-2"
+            >
+              The Akita is a Japanese dog breed of large size. Originating from the mountains of northern Japan, the Akita has a short double coat similar to that of many other northern spitz breeds. Historically, they were used by samurai for guarding, fighting and the hunting of bears.
+            </p>
+            <footer
+              class="card-footer flex px-2 pt-4 items-center mt-auto"
+            >
+              <a
+                class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+                href="https://en.wikipedia.org/wiki/Akita_(dog)"
+                target="_blank"
+              >
+                akita
+              </a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border border-x-0 border-t-0 last:border-b-0 bg-light text-dark border-neutral"
+    >
+      <h3
+        class="peer m-0 flex cursor-pointer items-center justify-between text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize "
+      >
+        beagle
+        <button
+          class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring text-info shadow-none !p-0 text-base p-3 bg-transparent text-current aspect-square rounded-full "
+          data-testid="button"
+          role="button"
+          title="Click"
+          type="button"
+        >
+          <svg
+            class="aspect-square text-current w-6 group-[.text-sm]:w-4 group-[.text-lg]:w-8"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+          <span
+            class="sr-only"
+          >
+            Toggle section
+          </span>
+        </button>
+      </h3>
+      <section
+        class="max-h-0 peer-[.open]:max-h-56 overflow-y-auto transition-all duration-500"
+        role="section"
+      >
+        <div
+          class="card group relative grid p-2 bg-light text-dark test row grid-cols-4"
+          data-testid="card"
+        >
+          <div
+            class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+          >
+            <figure
+              class="card-figure relative aspect-square"
+            >
+              <img
+                alt="beagle"
+                class="img object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                src="/_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=3840&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fbeagle.jpg&w=3840&q=75 3840w"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </figure>
+          </div>
+          <div
+            class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+          >
+            <p
+              class="line-clamp-2"
+            >
+              The beagle is a breed of small scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting hare, known as beagling
+            </p>
+            <footer
+              class="card-footer flex px-2 pt-4 items-center mt-auto"
+            >
+              <a
+                class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+                href="https://en.wikipedia.org/wiki/Beagle"
+                target="_blank"
+              >
+                beagle
+              </a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border border-x-0 border-t-0 last:border-b-0 bg-light text-dark border-neutral"
+    >
+      <h3
+        class="peer m-0 flex cursor-pointer items-center justify-between text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize "
+      >
+        corgi
+        <button
+          class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring text-info shadow-none !p-0 text-base p-3 bg-transparent text-current aspect-square rounded-full "
+          data-testid="button"
+          role="button"
+          title="Click"
+          type="button"
+        >
+          <svg
+            class="aspect-square text-current w-6 group-[.text-sm]:w-4 group-[.text-lg]:w-8"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+          <span
+            class="sr-only"
+          >
+            Toggle section
+          </span>
+        </button>
+      </h3>
+      <section
+        class="max-h-0 peer-[.open]:max-h-56 overflow-y-auto transition-all duration-500"
+        role="section"
+      >
+        <div
+          class="card group relative grid p-2 bg-light text-dark test row grid-cols-4"
+          data-testid="card"
+        >
+          <div
+            class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+          >
+            <figure
+              class="card-figure relative aspect-square"
+            >
+              <img
+                alt="corgi"
+                class="img object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                src="/_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=3840&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fcorgi.jpg&w=3840&q=75 3840w"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </figure>
+          </div>
+          <div
+            class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+          >
+            <p
+              class="line-clamp-2"
+            >
+              The Corgi is a cattle herding dog breed that originated in Wales. Corgis descended from the Spitz family of dogs.
+            </p>
+            <footer
+              class="card-footer flex px-2 pt-4 items-center mt-auto"
+            >
+              <a
+                class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+                href="https://en.wikipedia.org/wiki/Pembroke_Welsh_Corgi"
+                target="_blank"
+              >
+                corgi
+              </a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border border-x-0 border-t-0 last:border-b-0 bg-light text-dark border-neutral"
+    >
+      <h3
+        class="peer m-0 flex cursor-pointer items-center justify-between text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize "
+      >
+        dachshund
+        <button
+          class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring text-info shadow-none !p-0 text-base p-3 bg-transparent text-current aspect-square rounded-full "
+          data-testid="button"
+          role="button"
+          title="Click"
+          type="button"
+        >
+          <svg
+            class="aspect-square text-current w-6 group-[.text-sm]:w-4 group-[.text-lg]:w-8"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+          <span
+            class="sr-only"
+          >
+            Toggle section
+          </span>
+        </button>
+      </h3>
+      <section
+        class="max-h-0 peer-[.open]:max-h-56 overflow-y-auto transition-all duration-500"
+        role="section"
+      >
+        <div
+          class="card group relative grid p-2 bg-light text-dark test row grid-cols-4"
+          data-testid="card"
+        >
+          <div
+            class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+          >
+            <figure
+              class="card-figure relative aspect-square"
+            >
+              <img
+                alt="dachshund"
+                class="img object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                src="/_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=3840&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fdachshund.jpg&w=3840&q=75 3840w"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </figure>
+          </div>
+          <div
+            class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+          >
+            <p
+              class="line-clamp-2"
+            >
+              The dachshund, also known as the wiener dog, badger dog, doxie, and sausage dog, is a short-legged, long-bodied, hound-type dog breed. The dog may be smooth-haired, wire-haired, or long-haired. Coloration varies.
+            </p>
+            <footer
+              class="card-footer flex px-2 pt-4 items-center mt-auto"
+            >
+              <a
+                class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+                href="https://en.wikipedia.org/wiki/Dachshund"
+                target="_blank"
+              >
+                dachshund
+              </a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border border-x-0 border-t-0 last:border-b-0 bg-light text-dark border-neutral"
+    >
+      <h3
+        class="peer m-0 flex cursor-pointer items-center justify-between text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize "
+      >
+        husky
+        <button
+          class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring text-info shadow-none !p-0 text-base p-3 bg-transparent text-current aspect-square rounded-full "
+          data-testid="button"
+          role="button"
+          title="Click"
+          type="button"
+        >
+          <svg
+            class="aspect-square text-current w-6 group-[.text-sm]:w-4 group-[.text-lg]:w-8"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+          <span
+            class="sr-only"
+          >
+            Toggle section
+          </span>
+        </button>
+      </h3>
+      <section
+        class="max-h-0 peer-[.open]:max-h-56 overflow-y-auto transition-all duration-500"
+        role="section"
+      >
+        <div
+          class="card group relative grid p-2 bg-light text-dark test row grid-cols-4"
+          data-testid="card"
+        >
+          <div
+            class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+          >
+            <figure
+              class="card-figure relative aspect-square"
+            >
+              <img
+                alt="husky"
+                class="img object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                src="/_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=3840&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fhusky.jpg&w=3840&q=75 3840w"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </figure>
+          </div>
+          <div
+            class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+          >
+            <p
+              class="line-clamp-2"
+            >
+              The Alaskan husky is a breed of medium-sized working sled dog, developed specifically for its performance as such.
+            </p>
+            <footer
+              class="card-footer flex px-2 pt-4 items-center mt-auto"
+            >
+              <a
+                class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+                href="https://en.wikipedia.org/wiki/Alaskan_husky"
+                target="_blank"
+              >
+                husky
+              </a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="border border-x-0 border-t-0 last:border-b-0 bg-light text-dark border-neutral"
+    >
+      <h3
+        class="peer m-0 flex cursor-pointer items-center justify-between text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize "
+      >
+        poodle
+        <button
+          class="button group flex gap-1 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring text-info shadow-none !p-0 text-base p-3 bg-transparent text-current aspect-square rounded-full "
+          data-testid="button"
+          role="button"
+          title="Click"
+          type="button"
+        >
+          <svg
+            class="aspect-square text-current w-6 group-[.text-sm]:w-4 group-[.text-lg]:w-8"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+          <span
+            class="sr-only"
+          >
+            Toggle section
+          </span>
+        </button>
+      </h3>
+      <section
+        class="max-h-0 peer-[.open]:max-h-56 overflow-y-auto transition-all duration-500"
+        role="section"
+      >
+        <div
+          class="card group relative grid p-2 bg-light text-dark test row grid-cols-4"
+          data-testid="card"
+        >
+          <div
+            class="card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto"
+          >
+            <figure
+              class="card-figure relative aspect-square"
+            >
+              <img
+                alt="poodle"
+                class="img object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                src="/_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=3840&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=256&q=75 256w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=384&q=75 384w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=640&q=75 640w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=750&q=75 750w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=828&q=75 828w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimg%2Fdogs%2Fpoodle.jpg&w=3840&q=75 3840w"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </figure>
+          </div>
+          <div
+            class="card-body relative flex flex-col p-2 group-[.row]:col-span-4 group-[.row]:peer-[.card-image]:col-span-3"
+          >
+            <p
+              class="line-clamp-2"
+            >
+              The Poodle, called the Pudel in German and the Caniche in French, is a breed of water dog. The breed is divided into four varieties based on size, the Standard Poodle, Medium Poodle, Miniature Poodle and Toy Poodle, although the Medium Poodle is not universally recognised.
+            </p>
+            <footer
+              class="card-footer flex px-2 pt-4 items-center mt-auto"
+            >
+              <a
+                class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+                href="https://en.wikipedia.org/wiki/Poodle"
+                target="_blank"
+              >
+                poodle
+              </a>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;

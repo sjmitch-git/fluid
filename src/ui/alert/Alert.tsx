@@ -7,10 +7,10 @@ const outlineStyles = 'rounded border-0 outline outline-2'
 const solidStyles = `solid rounded border-none`
 
 const statuses = {
-	info: 'border-info bg-[var(--info-color-25)] text-info',
-	success: 'border-success bg-[var(--success-color-25)] text-success',
-	warning: 'border-warning bg-[var(--warning-color-25)] text-warning',
-	error: 'border-error bg-[var(--error-color-25)] text-error',
+	info: 'border-info bg-[var(--info-color-25)] outline-info',
+	success: 'border-success bg-[var(--success-color-25)] outline-success',
+	warning: 'border-warning bg-[var(--warning-color-25)] outline-warning',
+	error: 'border-error bg-[var(--error-color-25)] outline-error',
 }
 
 const solidStatuses = {
@@ -62,7 +62,7 @@ const Alert = ({
 		>
 			{status && (
 				<h4
-					className='mt-2 mb-0 uppercase font-bold group-[.solid]:text-light'
+					className='mt-2 mb-0 uppercase font-bold group-[.solid]:text-light opacity-85'
 					role='heading'
 				>
 					{status}

@@ -14,7 +14,7 @@
 	--success-color-25: #c0e5d9;
 	--warning-color: var(--deep-orange);
 	--warning-color-25: #fce7c2;
-	--error-color: var(--deep-red);
+	--error-color: #b20f0b;
 	--error-color-25: #f0c3d8;
 	--backdrop-color: rgba(0, 0, 0, 0.8);
 	--shim-color: rgba(0, 0, 0, 0.5);

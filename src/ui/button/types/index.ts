@@ -1,8 +1,10 @@
 export interface ButtonProps {
 	className?: string
 	children: React.ReactNode
-	size?: 'sm' | 'md' | 'lg'
-	theme?:
+	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+	background?:
+		| 'dark'
+		| 'light'
 		| 'info'
 		| 'success'
 		| 'warning'
@@ -10,8 +12,7 @@ export interface ButtonProps {
 		| 'primary'
 		| 'secondary'
 		| 'transparent'
-		| 'dark'
-		| 'light'
+	color?: 'dark' | 'light' | 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'secondary'
 	layout?: 'default' | 'rounded' | 'pill' | 'square' | 'circle'
 	outline?: boolean
 	id?: string
@@ -22,9 +23,4 @@ export interface ButtonProps {
 	disabled?: boolean
 	tabindex?: number
 	role?: string
-}
-
-export interface ButtonBodyProps {
-	className?: string
-	children: React.ReactNode
 }
