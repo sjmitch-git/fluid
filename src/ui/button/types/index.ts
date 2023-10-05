@@ -1,6 +1,6 @@
 export interface ButtonProps {
 	className?: string
-	children: React.ReactNode
+	children?: React.ReactNode
 	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 	background?:
 		| 'dark'
@@ -12,7 +12,16 @@ export interface ButtonProps {
 		| 'primary'
 		| 'secondary'
 		| 'transparent'
-	color?: 'dark' | 'light' | 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'secondary'
+	color?:
+		| 'dark'
+		| 'light'
+		| 'info'
+		| 'success'
+		| 'warning'
+		| 'danger'
+		| 'primary'
+		| 'secondary'
+		| 'current'
 	layout?: 'default' | 'rounded' | 'pill' | 'square' | 'circle'
 	outline?: boolean
 	id?: string

@@ -1,0 +1,15 @@
+/* import { render } from '@testing-library/react'
+import { Input, InputBody } from '..'
+
+import Data from '@/data/dogs.json'
+const data = Data[0]
+
+it('renders Input unchanged', () => {
+	const { container } = render(
+		<Input>
+			<InputBody>Test content</InputBody>
+		</Input>
+	)
+
+	expect(container).toMatchSnapshot()
+}) */

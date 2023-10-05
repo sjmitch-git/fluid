@@ -14,7 +14,7 @@ const Template = ({ className = defaultStyles, size = 'md', children }: Template
 	let sizeClasses = sizes[size]
 	return (
 		<div
-			className={`Template group ${className} ${sizeClasses}`}
+			className={`template group ${className} ${sizeClasses}`}
 			data-testid='template'
 		>
 			{children}

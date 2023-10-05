@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@/ui'
 
-// import * as HeaderStories from './CardHeader.stories'
-
 import Data from '@/data/dogs.json'
 
 const meta: Meta = {
@@ -14,6 +12,10 @@ const meta: Meta = {
 				disable: true,
 			},
 		},
+	},
+	args: {
+		theme: 'light',
+		layout: 'col',
 	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Card>
@@ -46,27 +48,89 @@ export const Default: Story = {
 	},
 }
 
-export const CardTheme: Story = {
-	args: {
-		...Default.args,
-		theme: 'light',
+export const NoImage: Story = {
+	argTypes: {
+		layout: {
+			table: {
+				disable: true,
+			},
+		},
 	},
-}
-
-export const CardLayout: Story = {
-	args: {
-		...Default.args,
-		layout: 'row',
-	},
-}
-
-export const CardWithoutImage: Story = {
 	args: {
 		children: (
 			<>
 				<CardBody>
 					<CardHeader title={data.name} />
 					<p>{data.description}</p>
+					<CardFooter
+						link={data.link}
+						linkLabel={data.name}
+					/>
+				</CardBody>
+			</>
+		),
+	},
+}
+
+export const ImageSquareAspect: Story = {
+	args: {
+		children: (
+			<>
+				<CardImage
+					title={data.name}
+					src={data.src}
+					aspect='square'
+				/>
+
+				<CardBody>
+					<CardHeader title={data.name} />
+					<p className='line-clamp-2'>{data.description}</p>
+					<CardFooter
+						link={data.link}
+						linkLabel={data.name}
+					/>
+				</CardBody>
+			</>
+		),
+	},
+}
+
+export const ImageVideoAspect: Story = {
+	args: {
+		children: (
+			<>
+				<CardImage
+					title={data.name}
+					src={data.src}
+					aspect='video'
+				/>
+
+				<CardBody>
+					<CardHeader title={data.name} />
+					<p className='line-clamp-2'>{data.description}</p>
+					<CardFooter
+						link={data.link}
+						linkLabel={data.name}
+					/>
+				</CardBody>
+			</>
+		),
+	},
+}
+
+export const ImagePortraitAspect: Story = {
+	args: {
+		children: (
+			<>
+				<CardImage
+					title={data.name}
+					src={data.src}
+					aspect='portrait'
+				/>
+
+				<CardBody>
+					<CardHeader title={data.name} />
+					<p className='line-clamp-2'>{data.description}</p>
 					<CardFooter
 						link={data.link}
 						linkLabel={data.name}

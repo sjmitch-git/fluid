@@ -24,6 +24,12 @@ const config: Config = {
 				landscape: '4 / 3',
 				portrait: '3 / 4',
 			},
+			fontSize: {
+				inherit: 'inherit',
+			},
+			lineHeight: {
+				inherit: 'inherit',
+			},
 			colors: {
 				primary: 'var(--primary-color)',
 				secondary: 'var(--secondary-color)',
@@ -42,6 +48,10 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/forms')({
+			strategy: 'class',
+		}),
+	],
 }
 export default config

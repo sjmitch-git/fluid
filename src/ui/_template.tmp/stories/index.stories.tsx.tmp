@@ -6,7 +6,7 @@ import { Template, TemplateBody } from '..'
 import Data from '@/data/dogs.json'
 console.log('data', Data)
 const meta: Meta = {
-	title: 'template',
+	title: 'Fluid UI/Template',
 	component: Template,
 	argTypes: {
 		children: {

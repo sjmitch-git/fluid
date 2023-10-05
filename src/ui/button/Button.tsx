@@ -37,6 +37,7 @@ const colors = {
 	secondary: 'text-secondary',
 	dark: 'text-dark',
 	light: 'text-light',
+	current: 'text-current',
 }
 
 const layouts = {

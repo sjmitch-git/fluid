@@ -2,6 +2,8 @@ import React from 'react'
 
 import { AlertProps } from './types'
 
+import { CloseButton } from '@/ui'
+
 const defaultStyles = 'border-s-8'
 const outlineStyles = 'rounded border-0 outline outline-2'
 const solidStyles = `solid rounded border-none`
@@ -35,21 +37,20 @@ const layouts = {
 const Alert = ({
 	className = '',
 	size = 'md',
-	status,
+	status = 'info',
 	layout = 'default',
+	title,
 	message,
+	dismissable = false,
+	onClick,
 }: AlertProps) => {
 	let sizeClasses = sizes[size]
 	let statusClasses
 
-	if (status && layout !== 'solid') {
-		statusClasses = statuses[status]
-	} else if (status && layout === 'solid') {
-		statusClasses = solidStatuses[status]
-	} else if (!status && layout === 'solid') {
-		statusClasses = solidStatuses['info']
+	if (layout === 'solid') {
+		statusClasses = `${solidStatuses[status]} text-light`
 	} else {
-		statusClasses = statuses['info']
+		statusClasses = `${statuses[status]} text-dark`
 	}
 
 	let layoutClasses = layouts[layout]
@@ -60,18 +61,25 @@ const Alert = ({
 			data-testid='alert'
 			role='alert'
 		>
-			{status && (
+			{title && (
 				<h4
-					className='mt-2 mb-0 uppercase font-bold group-[.solid]:text-light opacity-85'
+					className='mt-2 mb-0 uppercase font-bold opacity-85'
 					role='heading'
 				>
-					{status}
+					{title}
 				</h4>
 			)}
 			<div
-				className='text-size-inherit mb-4 mt-4 text-dark group-[.solid]:text-light'
+				className='text-size-inherit mb-4 mt-4'
 				dangerouslySetInnerHTML={{ __html: message }}
 			></div>
+
+			{dismissable && (
+				<CloseButton
+					size={size}
+					onClick={onClick}
+				/>
+			)}
 		</blockquote>
 	)
 }

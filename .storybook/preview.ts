@@ -5,6 +5,9 @@ import '../src/styles/index.css'
 const preview: Preview = {
 	parameters: {
 		actions: { argTypesRegex: '^on[A-Z].*' },
+		viewport: {
+			defaultViewport: 'mobile2',
+		},
 		backgrounds: {
 			default: 'grey',
 			values: [
