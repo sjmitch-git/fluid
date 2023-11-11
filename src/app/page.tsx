@@ -1,4 +1,11 @@
-import { Card, CardHeader, CardBody, CardFooter, CardImage, Alert } from '@/ui'
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	CardFooter,
+	CardImage,
+	Alert,
+} from '@/ui'
 
 import Dogs from '@/data/dogs.json'
 
@@ -16,6 +23,7 @@ export default function Home() {
 					/>
 				</div>
 			</div>
+
 
 			<div className='mb-12 grid gap-4 md:grid-cols-4 lg:grid-cols-6'>
 				{Dogs.map((dog, _index) => (

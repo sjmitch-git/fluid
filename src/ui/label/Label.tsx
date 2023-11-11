@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 
 import { LabelProps } from './types'
 
@@ -43,7 +45,6 @@ const Label = ({
 	label,
 	required,
 	type = 'text',
-	onToggleType,
 	hint,
 	children,
 }: LabelProps) => {
@@ -60,9 +61,9 @@ const Label = ({
 				}`}
 			>
 				{label}{' '}
-				{type === 'password' && (
+				{/* {type === 'password' && (
 					<Button
-						onClick={onToggleType}
+						onClick={toggleType}
 						className='absolute right-0 top-0 !p-0'
 						size={size}
 						layout='circle'
@@ -72,7 +73,7 @@ const Label = ({
 					>
 						<FaEye />
 					</Button>
-				)}
+				)} */}
 			</span>
 			<div className={`${widthClasses(type)} col-span-2`}>{children}</div>
 			{hint && (

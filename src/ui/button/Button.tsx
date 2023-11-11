@@ -5,15 +5,18 @@ import { ButtonProps } from './types'
 
 export type ButtonRef = HTMLButtonElement
 
-const defaultStyles = 'font-semibold uppercase tracking-widest'
+const defaultStyles =
+	'button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100'
 const outlineStyles = 'border-solid border-current'
+const stateStyles =
+	'disabled:opacity-50 disabled:grayscale focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:text-accent focus:text-accent focus-visible:text-accent focus-within:text-accent'
 
 const sizes = {
 	xs: 'text-xs p-1 border',
 	sm: 'text-sm p-2 border-2',
 	md: 'text-base p-3 border-4',
-	lg: 'text-lg p-4 border-4',
-	xl: 'text-xl p-4 border-4',
+	lg: 'text-lg p-4 border-[6px]',
+	xl: 'text-xl p-4 border-8',
 }
 
 const backgrounds = {
@@ -51,19 +54,20 @@ const layouts = {
 const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	const {
 		size = 'md',
-		className = defaultStyles,
+		className = 'font-semibold tracking-widest',
 		background = 'primary',
 		color = 'light',
 		layout = 'default',
 		outline = false,
 		type = 'button',
-		title = 'Click',
+		title,
 		id,
 		disabled,
 		onClick,
 		onBlur,
 		tabindex,
 		role = 'button',
+		textcase = 'capitalize',
 		children,
 	} = props
 
@@ -78,7 +82,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 
 	return (
 		<button
-			className={`button group flex gap-2 items-center justify-center disabled:opacity-50 disabled:grayscale shadow hover:shadow-lg scale-100 hover:scale-105 hover:disabled:scale-100 disabled:hover:shadow active:ring active:scale-100 focus:ring focus:ring-accent focus-visible:ring focus-within:ring ${className} ${sizeClasses} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses}`}
+			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${stateStyles}`}
 			data-testid='button'
 			type={type}
 			title={title}

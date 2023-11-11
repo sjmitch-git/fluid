@@ -26,5 +26,4 @@ export interface LabelProps {
 		| 'week'
 	value?: any
 	required?: boolean
-	onToggleType?: () => void
 }

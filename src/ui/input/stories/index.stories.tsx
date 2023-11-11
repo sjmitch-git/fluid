@@ -4,13 +4,6 @@ import { Input } from '..'
 const meta: Meta = {
 	title: 'Fluid UI/Input',
 	component: Input,
-	/* argTypes: {
-		children: {
-			table: {
-				disable: true,
-			},
-		},
-	}, */
 	tags: ['autodocs'],
 } satisfies Meta<typeof Input>
 
@@ -22,10 +15,3 @@ export const Default: Story = {
 		type: 'text',
 	},
 }
-
-/* export const CardTheme: Story = {
-	args: {
-		...Default.args,
-		theme: 'light',
-	},
-} */

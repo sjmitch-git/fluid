@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Label unchanged 1`] = `
+<div>
+  <label
+    class="label group relative cursor-pointer w-full font-semibold text-base flex flex-col items-start gap-2 text"
+    data-testid="label"
+  >
+    <span
+      class="inline-block  "
+    >
+      Label Value
+       
+    </span>
+    <div
+      class="w-full col-span-2"
+    >
+      <input
+        class="form-input w-full"
+        type="text"
+      />
+    </div>
+  </label>
+</div>
+`;

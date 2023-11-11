@@ -10,7 +10,6 @@ export interface InputProps {
 		| 'checkbox'
 		| 'radio'
 		| 'file'
-		| 'button'
 		| 'color'
 		| 'range'
 		| 'search'
@@ -23,7 +22,6 @@ export interface InputProps {
 	name?: string
 	label?: React.ReactNode
 	title?: string
-	hint?: string
 	placeholder?: string
 	list?: string
 	pattern?: string
@@ -44,7 +42,6 @@ export interface InputProps {
 	multiple?: boolean
 	value?: any
 	checked?: boolean
-	hintShow?: boolean
 	onchange?: React.ChangeEventHandler<HTMLInputElement>
 	oninput?: React.ChangeEventHandler<HTMLInputElement>
 }

@@ -12,7 +12,6 @@ const meta: Meta = {
 		size: 'md',
 		disabled: false,
 		outline: false,
-		className: 'shadow-none hover:shadow-none absolute left-0 top-0 !p-0',
 	},
 	argTypes: {
 		disabled: {
@@ -29,6 +28,11 @@ const meta: Meta = {
 			},
 		},
 		tabindex: {
+			table: {
+				disable: true,
+			},
+		},
+		textcase: {
 			table: {
 				disable: true,
 			},
@@ -71,3 +75,18 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+Default.decorators = [
+	(Story) => (
+		<div
+			style={{
+				margin: '1rem',
+				padding: '2rem',
+				position: 'relative',
+				background: '#ffffff',
+			}}
+		>
+			<Story />
+		</div>
+	),
+]

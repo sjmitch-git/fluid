@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Label } from '..'
-import { Input } from '@/ui'
-import { FaSearch } from 'react-icons/fa'
+import { Input, Autocomplete } from '@/ui'
+
+import data from '@/data/countries.json'
 
 const meta: Meta = {
 	title: 'Fluid UI/Label',
@@ -17,11 +18,6 @@ const meta: Meta = {
 			},
 		},
 		type: {
-			table: {
-				disable: true,
-			},
-		},
-		onToggleType: {
 			table: {
 				disable: true,
 			},
@@ -64,7 +60,7 @@ export const Default: Story = {
 	},
 }
 
-export const eMail: Story = {
+export const WithEMail: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -82,7 +78,7 @@ export const eMail: Story = {
 	},
 }
 
-export const Password: Story = {
+export const WithPassword: Story = {
 	argTypes: {
 		layout: {
 			table: {
@@ -112,7 +108,7 @@ export const Password: Story = {
 	},
 }
 
-export const Checkbox: Story = {
+export const WithCheckbox: Story = {
 	argTypes: {
 		layout: {
 			table: {
@@ -136,7 +132,7 @@ export const Checkbox: Story = {
 	},
 }
 
-export const Radio: Story = {
+export const WithRadio: Story = {
 	argTypes: {
 		layout: {
 			table: {
@@ -164,7 +160,7 @@ export const Radio: Story = {
 	},
 }
 
-export const Color: Story = {
+export const WithColor: Story = {
 	argTypes: {
 		layout: {
 			table: {
@@ -191,7 +187,7 @@ export const Color: Story = {
 	},
 }
 
-export const Date: Story = {
+export const WithDate: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -208,7 +204,7 @@ export const Date: Story = {
 	},
 }
 
-export const DatetimeLocal: Story = {
+export const WithDatetimeLocal: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -225,7 +221,7 @@ export const DatetimeLocal: Story = {
 	},
 }
 
-export const Time: Story = {
+export const WithTime: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -242,7 +238,7 @@ export const Time: Story = {
 	},
 }
 
-export const Week: Story = {
+export const WithWeek: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -259,7 +255,7 @@ export const Week: Story = {
 	},
 }
 
-export const Month: Story = {
+export const WithMonth: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -276,7 +272,7 @@ export const Month: Story = {
 	},
 }
 
-export const URL: Story = {
+export const WithURL: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -294,7 +290,7 @@ export const URL: Story = {
 	},
 }
 
-export const Number: Story = {
+export const WithNumber: Story = {
 	argTypes: {
 		required: {
 			table: {
@@ -318,7 +314,7 @@ export const Number: Story = {
 	},
 }
 
-export const File: Story = {
+export const WithFile: Story = {
 	argTypes: {
 		required: {
 			table: {
@@ -345,7 +341,7 @@ export const File: Story = {
 	},
 }
 
-export const Search: Story = {
+export const WithSearch: Story = {
 	argTypes: {
 		required: {
 			table: {
@@ -370,7 +366,7 @@ export const Search: Story = {
 	},
 }
 
-export const Telephone: Story = {
+export const WithTelephone: Story = {
 	argTypes: {
 		required: {
 			table: {
@@ -396,7 +392,7 @@ export const Telephone: Story = {
 	},
 }
 
-export const Range: Story = {
+export const WithRange: Story = {
 	argTypes: {
 		required: {
 			table: {
@@ -419,6 +415,32 @@ export const Range: Story = {
 				min='0'
 				max='100'
 				step='1'
+			/>
+		),
+	},
+}
+
+export const WithAutocomplete: Story = {
+	argTypes: {
+		required: {
+			table: {
+				disable: true,
+			},
+		},
+		layout: {
+			options: ['col', 'row'],
+			control: { type: 'radio' },
+		},
+	},
+	args: {
+		label: 'Autocomplete',
+		type: 'text',
+		layout: 'col',
+		children: (
+			<Autocomplete
+				data={data}
+				list='countries'
+				placeholder='Select Country'
 			/>
 		),
 	},

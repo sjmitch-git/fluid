@@ -7,9 +7,6 @@ import { Accordion } from '..'
 import Data from '@/data/dogs.json'
 
 let component: HTMLElement
-let body: HTMLElement
-
-//const data = Data[0]
 
 describe('Accordion Component', () => {
 	beforeEach(() => {

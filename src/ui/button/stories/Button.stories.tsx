@@ -12,6 +12,7 @@ const meta: Meta = {
 		size: 'lg',
 		disabled: false,
 		outline: false,
+		textcase: 'capitalize',
 	},
 	argTypes: {
 		disabled: {
@@ -76,6 +77,13 @@ export const Default: Story = {
 }
 
 export const Icon: Story = {
+	argTypes: {
+		textcase: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	args: {
 		children: (
 			<>

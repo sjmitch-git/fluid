@@ -32,4 +32,5 @@ export interface ButtonProps {
 	disabled?: boolean
 	tabindex?: number
 	role?: string
+	textcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
 }

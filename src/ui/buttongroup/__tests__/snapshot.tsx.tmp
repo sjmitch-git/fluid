@@ -1,14 +1,14 @@
 /* import { render } from '@testing-library/react'
-import { Input, InputBody } from '..'
+import { ButtonGroup, ButtonGroupBody } from '..'
 
 import Data from '@/data/dogs.json'
 const data = Data[0]
 
-it('renders Input unchanged', () => {
+it('renders ButtonGroup unchanged', () => {
 	const { container } = render(
-		<Input>
-			<InputBody>Test content</InputBody>
-		</Input>
+		<ButtonGroup>
+			<ButtonGroupBody>Test content</ButtonGroupBody>
+		</ButtonGroup>
 	)
 
 	expect(container).toMatchSnapshot()

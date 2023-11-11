@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { logRoles } from '@testing-library/dom'
 
-import { Input, InputBody } from '..'
+import { ButtonGroup, ButtonGroupBody } from '..'
 
 //import Data from '@/data/dogs.json'
 
@@ -11,14 +11,14 @@ let body: HTMLElement
 
 //const data = Data[0]
 
-describe('Input Component', () => {
+describe('ButtonGroup Component', () => {
 	beforeEach(() => {
 		render(
-			<Input>
-				<InputBody>Test content</InputBody>
-			</Input>
+			<ButtonGroup>
+				<ButtonGroupBody>Test content</ButtonGroupBody>
+			</ButtonGroup>
 		)
-		component = screen.getByTestId('input')
+		component = screen.getByTestId('buttongroup')
 		body = screen.getByTestId('body')
 		// logRoles(component)
 	})
