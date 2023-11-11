@@ -50,7 +50,6 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		title,
 		value,
 		checked,
-		hintShow,
 		accept,
 		multiple,
 		placeholder,
