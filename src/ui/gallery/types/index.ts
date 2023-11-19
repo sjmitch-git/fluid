@@ -6,7 +6,6 @@ export interface DataProps {
 export interface GalleryProps extends React.HTMLAttributes<HTMLDivElement> {
 	data: DataProps[]
 	className?: string
-	style?: React.CSSProperties
-	aspect?: string
+	aspect?: 'landscape' | 'portrait' | 'square' | 'video' | 'circle' | 'phone'
 	caption?: boolean
 }
