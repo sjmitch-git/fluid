@@ -1,11 +1,4 @@
-import {
-	Card,
-	CardHeader,
-	CardBody,
-	CardFooter,
-	CardImage,
-	Alert,
-} from '@/ui'
+import { Card, CardHeader, CardBody, CardFooter, CardImage, Alert, Carousel, Figure } from '@/ui'
 
 import Dogs from '@/data/dogs.json'
 
@@ -24,6 +17,28 @@ export default function Home() {
 				</div>
 			</div>
 
+			<div className='mb-12 max-w-lg bg-dark'>
+				<Carousel data={Dogs}>
+					<div>#Carousel</div>
+				</Carousel>
+			</div>
+
+			<div className='mb-12 grid gap-4 md:grid-cols-2 w-full'>
+				<Figure
+					alt='Beagle'
+					className='m-auto max-w-sm'
+					src='/img/dogs/beagle.jpg'
+					aspect='circle'
+					backdrop='light'
+				/>
+				<Figure
+					caption='Irish Wolfhound'
+					alt='Irish Wolfhound'
+					className='m-auto max-w-sm'
+					src='/img/dogs/wolfhound.jpg'
+					aspect='circle'
+				/>
+			</div>
 
 			<div className='mb-12 grid gap-4 md:grid-cols-4 lg:grid-cols-6'>
 				{Dogs.map((dog, _index) => (

@@ -18,6 +18,7 @@ const sizes = {
 	sm: 'text-sm',
 	md: 'text-base',
 	lg: 'text-lg',
+	xl: 'text-2xl',
 }
 
 const layouts = {

@@ -14,6 +14,7 @@ const sizes = {
 	sm: 'text-base',
 	md: 'text-lg',
 	lg: 'text-xl',
+	xl: 'text-2xl',
 	inherit: 'text-inherit leading-inherit',
 }
 

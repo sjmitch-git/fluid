@@ -6,7 +6,8 @@ const preview: Preview = {
 	parameters: {
 		actions: { argTypesRegex: '^on[A-Z].*' },
 		viewport: {
-			defaultViewport: 'tablet',
+			defaultViewport: 'Large mobile',
+			defaultOrientation: 'portrait',
 		},
 		backgrounds: {
 			default: 'grey',

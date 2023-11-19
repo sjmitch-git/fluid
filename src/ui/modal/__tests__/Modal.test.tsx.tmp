@@ -1,0 +1,30 @@
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import { logRoles } from '@testing-library/dom'
+
+import { Modal, ModalBody } from '..'
+
+//import Data from '@/data/dogs.json'
+
+let component: HTMLElement
+let body: HTMLElement
+
+//const data = Data[0]
+
+describe('Modal Component', () => {
+	beforeEach(() => {
+		render(
+			<Modal>
+				<ModalBody>Test content</ModalBody>
+			</Modal>
+		)
+		component = screen.getByTestId('modal')
+		body = screen.getByTestId('body')
+		// logRoles(component)
+	})
+
+	it('should render all elements', () => {
+		expect(component).toBeInTheDocument()
+		expect(body).toBeInTheDocument()
+	})
+})

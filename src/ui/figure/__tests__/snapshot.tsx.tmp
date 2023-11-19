@@ -1,0 +1,15 @@
+/* import { render } from '@testing-library/react'
+import { Figure, FigureBody } from '..'
+
+import Data from '@/data/dogs.json'
+const data = Data[0]
+
+it('renders Figure unchanged', () => {
+	const { container } = render(
+		<Figure>
+			<FigureBody>Test content</FigureBody>
+		</Figure>
+	)
+
+	expect(container).toMatchSnapshot()
+}) */

@@ -1,7 +1,7 @@
 export interface ButtonProps {
 	className?: string
 	children?: React.ReactNode
-	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+	size?: 'sm' | 'md' | 'lg' | 'xl'
 	background?:
 		| 'dark'
 		| 'light'

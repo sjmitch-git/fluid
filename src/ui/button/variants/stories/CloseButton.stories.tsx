@@ -6,9 +6,9 @@ const meta: Meta = {
 	title: 'Fluid UI/Button/Variants/Close Button',
 	component: CloseButton,
 	args: {
-		layout: 'square',
-		background: 'transparent',
-		color: 'current',
+		layout: 'circle',
+		background: 'dark',
+		color: 'light',
 		size: 'md',
 		disabled: false,
 		outline: false,

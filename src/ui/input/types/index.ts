@@ -1,5 +1,5 @@
 export interface InputProps {
-	size?: 'sm' | 'md' | 'lg' | 'inherit'
+	size?: 'sm' | 'md' | 'lg' | 'xl' | 'inherit'
 	type?:
 		| 'text'
 		| 'password'

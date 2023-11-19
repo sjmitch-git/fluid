@@ -13,7 +13,7 @@ const CardFooter = ({ className = defaultStyles, link, linkLabel, children }: Ca
 			{link && (
 				<Link
 					href={link}
-					className='uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10'
+					className='uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10 text-ellipsis overflow-hidden whitespace-nowrap'
 					target={link.startsWith('https://') ? '_blank' : '_self'}
 				>
 					{linkLabel}
