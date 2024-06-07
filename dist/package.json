@@ -1,6 +1,6 @@
 {
 	"name": "@smitch/fluid",
-	"version": "0.1.12",
+	"version": "0.1.13",
 	"description": "A React ui-component libray.",
 	"main": "index.js",
 	"keywords": [
@@ -12,7 +12,8 @@
 	"files": [
 		"lib",
 		"package.json",
-		"README.md"
+		"README.md",
+		".npmignore"
 	],
 	"peerDependencies": {
 		"react": "^18.0.0",

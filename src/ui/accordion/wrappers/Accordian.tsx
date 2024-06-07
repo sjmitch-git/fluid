@@ -2,12 +2,6 @@ import React, { useState } from 'react'
 import { AccordionItem, Label, Input } from '@/ui'
 import { AccordionProps } from '../types'
 
-const sizes = {
-	sm: 'text-sm',
-	md: 'text-base',
-	lg: 'text-lg',
-}
-
 const layouts = {
 	default: 'mb-0 border border-t-0 first:border-t',
 	flush: 'border border-x-0 border-t-0 last:border-b-0',
