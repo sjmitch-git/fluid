@@ -11,7 +11,8 @@ interface DataProps {
 export interface AccordionProps {
 	className?: string
 	size?: 'sm' | 'md' | 'lg'
-	data: DataProps[]
+	data?: DataProps[]
+	children?: React.ReactNode
 	opened?: string
 	layout?: 'default' | 'flush' | 'spaced'
 	theme?: 'light' | 'dark' | 'transparent'

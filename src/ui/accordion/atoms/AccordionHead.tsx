@@ -1,3 +1,5 @@
+'use client'
+
 import { AccordionHeadProps } from '../types'
 
 import { Button } from '@/ui'

@@ -1,3 +1,5 @@
+'use client'
+
 import { AccordionSectionProps } from '../types'
 
 const AccordionSection = ({ children }: AccordionSectionProps) => {

@@ -1,10 +1,27 @@
-import { Card, CardHeader, CardBody, CardFooter, CardImage, Alert, Carousel, Figure } from '@/ui'
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	CardFooter,
+	CardImage,
+	Alert,
+	Carousel,
+	Figure,
+	Accordion,
+	AccordionItem,
+	Label,
+	Input,
+} from '@/ui'
+
+import AccordionTemplate from '@/templates/Accordian'
 
 import Dogs from '@/data/dogs.json'
 
 export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
+			<AccordionTemplate />
+
 			<div className='mb-12 max-w-lg'>
 				<div className='mx-auto mb-12'>
 					<Alert message="<p><strong>Ugh umami</strong> bacon butcher <a href='#'>pickled kogi</a> stumptown, <em>subway tile</em> gatekeep flexitarian. Bespoke meggings health goth meh ascot listicle, cronut vaporware.</p>" />

@@ -1,3 +1,5 @@
+'use client'
+
 import { AccordionItemProps } from '../types'
 
 import { AccordionHead, AccordionSection } from '..'

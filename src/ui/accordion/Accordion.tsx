@@ -33,7 +33,8 @@ const Accordion = ({
 	opened,
 	layout = 'default',
 	theme = 'light',
-	icon = 'symbol'
+	icon = 'symbol',
+	children,
 }: AccordionProps) => {
 	const [open, setOpen] = useState<string>('')
 
@@ -50,8 +51,8 @@ const Accordion = ({
 			className={`accordion group ${className} ${sizeClasses}`}
 			data-testid='accordion'
 		>
-			{data &&
-				data.map((item, _index) => (
+			{data ? (
+				data.map((item) => (
 					<div
 						className={`${layoutClasses} ${themeClasses}`}
 						key={item.id}
@@ -73,7 +74,10 @@ const Accordion = ({
 							link={item.link}
 						/>
 					</div>
-				))}
+				))
+			) : (
+				<div className={`${layoutClasses} ${themeClasses}`}>{children}</div>
+			)}
 		</div>
 	)
 }
