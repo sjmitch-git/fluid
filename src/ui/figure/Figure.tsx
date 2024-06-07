@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { FigureProps } from './types'
 import { Modal } from '@/ui'
 
-const defaultStyles = 'relative h-auto w-full'
+const defaultStyles = 'relative h-auto min-w-full'
 
 const aspects = {
 	landscape: 'aspect-[4/3]',

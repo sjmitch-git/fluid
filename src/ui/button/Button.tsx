@@ -9,7 +9,7 @@ const defaultStyles =
 	'button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100'
 const outlineStyles = 'border-solid border-current'
 const stateStyles =
-	'disabled:opacity-50 disabled:grayscale focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:text-accent focus:text-accent focus-visible:text-accent focus-within:text-accent'
+	'disabled:opacity-50 disabled:grayscale focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:text-info focus:text-info focus-visible:text-info focus-within:text-accent'
 
 const sizes = {
 	xs: 'text-xs p-1 border',

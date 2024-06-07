@@ -17,9 +17,90 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className='mb-12 max-w-lg bg-dark'>
-				<Carousel data={Dogs}>
-					<div>#Carousel</div>
+			<div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery
+					caption
+					theme='light'
+					className='border-0'
+				/>
+			</div>
+
+			<div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery={true}
+					aspect='square'
+				/>
+			</div>
+
+			<div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery={true}
+					aspect='circle'
+					caption={false}
+					autoplay={true}
+					theme='light'
+				/>
+			</div>
+
+			<div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery={true}
+					aspect='phone'
+				/>
+			</div>
+
+			<div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery={true}
+					aspect='video'
+				/>
+			</div>
+
+			<div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery={true}
+					aspect='portrait'
+				/>
+			</div>
+
+			{/* <div className='mb-12'>
+				<Carousel
+					data={Dogs}
+					gallery={true}
+					autoplay={true}
+					aspect='square'
+				/>
+			</div> */}
+
+			<div className='mb-12'>
+				<h3>CUSTOM</h3>
+				<Carousel
+					data={Dogs}
+					gallery={false}
+					autoplay={false}
+				>
+					{Dogs.map((dog, _index) => (
+						<Card
+							key={dog.name}
+							className='aspect-[4/3] even:bg-dark even:text-light'
+						>
+							<CardBody>
+								<CardHeader title={dog.name} />
+								<p>{dog.description}</p>
+								<CardFooter
+									link={dog.link}
+									linkLabel={dog.name}
+								/>
+							</CardBody>
+						</Card>
+					))}
 				</Carousel>
 			</div>
 

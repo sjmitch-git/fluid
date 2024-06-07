@@ -8,9 +8,18 @@ const getCaption = (name: string, caption: boolean): string => {
 	return caption ? name : ''
 }
 
-const Gallery = ({ className = '', aspect, data, caption = true }: GalleryProps) => {
+const Gallery = ({
+	className = 'min-w-full',
+	aspect,
+	data,
+	caption = true,
+	style,
+}: GalleryProps) => {
 	return (
-		<div className={`gallery group ${defaultStyles} ${className}`}>
+		<div
+			className={`gallery group ${defaultStyles} ${className}`}
+			style={style}
+		>
 			{data.map((item, index) => (
 				<Figure
 					src={item.src}

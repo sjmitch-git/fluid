@@ -7,12 +7,18 @@ interface DataProps {
 
 export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 	data: DataProps[]
-	children: React.ReactNode
+	children?: React.ReactNode
 	className?: string
-	theme?: string
+	theme?: 'none' | 'light' | 'dark'
 	caption?: boolean
 	autoplay?: boolean
 	gallery?: boolean
 	rtl?: boolean
-	size?: 'sm' | 'md' | 'lg'
+	aspect?: 'landscape' | 'portrait' | 'square' | 'video' | 'circle' | 'phone'
+	buttonLayout?: 'rounded' | 'square' | 'circle'
+	buttonIcon?: 'arrow' | 'chevron'
+	buttonSize?: 'md' | 'lg' | 'xl'
+	buttonBackground?: 'dark' | 'light' | 'transparent'
+	buttonColor?: 'dark' | 'light'
+	buttonOutline?: boolean
 }
