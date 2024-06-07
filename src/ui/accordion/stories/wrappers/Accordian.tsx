@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AccordionItem, Label, Input } from '@/ui'
-import { AccordionProps } from '../types'
+import { AccordionProps } from '../../types'
 
 const layouts = {
 	default: 'mb-0 border border-t-0 first:border-t',

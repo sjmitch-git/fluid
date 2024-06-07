@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion } from '..'
-import AccordionWrapper from '../wrappers/Accordian'
+import AccordionWrapper from './wrappers/Accordian'
 import { AccordionProps } from '../types'
 
 import Data from '@/data/dogs.json'
