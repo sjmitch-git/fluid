@@ -4,8 +4,7 @@ export interface AutocompleteProps {
 	data: any[]
 	list: string
 	name?: string
-	autocomplete?: string
 	required?: boolean
 	placeholder?: string
-	onchange?: React.ChangeEventHandler<HTMLInputElement>
+	onChange?: React.ChangeEventHandler<HTMLInputElement>
 }

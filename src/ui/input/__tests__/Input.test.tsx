@@ -8,8 +8,13 @@ let component: HTMLElement
 
 describe('Input Component', () => {
 	beforeEach(() => {
-		render(<Input type='text' />)
-		component = screen.getByTestId('input')
+		render(
+			<Input
+				type='text'
+				autocomplete='name'
+			/>
+		)
+		component = screen.getByTestId('name')
 		// logRoles(component)
 	})
 

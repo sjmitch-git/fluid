@@ -15,7 +15,6 @@ export interface AccordionProps {
 	children?: React.ReactNode
 	opened?: string
 	layout?: 'default' | 'flush' | 'spaced'
-	theme?: 'light' | 'dark' | 'transparent'
 	icon?: 'symbol' | 'arrow'
 }
 
@@ -29,7 +28,6 @@ export interface AccordionHeadProps {
 }
 
 export interface AccordionCardProps {
-	theme?: 'light' | 'dark' | 'transparent'
 	src?: string
 	title: string
 	description?: string
@@ -43,7 +41,6 @@ export interface AccordionSectionProps {
 export interface AccordionItemProps {
 	children: React.ReactNode
 	layoutClasses: string
-	themeClasses: string
 	id: string
 	title: string
 	icon?: 'symbol' | 'arrow'

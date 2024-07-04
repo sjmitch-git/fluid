@@ -70,7 +70,7 @@ const Alert = ({
 				</h4>
 			)}
 			<div
-				className='text-size-inherit mb-4 mt-4'
+				className='text-size-inherit mb-[1em] mt-[1em]'
 				dangerouslySetInnerHTML={{ __html: message }}
 			></div>
 

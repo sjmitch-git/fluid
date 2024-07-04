@@ -2,21 +2,20 @@ import React from 'react'
 
 import { BadgeProps } from './types'
 
-const defaultStyles = 'badge group inline-block leading-none p-[.1em] min-w-[1rem]'
+const defaultStyles = 'badge group inline-block leading-none min-w-[1em]'
+
+const layouts = {
+	square: 'aspect-square p-[.25em]',
+	circle: 'rounded-full aspect-square p-[.25em]',
+	rounded: 'rounded-md p-[.5em]',
+	pill: 'rounded-full p-[.5em]',
+}
 
 const sizes = {
 	sm: 'text-sm',
 	md: 'text-base',
 	lg: 'text-lg',
-	xl: 'text-xl',
-	inherit: 'text-inherit',
-}
-
-const layouts = {
-	square: 'aspect-square',
-	circle: 'rounded-full aspect-square',
-	rounded: 'rounded-md px-[.15em]',
-	pill: 'rounded-full px-[.5em]',
+	xl: 'text-2xl',
 }
 
 const backgrounds = {
@@ -59,14 +58,17 @@ const Badge = ({
 	color = 'light',
 	position = 'inline',
 	children,
+	size = 'md',
 }: BadgeProps) => {
-	let layoutClasses = layouts[layout]
-	let backgroundClasses = backgrounds[background]
-	let colorClasses = colors[color]
-	let positionClasses = positions[position]
+	const layoutClasses = layouts[layout]
+	const backgroundClasses = backgrounds[background]
+	const colorClasses = colors[color]
+	const positionClasses = positions[position]
+	const sizeClasses = sizes[size]
+
 	return (
 		<small
-			className={`${defaultStyles} ${className} ${layoutClasses} ${backgroundClasses} ${colorClasses} ${positionClasses}`}
+			className={`${defaultStyles} ${className} ${sizeClasses} ${layoutClasses} ${backgroundClasses} ${colorClasses} ${positionClasses}`}
 			data-testid='badge'
 		>
 			<span className='flex gap-2'>{children}</span>

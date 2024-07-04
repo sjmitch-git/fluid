@@ -20,19 +20,12 @@ const layouts = {
 	spaced: 'mb-2 border',
 }
 
-const themes = {
-	light: 'bg-light text-dark border-neutral',
-	dark: 'bg-dark text-light border-neutral',
-	transparent: 'bg-transparent text-current border-neutral',
-}
-
 const Accordion = ({
 	className = defaultStyles,
 	size = 'md',
 	data,
 	opened,
 	layout = 'default',
-	theme = 'light',
 	icon = 'symbol',
 	children,
 }: AccordionProps) => {
@@ -42,9 +35,8 @@ const Accordion = ({
 		if (opened) setOpen(opened)
 	}, [opened])
 
-	let sizeClasses = sizes[size]
-	let layoutClasses = layouts[layout]
-	let themeClasses = themes[theme]
+	const sizeClasses = sizes[size]
+	const layoutClasses = layouts[layout]
 
 	return (
 		<div
@@ -54,7 +46,7 @@ const Accordion = ({
 			{data ? (
 				data.map((item) => (
 					<div
-						className={`${layoutClasses} ${themeClasses}`}
+						className={`${layoutClasses} bg-light text-dark dark:bg-dark dark:text-light border-neutral`}
 						key={item.id}
 					>
 						<AccordionHead
@@ -68,7 +60,6 @@ const Accordion = ({
 
 						<AccordionCard
 							title={item.title || item.name}
-							theme={theme}
 							src={item.src}
 							description={item.description}
 							link={item.link}
@@ -76,7 +67,7 @@ const Accordion = ({
 					</div>
 				))
 			) : (
-				<div className={`${layoutClasses} ${themeClasses}`}>{children}</div>
+				<div>{children}</div>
 			)}
 		</div>
 	)

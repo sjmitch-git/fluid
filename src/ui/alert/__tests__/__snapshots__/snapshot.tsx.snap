@@ -1,20 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Card unchanged 1`] = `
+exports[`renders Alert unchanged 1`] = `
 <div>
   <blockquote
-    class="alert group relative  text-base px-4 py-1 border-error bg-[var(--error-color-25)] text-error border-s-8"
+    class="alert group relative  text-base px-4 py-1 border-error bg-[var(--error-color-25)] outline-error text-dark border-s-8"
     data-testid="alert"
     role="alert"
   >
-    <h4
-      class="mt-2 mb-0 uppercase font-bold group-[.solid]:text-light"
-      role="heading"
-    >
-      error
-    </h4>
     <div
-      class="text-size-inherit mb-4 mt-4 text-dark group-[.solid]:text-light"
+      class="text-size-inherit mb-[1em] mt-[1em]"
     >
       <p>
         <strong>

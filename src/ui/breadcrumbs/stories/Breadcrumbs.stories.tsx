@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
 	argTypes: {
 		separator: {
-			options: ['slash', 'arrow', 'pipe'],
+			options: ['slash', 'arrow', 'pipe', 'dot'],
 			control: { type: 'radio' },
 		},
 	},
@@ -36,10 +36,8 @@ Default.decorators = [
 	(Story) => (
 		<div
 			style={{
-				margin: '1rem',
 				padding: '.5rem',
 				position: 'relative',
-				background: '#ffffff',
 			}}
 		>
 			<Story />
@@ -58,10 +56,8 @@ RTL.decorators = [
 	(Story) => (
 		<div
 			style={{
-				margin: '1rem',
 				padding: '.5rem',
 				position: 'relative',
-				background: '#ffffff',
 			}}
 			dir='rtl'
 		>

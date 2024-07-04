@@ -4,9 +4,10 @@ import { AccordionItemProps } from '../types'
 
 import { AccordionHead, AccordionSection } from '..'
 
+const themeClasses = 'bg-light text-dark dark:bg-dark dark:text-light border-neutral'
+
 const AccordionItem = ({
 	layoutClasses,
-	themeClasses,
 	id,
 	title,
 	icon = 'symbol',

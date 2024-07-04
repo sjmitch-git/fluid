@@ -1,30 +1,42 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-//import { logRoles } from '@testing-library/dom'
 
-import { Accordion } from '..'
+import Accordion from '../Accordion'
+import { AccordionProps } from '../types'
 
 import Data from '@/data/dogs.json'
 
-let component: HTMLElement
-
 describe('Accordion Component', () => {
-	beforeEach(() => {
-		render(
-			<Accordion
-				data={Data}
-				icon='symbol'
-				layout='flush'
-				opened='1'
-				size='md'
-				theme='light'
-			/>
-		)
-		component = screen.getByTestId('accordion')
-		//logRoles(component)
+	const defaultProps: AccordionProps = {
+		data: Data,
+		icon: 'symbol',
+		layout: 'flush',
+		opened: '1',
+		className: 'test-class',
+		size: 'md',
+	}
+
+	it('renders correctly', () => {
+		const { getByTestId } = render(<Accordion {...defaultProps} />)
+		const accordion = getByTestId('accordion')
+		expect(accordion).toBeInTheDocument()
+		expect(accordion).toHaveClass('accordion group test-class text-base')
 	})
 
-	it('should render all elements', () => {
-		expect(component).toBeInTheDocument()
+	it('renders children when no data is provided', () => {
+		const { getByTestId } = render(
+			<Accordion
+				className='test-class'
+				size='md'
+				data={undefined}
+				opened='1'
+				layout='default'
+				icon='symbol'
+			>
+				<div data-testid='custom-child'>Custom Child</div>
+			</Accordion>
+		)
+		const customChild = getByTestId('custom-child')
+		expect(customChild).toBeInTheDocument()
 	})
 })

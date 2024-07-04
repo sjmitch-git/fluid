@@ -15,9 +15,10 @@ describe('Autocomplete Component', () => {
 				data={data}
 				list='countries'
 				placeholder='Select Country'
+				name='autocomplete'
 			/>
 		)
-		component = screen.getByTestId('input')
+		component = screen.getByTestId('autocomplete')
 		//logRoles(component)
 	})
 

@@ -31,7 +31,7 @@ const AccordionTemplate = () => {
 				/>
 			</div>
 
-			<div className='mb-12'>
+			{/* <div className='mb-12'>
 				<Accordion
 					icon='symbol'
 					layout='flush'
@@ -61,7 +61,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value=''
 										checked={selectedBrand === ''}
-										onchange={() => setSelectedBrand('')}
+										onChange={() => setSelectedBrand('')}
 									/>
 								</Label>
 								<Label
@@ -76,7 +76,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='adidas'
 										checked={selectedBrand === 'adidas'}
-										onchange={() => setSelectedBrand('adidas')}
+										onChange={() => setSelectedBrand('adidas')}
 									/>
 								</Label>
 								<Label
@@ -91,7 +91,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='nike'
 										checked={selectedBrand === 'nike'}
-										onchange={() => setSelectedBrand('nike')}
+										onChange={() => setSelectedBrand('nike')}
 									/>
 								</Label>
 								<Label
@@ -106,7 +106,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='puma'
 										checked={selectedBrand === 'puma'}
-										onchange={() => setSelectedBrand('puma')}
+										onChange={() => setSelectedBrand('puma')}
 									/>
 								</Label>
 							</div>
@@ -132,7 +132,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value=''
 										checked={selectedColor === ''}
-										onchange={() => setSelectedColor('')}
+										onChange={() => setSelectedColor('')}
 									/>
 								</Label>
 								<Label
@@ -147,7 +147,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='white'
 										checked={selectedColor === 'white'}
-										onchange={() => setSelectedColor('white')}
+										onChange={() => setSelectedColor('white')}
 									/>
 								</Label>
 								<Label
@@ -162,7 +162,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='black'
 										checked={selectedColor === 'black'}
-										onchange={() => setSelectedColor('black')}
+										onChange={() => setSelectedColor('black')}
 									/>
 								</Label>
 							</div>
@@ -188,7 +188,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value=''
 										checked={selectedSize === ''}
-										onchange={() => setSelectedSize('')}
+										onChange={() => setSelectedSize('')}
 									/>
 								</Label>
 								<Label
@@ -203,7 +203,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='7'
 										checked={selectedSize === '7'}
-										onchange={() => setSelectedSize('7')}
+										onChange={() => setSelectedSize('7')}
 									/>
 								</Label>
 
@@ -219,7 +219,7 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='8'
 										checked={selectedSize === '8'}
-										onchange={() => setSelectedSize('8')}
+										onChange={() => setSelectedSize('8')}
 									/>
 								</Label>
 								<Label
@@ -234,7 +234,219 @@ const AccordionTemplate = () => {
 										type='radio'
 										value='8.5'
 										checked={selectedSize === '8.5'}
-										onchange={() => setSelectedSize('8.5')}
+										onChange={() => setSelectedSize('8.5')}
+									/>
+								</Label>
+							</div>
+						</AccordionItem>
+					</>
+				</Accordion>
+			</div> */}
+
+			<div className='mb-12'>
+				<Accordion
+					icon='symbol'
+					layout='spaced'
+					opened='1'
+					size='md'
+					theme='dark'
+				>
+					<>
+						<AccordionItem
+							id='1'
+							layoutClasses='border border-x-0 border-t-0 last:border-b-0'
+							open={open}
+							setOpen={setOpen}
+							themeClasses='bg-light text-dark border-neutral'
+							title='Brand'
+						>
+							<div className='p-4 flex flex-col gap-2'>
+								<Label
+									className='font-normal'
+									label='Any'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='brand'
+										type='radio'
+										value=''
+										checked={selectedBrand === ''}
+										onChange={() => setSelectedBrand('')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='Adidas'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='brand'
+										type='radio'
+										value='adidas'
+										checked={selectedBrand === 'adidas'}
+										onChange={() => setSelectedBrand('adidas')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='Nike'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='brand'
+										type='radio'
+										value='nike'
+										checked={selectedBrand === 'nike'}
+										onChange={() => setSelectedBrand('nike')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='Puma'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='brand'
+										type='radio'
+										value='puma'
+										checked={selectedBrand === 'puma'}
+										onChange={() => setSelectedBrand('puma')}
+									/>
+								</Label>
+							</div>
+						</AccordionItem>
+						<AccordionItem
+							id='2'
+							layoutClasses='border border-x-0 border-t-0 last:border-b-0'
+							open={open}
+							setOpen={setOpen}
+							themeClasses='bg-light text-dark border-neutral'
+							title='Colour'
+						>
+							<div className='p-4 flex flex-col gap-2'>
+								<Label
+									className='font-normal'
+									label='Any'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='color'
+										type='radio'
+										value=''
+										checked={selectedColor === ''}
+										onChange={() => setSelectedColor('')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='White'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='color'
+										type='radio'
+										value='white'
+										checked={selectedColor === 'white'}
+										onChange={() => setSelectedColor('white')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='Black'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='color'
+										type='radio'
+										value='black'
+										checked={selectedColor === 'black'}
+										onChange={() => setSelectedColor('black')}
+									/>
+								</Label>
+							</div>
+						</AccordionItem>
+						<AccordionItem
+							id='3'
+							layoutClasses='border border-x-0 border-t-0 last:border-b-0'
+							open={open}
+							setOpen={setOpen}
+							themeClasses='bg-light text-dark border-neutral'
+							title='Size'
+						>
+							<div className='p-4 flex flex-col gap-2'>
+								<Label
+									className='font-normal'
+									label='Any'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='size'
+										type='radio'
+										value=''
+										checked={selectedSize === ''}
+										onChange={() => setSelectedSize('')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='UK 7 - EU 41'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='size'
+										type='radio'
+										value='7'
+										checked={selectedSize === '7'}
+										onChange={() => setSelectedSize('7')}
+									/>
+								</Label>
+
+								<Label
+									className='font-normal'
+									label='UK 8 - EU 42'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='size'
+										type='radio'
+										value='8'
+										checked={selectedSize === '8'}
+										onChange={() => setSelectedSize('8')}
+									/>
+								</Label>
+								<Label
+									className='font-normal'
+									label='UK 8.5 - EU 43'
+									layout='inline'
+									size='md'
+									type='radio'
+								>
+									<Input
+										name='size'
+										type='radio'
+										value='8.5'
+										checked={selectedSize === '8.5'}
+										onChange={() => setSelectedSize('8.5')}
 									/>
 								</Label>
 							</div>

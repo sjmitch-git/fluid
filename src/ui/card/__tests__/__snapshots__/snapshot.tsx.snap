@@ -3,7 +3,7 @@
 exports[`renders Card unchanged 1`] = `
 <div>
   <div
-    class="card group relative grid rounded border shadow-lg bg-dark text-light col grid-cols-1"
+    class="card group relative grid rounded border shadow-lg bg-light text-dark dark:bg-dark dark:text-light col grid-cols-1"
     data-testid="card"
   >
     <div
@@ -42,17 +42,17 @@ exports[`renders Card unchanged 1`] = `
       >
         The Akita is a Japanese dog breed of large size. Originating from the mountains of northern Japan, the Akita has a short double coat similar to that of many other northern spitz breeds. Historically, they were used by samurai for guarding, fighting and the hunting of bears.
       </p>
-      <footer
+      <div
         class="card-footer flex px-2 pt-4 items-center mt-auto"
       >
         <a
-          class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10"
+          class="uppercase ms-auto before:absolute before:content-["_"] before:top-0 before:right-0 before:bottom-0 before:left-0 z-10 text-ellipsis overflow-hidden whitespace-nowrap"
           href="https://en.wikipedia.org/wiki/Akita_(dog)"
           target="_blank"
         >
           akita
         </a>
-      </footer>
+      </div>
     </div>
   </div>
 </div>

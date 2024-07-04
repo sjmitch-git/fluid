@@ -24,13 +24,23 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-let open = true
-
 const setOpen = (open: boolean) => {
 	open = open
 }
 
 export const Default: Story = {
+	argTypes: {
+		alt: {
+			table: {
+				disable: true,
+			},
+		},
+		open: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	args: {
 		src: data.src,
 		caption: data.name,

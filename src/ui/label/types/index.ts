@@ -3,7 +3,8 @@ export interface LabelProps {
 	layout?: 'col' | 'row' | 'inline'
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	label: string | React.ReactNode
-	hint?: string
+	value?: any
+	required?: boolean
 	children: React.ReactNode
 	type?:
 		| 'text'
@@ -24,6 +25,4 @@ export interface LabelProps {
 		| 'time'
 		| 'month'
 		| 'week'
-	value?: any
-	required?: boolean
 }

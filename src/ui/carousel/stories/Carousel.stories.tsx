@@ -9,7 +9,6 @@ const meta: Meta = {
 	component: Carousel,
 	args: {
 		data: Data,
-		theme: 'none',
 		caption: true,
 		aspect: 'landscape',
 		buttonLayout: 'circle',
@@ -42,6 +41,7 @@ export const Default: Story = {
 	args: {
 		gallery: true,
 		autoplay: false,
+		autoplayDuration: 3000,
 	},
 }
 
@@ -64,7 +64,7 @@ export const Custom: Story = {
 		children: Data.map((item, _index) => (
 			<Card
 				key={item.name}
-				className='aspect-[4/3] even:bg-dark even:text-light'
+				className='aspect-[4/3]'
 			>
 				<CardBody>
 					<CardHeader title={item.name} />

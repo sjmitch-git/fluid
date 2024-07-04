@@ -26,5 +26,7 @@ export const Default: Story = {
 		src: src,
 		alt: title,
 		caption: title,
+		aspect: 'landscape',
+		backdrop: 'dark',
 	},
 }

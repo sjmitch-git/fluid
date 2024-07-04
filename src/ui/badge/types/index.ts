@@ -26,4 +26,5 @@ export interface BadgeProps {
 		| 'secondary'
 		| 'current'
 		| 'accent'
+	size?: 'sm' | 'md' | 'lg' | 'xl'
 }

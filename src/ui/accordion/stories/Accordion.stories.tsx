@@ -1,6 +1,7 @@
+import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion } from '..'
-import AccordionWrapper from './wrappers/Accordian'
+import { AccordionItem, Label, Input } from '@/ui'
 import { AccordionProps } from '../types'
 
 import Data from '@/data/dogs.json'
@@ -21,7 +22,6 @@ export const Default: Story = {
 		layout: 'flush',
 		opened: '1',
 		size: 'md',
-		theme: 'light',
 	},
 }
 
@@ -33,26 +33,234 @@ Default.argTypes = {
 	},
 }
 
-export const Custom: Story = (args: AccordionProps) => <AccordionWrapper {...args} />
+export const Custom: Story = (args: AccordionProps) => {
+	const [open, setOpen] = useState('')
+	const [selectedBrand, setSelectedBrand] = useState('')
+	const [selectedColor, setSelectedColor] = useState('')
+	const [selectedSize, setSelectedSize] = useState('')
+
+	const layouts = {
+		default: 'mb-0 border border-t-0 first:border-t',
+		flush: 'border border-x-0 border-t-0 last:border-b-0',
+		spaced: 'mb-2 last:mb-0 border',
+	}
+
+	const layoutClasses = layouts[args.layout || 'default']
+
+	return (
+		<Accordion {...args}>
+			<>
+				<AccordionItem
+					id='1'
+					layoutClasses={`${layoutClasses}`}
+					open={open}
+					setOpen={setOpen}
+					title='Brand'
+					icon={args.icon}
+				>
+					<div className='p-4 flex flex-col gap-2'>
+						<Label
+							className='font-normal'
+							label='Any'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='brand'
+								type='radio'
+								value=''
+								checked={selectedBrand === ''}
+								onChange={() => setSelectedBrand('')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='Adidas'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='brand'
+								type='radio'
+								value='adidas'
+								checked={selectedBrand === 'adidas'}
+								onChange={() => setSelectedBrand('adidas')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='Nike'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='brand'
+								type='radio'
+								value='nike'
+								checked={selectedBrand === 'nike'}
+								onChange={() => setSelectedBrand('nike')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='Puma'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='brand'
+								type='radio'
+								value='puma'
+								checked={selectedBrand === 'puma'}
+								onChange={() => setSelectedBrand('puma')}
+							/>
+						</Label>
+					</div>
+				</AccordionItem>
+				<AccordionItem
+					id='2'
+					layoutClasses={`${layoutClasses}`}
+					open={open}
+					setOpen={setOpen}
+					title='Colour'
+					icon={args.icon}
+				>
+					<div className='p-4 flex flex-col gap-2'>
+						<Label
+							className='font-normal'
+							label='Any'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='color'
+								type='radio'
+								value=''
+								checked={selectedColor === ''}
+								onChange={() => setSelectedColor('')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='White'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='color'
+								type='radio'
+								value='white'
+								checked={selectedColor === 'white'}
+								onChange={() => setSelectedColor('white')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='Black'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='color'
+								type='radio'
+								value='black'
+								checked={selectedColor === 'black'}
+								onChange={() => setSelectedColor('black')}
+							/>
+						</Label>
+					</div>
+				</AccordionItem>
+				<AccordionItem
+					id='3'
+					layoutClasses={`${layoutClasses}`}
+					open={open}
+					setOpen={setOpen}
+					title='Size'
+					icon={args.icon}
+				>
+					<div className='p-4 flex flex-col gap-2'>
+						<Label
+							className='font-normal'
+							label='Any'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='size'
+								type='radio'
+								value=''
+								checked={selectedSize === ''}
+								onChange={() => setSelectedSize('')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='UK 7 - EU 41'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='size'
+								type='radio'
+								value='7'
+								checked={selectedSize === '7'}
+								onChange={() => setSelectedSize('7')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='UK 8 - EU 42'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='size'
+								type='radio'
+								value='8'
+								checked={selectedSize === '8'}
+								onChange={() => setSelectedSize('8')}
+							/>
+						</Label>
+						<Label
+							className='font-normal'
+							label='UK 8.5 - EU 43'
+							layout='inline'
+							size='md'
+							type='radio'
+						>
+							<Input
+								name='size'
+								type='radio'
+								value='8.5'
+								checked={selectedSize === '8.5'}
+								onChange={() => setSelectedSize('8.5')}
+							/>
+						</Label>
+					</div>
+				</AccordionItem>
+			</>
+		</Accordion>
+	)
+}
 
 Custom.args = {
 	icon: 'symbol',
-	theme: 'light',
-	layout: 'flush',
+	layout: 'default',
+	size: 'md',
 }
 
 Custom.argTypes = {
 	data: {
-		table: {
-			disable: true,
-		},
-	},
-	size: {
-		table: {
-			disable: true,
-		},
-	},
-	className: {
 		table: {
 			disable: true,
 		},
@@ -63,3 +271,20 @@ Custom.argTypes = {
 		},
 	},
 }
+
+export const RTL: Story = {
+	args: {
+		...Default.args,
+	},
+	argTypes: {
+		...Default.argTypes,
+	},
+}
+
+RTL.decorators = [
+	(Story) => (
+		<div dir='rtl'>
+			<Story />
+		</div>
+	),
+]

@@ -1,6 +1,5 @@
 export interface CardProps {
 	className?: string
-	theme?: 'light' | 'dark' | 'transparent'
 	layout?: 'col' | 'row'
 	children: React.ReactNode
 }

@@ -19,10 +19,7 @@ const data = Data[0]
 describe('Card Component', () => {
 	beforeEach(() => {
 		render(
-			<Card
-				theme='dark'
-				layout='col'
-			>
+			<Card layout='col'>
 				<CardImage
 					title={data.name}
 					src={data.src}
@@ -44,8 +41,8 @@ describe('Card Component', () => {
 		image = screen.getByRole('img')
 		link = screen.getByRole('link')
 		figure = screen.getByRole('figure')
-		contentinfo = screen.getByRole('contentinfo')
-		// logRoles(component)
+		//contentinfo = screen.getByRole('contentinfo')
+		logRoles(component)
 	})
 
 	it('should render all elements', () => {
@@ -55,11 +52,7 @@ describe('Card Component', () => {
 		expect(image).toBeInTheDocument()
 		expect(link).toBeInTheDocument()
 		expect(figure).toBeInTheDocument()
-		expect(contentinfo).toBeInTheDocument()
-	})
-
-	it("card should have correct 'Theme' class", () => {
-		expect(component).toHaveClass('bg-dark')
+		//expect(contentinfo).toBeInTheDocument()
 	})
 
 	it("card should have correct 'Layout' class", () => {

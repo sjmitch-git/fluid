@@ -6,39 +6,32 @@ import { Input } from '@/ui'
 
 const defaultStyles = ''
 
-const sizes = {
-	sm: 'text-sm',
-	md: 'text-base',
-	lg: 'text-lg',
-}
-
 const Autocomplete = ({
 	className = defaultStyles,
 	size = 'md',
 	data,
 	list,
-	autocomplete = 'off',
 	required,
 	name,
 	placeholder = 'Please Select',
-	onchange,
+	onChange,
 }: AutocompleteProps) => {
-	let sizeClasses = sizes[size]
 	return (
 		<>
 			<Input
 				list={list}
 				placeholder={placeholder}
-				autocomplete={autocomplete}
+				autocomplete='off'
 				required={required}
 				name={name || list}
-				onchange={onchange}
-				className={`autocomplete group ${className} ${sizeClasses}`}
+				onChange={onChange}
+				className={`autocomplete group ${className}`}
+				size={size}
 				data-testid='autocomplete'
 			/>
 
 			<datalist
-				className='datalist'
+				className='datalist bg-light text-dark dark:bg-dark dark:text-light dark:[color-scheme:dark]'
 				id={list}
 				data-testid='datalist'
 			>
@@ -46,9 +39,7 @@ const Autocomplete = ({
 					<option
 						key={index}
 						value={el}
-					>
-						{el}
-					</option>
+					/>
 				))}
 			</datalist>
 		</>

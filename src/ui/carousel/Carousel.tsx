@@ -14,7 +14,7 @@ import {
 
 import { CarouselProps } from './types'
 
-const defaultStyles = 'relative flex justify-center rounded-lg w-auto'
+const defaultStyles = 'relative flex justify-center rounded-lg w-auto border border-neutral'
 
 const iconSizes = {
 	md: 18,
@@ -22,19 +22,13 @@ const iconSizes = {
 	xl: 32,
 }
 
-const themes = {
-	none: 'bg-none',
-	light: 'bg-light',
-	dark: 'bg-dark',
-}
-
 const Carousel = ({
 	data,
 	caption = false,
 	autoplay = false,
+	autoplayDuration = 3000,
 	gallery = true,
 	className = '',
-	theme = 'none',
 	rtl = false,
 	aspect = 'landscape',
 	buttonLayout = 'circle',
@@ -45,8 +39,7 @@ const Carousel = ({
 	buttonOutline = true,
 	children,
 }: CarouselProps) => {
-	let themeClasses = themes[theme]
-	let iconSize = iconSizes[buttonSize]
+	const iconSize = iconSizes[buttonSize]
 	const [index, setIndex] = useState(0)
 	const [position, setPosition] = useState(0)
 	const [touchPosition, setTouchPosition] = useState<number>(null!)
@@ -74,7 +67,7 @@ const Carousel = ({
 
 	if (aspect === 'landscape') {
 		heightStyle = {
-			height: 288,
+			height: 286,
 		}
 	} else if (aspect === 'portrait') {
 		heightStyle = {
@@ -101,7 +94,7 @@ const Carousel = ({
 				else if (index === data.length - 1) playDirection.current = 'backward'
 				if (playDirection.current === 'forward') setNext()
 				else setPrevious()
-			}, 3000)
+			}, autoplayDuration)
 		}
 		if (autoplay) startAutoplay()
 		return () => {
@@ -143,7 +136,7 @@ const Carousel = ({
 	return (
 		<>
 			<div
-				className={`carousel ${defaultStyles} ${className} ${themeClasses}`}
+				className={`carousel ${defaultStyles} ${className}`}
 				onTouchStart={handleTouchStart}
 				onTouchMove={handleTouchMove}
 			>

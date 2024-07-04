@@ -9,6 +9,9 @@ const meta: Meta = {
 		position: {
 			options: ['inline', 'right'],
 		},
+		size: {
+			options: ['sm', 'md', 'lg', 'xl'],
+		},
 		children: {
 			table: {
 				disable: true,
@@ -25,6 +28,7 @@ export const Default: Story = {
 	args: {
 		children: <FaStar />,
 		position: 'inline',
+		size: 'md',
 	},
 }
 
@@ -32,11 +36,9 @@ Default.decorators = [
 	(Story) => (
 		<div
 			style={{
-				margin: '1rem',
-				padding: '.5rem',
 				position: 'relative',
-				background: '#ffffff',
 			}}
+			className='text-dark dark:text-light'
 		>
 			<h1
 				style={{
@@ -139,10 +141,15 @@ export const Empty: Story = {
 		position: {
 			options: ['inline', 'left', 'right'],
 		},
+		color: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		...Default.args,
-		position: 'left',
+		position: 'right',
 		children: '',
 		layout: 'circle',
 		background: 'warning',

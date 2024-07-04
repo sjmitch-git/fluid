@@ -21,13 +21,6 @@ const outlineColors = {
 	dark: 'bg-dark',
 }
 
-const shadows = {
-	none: '',
-	small: 'shadow',
-	medium: 'shadow-md',
-	large: 'shadow-lg',
-}
-
 const ButtonGroup = ({
 	className,
 	label = 'Button group',
@@ -36,24 +29,21 @@ const ButtonGroup = ({
 	children,
 	outline,
 	outlineColor = 'light',
-	shadow,
 }: ButtonGroupProps) => {
 	let layoutClasses = layouts[layout]
 	let outlineClasses = ''
 	let outlineColorClasses = ''
-	let shadowClasses = 'none'
+
 	if (outline) {
 		outlineClasses = outlines[outline]
 		outlineColorClasses = outlineColors[outlineColor]
 	}
-	if (shadow) {
-		shadowClasses = shadows[shadow]
-	}
+
 	return (
 		<div
 			className={`${defaultStyles} ${layoutClasses} ${outlineClasses} ${outlineColorClasses}  ${
 				rounded ? 'rounded-md' : 'rounded-none'
-			} ${shadowClasses} ${className}`}
+			} ${className}`}
 			role='group'
 			aria-label={label}
 			data-testid='buttongroup'

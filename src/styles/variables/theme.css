@@ -3,6 +3,7 @@
 	--secondary-color: var(--deep-purple);
 	--tertiary-color: var(--light-blue);
 	--accent-color: var(--yellow);
+	--highlight-color: #f0c3d8;
 	--neutral-color: #d1d5db;
 	--disabled-color: var(--darker-grey);
 	--dark-color: var(--darkest-grey);

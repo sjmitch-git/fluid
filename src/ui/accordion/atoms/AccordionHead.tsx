@@ -19,11 +19,11 @@ const AccordionHead = ({ icon = 'symbol', id, open, setopen, title, name }: Acco
 			{title || name}
 
 			<Button
-				className='text-info shadow-none !p-0'
+				className='shadow-none !p-0'
 				layout='circle'
 				onClick={() => setopen(`${open === id ? '' : id}`)}
 				background='transparent'
-				color='info'
+				color='current'
 			>
 				<>
 					{open === id ? (

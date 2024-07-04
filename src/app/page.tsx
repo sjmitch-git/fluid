@@ -1,4 +1,5 @@
 import {
+	Autocomplete,
 	Card,
 	CardHeader,
 	CardBody,
@@ -16,10 +17,19 @@ import {
 import AccordionTemplate from '@/templates/Accordian'
 
 import Dogs from '@/data/dogs.json'
+import Countries from '@/data/countries.json'
 
 export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
+			<Autocomplete
+				data={Countries}
+				list='countries'
+				placeholder='Select Country'
+				required
+				size='md'
+			/>
+
 			<AccordionTemplate />
 
 			<div className='mb-12 max-w-lg'>

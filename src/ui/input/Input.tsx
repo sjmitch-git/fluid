@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { forwardRef, useState } from 'react'
+import { forwardRef } from 'react'
 
 import { InputProps } from './types'
 
@@ -15,7 +15,7 @@ const sizes = {
 	md: 'text-lg',
 	lg: 'text-xl',
 	xl: 'text-2xl',
-	inherit: 'text-inherit leading-inherit',
+	// inherit: 'text-inherit leading-inherit',
 }
 
 const typeClasses = (type: string) => {
@@ -34,15 +34,21 @@ const typeClasses = (type: string) => {
 		: 'form-input w-full rounded-md'
 }
 
+const styles = {
+	required: '!bg-[var(--highlight-color)] !text-dark',
+}
+
 export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 	const {
 		type = 'text',
-		size = 'inherit',
-		autocomplete,
-		name,
+		size = 'md',
+		autocomplete = 'off',
+		name = 'control-name',
 		className = defaultStyles,
-		required,
+		required = false,
 		readonly = false,
+		disabled = false,
+		hint = false,
 		tabindex,
 		min,
 		max,
@@ -55,38 +61,47 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		multiple,
 		placeholder,
 		list,
-		onchange,
+		onChange,
 		hidden,
 	} = props
 
-	let sizeClasses = sizes[size]
+	const sizeClasses = sizes[size]
+
+	const id = autocomplete !== 'off' ? autocomplete : name
+
 	return (
-		<input
-			className={`input ${typeClasses(
-				type
-			)} group ${className} ${sizeClasses} required:bg-accent invalid:ring-danger disabled:bg-neutral`}
-			type={type}
-			name={name}
-			autoComplete={autocomplete}
-			required={required}
-			hidden={hidden}
-			readOnly={readonly}
-			tabIndex={tabindex}
-			ref={ref}
-			min={min}
-			max={max}
-			step={step}
-			pattern={pattern}
-			title={title}
-			placeholder={placeholder}
-			defaultValue={value}
-			defaultChecked={checked}
-			accept={accept}
-			multiple={multiple}
-			list={list}
-			onChange={onchange}
-			onInput={onchange}
-			data-testid='input'
-		/>
+		<>
+			<input
+				className={`input ${typeClasses(
+					type
+				)} group peer ${className} ${sizeClasses} bg-light text-dark dark:[color-scheme:dark] required:!bg-[var(--highlight-color)] focus:ring required:!text-dark invalid:[&:not(:placeholder-shown)]:ring-danger disabled:bg-neutral disabled:cursor-default disabled:text-dark`}
+				type={type}
+				name={id}
+				autoComplete={autocomplete}
+				required={required}
+				hidden={hidden}
+				readOnly={readonly}
+				tabIndex={tabindex}
+				ref={ref}
+				min={min}
+				max={max}
+				step={step}
+				pattern={pattern}
+				title={title}
+				placeholder={placeholder}
+				defaultValue={value}
+				defaultChecked={checked}
+				accept={accept}
+				multiple={multiple}
+				list={list}
+				disabled={disabled}
+				onChange={onChange}
+				onInput={onChange}
+				data-testid={id}
+			/>
+			{hint && (
+				<p className='text-sm mt-1 dark:text-light peer-invalid:text-warning'>{title}</p>
+			)}
+		</>
 	)
 })

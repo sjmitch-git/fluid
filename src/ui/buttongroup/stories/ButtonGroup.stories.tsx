@@ -23,7 +23,6 @@ const meta: Meta = {
 		rounded: true,
 		outline: 'none',
 		outlineColor: 'light',
-		shadow: 'medium',
 	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof ButtonGroup>
@@ -101,34 +100,6 @@ export const Outlines: Story = {
 	args: {
 		outline: 'thin',
 		outlineColor: 'light',
-		children: (
-			<>
-				<Button
-					background='dark'
-					size='lg'
-				>
-					<FaPlay /> Play
-				</Button>
-				<Button
-					background='dark'
-					size='lg'
-				>
-					<FaPause /> Pause
-				</Button>
-				<Button
-					background='dark'
-					size='lg'
-				>
-					<FaStop /> Stop
-				</Button>
-			</>
-		),
-	},
-}
-
-export const Shadows: Story = {
-	args: {
-		shadow: 'medium',
 		children: (
 			<>
 				<Button

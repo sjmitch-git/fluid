@@ -1,5 +1,5 @@
 export interface InputProps {
-	size?: 'sm' | 'md' | 'lg' | 'xl' | 'inherit'
+	size?: 'sm' | 'md' | 'lg' | 'xl'
 	type?:
 		| 'text'
 		| 'password'
@@ -7,6 +7,7 @@ export interface InputProps {
 		| 'email'
 		| 'tel'
 		| 'date'
+		| 'datetime-local'
 		| 'checkbox'
 		| 'radio'
 		| 'file'
@@ -14,25 +15,73 @@ export interface InputProps {
 		| 'range'
 		| 'search'
 		| 'url'
-		| 'datetime-local'
 		| 'time'
 		| 'month'
 		| 'week'
-	autocomplete?: string
+	autocomplete?:
+		| 'off'
+		| 'on'
+		| 'name'
+		| 'honorific-prefix'
+		| 'given-name'
+		| 'additional-name'
+		| 'family-name'
+		| 'honorific-suffix'
+		| 'nickname'
+		| 'username'
+		| 'email'
+		| 'username email'
+		| 'new-password'
+		| 'current-password'
+		| 'one-time-code'
+		| 'organization-title'
+		| 'organization'
+		| 'street-address'
+		| 'address-line1'
+		| 'address-line2'
+		| 'address-line3'
+		| 'address-level4'
+		| 'address-level3'
+		| 'address-level2'
+		| 'address-level1'
+		| 'country'
+		| 'country-name'
+		| 'postal-code'
+		| 'cc-name'
+		| 'cc-given-name'
+		| 'cc-additional-name'
+		| 'cc-family-name'
+		| 'cc-number'
+		| 'cc-exp'
+		| 'cc-exp-month'
+		| 'cc-exp-year'
+		| 'cc-csc'
+		| 'cc-type'
+		| 'transaction-currency'
+		| 'transaction-amount'
+		| 'language'
+		| 'bday'
+		| 'bday-day'
+		| 'bday-month'
+		| 'bday-year'
+		| 'sex'
+		| 'url'
+		| 'tel'
+		| string
 	name?: string
-	label?: React.ReactNode
 	title?: string
 	placeholder?: string
 	list?: string
 	pattern?: string
 	className?: string
-	labelStyles?: string
+	disabled?: boolean
+	hint?: boolean
 	hidden?: boolean
 	required?: boolean
 	readonly?: boolean
 	tabindex?: number
-	min?: number | string
-	max?: number | string
+	min?: string
+	max?: string
 	step?: string
 	accept?:
 		| 'audio/*'
@@ -40,8 +89,8 @@ export interface InputProps {
 		| 'video/*'
 		| '.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 	multiple?: boolean
-	value?: any
+	value?: number | string
 	checked?: boolean
-	onchange?: React.ChangeEventHandler<HTMLInputElement>
-	oninput?: React.ChangeEventHandler<HTMLInputElement>
+	onChange?: React.ChangeEventHandler<HTMLInputElement>
+	onInput?: React.ChangeEventHandler<HTMLInputElement>
 }

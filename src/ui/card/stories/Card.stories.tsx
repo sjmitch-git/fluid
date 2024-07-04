@@ -14,7 +14,6 @@ const meta: Meta = {
 		},
 	},
 	args: {
-		theme: 'light',
 		layout: 'col',
 	},
 	tags: ['autodocs'],

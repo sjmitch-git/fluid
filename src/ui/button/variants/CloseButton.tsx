@@ -15,7 +15,7 @@ const sizes = {
 
 const CloseButton = ({
 	size = 'sm',
-	className = 'fixed right-3 top-3 !p-0',
+	className = 'right-5 top-4 !p-0',
 	onClick,
 	disabled = false,
 	color = 'current',
@@ -28,7 +28,7 @@ const CloseButton = ({
 
 	return (
 		<Button
-			className={`${className} ${stateClasses} ${sizeClasses}`}
+			className={`fixed ${className} ${stateClasses} ${sizeClasses}`}
 			onClick={onClick}
 			background={background}
 			color={color}

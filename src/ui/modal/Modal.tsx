@@ -11,14 +11,15 @@ import { ModalProps } from './types'
 const defaultStyles = 'dialog  border-none'
 
 const themes = {
-	light: 'backdrop:bg-white text-dark bg-white',
-	dark: 'backdrop:bg-black text-light bg-black',
+	light: 'backdrop:bg-white',
+	dark: 'dark backdrop:bg-black',
 }
 
 const Modal = ({ src, caption, alt, onClick, open, theme = 'dark' }: ModalProps) => {
 	useDisableBack()
 	let dialogRef = useRef<HTMLDialogElement>(null)
 	let themeClasses = themes[theme]
+
 	useEffect(() => {
 		if (dialogRef.current) {
 			const modal = dialogRef.current
@@ -44,14 +45,18 @@ const Modal = ({ src, caption, alt, onClick, open, theme = 'dark' }: ModalProps)
 					alt={alt}
 					className='cursor-zoom-out'
 				/>
-				<figcaption className='text-center p-2'>{caption}</figcaption>
+				<figcaption className='text-center p-2 bg-light dark:bg-dark dark:text-light'>
+					{caption}
+				</figcaption>
 			</figure>
 
 			<CloseButton
 				onClick={onClick}
-				color='current'
 				layout='circle'
 				size='lg'
+				className='right-3 top-3 !p-0'
+				background={theme === 'dark' ? 'light' : 'dark'}
+				color={theme === 'dark' ? 'dark' : 'light'}
 			/>
 		</dialog>
 	)

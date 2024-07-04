@@ -7,6 +7,13 @@ const meta: Meta = {
 	title: 'Fluid UI/Gallery',
 	component: Gallery,
 	tags: ['autodocs'],
+	argTypes: {
+		style: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 } satisfies Meta<typeof Gallery>
 
 export default meta
@@ -17,5 +24,6 @@ export const Default: Story = {
 		data: Data,
 		aspect: 'landscape',
 		caption: true,
+		className: 'border border-neutral rounded-md p-4',
 	},
 }

@@ -20,17 +20,27 @@ export const Default: Story = {
 				disable: true,
 			},
 		},
+		list: {
+			table: {
+				disable: true,
+			},
+		},
+		name: {
+			table: {
+				disable: true,
+			},
+		},
+		onChange: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		data: data,
 		list: 'countries',
 		placeholder: 'Select Country',
+		size: 'md',
+		required: false,
 	},
 }
-
-/* export const CardTheme: Story = {
-	args: {
-		...Default.args,
-		theme: 'light',
-	},
-} */

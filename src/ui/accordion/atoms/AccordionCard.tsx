@@ -2,12 +2,11 @@ import { AccordionCardProps } from '../types'
 
 import { Card, CardBody, CardImage, CardFooter, AccordionSection } from '@/ui'
 
-const AccordionCard = ({ theme = 'light', src, title, description, link }: AccordionCardProps) => {
+const AccordionCard = ({ src, title, description, link }: AccordionCardProps) => {
 	return (
 		<AccordionSection>
 			<Card
 				layout='row'
-				theme={theme}
 				className='p-2'
 			>
 				{src && (

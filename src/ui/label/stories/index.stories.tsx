@@ -1,6 +1,8 @@
+import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Label } from '..'
 import { Input, Autocomplete } from '@/ui'
+import { LabelProps } from '../types'
 
 import data from '@/data/countries.json'
 
@@ -8,6 +10,10 @@ const meta: Meta = {
 	title: 'Fluid UI/Label',
 	component: Label,
 	argTypes: {
+		layout: {
+			options: ['col', 'row', 'inline'],
+			control: { type: 'radio' },
+		},
 		required: {
 			options: [false, true],
 			control: { type: 'radio' },
@@ -40,21 +46,19 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+const passwordPattern = '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}'
+
 export const Default: Story = {
-	argTypes: {
-		layout: {
-			options: ['col', 'row'],
-			control: { type: 'radio' },
-		},
-	},
 	args: {
-		label: 'Name:',
-		hint: 'Some helpful information for the user',
+		label: 'Label:',
 		children: (
 			<Input
 				type='text'
 				name='name'
-				autocomplete='name'
+				autocomplete='on'
+				placeholder='Placeholder Text'
+				title='Some helpful information for the user'
+				hint={true}
 			/>
 		),
 	},
@@ -67,12 +71,16 @@ export const WithEMail: Story = {
 	args: {
 		...Default.args,
 		label: 'e-Mail:',
-		hint: 'Enter a vaild e-mail address',
+		required: true,
 		children: (
 			<Input
 				type='email'
 				name='email'
 				autocomplete='email'
+				placeholder='Enter your e-mail'
+				title='Enter a vaild e-mail address'
+				required={true}
+				hint={true}
 			/>
 		),
 	},
@@ -96,13 +104,17 @@ export const WithPassword: Story = {
 		layout: 'col',
 		required: true,
 		type: 'password',
-		hint: 'Must contain at least one number and one uppercase and lowercase letter, and between 8 and 12 characters',
+
 		children: (
 			<Input
 				type='password'
 				name='password'
+				required={true}
 				autocomplete='current-password'
-				pattern='(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+				pattern={passwordPattern}
+				placeholder='Enter Password'
+				hint={true}
+				title='Must contain at least one number and one uppercase and lowercase letter, and between 8 and 12 characters'
 			/>
 		),
 	},
@@ -120,7 +132,7 @@ export const WithCheckbox: Story = {
 		label: 'I agree to the Terms and Conditions',
 		type: 'checkbox',
 		layout: 'inline',
-		hint: 'Some message relating to terms and condiftions',
+
 		className: 'font-normal',
 		children: (
 			<Input
@@ -160,30 +172,55 @@ export const WithRadio: Story = {
 	},
 }
 
-export const WithColor: Story = {
-	argTypes: {
-		layout: {
-			table: {
-				disable: true,
-			},
-		},
-		required: {
-			table: {
-				disable: true,
-			},
-		},
-	},
-	args: {
-		label: 'Select Colour',
-		type: 'color',
-		layout: 'inline',
-		className: 'font-normal',
-		children: (
+export const WithColor: Story = (args: LabelProps) => {
+	const [value, setValue] = useState('#000000')
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		console.log('event', event.target.value)
+		setValue(event.target.value)
+	}
+
+	return (
+		<Label
+			{...args}
+			label={`${args.label}: ${value}`}
+		>
 			<Input
 				type='color'
 				name='color'
+				onChange={handleChange}
 			/>
-		),
+		</Label>
+	)
+}
+
+WithColor.args = {
+	type: 'color',
+	layout: 'inline',
+	className: 'font-normal',
+	label: 'Set Colour',
+}
+
+WithColor.argTypes = {
+	layout: {
+		table: {
+			disable: true,
+		},
+	},
+	required: {
+		table: {
+			disable: true,
+		},
+	},
+	label: {
+		table: {
+			disable: true,
+		},
+	},
+	className: {
+		table: {
+			disable: true,
+		},
 	},
 }
 
@@ -285,6 +322,7 @@ export const WithURL: Story = {
 				name='blog'
 				placeholder='https://'
 				type='url'
+				size='md'
 			/>
 		),
 	},
@@ -392,34 +430,6 @@ export const WithTelephone: Story = {
 	},
 }
 
-export const WithRange: Story = {
-	argTypes: {
-		required: {
-			table: {
-				disable: true,
-			},
-		},
-		layout: {
-			options: ['col', 'row'],
-			control: { type: 'radio' },
-		},
-	},
-	args: {
-		label: 'Range',
-		type: 'range',
-		layout: 'col',
-		children: (
-			<Input
-				name='range'
-				type='range'
-				min='0'
-				max='100'
-				step='1'
-			/>
-		),
-	},
-}
-
 export const WithAutocomplete: Story = {
 	argTypes: {
 		required: {
@@ -433,7 +443,7 @@ export const WithAutocomplete: Story = {
 		},
 	},
 	args: {
-		label: 'Autocomplete',
+		label: 'Country of residence',
 		type: 'text',
 		layout: 'col',
 		children: (
@@ -444,4 +454,36 @@ export const WithAutocomplete: Story = {
 			/>
 		),
 	},
+}
+
+export const WithRange: Story = (args: LabelProps) => {
+	const [value, setValue] = useState(50)
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const newValue = e.target.value
+		setValue(Number(newValue))
+	}
+
+	return (
+		<Label {...args}>
+			<Input
+				name='range'
+				type='range'
+				value={50}
+				min='0'
+				max='100'
+				step='1'
+				hint={true}
+				title={`Current value: ${value}`}
+				onChange={handleChange}
+				onInput={handleChange}
+			/>
+		</Label>
+	)
+}
+
+WithRange.args = {
+	label: 'Range',
+	type: 'range',
+	layout: 'col',
 }

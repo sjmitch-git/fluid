@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Breadcrumbs unchanged 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumb"
+    class="breadcrumbs group mx-auto w-full text-dark dark:text-light text-base "
+    data-testid="breadcrumbs"
+  >
+    <ol
+      class="flex flex-col md:flex-row"
+    />
+  </nav>
+</div>
+`;

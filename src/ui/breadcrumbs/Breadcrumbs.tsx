@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 
 import { BreadcrumbsProps } from './types'
 
-const defaultStyles = 'breadcrumbs group mx-auto w-full'
+const defaultStyles = 'breadcrumbs group mx-auto w-full text-dark dark:text-light'
 
 const sizes = {
 	sm: 'text-sm',
@@ -19,6 +19,7 @@ const separators = {
 	slash: 'before:content-["/"]',
 	arrow: 'before:content-[">"]',
 	pipe: 'before:content-["|"]',
+	dot: 'before:content-["•"]',
 }
 
 const Breadcrumbs = ({
