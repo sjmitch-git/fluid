@@ -27,7 +27,6 @@ const AccordionTemplate = () => {
 					layout='flush'
 					opened='1'
 					size='md'
-					theme='light'
 				/>
 			</div>
 
@@ -249,7 +248,6 @@ const AccordionTemplate = () => {
 					layout='spaced'
 					opened='1'
 					size='md'
-					theme='dark'
 				>
 					<>
 						<AccordionItem
@@ -257,7 +255,6 @@ const AccordionTemplate = () => {
 							layoutClasses='border border-x-0 border-t-0 last:border-b-0'
 							open={open}
 							setOpen={setOpen}
-							themeClasses='bg-light text-dark border-neutral'
 							title='Brand'
 						>
 							<div className='p-4 flex flex-col gap-2'>
@@ -328,7 +325,6 @@ const AccordionTemplate = () => {
 							layoutClasses='border border-x-0 border-t-0 last:border-b-0'
 							open={open}
 							setOpen={setOpen}
-							themeClasses='bg-light text-dark border-neutral'
 							title='Colour'
 						>
 							<div className='p-4 flex flex-col gap-2'>
@@ -384,7 +380,6 @@ const AccordionTemplate = () => {
 							layoutClasses='border border-x-0 border-t-0 last:border-b-0'
 							open={open}
 							setOpen={setOpen}
-							themeClasses='bg-light text-dark border-neutral'
 							title='Size'
 						>
 							<div className='p-4 flex flex-col gap-2'>
