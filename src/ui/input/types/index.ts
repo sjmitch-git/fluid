@@ -83,11 +83,7 @@ export interface InputProps {
 	min?: string
 	max?: string
 	step?: string
-	accept?:
-		| 'audio/*'
-		| 'image/*'
-		| 'video/*'
-		| '.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+	accept?: string
 	multiple?: boolean
 	value?: number | string
 	checked?: boolean
