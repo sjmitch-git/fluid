@@ -49,7 +49,6 @@ export default function Home() {
 					data={Dogs}
 					gallery
 					caption
-					theme='light'
 					className='border-0'
 				/>
 			</div>
@@ -69,7 +68,6 @@ export default function Home() {
 					aspect='circle'
 					caption={false}
 					autoplay={true}
-					theme='light'
 				/>
 			</div>
 
@@ -167,7 +165,6 @@ export default function Home() {
 				{Dogs.map((dog, _index) => (
 					<Card
 						key={dog.name}
-						theme='dark'
 						layout='row'
 					>
 						<CardImage
@@ -191,7 +188,6 @@ export default function Home() {
 				{Dogs.map((dog, _index) => (
 					<Card
 						key={dog.name}
-						theme='dark'
 						layout='row'
 					>
 						<CardBody>
