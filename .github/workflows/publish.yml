@@ -30,7 +30,11 @@ jobs:
             - name: Copy README and docs to dist
               run: |
                   cp README.md dist/
-                  cp -r docs dist/
+                  cp -R docs dist/
+
+            - name: List contents of dist
+              run: |
+                  ls -R dist
 
             - name: Publish package on NPM 📦
               run: |
