@@ -1,2 +1,2 @@
-lib/**/stories/
-lib/**/__tests__/
+lib/**/stories
+lib/**/__tests__
