@@ -1,17 +1,17 @@
 # Fluid UI
 
-A React UI component library.
+A Next.js/React UI component library.
 
--   [Fluid UI](#fluid-ui)
-    -   [Overview](#overview)
-    -   [Features](#features)
-    -   [Installation](#installation)
-    -   [Basic Usage](#basic-usage)
-    -   [Components](#components)
+- [Fluid UI](#fluid-ui)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [Components](#components)
 
 ## Overview
 
-@smitch/fluid is a comprehensive library of reusable UI components for React applications. This library is designed to streamline the development process and ensure consistency across your projects.
+@smitch/fluid is a comprehensive library of reusable UI components for Next.js/React applications. This library is designed to streamline the development process and ensure consistency across your projects.
 
 ## Features
 
