@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fluid UI
 
-## Getting Started
+A React UI component library.
 
-First, run the development server:
+-   [Fluid UI](#fluid-ui)
+    -   [Overview](#overview)
+    -   [Features](#features)
+    -   [Installation](#installation)
+    -   [Basic Usage](#basic-usage)
+    -   [Components](#components)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Overview
+
+@smitch/fluid is a comprehensive library of reusable UI components for React applications. This library is designed to streamline the development process and ensure consistency across your projects.
+
+## Features
+
+-   Reusable UI components
+-   Built with React
+-   Easy to integrate
+-   Supports TypeScript
+-   Storybook for component documentation
+
+## Installation
+
+To install the library, use npm:
+
+```sh
+npm i @smitch/fluid
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Basic Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```jsx
+import { Input } from '@smitch/fluid'
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+const App = () => (
+	<div>
+		<Input placeholder='Enter text' />
+	</div>
+)
 
-## Learn More
+export default App
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   [Accordion](./docs/accordion.md)
+-   [Alert](./docs/alert.md)
+-   [Autocomplete](./docs/autocomplete.md)
+-   [Breadcrumbs](./docs/breadcrumbs.md)
+-   [Button](./docs/button.md)
+-   [ButtonGroup](./docs/buttongroup.md)
+-   [Card](./docs/card.md)
+-   [Carousel](./docs/carousel.md)
+-   [Figure](./docs/figure.md)
+-   [FileUpload](./docs/fileupload.md)
+-   [Gallery](./docs/gallery.md)
+-   [Input](./docs/input.md)
+-   [Label](./docs/label.md)
+-   [Modal](./docs/modal.md)
+-   [RadioGroup](./docs/radiogroup.md)
