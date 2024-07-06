@@ -27,14 +27,17 @@ jobs:
                   npm ci
                   npm run build
 
-            - name: Copy README and docs to dist
+            - name: Copy README to dist
               run: |
                   cp README.md dist/
+
+            - name: Copy docs to dist
+              run: |
                   cp -R docs dist/
 
-            - name: List contents of dist
+            - name: List contents of dist/docs
               run: |
-                  ls -R dist
+                  ls -R dist/docs
 
             - name: Publish package on NPM 📦
               run: |
