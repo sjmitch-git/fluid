@@ -1,6 +1,7 @@
 import '@/styles/index.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import 'prismjs/themes/prism-tomorrow.min.css'
 
 const inter = Inter({ subsets: ['latin'] })
 

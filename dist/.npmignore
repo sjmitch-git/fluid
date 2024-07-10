@@ -1,2 +1,3 @@
-lib/**/stories
-lib/**/__tests__
+# Exclude stories and tests from lib directory
+/stories/
+/__tests__/
