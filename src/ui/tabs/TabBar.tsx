@@ -1,0 +1,54 @@
+'use client'
+
+import { Tab } from './Tab'
+
+import { Spinner } from '@/ui'
+
+import { TabBarProps } from './types'
+
+const tabsPositionStyles = {
+	left: 'justify-start',
+	center: 'justify-center',
+	right: 'justify-end',
+	full: 'justify-stretch',
+}
+
+const TabBar = ({
+	tabs,
+	onClick,
+	activeId,
+	tabStyles = '',
+	activeTabStyles = '',
+	tabsPosition = 'center',
+}: TabBarProps) => {
+	const positionClasses = tabsPositionStyles[tabsPosition]
+	return (
+		<nav className='tabbar'>
+			{tabs ? (
+				<ul className={`tablist flex -mb-[1px] ${positionClasses}`}>
+					{tabs.map((tab) => (
+						<li
+							key={tab.id}
+							className={`${tabsPosition === 'full' ? 'flex-grow' : ''}`}
+						>
+							<Tab
+								id={tab.id}
+								title={tab.title}
+								activeId={activeId}
+								tabStyles={tabStyles}
+								activeTabStyles={activeTabStyles}
+								onClick={onClick}
+							/>
+						</li>
+					))}
+				</ul>
+			) : (
+				<div className='mb-4 w-8 text-info'>
+					<Spinner />
+				</div>
+			)}
+		</nav>
+	)
+}
+
+export default TabBar

@@ -1,4 +1,4 @@
-const Spinner = ({ width }: { width: number }) => {
+const Spinner = ({ width }: { width?: number }) => {
 	return (
 		<div className={`spinner`}>
 			<svg
