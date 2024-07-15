@@ -11,7 +11,7 @@ const defaultActiveTabStyles = 'border-x-gray-300 border-t-gray-300 bg-light dar
 
 const minimalTabStyles =
 	'border-b-4 border-b-transparent px-4 py-2 dark:text-light hover:border-b-warning'
-const minimalActiveTabStyles = '!border-b-info hover:cursor-default'
+const minimalActiveTabStyles = '!border-b-info hover:cursor-default font-bold'
 
 const sizes = {
 	sm: 'text-sm',
@@ -43,6 +43,7 @@ const Tabs = ({
 				const buildTabs = (item: any, index: number) => {
 					const tabObject = {
 						id: item.id,
+						key: item.id,
 						title: icons ? icons[index] : item.title,
 					}
 					arrTabs.push(tabObject)
@@ -56,17 +57,16 @@ const Tabs = ({
 		[icons]
 	)
 
-	const setDisplay = (item: HTMLElement) => {
-		if (item.id === activeId) {
-			item.classList.add('block')
-			item.classList.remove('hidden')
-		} else {
-			item.classList.add('hidden')
-			item.classList.remove('block')
-		}
-	}
-
 	useEffect(() => {
+		const setDisplay = (item: HTMLElement) => {
+			if (item.id === activeId) {
+				item.classList.add('block')
+				item.classList.remove('hidden')
+			} else {
+				item.classList.add('hidden')
+				item.classList.remove('block')
+			}
+		}
 		const setActive = (item: any) => setDisplay(item)
 		if (activeId && nodes) nodes.forEach(setActive)
 	}, [activeId, nodes])
