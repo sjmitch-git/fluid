@@ -210,6 +210,6 @@ export const WithIcons: Story = {
 		...Default.args,
 		children: techContent(),
 		size: 'xxl',
-		icons: [<ReactIcon />, <NextIcon />, <TailwindIcon />],
+		icons: [<ReactIcon key='react' />, <NextIcon key='next' />, <TailwindIcon key='tailwind' />],
 	},
 }
