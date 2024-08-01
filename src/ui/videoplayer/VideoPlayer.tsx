@@ -2,19 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Video from './Video'
 import VideoControls from './VideoControls'
 
-export interface VideoPlayerProps {
-	controls?: boolean
-	loop?: boolean
-	poster?: string
-	preload?: 'auto' | 'metadata' | 'none'
-	src: string
-	fallback?: string
-	aspect?: 'video' | 'square' | 'television' | 'cinematic' | 'portrait'
-	className?: string
-	currentTime?: number
-	formats?: string[]
-	pictureInPicture?: boolean
-}
+import { VideoPlayerProps } from './types'
 
 const aspectRatios = {
 	video: 'aspect-video',

@@ -6,20 +6,7 @@ import { MdPictureInPictureAlt } from 'react-icons/md'
 
 import { Button } from '@/ui'
 
-export interface VideoControlProps {
-	duration: number
-	time: number
-	togglePlay: () => void
-	play: boolean
-	onScrubChange?: (number: number) => void
-	fullscreen: boolean
-	onFullscreen?: () => void
-	onPIP?: () => void
-	muted: boolean
-	onMute: () => void
-
-	onVolume: (number: number) => void
-}
+import { VideoControlProps } from './types'
 
 const toHHMMSS = (secs: any) => {
 	secs = secs || 0

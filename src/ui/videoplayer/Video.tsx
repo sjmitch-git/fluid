@@ -2,25 +2,7 @@ import React, { useRef, useEffect, useCallback, useState } from 'react'
 
 import { Alert } from '@/ui'
 
-interface VideoProps {
-	src: string
-	poster?: string
-	title?: string
-	controls?: boolean
-	loop?: boolean
-	setDuration: (number: number) => void
-	setTime: (number: number) => void
-	play: boolean
-	togglePlay: () => void
-	onEnded: () => void
-	muted: boolean
-	preload?: 'auto' | 'metadata' | 'none'
-	fallback?: string
-	currentTime?: number
-	volume?: number
-	formats?: string[]
-	pictureInPicture?: boolean
-}
+import { VideoProps } from './types'
 
 const posterSrc = '/poster.png'
 
@@ -74,13 +56,13 @@ const Video = ({
 	}, [volume])
 
 	const handleLoadedmetadata = () => {
-		if (videoRef.current) setDuration(videoRef.current.duration)
+		if (videoRef.current && setDuration) setDuration(videoRef.current.duration)
 	}
 
 	const handleEnd = () => onEnded()
 
 	const handleTime = () => {
-		if (videoRef.current) setTime(videoRef.current.currentTime)
+		if (videoRef.current && setTime) setTime(videoRef.current.currentTime)
 	}
 
 	const handleError = () => {
@@ -119,7 +101,7 @@ const Video = ({
 				loop={loop}
 				ref={setVideoRef}
 				onClick={togglePlay}
-				className={`${!error ? 'cursor-pointer' : ''}`}
+				className={`video bg-black ${!error ? 'cursor-pointer' : ''}`}
 				muted={muted}
 				preload={preload}
 			>
