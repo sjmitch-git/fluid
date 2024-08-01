@@ -588,7 +588,7 @@ export const Range: Story = {
 		},
 		pattern: {
 			table: {
-				disable: false,
+				disable: true,
 			},
 		},
 	},

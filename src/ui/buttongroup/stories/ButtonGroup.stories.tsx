@@ -4,7 +4,7 @@ import { ButtonGroup } from '..'
 import { Button } from '@/ui'
 
 const meta: Meta = {
-	title: 'Fluid UI/ButtonGroup',
+	title: 'Fluid UI/Button Group',
 	component: ButtonGroup,
 	argTypes: {
 		children: {

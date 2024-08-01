@@ -12,6 +12,7 @@ const aspects = {
 	square: 'aspect-square',
 	circle: 'aspect-square',
 	video: 'aspect-video',
+	ultrawide: 'aspect-[12/5]',
 	phone: 'aspect-[9/16]',
 }
 
