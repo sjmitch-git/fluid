@@ -67,7 +67,7 @@ const VideoControls = ({
 	}
 
 	return (
-		<div className='bg-black lg:bg-transparent lg:bg-gradient-to-t from-black to-transparent text-light overflow-hidden absolute top-full lg:bottom-0 lg:top-auto w-full flex flex-col justify-between lg:opacity-0 hover:opacity-100'>
+		<div className='bg-black text-light overflow-hidden absolute top-full lg:bottom-0 lg:top-auto w-full flex flex-col justify-between lg:opacity-0 hover:opacity-100'>
 			<div className={`mx-2 ${duration > 0 ? 'block' : 'hidden'}`}>
 				<input
 					type='range'
@@ -79,7 +79,7 @@ const VideoControls = ({
 					onChange={handleScrubChange}
 					onInputCapture={handleScrubChange}
 					style={scrubStyle}
-					className='w-full rounded-none [&&::-webkit-slider-thumb]:duration-500 [&&::-webkit-slider-thumb]:transition-all [&&::-webkit-slider-thumb]:cursor-grab h-1 cursor-pointer appearance-none'
+					className='w-full rounded-none [&&::-webkit-slider-thumb]:duration-500 [&&::-webkit-slider-thumb]:transition-all [&&::-webkit-slider-thumb]:cursor-grab h-1 cursor-pointer appearance-none [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:w-4'
 				/>
 			</div>
 			<div className='flex justify-between'>
@@ -121,7 +121,7 @@ const VideoControls = ({
 						step='1'
 						value={volumeLevel}
 						onChange={handleVolumeChange}
-						className='volume-slider w-16'
+						className='volume-slider w-16 hidden lg:block'
 						style={rangeStyle}
 						disabled={duration === 0}
 					/>
@@ -142,7 +142,7 @@ const VideoControls = ({
 						background='transparent'
 						color='light'
 						size='sm'
-						className='-ml-2'
+						className='lg:-ml-2'
 						disabled={duration === 0}
 					>
 						<MdPictureInPictureAlt />

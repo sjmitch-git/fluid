@@ -23,6 +23,7 @@ const Video = ({
 	volume = 5,
 	formats = ['mp4'],
 	pictureInPicture = false,
+	setLoading,
 }: VideoProps) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null)
 	const [error, setError] = useState('')
@@ -45,7 +46,7 @@ const Video = ({
 
 	useEffect(() => {
 		const node = videoRef.current
-		if (node && currentTime && currentTime !== 0) {
+		if (node && currentTime) {
 			node.currentTime = currentTime
 		}
 	}, [currentTime])
@@ -56,7 +57,12 @@ const Video = ({
 	}, [volume])
 
 	const handleLoadedmetadata = () => {
+		setLoading(true)
 		if (videoRef.current && setDuration) setDuration(videoRef.current.duration)
+	}
+
+	const handleLoadeddata = () => {
+		if (videoRef.current && setLoading) setLoading(false)
 	}
 
 	const handleEnd = () => onEnded()
@@ -77,6 +83,7 @@ const Video = ({
 		if (node) {
 			videoRef.current = node
 			node.addEventListener('loadedmetadata', handleLoadedmetadata, true)
+			node.addEventListener('loadeddata', handleLoadeddata, true)
 			node.addEventListener('ended', handleEnd, true)
 			node.addEventListener('timeupdate', handleTime, true)
 			node.addEventListener('error', handleError, true)
@@ -87,6 +94,7 @@ const Video = ({
 				node.removeEventListener('ended', handleEnd, true)
 				node.removeEventListener('timeupdate', handleTime, true)
 				node.removeEventListener('error', handleError, true)
+				node.removeEventListener('loadeddata', handleLoadeddata, true)
 			}
 		}
 	}, [])

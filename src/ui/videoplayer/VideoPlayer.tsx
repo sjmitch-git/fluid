@@ -4,6 +4,8 @@ import VideoControls from './VideoControls'
 
 import { VideoPlayerProps } from './types'
 
+import { Loading } from '@/ui'
+
 const aspectRatios = {
 	video: 'aspect-video',
 	square: 'aspect-square',
@@ -31,6 +33,7 @@ const VideoPlayer = ({
 	const [pictureInPicture, setPictureInPicture] = useState(false)
 	const [mute, setMute] = useState(false)
 	const [volume, setVolume] = useState(5)
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		const handleFullscreenChange = () => {
@@ -108,7 +111,14 @@ const VideoPlayer = ({
 					volume={volume}
 					formats={formats}
 					pictureInPicture={pictureInPicture}
+					setLoading={setLoading}
 				/>
+				{loading && (
+					<Loading
+						className='absolute w-full'
+						size='lg'
+					/>
+				)}
 			</figure>
 			{!controls && (
 				<VideoControls

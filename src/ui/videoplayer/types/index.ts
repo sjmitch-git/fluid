@@ -5,6 +5,7 @@ export interface VideoProps extends React.HTMLAttributes<HTMLVideoElement> {
 	loop?: boolean
 	setDuration?: (number: number) => void
 	setTime?: (number: number) => void
+	setLoading: (boolean: boolean) => void
 	play: boolean
 	togglePlay: () => void
 	onEnded: () => void
