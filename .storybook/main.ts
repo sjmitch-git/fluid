@@ -9,7 +9,6 @@ const config: StorybookConfig = {
 		'storybook-tailwind-dark-mode',
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
-		'@storybook/addon-onboarding',
 		'@storybook/addon-interactions',
 		'storybook-addon-pseudo-states',
 		'@storybook/addon-a11y',
