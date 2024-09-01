@@ -1,0 +1,126 @@
+'use client'
+
+import { useState, useRef } from 'react'
+
+import { FaPlus, FaMinus } from 'react-icons/fa6'
+
+import { Input, Button, Label } from '@/ui'
+
+import { CounterProps } from './types'
+
+const Counter = ({
+	name = 'counter',
+	id = 'counter',
+	className = 'font-semibold',
+	min = 0,
+	max,
+	value = 1,
+	step = 1,
+	onCountChange,
+	btnShape = 'circle',
+	btnBackground = 'dark',
+	btnColor = 'light',
+	size = 'md',
+	spacing = '0',
+	label,
+	layout = 'col',
+	title,
+	hint = false,
+	inputStyles = 'max-w-[3em] border-neutral',
+}: CounterProps) => {
+	const [total, setTotal] = useState(value)
+	const [error, setError] = useState(false)
+	const input = useRef<HTMLInputElement>(null!)
+
+	const handleValueChange = (value: number) => {
+		setTotal(value)
+		onCountChange(value)
+		input.current.valueAsNumber = value
+		ifError(value)
+	}
+
+	const plus = () => {
+		const value = total + step
+		handleValueChange(value)
+	}
+
+	const minus = () => {
+		const value = total - step
+		handleValueChange(value)
+	}
+
+	const handleChange = (e: any) => {
+		const value = e.target.valueAsNumber
+		handleValueChange(value)
+	}
+
+	const ifError = (value: number) => {
+		if (!value || value > max || value < min) setError(true)
+		else setError(false)
+	}
+
+	return (
+		<Label
+			label={label}
+			layout={layout}
+			forId={id}
+			size={size}
+			type='number'
+			className={`counter ${className}`}
+			data-testid='counter'
+		>
+			<div className={`flex items-center gap-${spacing}`}>
+				<Button
+					disabled={total <= Number(min)}
+					onClick={minus}
+					aria-label='Minus'
+					title='Minus'
+					id='minus'
+					layout={btnShape}
+					size={size}
+					background={btnBackground}
+					color={btnColor}
+				>
+					<FaMinus />
+					<span className='sr-only'>Minus</span>
+				</Button>
+				<Input
+					name={name}
+					id={id}
+					type='number'
+					max={max}
+					min={min}
+					value={total}
+					ref={input}
+					onChange={handleChange}
+					data-testid='counter-input'
+					className={inputStyles}
+					size={size}
+					title={title}
+					placeholder={min?.toString()}
+				/>
+				<Button
+					disabled={total >= Number(max)}
+					onClick={plus}
+					aria-label='Plus'
+					title='Plus'
+					id='plus'
+					layout={btnShape}
+					size={size}
+					background={btnBackground}
+					color={btnColor}
+				>
+					<FaPlus />
+					<span className='sr-only'>Add</span>
+				</Button>
+			</div>
+			{hint && (
+				<p className={`text-sm font-normal mt-1 dark:text-light ${error && 'text-error'}`}>
+					{title}
+				</p>
+			)}
+		</Label>
+	)
+}
+
+export default Counter

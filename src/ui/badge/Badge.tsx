@@ -7,7 +7,7 @@ const defaultStyles = 'badge group inline-block leading-none min-w-[1em]'
 const layouts = {
 	square: 'aspect-square p-[.25em]',
 	circle: 'rounded-full aspect-square p-[.25em]',
-	rounded: 'rounded-md p-[.5em]',
+	rounded: 'rounded-md p-[.25em]',
 	pill: 'rounded-full p-[.5em]',
 }
 
@@ -43,6 +43,7 @@ const colors = {
 	light: 'text-light',
 	accent: 'text-accent',
 	current: 'text-current',
+	neutral: 'text-neutral',
 }
 
 const positions = {

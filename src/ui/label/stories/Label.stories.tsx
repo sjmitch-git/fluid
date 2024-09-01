@@ -11,7 +11,7 @@ const meta: Meta = {
 	component: Label,
 	argTypes: {
 		layout: {
-			options: ['col', 'row', 'inline'],
+			options: ['col', 'row'],
 			control: { type: 'radio' },
 		},
 		required: {
@@ -29,6 +29,11 @@ const meta: Meta = {
 			},
 		},
 		value: {
+			table: {
+				disable: true,
+			},
+		},
+		forId: {
 			table: {
 				disable: true,
 			},
@@ -51,6 +56,7 @@ const passwordPattern = '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}'
 export const Default: Story = {
 	args: {
 		label: 'Label:',
+		size: 'md',
 		children: (
 			<Input
 				type='text'
@@ -131,7 +137,7 @@ export const WithCheckbox: Story = {
 	args: {
 		label: 'I agree to the Terms and Conditions',
 		type: 'checkbox',
-		layout: 'inline',
+		layout: 'row_reverse',
 
 		className: 'font-normal',
 		children: (
@@ -160,7 +166,7 @@ export const WithRadio: Story = {
 	args: {
 		label: '18 - 64 years',
 		type: 'radio',
-		layout: 'inline',
+		layout: 'row_reverse',
 		className: 'font-normal',
 		children: (
 			<Input
@@ -196,7 +202,7 @@ export const WithColor: Story = (args: LabelProps) => {
 
 WithColor.args = {
 	type: 'color',
-	layout: 'inline',
+	layout: 'row_reverse',
 	className: 'font-normal',
 	label: 'Set Colour',
 }
@@ -339,7 +345,7 @@ export const WithNumber: Story = {
 	args: {
 		label: 'Number',
 		type: 'number',
-		layout: 'inline',
+		layout: 'row_reverse',
 		children: (
 			<Input
 				name='number'
@@ -394,7 +400,7 @@ export const WithSearch: Story = {
 	args: {
 		label: 'Search',
 		type: 'search',
-		layout: 'inline',
+		layout: 'row_reverse',
 		children: (
 			<Input
 				name='search'

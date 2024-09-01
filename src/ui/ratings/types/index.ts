@@ -1,8 +1,10 @@
-export interface BadgeProps {
+export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string
-	children: React.ReactNode
-	layout?: 'square' | 'circle' | 'rounded' | 'pill'
-	position?: 'inline' | 'left' | 'right'
+	icon?: 'star' | 'smiley' | 'thumb' | 'heart' | 'pound' | 'dollar' | 'euro' | 'yen' | 'check'
+	rating: number
+	range?: number
+	spacing?: '0' | '1' | '2'
+	shape?: 'square' | 'circle' | 'rounded'
 	background?:
 		| 'dark'
 		| 'light'

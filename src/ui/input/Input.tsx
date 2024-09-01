@@ -31,7 +31,7 @@ const typeClasses = (type: string) => {
 		? 'hidden'
 		: type === 'range'
 		? 'h-[.5em] w-full rounded [&&::-webkit-slider-thumb]:cursor-grab [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:bg-current [&&::-webkit-slider-thumb]:text-current [&&::-webkit-slider-thumb]:h-[1em] [&&::-webkit-slider-thumb]:w-[1em] [&&::-webkit-slider-thumb]:rounded-full'
-		: 'form-input w-full rounded-md'
+		: 'form-input w-full'
 }
 
 const styles = {
@@ -44,7 +44,9 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		size = 'md',
 		autocomplete = 'off',
 		name = 'control-name',
+		id,
 		className = defaultStyles,
+		rounded = 'md',
 		required = false,
 		readonly = false,
 		disabled = false,
@@ -63,20 +65,22 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		list,
 		onChange,
 		hidden,
+		ariaLabel,
+		autocorrect,
+		spellcheck,
 	} = props
 
 	const sizeClasses = sizes[size]
-
-	const id = autocomplete !== 'off' ? autocomplete : name
 
 	return (
 		<>
 			<input
 				className={`input ${typeClasses(
 					type
-				)} group peer ${className} ${sizeClasses} bg-light text-dark dark:[color-scheme:dark] required:!bg-[var(--highlight-color)] focus:ring required:!text-dark invalid:[&:not(:placeholder-shown)]:ring-danger disabled:bg-neutral disabled:cursor-default disabled:text-dark`}
+				)} peer ${className} ${sizeClasses} rounded-${rounded} dark:bg-dark dark:text-light color-scheme:light font-normal dark:[color-scheme:dark] focus-visible:outline-none focus-visible:border-info disabled:bg-neutral disabled:cursor-default disabled:text-dark`}
 				type={type}
-				name={id}
+				name={name}
+				id={id}
 				autoComplete={autocomplete}
 				required={required}
 				hidden={hidden}
@@ -97,10 +101,15 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 				disabled={disabled}
 				onChange={onChange}
 				onInput={onChange}
-				data-testid={id}
+				data-testid={id || name}
+				aria-label={ariaLabel}
+				autoCorrect={autocorrect}
+				spellCheck={spellcheck}
 			/>
 			{hint && (
-				<p className='text-sm mt-1 dark:text-light peer-invalid:text-warning'>{title}</p>
+				<p className='hint text-sm font-normal mt-1 dark:text-light peer-invalid:bg-accent peer-invalid:text-dark inline-block'>
+					{title}
+				</p>
 			)}
 		</>
 	)

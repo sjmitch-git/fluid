@@ -1,23 +1,20 @@
-export interface InputProps {
+export interface TextInputProps extends React.HTMLAttributes<HTMLLabelElement> {
+	name?: string
+	id?: string
+	value?: string
+	className?: string
+	label: string
+	layout?: 'col' | 'row'
+	required?: boolean
+	onInputChange: (input: string) => void
 	size?: 'sm' | 'md' | 'lg' | 'xl'
-	type?:
-		| 'text'
-		| 'password'
-		| 'number'
-		| 'email'
-		| 'tel'
-		| 'date'
-		| 'datetime-local'
-		| 'checkbox'
-		| 'radio'
-		| 'file'
-		| 'color'
-		| 'range'
-		| 'search'
-		| 'url'
-		| 'time'
-		| 'month'
-		| 'week'
+	title?: string
+	hint?: boolean
+	type?: 'text' | 'password' | 'email' | 'tel' | 'search' | 'url'
+	placeholder?: string
+	inputStyles?: string
+	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+	pattern?: string
 	autocomplete?:
 		| 'off'
 		| 'on'
@@ -67,31 +64,4 @@ export interface InputProps {
 		| 'sex'
 		| 'url'
 		| 'tel'
-		| string
-	name?: string
-	id?: string
-	title?: string
-	ariaLabel?: string
-	placeholder?: string
-	list?: string
-	pattern?: string
-	className?: string
-	disabled?: boolean
-	hint?: boolean
-	hidden?: boolean
-	required?: boolean
-	readonly?: boolean
-	tabindex?: number
-	min?: string | number
-	max?: string | number
-	step?: string
-	accept?: string
-	multiple?: boolean
-	value?: number | string
-	checked?: boolean
-	onChange?: React.ChangeEventHandler<HTMLInputElement>
-	onInput?: React.ChangeEventHandler<HTMLInputElement>
-	autocorrect?: 'on' | 'off'
-	spellcheck?: boolean
-	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }

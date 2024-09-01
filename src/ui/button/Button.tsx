@@ -8,8 +8,10 @@ export type ButtonRef = HTMLButtonElement
 const defaultStyles =
 	'button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100'
 const outlineStyles = 'border-solid border-current'
-const stateStyles =
-	'disabled:opacity-50 disabled:grayscale disabled:text-gray-400 focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:opacity-50 focus:opacity-50 focus-visible:opacity-50 focus-within:opacity-50'
+/* const stateStyles =
+	'disabled:opacity-50 disabled:grayscale disabled:text-gray-400 focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:opacity-50 focus:opacity-50 focus-visible:opacity-50 focus-within:opacity-50' */
+
+const stateStyles = 'disabled:opacity-50 disabled:grayscale disabled:text-gray-400'
 
 const sizes = {
 	xs: 'text-xs p-1 border',
@@ -54,7 +56,7 @@ const layouts = {
 const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	const {
 		size = 'md',
-		className = 'font-semibold tracking-widest',
+		className = 'button font-semibold tracking-widest',
 		background = 'primary',
 		color = 'light',
 		layout = 'default',

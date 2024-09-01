@@ -19,6 +19,7 @@
 		"chromatic": "chromatic --only-changed --untraced=package.json --untraced=yarn.lock --exit-zero-on-changes"
 	},
 	"dependencies": {
+		"@smitch/js-lib": "^0.3.22",
 		"@types/node": "20.6.0",
 		"@types/prismjs": "^1.26.4",
 		"@types/react": "18.2.21",
@@ -44,7 +45,6 @@
 		"@storybook/addon-interactions": "7.4.5",
 		"@storybook/addon-links": "7.4.5",
 		"@storybook/addon-mdx-gfm": "^7.4.5",
-		"@storybook/addon-onboarding": "1.0.8",
 		"@storybook/blocks": "7.4.5",
 		"@storybook/nextjs": "7.4.5",
 		"@storybook/react": "7.4.5",

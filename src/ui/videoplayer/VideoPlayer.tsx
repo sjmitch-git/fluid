@@ -4,7 +4,7 @@ import VideoControls from './VideoControls'
 
 import { VideoPlayerProps } from './types'
 
-import { Loading } from '@/ui'
+import { Loading, Alert } from '@/ui'
 
 const aspectRatios = {
 	video: 'aspect-video',
@@ -24,6 +24,9 @@ const VideoPlayer = ({
 	preload,
 	fallback,
 	formats = ['mp4'],
+	width = '100%',
+	height = 'auto',
+	defaultError = 'Oops! There was an unknown error.',
 }: VideoPlayerProps) => {
 	const [play, setPlay] = useState(false)
 	const [duration, setDuration] = useState(0)
@@ -34,6 +37,7 @@ const VideoPlayer = ({
 	const [mute, setMute] = useState(false)
 	const [volume, setVolume] = useState(5)
 	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState('')
 
 	useEffect(() => {
 		const handleFullscreenChange = () => {
@@ -103,7 +107,7 @@ const VideoPlayer = ({
 					setTime={setTime}
 					currentTime={currentTime}
 					togglePlay={handleTogglePlay}
-					onEnded={handleEnded}
+					playEnded={handleEnded}
 					play={play}
 					muted={mute}
 					preload={preload}
@@ -112,6 +116,10 @@ const VideoPlayer = ({
 					formats={formats}
 					pictureInPicture={pictureInPicture}
 					setLoading={setLoading}
+					setError={setError}
+					width={width}
+					height={height}
+					defaultError={defaultError}
 				/>
 				{loading && (
 					<Loading
@@ -119,8 +127,16 @@ const VideoPlayer = ({
 						size='lg'
 					/>
 				)}
+				{error && (
+					<Alert
+						title='Error'
+						message={error}
+						status='error'
+						className='!absolute top-4 left-2 right-2'
+					/>
+				)}
 			</figure>
-			{!controls && (
+			{!controls && !error && (
 				<VideoControls
 					duration={duration}
 					time={time}

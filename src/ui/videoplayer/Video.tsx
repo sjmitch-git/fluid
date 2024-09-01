@@ -1,6 +1,4 @@
-import React, { useRef, useEffect, useCallback, useState } from 'react'
-
-import { Alert } from '@/ui'
+import React, { useRef, useEffect, useCallback } from 'react'
 
 import { VideoProps } from './types'
 
@@ -19,14 +17,17 @@ const Video = ({
 	preload = 'none',
 	fallback = 'Your browser does not support the video tag.',
 	currentTime,
-	onEnded,
+	playEnded,
 	volume = 5,
 	formats = ['mp4'],
 	pictureInPicture = false,
 	setLoading,
+	setError,
+	width = '100%',
+	height = 'auto',
+	defaultError,
 }: VideoProps) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null)
-	const [error, setError] = useState('')
 
 	useEffect(() => {
 		const node = videoRef.current
@@ -57,7 +58,7 @@ const Video = ({
 	}, [volume])
 
 	const handleLoadedmetadata = () => {
-		setLoading(true)
+		if (setLoading) setLoading(true)
 		if (videoRef.current && setDuration) setDuration(videoRef.current.duration)
 	}
 
@@ -65,7 +66,9 @@ const Video = ({
 		if (videoRef.current && setLoading) setLoading(false)
 	}
 
-	const handleEnd = () => onEnded()
+	const handleEnd = () => {
+		if (playEnded) playEnded()
+	}
 
 	const handleTime = () => {
 		if (videoRef.current && setTime) setTime(videoRef.current.currentTime)
@@ -73,8 +76,8 @@ const Video = ({
 
 	const handleError = () => {
 		const node = videoRef.current
-		if (node) {
-			const error = node?.error?.message || 'Oops! There was an unknown error.'
+		if (node && setError) {
+			const error = node?.error?.message || defaultError
 			setError(error)
 		}
 	}
@@ -91,10 +94,10 @@ const Video = ({
 		return () => {
 			if (node) {
 				node.removeEventListener('loadedmetadata', handleLoadedmetadata, true)
+				node.removeEventListener('loadeddata', handleLoadeddata, true)
 				node.removeEventListener('ended', handleEnd, true)
 				node.removeEventListener('timeupdate', handleTime, true)
 				node.removeEventListener('error', handleError, true)
-				node.removeEventListener('loadeddata', handleLoadeddata, true)
 			}
 		}
 	}, [])
@@ -103,13 +106,13 @@ const Video = ({
 		<>
 			<video
 				poster={poster}
-				width='100%'
-				height='auto'
+				width={width}
+				height={height}
 				controls={controls}
 				loop={loop}
 				ref={setVideoRef}
 				onClick={togglePlay}
-				className={`video bg-black ${!error ? 'cursor-pointer' : ''}`}
+				className={`video bg-black cursor-pointer`}
 				muted={muted}
 				preload={preload}
 			>
@@ -122,14 +125,6 @@ const Video = ({
 				))}
 				<p>{fallback}</p>
 			</video>
-			{error && (
-				<Alert
-					title='Error'
-					message={error}
-					status='error'
-					className='!absolute top-4 left-2 right-2'
-				/>
-			)}
 		</>
 	)
 }

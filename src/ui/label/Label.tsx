@@ -24,7 +24,7 @@ const sizes = {
 const layouts = {
 	col: 'flex flex-col items-start gap-2',
 	row: 'grid grid-cols-3 items-start gap-4',
-	inline: 'flex flex-wrap justify-end flex-row-reverse gap-4 items-center',
+	row_reverse: 'flex flex-wrap justify-end flex-row-reverse gap-4 items-center',
 }
 
 const widthClasses = (type: string) => {
@@ -41,6 +41,7 @@ const widthClasses = (type: string) => {
 
 const Label = ({
 	className = defaultStyles,
+	forId,
 	size = 'md',
 	layout = 'col',
 	label,
@@ -55,6 +56,7 @@ const Label = ({
 		<label
 			className={`label group relative cursor-pointer w-full ${className} ${sizeClasses} ${layoutClasses} text-dark dark:text-light  ${type}`}
 			data-testid='label'
+			htmlFor={forId}
 		>
 			<span
 				className={`inline-block [&:has(svg)]:w-full ${layout === 'row' ? 'pt-2' : ''} ${

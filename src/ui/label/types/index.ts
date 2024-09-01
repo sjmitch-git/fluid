@@ -1,6 +1,7 @@
 export interface LabelProps {
 	className?: string
-	layout?: 'col' | 'row' | 'inline'
+	forId?: string
+	layout?: 'col' | 'row' | 'row_reverse'
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	label: string | React.ReactNode
 	value?: any

@@ -1,33 +1,40 @@
-export interface VideoProps extends React.HTMLAttributes<HTMLVideoElement> {
+export interface MediaProps {
 	src: string
 	poster?: string
 	controls?: boolean
 	loop?: boolean
-	setDuration?: (number: number) => void
-	setTime?: (number: number) => void
-	setLoading: (boolean: boolean) => void
-	play: boolean
-	togglePlay: () => void
-	onEnded: () => void
-	muted: boolean
 	preload?: 'auto' | 'metadata' | 'none'
-	fallback?: string
-	currentTime?: number
-	volume?: number
 	formats?: string[]
+	fallback?: string
+	width?: string
+	height?: string
+}
+
+export interface VideoSpecificProps {
+	muted: boolean
+	defaultError: string
+	play?: boolean
+	togglePlay?: () => void
+	playEnded?: () => void
 	pictureInPicture?: boolean
 }
 
-export interface VideoPlayerProps extends React.HTMLAttributes<HTMLDivElement> {
-	controls?: boolean
-	loop?: boolean
-	poster?: string
-	preload?: 'auto' | 'metadata' | 'none'
-	src: string
-	fallback?: string
+export interface VideoProps
+	extends React.HTMLAttributes<HTMLVideoElement>,
+		MediaProps,
+		VideoSpecificProps {
+	setDuration?: (duration: number) => void
+	setTime?: (time: number) => void
+	setLoading?: (loading: boolean) => void
+	setError?: (error: string) => void
+	currentTime?: number
+	volume?: number
+}
+
+export interface VideoPlayerProps extends React.HTMLAttributes<HTMLDivElement>, MediaProps {
 	aspect?: 'video' | 'square' | 'television' | 'cinematic' | 'portrait'
 	className?: string
-	formats?: string[]
+	defaultError?: string
 }
 
 export interface VideoControlProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -35,11 +42,11 @@ export interface VideoControlProps extends React.HTMLAttributes<HTMLDivElement> 
 	time: number
 	togglePlay: () => void
 	play: boolean
-	onScrubChange?: (number: number) => void
+	onScrubChange?: (time: number) => void
 	fullscreen: boolean
 	onFullscreen?: () => void
 	onPIP?: () => void
 	muted: boolean
 	onMute: () => void
-	onVolume: (number: number) => void
+	onVolume: (volume: number) => void
 }
