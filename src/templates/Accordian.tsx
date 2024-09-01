@@ -261,7 +261,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Any'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -276,7 +276,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Adidas'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -291,7 +291,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Nike'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -306,7 +306,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Puma'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -331,7 +331,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Any'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -346,7 +346,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='White'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -361,7 +361,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Black'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -386,7 +386,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='Any'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -401,7 +401,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='UK 7 - EU 41'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -417,7 +417,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='UK 8 - EU 42'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
@@ -432,7 +432,7 @@ const AccordionTemplate = () => {
 								<Label
 									className='font-normal'
 									label='UK 8.5 - EU 43'
-									layout='inline'
+									layout='row'
 									size='md'
 									type='radio'
 								>
