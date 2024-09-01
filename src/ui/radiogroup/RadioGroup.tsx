@@ -65,7 +65,7 @@ const RadioGroup = ({
 						<Label
 							key={item.id}
 							label={getIcon ? getIcon(item.id) : item.name}
-							layout='inline'
+							layout='row'
 							type='radio'
 							className={labelStyles}
 							size={size}
