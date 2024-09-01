@@ -84,25 +84,28 @@ const Video = ({
 		}
 	}
 
-	const setVideoRef = useCallback((node: HTMLVideoElement) => {
-		if (node) {
-			videoRef.current = node
-			node.addEventListener('loadedmetadata', handleLoadedmetadata, true)
-			node.addEventListener('loadeddata', handleLoadeddata, true)
-			node.addEventListener('ended', handleEnd, true)
-			node.addEventListener('timeupdate', handleTime, true)
-			node.addEventListener('error', handleError, true)
-		}
-		return () => {
+	const setVideoRef = useCallback(
+		(node: HTMLVideoElement) => {
 			if (node) {
-				node.removeEventListener('loadedmetadata', handleLoadedmetadata, true)
-				node.removeEventListener('loadeddata', handleLoadeddata, true)
-				node.removeEventListener('ended', handleEnd, true)
-				node.removeEventListener('timeupdate', handleTime, true)
-				node.removeEventListener('error', handleError, true)
+				videoRef.current = node
+				node.addEventListener('loadedmetadata', handleLoadedmetadata, true)
+				node.addEventListener('loadeddata', handleLoadeddata, true)
+				node.addEventListener('ended', handleEnd, true)
+				node.addEventListener('timeupdate', handleTime, true)
+				node.addEventListener('error', handleError, true)
 			}
-		}
-	}, [])
+			return () => {
+				if (node) {
+					node.removeEventListener('loadedmetadata', handleLoadedmetadata, true)
+					node.removeEventListener('loadeddata', handleLoadeddata, true)
+					node.removeEventListener('ended', handleEnd, true)
+					node.removeEventListener('timeupdate', handleTime, true)
+					node.removeEventListener('error', handleError, true)
+				}
+			}
+		},
+		['handleEnd', 'handleError', 'handleLoadeddata', 'handleLoadedmetadata', 'handleTime']
+	)
 
 	return (
 		<>
