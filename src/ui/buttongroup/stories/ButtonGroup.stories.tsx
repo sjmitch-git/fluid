@@ -4,7 +4,7 @@ import { ButtonGroup } from '..'
 import { Button } from '@/ui'
 
 const meta: Meta = {
-	title: 'Fluid UI/Button Group',
+	title: 'Fluid UI/Buttons/Button Group',
 	component: ButtonGroup,
 	argTypes: {
 		children: {
@@ -31,6 +31,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+	name: 'Text',
 	args: {
 		children: (
 			<>
@@ -69,7 +70,7 @@ export const Icons: Story = {
 	},
 }
 
-export const IconsWithLabel: Story = {
+export const IconsWithText: Story = {
 	args: {
 		children: (
 			<>

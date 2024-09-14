@@ -58,18 +58,19 @@ export const Custom: Story = (args: AccordionProps) => {
 					title='Brand'
 					icon={args.icon}
 				>
-					<div className='p-4 flex flex-col gap-2'>
+					<div className='p-4 flex flex-col gap-4'>
 						<Label
 							className='font-normal'
 							label='Any'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='brand'
 								type='radio'
 								value=''
+								size={args.size}
 								checked={selectedBrand === ''}
 								onChange={() => setSelectedBrand('')}
 							/>
@@ -77,14 +78,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='Adidas'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='brand'
 								type='radio'
 								value='adidas'
+								size={args.size}
 								checked={selectedBrand === 'adidas'}
 								onChange={() => setSelectedBrand('adidas')}
 							/>
@@ -92,14 +94,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='Nike'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='brand'
 								type='radio'
 								value='nike'
+								size={args.size}
 								checked={selectedBrand === 'nike'}
 								onChange={() => setSelectedBrand('nike')}
 							/>
@@ -107,14 +110,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='Puma'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='brand'
 								type='radio'
 								value='puma'
+								size={args.size}
 								checked={selectedBrand === 'puma'}
 								onChange={() => setSelectedBrand('puma')}
 							/>
@@ -129,18 +133,19 @@ export const Custom: Story = (args: AccordionProps) => {
 					title='Colour'
 					icon={args.icon}
 				>
-					<div className='p-4 flex flex-col gap-2'>
+					<div className='p-4 flex flex-col gap-4'>
 						<Label
 							className='font-normal'
 							label='Any'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='color'
 								type='radio'
 								value=''
+								size={args.size}
 								checked={selectedColor === ''}
 								onChange={() => setSelectedColor('')}
 							/>
@@ -148,14 +153,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='White'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='color'
 								type='radio'
 								value='white'
+								size={args.size}
 								checked={selectedColor === 'white'}
 								onChange={() => setSelectedColor('white')}
 							/>
@@ -163,14 +169,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='Black'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='color'
 								type='radio'
 								value='black'
+								size={args.size}
 								checked={selectedColor === 'black'}
 								onChange={() => setSelectedColor('black')}
 							/>
@@ -185,18 +192,19 @@ export const Custom: Story = (args: AccordionProps) => {
 					title='Size'
 					icon={args.icon}
 				>
-					<div className='p-4 flex flex-col gap-2'>
+					<div className='p-4 flex flex-col gap-4'>
 						<Label
 							className='font-normal'
 							label='Any'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='size'
 								type='radio'
 								value=''
+								size={args.size}
 								checked={selectedSize === ''}
 								onChange={() => setSelectedSize('')}
 							/>
@@ -204,14 +212,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='UK 7 - EU 41'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='size'
 								type='radio'
 								value='7'
+								size={args.size}
 								checked={selectedSize === '7'}
 								onChange={() => setSelectedSize('7')}
 							/>
@@ -219,14 +228,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='UK 8 - EU 42'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='size'
 								type='radio'
 								value='8'
+								size={args.size}
 								checked={selectedSize === '8'}
 								onChange={() => setSelectedSize('8')}
 							/>
@@ -234,14 +244,15 @@ export const Custom: Story = (args: AccordionProps) => {
 						<Label
 							className='font-normal'
 							label='UK 8.5 - EU 43'
-							layout='row'
-							size='md'
+							layout='row_reverse'
+							size={args.size}
 							type='radio'
 						>
 							<Input
 								name='size'
 								type='radio'
 								value='8.5'
+								size={args.size}
 								checked={selectedSize === '8.5'}
 								onChange={() => setSelectedSize('8.5')}
 							/>

@@ -22,6 +22,7 @@ const layouts = {
 
 const Accordion = ({
 	className = defaultStyles,
+	style,
 	size = 'md',
 	data,
 	opened,
@@ -41,6 +42,7 @@ const Accordion = ({
 	return (
 		<div
 			className={`accordion group ${className} ${sizeClasses}`}
+			style={style}
 			data-testid='accordion'
 		>
 			{data ? (

@@ -1,5 +1,6 @@
 export interface LabelProps {
 	className?: string
+	style?: React.CSSProperties
 	forId?: string
 	layout?: 'col' | 'row' | 'row_reverse'
 	size?: 'sm' | 'md' | 'lg' | 'xl'

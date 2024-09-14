@@ -17,4 +17,5 @@ export interface CounterProps extends React.HTMLAttributes<HTMLLabelElement> {
 	spacing?: '0' | '1' | '2'
 	title?: string
 	hint?: boolean
+	rounded?: 'none' | 'md' | 'lg' | 'full'
 }

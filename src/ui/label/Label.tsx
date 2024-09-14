@@ -12,7 +12,7 @@ const defaultStyles = 'font-semibold'
 const fileClasses =
 	'bg-dark text-light dark:bg-light dark:text-dark rounded-md p-[1em] flex items-center justify-center whitespace-nowrap !w-auto'
 
-const requiredClasses = "after:text-warning after:content-['_*']"
+const requiredClasses = "after:text-accent after:content-['_*']"
 
 const sizes = {
 	sm: 'text-sm',
@@ -41,6 +41,7 @@ const widthClasses = (type: string) => {
 
 const Label = ({
 	className = defaultStyles,
+	style,
 	forId,
 	size = 'md',
 	layout = 'col',
@@ -57,6 +58,7 @@ const Label = ({
 			className={`label group relative cursor-pointer w-full ${className} ${sizeClasses} ${layoutClasses} text-dark dark:text-light  ${type}`}
 			data-testid='label'
 			htmlFor={forId}
+			style={style}
 		>
 			<span
 				className={`inline-block [&:has(svg)]:w-full ${layout === 'row' ? 'pt-2' : ''} ${
@@ -64,30 +66,14 @@ const Label = ({
 				} ${required ? requiredClasses : ''}`}
 			>
 				{label} {type === 'file' && <span className='sr-only'>Upload file icon</span>}
-				{/* {type === 'password' && (
-					<Button
-						onClick={toggleType}
-						className='absolute right-0 top-0 !p-0'
-						size={size}
-						layout='circle'
-						background='transparent'
-						color='info'
-						title='Toggle password visiblity'
-					>
-						<FaEye />
-					</Button>
-				)} */}
 			</span>
-			<div className={`${widthClasses(type)} col-span-2 [&:has(input.w-0)]:absolute`}>
+			<div
+				className={`${widthClasses(
+					type
+				)} col-span-2 [&:has(input.w-0)]:absolute [&:has(input.password)]:relative`}
+			>
 				{children}
 			</div>
-			{/* {hint && (
-				<div
-					className={`hint font-normal text-[.90em] w-full col-span-3 group-[.flex-row-reverse]:-mt-2 leading-tight`}
-				>
-					{hint}
-				</div>
-			)} */}
 		</label>
 	)
 }

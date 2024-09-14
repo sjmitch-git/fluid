@@ -2,7 +2,7 @@ import React from 'react'
 
 import { AutocompleteProps } from './types'
 
-import { Input } from '@/ui'
+import { Input, Label } from '@/ui'
 
 const defaultStyles = ''
 
@@ -15,19 +15,29 @@ const Autocomplete = ({
 	name,
 	placeholder = 'Please Select',
 	onChange,
+	autocomplete,
+	label,
+	layout = 'row',
+	rounded,
 }: AutocompleteProps) => {
 	return (
-		<>
+		<Label
+			label={label}
+			layout={layout}
+			required={required}
+			size={size}
+		>
 			<Input
 				list={list}
 				placeholder={placeholder}
-				autocomplete='off'
 				required={required}
 				name={name || list}
 				onChange={onChange}
 				className={`autocomplete group ${className}`}
 				size={size}
+				autocomplete={autocomplete}
 				data-testid='autocomplete'
+				rounded={rounded}
 			/>
 
 			<datalist
@@ -42,7 +52,7 @@ const Autocomplete = ({
 					/>
 				))}
 			</datalist>
-		</>
+		</Label>
 	)
 }
 

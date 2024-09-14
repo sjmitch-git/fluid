@@ -27,6 +27,7 @@ const Counter = ({
 	title,
 	hint = false,
 	inputStyles = 'max-w-[3em] border-neutral',
+	rounded = 'md',
 }: CounterProps) => {
 	const [total, setTotal] = useState(value)
 	const [error, setError] = useState(false)
@@ -94,10 +95,11 @@ const Counter = ({
 					ref={input}
 					onChange={handleChange}
 					data-testid='counter-input'
-					className={inputStyles}
+					className={`me-0 ${inputStyles}`}
 					size={size}
 					title={title}
 					placeholder={min?.toString()}
+					rounded={rounded}
 				/>
 				<Button
 					disabled={total >= Number(max)}
@@ -115,7 +117,11 @@ const Counter = ({
 				</Button>
 			</div>
 			{hint && (
-				<p className={`text-sm font-normal mt-1 dark:text-light ${error && 'text-error'}`}>
+				<p
+					className={`hint text-sm font-normal mt-[.5em] dark:text-light ${
+						error && 'text-error'
+					}`}
+				>
 					{title}
 				</p>
 			)}

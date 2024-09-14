@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CloseButton } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Button/Variants/Close Button',
+	title: 'Fluid UI/Buttons/Button/Close Button',
 	component: CloseButton,
 	args: {
 		layout: 'circle',

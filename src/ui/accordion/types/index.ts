@@ -10,6 +10,7 @@ interface DataProps {
 
 export interface AccordionProps {
 	className?: string
+	style?: React.CSSProperties
 	size?: 'sm' | 'md' | 'lg'
 	data?: DataProps[]
 	children?: React.ReactNode

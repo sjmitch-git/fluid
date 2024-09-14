@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RadioGroup } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Radio Group',
+	title: 'Fluid UI/Forms/Radio Group',
 	component: RadioGroup,
 	tags: ['autodocs'],
 } satisfies Meta<typeof RadioGroup>
@@ -26,7 +26,7 @@ const getEmoji = (key: string) => {
 const cc_data = [
 	{
 		id: 'amex',
-		name: 'American Express',
+		name: 'Amex',
 	},
 	{
 		id: 'dinersclub',
@@ -182,7 +182,7 @@ export const Default: Story = {
 			},
 		},
 		columns: {
-			control: 'select',
+			control: 'radio',
 			options: [1, 2],
 		},
 		disabled: {
@@ -197,26 +197,39 @@ export const Default: Story = {
 		name: 'cc',
 		columns: 1,
 		size: 'md',
+		hasBorder: false,
+		legendBold: true,
+		legendAlign: 'center',
+		spacing: '4',
 	},
 }
 
 export const HiddenInput: Story = {
 	argTypes: {
 		...Default.argTypes,
+		rounded: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		...Default.args,
 		hideInput: true,
 		columns: 1,
 		size: 'md',
-		labelStyles:
-			'p-[.5em] gap-0 rounded-md ring-2 ring-neutral [&:has(input:checked)]:ring-info hover:ring-accent overflow-hidden relative',
+		labelStyles: `p-[.5em] gap-0 rounded-md ring-2 ring-neutral [&:has(input:checked)]:ring-info hover:ring-accent overflow-hidden relative`,
 	},
 }
 
 export const WithEmojis: Story = {
 	argTypes: {
 		...Default.argTypes,
+		rounded: {
+			table: {
+				disable: true,
+			},
+		},
 		columns: {
 			control: 'select',
 			options: [3, 4, 6],
@@ -231,6 +244,7 @@ export const WithEmojis: Story = {
 		icons: true,
 		hideInput: true,
 		columns: 4,
+		spacing: '8',
 		size: 'md',
 		labelStyles:
 			'p-[.2em] !text-[2em] gap-0 rounded-full aspect-square ring-2 text-center ring-neutral [&:has(input:checked)]:ring-info hover:ring-accent overflow-hidden relative flex justify-center',
@@ -244,7 +258,12 @@ export const WithIcons: Story = {
 			control: 'select',
 			options: [3, 4, 6],
 		},
-		size: {
+		/* size: {
+			table: {
+				disable: true,
+			},
+		}, */
+		rounded: {
 			table: {
 				disable: true,
 			},

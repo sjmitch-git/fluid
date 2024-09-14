@@ -4,7 +4,6 @@ export interface RadioGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	legend?: string
 	selected?: string
 	icons?: boolean
-	disabled?: boolean
 	className?: string
 	onChange?: React.ChangeEventHandler<HTMLInputElement>
 	labelStyles?: string
@@ -12,4 +11,9 @@ export interface RadioGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	hideInput?: boolean
 	columns?: 1 | 2 | 3 | 4 | 5 | 6
 	size?: 'sm' | 'md' | 'lg' | 'xl'
+	legendAlign?: 'left' | 'center' | 'right'
+	hasBorder?: boolean
+	legendBold?: boolean
+	spacing?: '4' | '8'
+	rounded?: 'none' | 'md' | 'lg' | 'full'
 }

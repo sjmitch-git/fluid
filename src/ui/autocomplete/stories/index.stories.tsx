@@ -4,7 +4,7 @@ import { Autocomplete } from '..'
 import data from '@/data/countries.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Autocomplete',
+	title: 'Fluid UI/Forms/Autocomplete',
 	component: Autocomplete,
 	argTypes: {},
 	tags: ['autodocs'],
@@ -15,11 +15,11 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	argTypes: {
-		data: {
+		/* data: {
 			table: {
 				disable: true,
 			},
-		},
+		}, */
 		list: {
 			table: {
 				disable: true,
@@ -37,10 +37,14 @@ export const Default: Story = {
 		},
 	},
 	args: {
-		data: data,
 		list: 'countries',
 		placeholder: 'Select Country',
 		size: 'md',
 		required: false,
+		label: 'Country',
+		autocomplete: 'country-name',
+		layout: 'row',
+		rounded: 'md',
+		data: data,
 	},
 }

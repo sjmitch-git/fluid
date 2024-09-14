@@ -22,27 +22,17 @@ const TextInput = ({
 	inputStyles = 'border-neutral',
 	rounded = 'md',
 	required,
+	readonly,
 	autocomplete = 'off',
 	pattern,
+	disabled,
 }: TextInputProps) => {
-	const [total, setTotal] = useState(value)
-	const [error, setError] = useState(false)
 	const input = useRef<HTMLInputElement>(null!)
 
-	const handleValueChange = (value: string) => {
-		setTotal(value)
-		onInputChange(value)
-		input.current.value = value
-		ifError(value)
-	}
-
 	const handleChange = (e: any) => {
+		if (!onInputChange) return
 		const value = e.target.value
-		handleValueChange(value)
-	}
-
-	const ifError = (value: string) => {
-		console.log('if error', value)
+		onInputChange(value)
 	}
 
 	return (
@@ -60,7 +50,7 @@ const TextInput = ({
 				name={name}
 				id={id}
 				type={type}
-				value={total}
+				value={value}
 				ref={input}
 				onChange={handleChange}
 				data-testid={`input-${name}`}
@@ -73,6 +63,8 @@ const TextInput = ({
 				autocomplete={autocomplete}
 				required={required}
 				pattern={pattern}
+				readonly={readonly}
+				disabled={disabled}
 			/>
 		</Label>
 	)

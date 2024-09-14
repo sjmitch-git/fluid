@@ -6,7 +6,7 @@ const videoSrc =
 const videoPoster = 'http://media.w3.org/2010/05/bunny/poster.png'
 
 const meta: Meta = {
-	title: 'Fluid UI/Video Player',
+	title: 'Fluid UI/Media/Video Player',
 	component: VideoPlayer,
 	argTypes: {
 		fallback: {

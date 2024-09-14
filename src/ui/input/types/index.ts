@@ -93,5 +93,5 @@ export interface InputProps {
 	onInput?: React.ChangeEventHandler<HTMLInputElement>
 	autocorrect?: 'on' | 'off'
 	spellcheck?: boolean
-	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+	rounded?: 'none' | 'md' | 'lg' | 'full'
 }

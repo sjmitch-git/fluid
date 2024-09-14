@@ -3,7 +3,7 @@ import { FaPlus, FaTrashAlt } from 'react-icons/fa'
 import { Button } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Button',
+	title: 'Fluid UI/Buttons/Button',
 	component: Button,
 	args: {
 		layout: 'default',
@@ -71,6 +71,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+	name: 'Text Label',
 	args: {
 		children: 'Click!',
 	},
@@ -95,7 +96,7 @@ export const Icon: Story = {
 	},
 }
 
-export const IconAndLabel: Story = {
+export const IconAndTextLabel: Story = {
 	args: {
 		children: (
 			<>

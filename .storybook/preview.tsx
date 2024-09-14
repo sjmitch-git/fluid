@@ -30,7 +30,7 @@ const preview: Preview = {
 		(Story) => (
 			<div
 				style={{ padding: '1rem' }}
-				className='bg-[#f5f5f5] dark:bg-[#111111]'
+				className='bg-[#f5f5f5] dark:bg-[#111111] text-dark dark:text-light'
 			>
 				<Story />
 			</div>

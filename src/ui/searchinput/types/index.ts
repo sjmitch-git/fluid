@@ -4,6 +4,7 @@ export interface SearchInputProps extends React.HTMLAttributes<HTMLDivElement> {
 	label?: string
 	icon?: boolean
 	className?: string
+	style?: React.CSSProperties
 	onButtonSubmit: (value: string) => void
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	placeholder?: string
@@ -15,5 +16,5 @@ export interface SearchInputProps extends React.HTMLAttributes<HTMLDivElement> {
 	autocorrect?: 'on' | 'off'
 	spellcheck?: boolean
 	spacing?: '0' | '1' | '2'
-	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+	rounded?: 'none' | 'md' | 'lg' | 'full'
 }

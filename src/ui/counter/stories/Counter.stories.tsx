@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Counter } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Counter',
+	title: 'Fluid UI/Forms/Counter',
 	component: Counter,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Counter>
@@ -15,6 +15,7 @@ const onCountChange = (count: number) => {
 }
 
 export const Default: Story = {
+	name: 'Counter',
 	argTypes: {
 		name: {
 			table: {

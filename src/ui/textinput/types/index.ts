@@ -6,14 +6,16 @@ export interface TextInputProps extends React.HTMLAttributes<HTMLLabelElement> {
 	label: string
 	layout?: 'col' | 'row'
 	required?: boolean
-	onInputChange: (input: string) => void
+	readonly?: boolean
+	disabled?: boolean
+	onInputChange?: (input: string) => void
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	title?: string
 	hint?: boolean
 	type?: 'text' | 'password' | 'email' | 'tel' | 'search' | 'url'
 	placeholder?: string
 	inputStyles?: string
-	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+	rounded?: 'none' | 'md' | 'lg' | 'full'
 	pattern?: string
 	autocomplete?:
 		| 'off'

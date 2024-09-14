@@ -2,16 +2,9 @@
 
 import { useEffect, useState } from 'react'
 
-import { Input, Label } from '@/ui'
+import { Input, Label, Fieldset } from '@/ui'
 
 import { RadioGroupProps } from './types'
-
-const sizes = {
-	sm: 'text-sm',
-	md: 'text-base',
-	lg: 'text-xl',
-	xl: 'text-2xl',
-}
 
 const layouts = {
 	1: 'grid-cols-1',
@@ -32,10 +25,14 @@ const RadioGroup = ({
 	icons = false,
 	onChange,
 	selected,
-	disabled,
 	hideInput,
 	columns = 1,
 	size = 'md',
+	legendAlign = 'center',
+	legendBold = true,
+	hasBorder = false,
+	spacing = '4',
+	rounded = 'full',
 }: RadioGroupProps) => {
 	const [checked, setChecked] = useState('')
 
@@ -45,18 +42,16 @@ const RadioGroup = ({
 		if (selected) setChecked(selected)
 	}, [selected])
 
-	const sizeClasses = sizes[size]
-
 	return (
-		<fieldset
-			className={`fieldset max-w-sm ${sizeClasses}`}
-			disabled={disabled}
+		<Fieldset
+			legendText={legend}
+			legendSize={size}
+			legendAlign={legendAlign}
+			isBold={legendBold}
+			hasBorder={hasBorder}
 		>
-			{legend && (
-				<legend className={`font-semibold mb-4 text-dark dark:text-light`}>{legend}</legend>
-			)}
 			<div
-				className={`radiogroup grid ${layoutStyles} gap-4 ${className} ${
+				className={`radiogroup grid ${layoutStyles} gap-${spacing} ${className} ${
 					icons ? 'icons' : ''
 				}`}
 			>
@@ -65,7 +60,7 @@ const RadioGroup = ({
 						<Label
 							key={item.id}
 							label={getIcon ? getIcon(item.id) : item.name}
-							layout='row'
+							layout='row_reverse'
 							type='radio'
 							className={labelStyles}
 							size={size}
@@ -78,12 +73,13 @@ const RadioGroup = ({
 								checked={item.id === checked}
 								className={`${hideInput ? 'opacity-0 w-0 h-0 -ml-1' : ''}`}
 								size={size}
+								rounded={rounded}
 							/>
 						</Label>
 					)
 				})}
 			</div>
-		</fieldset>
+		</Fieldset>
 	)
 }
 

@@ -38,7 +38,6 @@ const SearchInput = ({
 
 	const handleChange = (e: any) => {
 		const value = e.target.value
-		console.log('handleChange', value)
 		value ? setDisabled(false) : setDisabled(true)
 	}
 

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Input',
+	title: 'Fluid UI/Forms/Input',
 	component: Input,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Input>
@@ -34,7 +34,42 @@ export const Default: Story = {
 				disable: true,
 			},
 		},
+		ariaLabel: {
+			table: {
+				disable: true,
+			},
+		},
 		readonly: {
+			table: {
+				disable: true,
+			},
+		},
+		name: {
+			table: {
+				disable: true,
+			},
+		},
+		id: {
+			table: {
+				disable: true,
+			},
+		},
+		list: {
+			table: {
+				disable: true,
+			},
+		},
+		type: {
+			table: {
+				disable: true,
+			},
+		},
+		autocorrect: {
+			table: {
+				disable: true,
+			},
+		},
+		spellcheck: {
 			table: {
 				disable: true,
 			},
@@ -44,6 +79,7 @@ export const Default: Story = {
 		type: 'text',
 		size: 'md',
 		placeholder: 'Enter Input',
+		rounded: 'md',
 	},
 }
 
@@ -286,6 +322,7 @@ export const Radio: Story = {
 		type: 'radio',
 		size: 'md',
 		name: 'radioGroup',
+		rounded: 'full',
 	},
 }
 
@@ -573,7 +610,7 @@ export const Telephone: Story = {
 		placeholder: 'eg: 07123456789',
 		hint: true,
 		title: 'Enter a vaild UK mobile number',
-		pattern: '^07d{8,9}$',
+		pattern: '07[0-9]{9}',
 		name: 'telNo',
 	},
 }
@@ -598,14 +635,3 @@ export const Range: Story = {
 		name: 'range',
 	},
 }
-
-/* Password.decorators = [
-	(Story) => (
-		<form
-			className='group'
-			noValidate
-		>
-			<Story />
-		</form>
-	),
-] */
