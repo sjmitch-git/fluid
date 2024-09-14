@@ -1,5 +1,6 @@
 export interface AlertProps {
 	className?: string
+	style?: React.CSSProperties
 	size?: 'sm' | 'md' | 'lg'
 	title?: string
 	status?: 'info' | 'success' | 'warning' | 'error'

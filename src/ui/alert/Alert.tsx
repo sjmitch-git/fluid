@@ -36,6 +36,7 @@ const layouts = {
 
 const Alert = ({
 	className = '',
+	style,
 	size = 'md',
 	status = 'info',
 	layout = 'default',
@@ -58,6 +59,7 @@ const Alert = ({
 	return (
 		<blockquote
 			className={`alert group relative ${className} ${sizeClasses} ${statusClasses} ${layoutClasses}`}
+			style={style}
 			data-testid='alert'
 			role='alert'
 		>
