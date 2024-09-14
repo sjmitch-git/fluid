@@ -59,30 +59,30 @@ const Video = ({
 		if (node) node.volume = volume / 10
 	}, [volume])
 
-	const handleLoadedmetadata = () => {
+	const handleLoadedmetadata = useCallback(() => {
 		if (setLoading) setLoading(true)
 		if (videoRef.current && setDuration) setDuration(videoRef.current.duration)
-	}
+	}, [setLoading, setDuration])
 
-	const handleLoadeddata = () => {
+	const handleLoadeddata = useCallback(() => {
 		if (videoRef.current && setLoading) setLoading(false)
-	}
+	}, [setLoading])
 
-	const handleEnd = () => {
+	const handleEnd = useCallback(() => {
 		if (playEnded) playEnded()
-	}
+	}, [playEnded])
 
-	const handleTime = () => {
+	const handleTime = useCallback(() => {
 		if (videoRef.current && setTime) setTime(videoRef.current.currentTime)
-	}
+	}, [setTime])
 
-	const handleError = () => {
+	const handleError = useCallback(() => {
 		const node = videoRef.current
 		if (node && setError) {
-			const error = node?.error?.message || defaultError
+			const error = node.error?.message || defaultError
 			setError(error)
 		}
-	}
+	}, [setError, defaultError])
 
 	const setVideoRef = useCallback(
 		(node: HTMLVideoElement) => {
@@ -104,7 +104,7 @@ const Video = ({
 				}
 			}
 		},
-		['handleEnd', 'handleError', 'handleLoadeddata', 'handleLoadedmetadata', 'handleTime']
+		[handleEnd, handleError, handleLoadeddata, handleLoadedmetadata, handleTime]
 	)
 
 	return (

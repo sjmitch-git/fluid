@@ -72,7 +72,7 @@ export const Default: Story = {
 	},
 }
 
-export const eMailInput: Story = {
+export const EmailInput: Story = {
 	argTypes: {
 		...Default.argTypes,
 	},
