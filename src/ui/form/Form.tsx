@@ -32,9 +32,11 @@ const Form = ({
 	const form = useRef<HTMLFormElement | null>(null)
 	const [valid, setValid] = useState(false)
 
-	const handleInputChange = () => {
-		if (form && form.current) setValid(form.current.checkValidity())
-	}
+	const handleInputChange = useCallback(() => {
+		if (form.current) {
+			setValid(form.current.checkValidity())
+		}
+	}, [])
 
 	const setFormRef = useCallback(
 		(node: HTMLFormElement) => {
@@ -48,7 +50,7 @@ const Form = ({
 				}
 			}
 		},
-		['handleInputChange']
+		[handleInputChange]
 	)
 
 	return (
