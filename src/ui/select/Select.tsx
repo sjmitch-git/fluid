@@ -1,17 +1,19 @@
+'use client'
+
 import { useState } from 'react'
 
 import { SelectProps } from './types'
 
 const sizes = {
-	base: 'text-base',
+	sm: 'text-sm',
+	md: 'text-base',
 	lg: 'text-lg',
 	xl: 'text-xl',
-	xxl: 'text-2xl',
 }
 
 const Select = ({
 	className = '',
-	dropdownSize = 'base',
+	dropdownSize = 'md',
 	onChange,
 	placeholder,
 	name = 'select',
