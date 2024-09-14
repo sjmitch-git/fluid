@@ -3,7 +3,6 @@ import Legend from './Legend'
 
 const Fieldset = ({
 	legendText,
-	errorMessage,
 	isDisabled,
 	legendAlign,
 	legendSize,
@@ -27,7 +26,6 @@ const Fieldset = ({
 				/>
 			)}
 			{children}
-			{errorMessage && <span style={{ color: 'red' }}>{errorMessage}</span>}
 		</fieldset>
 	)
 }
