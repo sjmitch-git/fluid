@@ -8,10 +8,6 @@ import {
 	Alert,
 	Carousel,
 	Figure,
-	Accordion,
-	AccordionItem,
-	Label,
-	Input,
 } from '@/ui'
 
 import AccordionTemplate from '@/templates/Accordian'
@@ -28,6 +24,7 @@ export default function Home() {
 				placeholder='Select Country'
 				required
 				size='md'
+				label='Country'
 			/>
 
 			<AccordionTemplate />
