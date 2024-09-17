@@ -45,7 +45,7 @@ const Dialog = ({
 			if (dialogRef) dialogRef.removeEventListener('close', handleClose, false)
 			document.removeEventListener('keyup', handleEscape, false)
 		}
-	}, [open, modal])
+	}, [open, modal, onClose])
 
 	return (
 		<dialog

@@ -15,72 +15,116 @@ export default meta
 
 type Story = StoryObj<typeof Dialog>
 
-export const Default: Story = {
-	name: 'Dialog',
-	render: (args: DialogProps) => {
-		const [open, setOpen] = useState(args.open)
+export const Default: Story = (args: DialogProps) => {
+	const [open, setOpen] = useState(args.open)
 
-		const handleClose = () => {
-			setOpen(false)
-			if (args.onClose) args.onClose()
-		}
+	const handleClose = () => {
+		setOpen(false)
+		if (args.onClose) args.onClose()
+	}
 
-		const handleSubmit = (data: { [key: string]: string }) => {
-			console.log('data', data)
-			handleClose()
-		}
+	const handleSubmit = (data: { [key: string]: string }) => {
+		console.log('data', data)
+		handleClose()
+	}
 
-		return (
-			<>
-				<button
-					onClick={() => setOpen(true)}
-					className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
-				>
-					Open Dialog
-				</button>
-				<Dialog
-					{...args}
-					open={open}
-					onClose={handleClose}
-				>
-					<p>A simple dialog message!</p>
-				</Dialog>
-			</>
-		)
-	},
-	argTypes: {
-		submit: {
-			table: {
-				disable: true,
-			},
-		},
-		onClose: {
-			table: {
-				disable: true,
-			},
-		},
-		open: {
-			table: {
-				disable: true,
-			},
-		},
-		modal: {
-			table: {
-				disable: true,
-			},
+	return (
+		<>
+			<button
+				onClick={() => setOpen(true)}
+				className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
+			>
+				Open Dialog
+			</button>
+			<Dialog
+				{...args}
+				open={open}
+				onClose={handleClose}
+			>
+				<p>A simple dialog message!</p>
+			</Dialog>
+		</>
+	)
+}
+
+Default.args = {
+	title: 'Dialog Title',
+	titleSize: 'lg',
+	titleBold: true,
+	open: false,
+	modal: false,
+	onClose: () => console.log('Dialog closed'),
+}
+
+Default.argTypes = {
+	submit: {
+		table: {
+			disable: true,
 		},
 	},
-	args: {
-		title: 'Dialog Title',
-		titleSize: 'lg',
-		titleBold: true,
-		open: false,
-		modal: false,
-		onClose: () => console.log('Dialog closed'),
+	onClose: {
+		table: {
+			disable: true,
+		},
+	},
+	open: {
+		table: {
+			disable: true,
+		},
+	},
+	modal: {
+		table: {
+			disable: true,
+		},
 	},
 }
 
-export const ModalDialog: Story = {
+export const ModalDialog: Story = (args: DialogProps) => {
+	const [open, setOpen] = useState(args.open)
+
+	const handleClose = () => {
+		setOpen(false)
+		if (args.onClose) args.onClose()
+	}
+
+	const handleSubmit = (data: { [key: string]: string }) => {
+		console.log('data', data)
+		handleClose()
+	}
+
+	return (
+		<>
+			<button
+				onClick={() => setOpen(true)}
+				className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
+			>
+				Log-in
+			</button>
+			<Dialog
+				{...args}
+				open={open}
+				onClose={handleClose}
+			>
+				<Tabs {...LoginRegister.args}>{LoginRegister.args?.children}</Tabs>
+			</Dialog>
+		</>
+	)
+}
+
+ModalDialog.args = {
+	title: 'Log-in to your account',
+	titleSize: 'lg',
+	titleBold: true,
+	open: false,
+	modal: true,
+	onClose: () => console.log('Dialog closed'),
+}
+
+ModalDialog.argTypes = {
+	...Default.argTypes,
+}
+
+/* export const ModalDialog: Story = {
 	render: (args: DialogProps) => {
 		const [open, setOpen] = useState(args.open)
 
@@ -123,4 +167,4 @@ export const ModalDialog: Story = {
 		modal: true,
 		onClose: () => console.log('Dialog closed'),
 	},
-}
+} */
