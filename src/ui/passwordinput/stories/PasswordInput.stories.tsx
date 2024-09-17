@@ -13,7 +13,7 @@ const meta: Meta = {
 				disable: true,
 			},
 		},
-		onInput: {
+		onInputChange: {
 			table: {
 				disable: true,
 			},

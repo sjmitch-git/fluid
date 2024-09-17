@@ -25,7 +25,9 @@ const Legend = ({
 
 	return (
 		<legend
-			className={`legend ${className} ${alignment} text-${align} ${sizeClasses} text-dark dark:text-light mb-[1em]`}
+			className={`legend ${className} ${alignment} ${
+				isBold ? 'font-bold' : 'font-normal'
+			} text-${align} ${sizeClasses} text-dark dark:text-light mb-[1em]`}
 		>
 			{text}
 		</legend>

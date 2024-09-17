@@ -1,5 +1,6 @@
 export interface CardProps {
 	className?: string
+	style?: React.CSSProperties
 	layout?: 'col' | 'row'
 	children: React.ReactNode
 }

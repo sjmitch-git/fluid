@@ -6,11 +6,11 @@ import { useCallback, useState, useEffect } from 'react'
 
 import { TabsProps, TabProps } from './types'
 
-const defaultTabStyles = 'border border-transparent px-4 py-2 rounded-t dark:text-light w-full'
-const defaultActiveTabStyles = 'border-x-gray-300 border-t-gray-300 bg-light dark:bg-dark'
+const defaultTabStyles = 'border border-transparent px-4 py-2 rounded-t w-full'
+const defaultActiveTabStyles = 'border-x-neutral border-t-neutral bg-light dark:bg-dark'
 
 const minimalTabStyles =
-	'border-b-4 border-b-transparent px-4 py-2 dark:text-light hover:border-b-warning'
+	'border-b-4 border-b-transparent px-4 py-2 dark:text-light hover:border-b-accent'
 const minimalActiveTabStyles = '!border-b-info hover:cursor-default font-bold'
 
 const sizes = {
@@ -29,6 +29,7 @@ const Tabs = ({
 	icons,
 	children,
 	minimal = false,
+	contentBorder = false,
 	size = 'md',
 	tabsPosition,
 }: TabsProps) => {
@@ -87,7 +88,9 @@ const Tabs = ({
 			/>
 			<div
 				ref={content}
-				className='tabwrapper border border-gray-300 bg-light dark:bg-dark dark:text-light p-4'
+				className={`tabwrapper bg-light dark:bg-dark ${
+					contentBorder ? 'border' : 'border-t'
+				} border-neutral p-4`}
 			>
 				{children}
 			</div>

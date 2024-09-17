@@ -54,6 +54,7 @@ const positions = {
 
 const Badge = ({
 	className = '',
+	style,
 	layout = 'circle',
 	background = 'info',
 	color = 'light',
@@ -70,6 +71,7 @@ const Badge = ({
 	return (
 		<small
 			className={`${defaultStyles} ${className} ${sizeClasses} ${layoutClasses} ${backgroundClasses} ${colorClasses} ${positionClasses}`}
+			style={style}
 			data-testid='badge'
 		>
 			<span className='flex gap-2'>{children}</span>

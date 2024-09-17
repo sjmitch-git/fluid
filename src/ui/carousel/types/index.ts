@@ -9,6 +9,7 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 	data: DataProps[]
 	children?: React.ReactNode
 	className?: string
+	style?: React.CSSProperties
 	caption?: boolean
 	autoplay?: boolean
 	autoplayDuration?: number

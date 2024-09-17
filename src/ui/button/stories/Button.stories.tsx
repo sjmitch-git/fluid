@@ -84,6 +84,11 @@ export const Icon: Story = {
 				disable: true,
 			},
 		},
+		isBold: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		children: (

@@ -1,5 +1,6 @@
 export interface ButtonGroupProps {
 	className?: string
+	style?: React.CSSProperties
 	children: React.ReactNode
 	label?: string
 	layout?: 'horizontal' | 'vertical'

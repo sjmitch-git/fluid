@@ -1,6 +1,6 @@
 'use client'
 
-import { FaEye } from 'react-icons/fa'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 import { useState } from 'react'
 
@@ -9,7 +9,7 @@ import { Input, Button, Label } from '@/ui'
 import { PasswordInputProps } from './types'
 
 const PasswordInput = ({
-	name = 'search',
+	name = 'password',
 	className = 'font-semibold',
 	label = 'Password',
 	size = 'md',
@@ -22,11 +22,18 @@ const PasswordInput = ({
 	title,
 	required = true,
 	layout = 'col',
+	onInputChange,
 }: PasswordInputProps) => {
 	const [type, setType] = useState<'password' | 'text'>('password')
 
 	const toggleType = () => {
 		setType((prevType) => (prevType === 'password' ? 'text' : 'password'))
+	}
+
+	const handleChange = (e: any) => {
+		if (!onInputChange) return
+		const value = e.target.value
+		onInputChange(value)
 	}
 
 	return (
@@ -51,6 +58,7 @@ const PasswordInput = ({
 				title={title}
 				hint={hint}
 				required={required}
+				onChange={handleChange}
 			/>
 			<Button
 				onClick={toggleType}
@@ -61,7 +69,7 @@ const PasswordInput = ({
 				color='info'
 				title='Toggle password visiblity'
 			>
-				<FaEye />
+				{type !== 'password' ? <FaEye /> : <FaEyeSlash />}
 			</Button>
 		</Label>
 	)

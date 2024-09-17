@@ -1,5 +1,6 @@
 export interface ButtonProps {
 	className?: string
+	style?: React.CSSProperties
 	children?: React.ReactNode
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	background?:
@@ -24,6 +25,16 @@ export interface ButtonProps {
 		| 'current'
 	layout?: 'default' | 'rounded' | 'pill' | 'square' | 'circle'
 	outline?: boolean
+	outlineColor?:
+		| 'dark'
+		| 'light'
+		| 'info'
+		| 'success'
+		| 'warning'
+		| 'danger'
+		| 'primary'
+		| 'secondary'
+		| 'current'
 	id?: string
 	title?: string
 	onClick?: (e: any) => void
@@ -33,4 +44,5 @@ export interface ButtonProps {
 	tabindex?: number
 	role?: string
 	textcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
+	isBold?: boolean
 }

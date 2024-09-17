@@ -10,7 +10,7 @@ export interface PasswordInputProps {
 	hint?: boolean
 	required?: boolean
 	onChange?: React.ChangeEventHandler<HTMLInputElement>
-	onInput?: React.ChangeEventHandler<HTMLInputElement>
+	onInputChange?: (input: string) => void
 	rounded?: 'none' | 'md' | 'lg' | 'full'
 	layout?: 'col' | 'row'
 	label: string

@@ -6,6 +6,7 @@ export interface TabsProps extends React.HTMLAttributes<HTMLButtonElement> {
 	defaultActiveId?: string
 	icons?: React.ReactNode[]
 	minimal?: boolean
+	contentBorder?: boolean
 	size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 	tabsPosition?: 'left' | 'center' | 'right' | 'full'
 }

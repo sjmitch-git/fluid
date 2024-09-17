@@ -1,5 +1,6 @@
 export interface BadgeProps {
 	className?: string
+	style?: React.CSSProperties
 	children: React.ReactNode
 	layout?: 'square' | 'circle' | 'rounded' | 'pill'
 	position?: 'inline' | 'left' | 'right'

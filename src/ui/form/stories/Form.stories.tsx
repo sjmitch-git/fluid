@@ -1,11 +1,12 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form, Fieldset } from '..'
-import { TextInput, Autocomplete, SearchInput, Select } from '@/ui'
+import { TextInput, Autocomplete, SearchInput, Select, PasswordInput, Checkbox } from '@/ui'
+import { Default as Password } from '../../passwordinput/stories/PasswordInput.stories'
 import data from '@/data/countries.json'
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-	e.preventDefault()
-	console.log({ e })
+const handleSubmit = (data: { [key: string]: string }) => {
+	console.log('form data', data)
 }
 
 const meta: Meta<typeof Form> = {
@@ -28,7 +29,7 @@ const meta: Meta<typeof Form> = {
 				disable: true,
 			},
 		},
-		onSubmit: {
+		onsubmit: {
 			table: {
 				disable: true,
 			},
@@ -50,7 +51,7 @@ const meta: Meta<typeof Form> = {
 		},
 	},
 	args: {
-		onSubmit: handleSubmit,
+		buttonLayout: 'default',
 		buttonTextcase: 'normal-case',
 	},
 }
@@ -81,7 +82,7 @@ const searchOptions = () => {
 		<Select
 			options={options}
 			onChange={onSelectChange}
-			className='!border-0 focus:border-neutral focus:ring-0 focus:ring-transparent'
+			className='!border-0 focus:border-neutral focus:ring-0 focus:ring-transparent !bg-neutral !text-dark'
 		/>
 	)
 }
@@ -119,7 +120,6 @@ const AddressContent = () => {
 					label='Street'
 					autocomplete='address-line1'
 					layout='row'
-					onInputChange={onInputChange}
 					name='address-line1'
 					id='address-line1'
 					required
@@ -128,7 +128,6 @@ const AddressContent = () => {
 					label='Town/City'
 					autocomplete='address-level2'
 					layout='row'
-					onInputChange={onInputChange}
 					name='address-line2'
 					id='address-line2'
 					required
@@ -137,7 +136,6 @@ const AddressContent = () => {
 					label='County'
 					autocomplete='address-level1'
 					layout='row'
-					onInputChange={onInputChange}
 					name='address-line3'
 					id='address-line3'
 					required
@@ -155,7 +153,6 @@ const AddressContent = () => {
 					label='Post Code'
 					autocomplete='postal-code'
 					layout='row'
-					onInputChange={onInputChange}
 					name='postal-code'
 					id='postal-code'
 					inputStyles='max-w-[10em] border-neutral'
@@ -178,7 +175,6 @@ const contactContent = () => {
 					label='First Name'
 					autocomplete='given-name'
 					layout='row'
-					onInputChange={onInputChange}
 					name='given-name'
 					id='given-name'
 					pattern='[a-zA-Z]+'
@@ -188,7 +184,6 @@ const contactContent = () => {
 					label='Last Name'
 					autocomplete='family-name'
 					layout='row'
-					onInputChange={onInputChange}
 					name='family-name'
 					id='family-name'
 					pattern='[a-zA-Z]+'
@@ -198,7 +193,6 @@ const contactContent = () => {
 					label='e-Mail'
 					autocomplete='email'
 					layout='row'
-					onInputChange={onInputChange}
 					name='email'
 					id='email'
 					placeholder='myname@email.com'
@@ -210,7 +204,6 @@ const contactContent = () => {
 					label='Mobile'
 					autocomplete='tel'
 					layout='row'
-					onInputChange={onInputChange}
 					name='tel'
 					id='tel'
 					placeholder='07123456789'
@@ -223,12 +216,65 @@ const contactContent = () => {
 	)
 }
 
+const loginContent = () => {
+	return (
+		<>
+			<Fieldset
+				legendText='Log-in'
+				legendSize='xl'
+				spacing='8'
+				isBold={true}
+			>
+				<TextInput
+					label='User Name'
+					autocomplete='username'
+					name='username'
+					id='username'
+					placeholder='User Name or e-Mail'
+					required
+				/>
+				<PasswordInput
+					{...Password.args}
+					label='Password'
+				/>
+				<p className='psw group-valid:hidden'>
+					Forgot <a href='#'>password?</a>
+				</p>
+				<Checkbox
+					label='Remember me'
+					name='remember'
+					className='group-invalid:hidden'
+				/>
+			</Fieldset>
+		</>
+	)
+}
+
+export const LoginForm: Story = {
+	args: {
+		children: loginContent(),
+		actionsLayout: 'row',
+		actionsSpacing: '0',
+		onCancel: onFormCancel,
+		onsubmit: handleSubmit,
+		showCancel: true,
+		submitLabel: 'Log-in',
+		submitBackground: 'primary',
+		submitColor: 'light',
+		cancelBackground: 'transparent',
+		cancelColor: 'current',
+		separator: true,
+		name: 'login',
+	},
+}
+
 export const ContactForm: Story = {
 	args: {
 		children: contactContent(),
 		actionsLayout: 'row',
 		actionsSpacing: '0',
 		onCancel: onFormCancel,
+		onsubmit: handleSubmit,
 		showCancel: true,
 		submitBackground: 'primary',
 		submitColor: 'light',
@@ -240,6 +286,7 @@ export const ContactForm: Story = {
 
 export const AddressForm: Story = {
 	args: {
+		onsubmit: handleSubmit,
 		children: AddressContent(),
 		actionsLayout: 'row',
 		actionsSpacing: '0',

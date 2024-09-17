@@ -23,7 +23,8 @@ const separators = {
 }
 
 const Breadcrumbs = ({
-	className,
+	className = '',
+	style,
 	size = 'md',
 	homeLabel = 'Home',
 	separator = 'slash',
@@ -59,7 +60,8 @@ const Breadcrumbs = ({
 		<nav></nav>
 	) : (
 		<nav
-			className={`${defaultStyles} ${sizeClasses} ${className ? className : ''}`}
+			className={`${defaultStyles} ${sizeClasses} ${className}`}
+			style={style}
 			aria-label='breadcrumb'
 			data-testid='breadcrumbs'
 		>

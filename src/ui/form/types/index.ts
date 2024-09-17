@@ -24,7 +24,7 @@ export interface FormProps extends React.HTMLAttributes<HTMLFormElement> {
 	className?: string
 	style?: React.CSSProperties
 	children?: React.ReactNode
-	onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
+	onsubmit?: (formData: { [key: string]: string }) => void
 	onCancel?: () => void
 	showCancel?: boolean
 	actions?: boolean
@@ -38,9 +38,12 @@ export interface FormProps extends React.HTMLAttributes<HTMLFormElement> {
 	cancelBackground?: BackgroundOption
 	cancelColor?: ColorOption
 	submitOutline?: boolean
+	submitOutlineColor?: ColorOption
 	cancelOutline?: boolean
+	cancelOutlineColor?: ColorOption
 	buttonTextcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
 	buttonLayout?: 'default' | 'rounded' | 'pill'
+	buttonIsBold?: boolean
 }
 
 export interface FieldsetProps extends React.FieldsetHTMLAttributes<HTMLFieldSetElement> {
@@ -58,4 +61,53 @@ export interface LegendProps extends React.HTMLProps<HTMLLegendElement> {
 	isBold?: boolean
 	align?: AlignOption
 	legendSize?: SizeOption
+}
+
+export interface RegisterFormProps {
+	action?: string
+	name?: string
+	className?: string
+	style?: React.CSSProperties
+	onsubmit?: (formData: { [key: string]: string }) => void
+	onCancel?: () => void
+	showCancel?: boolean
+	actions?: boolean
+	actionsLayout?: 'row' | 'row-reverse' | 'col' | 'col-reverse'
+	actionsSpacing?: SpacingOption
+	separator?: boolean
+	submitLabel?: string
+	cancelLabel?: string
+	submitBackground?: BackgroundOption
+	submitColor?: ColorOption
+	submitOutlineColor?: ColorOption
+	cancelBackground?: BackgroundOption
+	cancelColor?: ColorOption
+	cancelOutlineColor?: ColorOption
+	buttonTextcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
+	buttonLayout?: 'default' | 'rounded' | 'pill'
+	buttonIsBold?: boolean
+	buttonOutline?: boolean
+	hasBorder?: boolean
+	legendText: string
+	legendisBold?: boolean
+	legendAlign?: AlignOption
+	legendSize?: SizeOption
+	spacing?: '4' | '8'
+	userLabel: string
+	userAutocomplete?: 'username' | 'email' | 'username email'
+	userPlaceholder?: string
+	passwordLabel: string
+	passwordPlaceholder?: string
+	passwordPattern?: string
+	passwordTitle?: string
+	confirmLabel: string
+	confirmPlaceholder?: string
+	confirmTitle?: string
+	inputsLayout?: 'col' | 'row'
+	inputsSize?: 'sm' | 'md' | 'lg' | 'xl'
+	inputsRounded?: 'none' | 'md' | 'lg' | 'full'
+	checkLabel: string
+	checkLabelIsBold?: boolean
+	checkRounded?: 'none' | 'full'
+	checkHint?: React.ReactNode
 }

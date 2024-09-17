@@ -33,7 +33,6 @@ const SearchInput = ({
 	const handleClick = () => {
 		const value = input.current.value
 		onButtonSubmit(value)
-		console.log('click', value)
 	}
 
 	const handleChange = (e: any) => {

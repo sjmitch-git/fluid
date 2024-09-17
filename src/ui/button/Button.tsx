@@ -7,7 +7,7 @@ export type ButtonRef = HTMLButtonElement
 
 const defaultStyles =
 	'button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100'
-const outlineStyles = 'border-solid border-current'
+
 /* const stateStyles =
 	'disabled:opacity-50 disabled:grayscale disabled:text-gray-400 focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:opacity-50 focus:opacity-50 focus-visible:opacity-50 focus-within:opacity-50' */
 
@@ -45,6 +45,18 @@ const colors = {
 	current: 'text-current',
 }
 
+const borderColors = {
+	info: 'border-info',
+	success: 'border-success',
+	warning: 'border-warning',
+	danger: 'border-danger',
+	primary: 'border-primary',
+	secondary: 'border-secondary',
+	dark: 'border-dark',
+	light: 'border-light',
+	current: 'border-current',
+}
+
 const layouts = {
 	default: '',
 	rounded: 'rounded-md',
@@ -56,11 +68,13 @@ const layouts = {
 const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	const {
 		size = 'md',
-		className = 'button font-semibold tracking-widest',
+		className = '',
+		style,
 		background = 'primary',
 		color = 'light',
 		layout = 'default',
 		outline = false,
+		outlineColor = 'current',
 		type = 'button',
 		title,
 		id,
@@ -70,6 +84,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		tabindex,
 		role = 'button',
 		textcase = 'capitalize',
+		isBold = false,
 		children,
 	} = props
 
@@ -77,6 +92,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	const backgroundClasses = backgrounds[background]
 	const colorClasses = colors[color]
 	const layoutClasses = layouts[layout]
+	const outlineStyles = `border-solid ${borderColors[outlineColor]}`
 	let outlineClasses = ''
 
 	if (outline) outlineClasses = `${outlineStyles}`
@@ -84,7 +100,10 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 
 	return (
 		<button
-			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${stateStyles}`}
+			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${stateStyles} ${
+				isBold ? 'font-bold' : 'font-normal'
+			}`}
+			style={style}
 			data-testid='button'
 			type={type}
 			title={title}

@@ -10,7 +10,7 @@ const Form = ({
 	className = '',
 	style,
 	name = 'form',
-	onSubmit,
+	onsubmit,
 	onCancel,
 	showCancel = false,
 	actions = true,
@@ -24,15 +24,36 @@ const Form = ({
 	cancelBackground = 'transparent',
 	cancelColor = 'current',
 	submitOutline = false,
+	submitOutlineColor = 'current',
 	cancelOutline = false,
+	cancelOutlineColor = 'current',
 	buttonTextcase = 'normal-case',
 	buttonLayout = 'default',
+	buttonIsBold = false,
 	separator = false,
 }: FormProps) => {
 	const form = useRef<HTMLFormElement | null>(null)
 	const [valid, setValid] = useState(false)
+	const [formData, setFormData] = useState({})
 
-	const handleInputChange = useCallback(() => {
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+		if (onsubmit) {
+			onsubmit(formData)
+		}
+	}
+
+	const handleInputChange = useCallback((event: Event) => {
+		const target = event.target as HTMLInputElement
+		const { name, value } = target
+		setFormData((prevData) => {
+			const updatedData = {
+				...prevData,
+				[name]: value,
+			}
+			return updatedData
+		})
+
 		if (form.current) {
 			setValid(form.current.checkValidity())
 		}
@@ -60,12 +81,12 @@ const Form = ({
 			name={name}
 			id={name}
 			ref={setFormRef}
-			onSubmit={onSubmit}
+			onSubmit={handleSubmit}
 		>
 			{children}
 			{actions && (
 				<>
-					{separator && <hr className='border-current border-t-2 opacity-70' />}
+					{separator && <hr className='border-neutral border-t-2 opacity-70' />}
 					<div
 						className={`form-actions flex group justify-between flex-${actionsLayout} gap-${actionsSpacing}`}
 					>
@@ -76,8 +97,10 @@ const Form = ({
 								background={cancelBackground}
 								color={cancelColor}
 								outline={cancelOutline}
+								outlineColor={cancelOutlineColor}
 								textcase={buttonTextcase}
 								layout={buttonLayout}
+								isBold={buttonIsBold}
 								onClick={onCancel}
 							>
 								{cancelLabel}
@@ -89,8 +112,10 @@ const Form = ({
 							background={submitBackground}
 							color={submitColor}
 							outline={submitOutline}
+							outlineColor={submitOutlineColor}
 							textcase={buttonTextcase}
 							layout={buttonLayout}
+							isBold={buttonIsBold}
 							disabled={!valid}
 						>
 							{submitLabel}
