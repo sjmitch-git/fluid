@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dialog } from '..'
 import { DialogProps } from '../types'
-import { Form, Tabs } from '@/ui'
-import { LoginForm } from '../../form/stories/Form.stories'
+import { Tabs } from '@/ui'
 import { LoginRegister } from '../../tabs/stories/Tabs.stories'
 
 const meta: Meta = {
@@ -108,12 +107,6 @@ export const ModalDialog: Story = {
 					open={open}
 					onClose={handleClose}
 				>
-					{/* <Form
-						{...LoginForm.args}
-						onCancel={handleClose}
-						onsubmit={handleSubmit}
-						method='dialog'
-					/> */}
 					<Tabs {...LoginRegister.args}>{LoginRegister.args?.children}</Tabs>
 				</Dialog>
 			</>

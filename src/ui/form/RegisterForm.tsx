@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import { Form, Fieldset } from '..'
 import { TextInput, PasswordInput, Checkbox } from '@/ui'
