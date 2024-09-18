@@ -10,5 +10,5 @@ export interface CheckboxProps {
 	hint?: React.ReactNode
 	disabled?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-	checked: boolean
+	checked?: boolean
 }

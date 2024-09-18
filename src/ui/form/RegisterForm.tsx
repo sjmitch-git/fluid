@@ -138,6 +138,7 @@ const RegisterForm = ({
 					name='terms'
 					required
 					hint={checkHint}
+					checked={false}
 				/>
 			</Fieldset>
 		</Form>

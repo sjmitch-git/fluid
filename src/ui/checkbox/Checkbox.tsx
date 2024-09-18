@@ -12,6 +12,7 @@ const Checkbox = ({
 	labelIsBold = false,
 	disabled,
 	hint,
+	checked = false,
 	onChange,
 }: CheckboxProps) => {
 	return (
@@ -35,6 +36,7 @@ const Checkbox = ({
 					required={required}
 					disabled={disabled}
 					onChange={onChange}
+					checked={checked}
 				/>
 			</Label>
 			{hint && <p className={`hint text-sm font-normal mt-[.5em] dark:text-light`}>{hint}</p>}
