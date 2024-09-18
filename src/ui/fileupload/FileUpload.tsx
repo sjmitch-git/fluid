@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import Files from './Files'
 import { FileUploadProps, acceptTypes } from './types'
