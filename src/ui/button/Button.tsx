@@ -55,6 +55,7 @@ const borderColors = {
 	dark: 'border-dark',
 	light: 'border-light',
 	current: 'border-current',
+	accent: 'border-accent',
 }
 
 const layouts = {

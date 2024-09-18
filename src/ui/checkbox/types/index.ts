@@ -9,4 +9,6 @@ export interface CheckboxProps {
 	rounded?: 'none' | 'full'
 	hint?: React.ReactNode
 	disabled?: boolean
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+	checked: boolean
 }

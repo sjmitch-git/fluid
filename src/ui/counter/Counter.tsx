@@ -26,7 +26,7 @@ const Counter = ({
 	layout = 'col',
 	title,
 	hint = false,
-	inputStyles = 'max-w-[3em] border-neutral',
+	inputStyles = 'max-w-[3em] border-neutral border-2',
 	rounded = 'md',
 }: CounterProps) => {
 	const [total, setTotal] = useState(value)
@@ -95,7 +95,7 @@ const Counter = ({
 					ref={input}
 					onChange={handleChange}
 					data-testid='counter-input'
-					className={`me-0 ${inputStyles}`}
+					className={`!me-0 ${inputStyles}`}
 					size={size}
 					title={title}
 					placeholder={min?.toString()}

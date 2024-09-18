@@ -49,7 +49,7 @@ const colors = {
 const positions = {
 	inline: 'relative -top-3',
 	right: 'absolute end-1 top-1',
-	left: 'absolute start-1 top-1',
+	left: 'absolute start-0 top-0',
 }
 
 const Badge = ({

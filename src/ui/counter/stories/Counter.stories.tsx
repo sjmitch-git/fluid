@@ -50,6 +50,6 @@ export const Default: Story = {
 		title: 'Enter a value between 1 and 9',
 		hint: true,
 		className: 'font-semibold',
-		inputStyles: 'max-w-[3em] border-neutral',
+		inputStyles: 'max-w-[3em] border-neutral border-2',
 	},
 }

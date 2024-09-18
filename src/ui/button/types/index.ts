@@ -35,6 +35,7 @@ export interface ButtonProps {
 		| 'primary'
 		| 'secondary'
 		| 'current'
+		| 'accent'
 	id?: string
 	title?: string
 	onClick?: (e: any) => void

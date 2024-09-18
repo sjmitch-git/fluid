@@ -13,37 +13,33 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = (args: FileUploadProps) => {
-	const [value, setValue] = useState('')
-	const [name, setName] = useState('')
-	const [fileURL, setFileURL] = useState('')
-
-	const convertToKB = (size: number) => {
-		return `${(size / 1000).toFixed()} KB`
-	}
+	const [files, setFiles] = useState<File[]>([])
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		if (event.target.files && event.target.files.length > 0) {
-			const file = event.target.files[0]
-			setFileURL(URL.createObjectURL(file))
-			setValue(file.name + ' - ' + convertToKB(file.size))
-			setName(file.name)
-		}
+		const newFiles = event.target.files ? Array.from(event.target.files) : []
+		setFiles(newFiles)
+		console.log('STORY add files', files)
+	}
+
+	const handleSetFiles = (newFiles: File[]) => {
+		console.log('STORY files when 1 deleted', newFiles)
+		setFiles(newFiles)
 	}
 
 	return (
 		<FileUpload
 			{...args}
-			value={value}
-			fileURL={fileURL}
 			onChange={handleChange}
+			setFiles={handleSetFiles}
 		/>
 	)
 }
 
 Default.args = {
-	label: 'Upload a file',
+	label: 'Upload',
 	accept: 'image/*',
-	multiple: false,
+	showMultiple: true,
+	multipleLabel: 'Select Multiple',
 	icon: true,
 	size: 'md',
 }
@@ -51,16 +47,6 @@ Default.args = {
 Default.argTypes = {
 	size: {
 		options: ['sm', 'md', 'lg', 'xl'],
-	},
-	accept: {
-		control: 'select',
-		options: [
-			'*',
-			'audio/*',
-			'image/*',
-			'video/*',
-			'.doc,.docx,.pdf,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-		],
 	},
 	required: {
 		table: {
@@ -77,17 +63,12 @@ Default.argTypes = {
 			disable: true,
 		},
 	},
-	multiple: {
+	setFiles: {
 		table: {
 			disable: true,
 		},
 	},
-	fileURL: {
-		table: {
-			disable: true,
-		},
-	},
-	value: {
+	files: {
 		table: {
 			disable: true,
 		},

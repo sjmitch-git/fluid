@@ -4,9 +4,6 @@ import React from 'react'
 
 import { LabelProps } from './types'
 
-import { Button, Input } from '@/ui'
-import { FaEye } from 'react-icons/fa'
-
 const defaultStyles = 'font-semibold'
 
 const fileClasses =
