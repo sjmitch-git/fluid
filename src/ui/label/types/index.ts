@@ -8,6 +8,7 @@ export interface LabelProps {
 	value?: any
 	required?: boolean
 	children: React.ReactNode
+	onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void
 	type?:
 		| 'text'
 		| 'password'

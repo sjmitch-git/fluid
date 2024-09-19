@@ -61,6 +61,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		title,
 		value,
 		checked,
+		defaultChecked,
 		accept,
 		multiple,
 		placeholder,
@@ -96,7 +97,8 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 				title={title}
 				placeholder={placeholder}
 				defaultValue={value}
-				defaultChecked={checked}
+				checked={checked}
+				defaultChecked={defaultChecked}
 				accept={accept}
 				multiple={multiple}
 				list={list}

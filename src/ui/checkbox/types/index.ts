@@ -11,4 +11,5 @@ export interface CheckboxProps {
 	disabled?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 	checked?: boolean
+	defaultChecked?: boolean
 }

@@ -89,6 +89,7 @@ export interface InputProps {
 	multiple?: boolean
 	value?: number | string
 	checked?: boolean
+	defaultChecked?: boolean
 	onChange?: React.ChangeEventHandler<HTMLInputElement>
 	onInput?: React.ChangeEventHandler<HTMLInputElement>
 	autocorrect?: 'on' | 'off'

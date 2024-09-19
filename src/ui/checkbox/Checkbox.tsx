@@ -3,7 +3,7 @@ import { Input, Label } from '@/ui'
 import { CheckboxProps } from './types'
 
 const Checkbox = ({
-	name = 'password',
+	name = 'checkbox',
 	className = '',
 	label = 'I agree to Terms & Conditions',
 	size = 'md',
@@ -13,6 +13,7 @@ const Checkbox = ({
 	disabled,
 	hint,
 	checked = false,
+	defaultChecked = false,
 	onChange,
 }: CheckboxProps) => {
 	return (
@@ -37,6 +38,7 @@ const Checkbox = ({
 					disabled={disabled}
 					onChange={onChange}
 					checked={checked}
+					defaultChecked={defaultChecked}
 				/>
 			</Label>
 			{hint && <p className={`hint text-sm font-normal mt-[.5em] dark:text-light`}>{hint}</p>}

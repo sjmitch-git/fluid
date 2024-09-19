@@ -103,7 +103,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		<button
 			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${stateStyles} ${
 				isBold ? 'font-bold' : 'font-normal'
-			}`}
+			} active:text-accent`}
 			style={style}
 			data-testid='button'
 			type={type}

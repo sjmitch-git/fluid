@@ -22,7 +22,7 @@ export const Default: Story = (args: FileUploadProps) => {
 	}
 
 	const handleSetFiles = (newFiles: File[]) => {
-		console.log('STORY files when 1 deleted', newFiles)
+		console.log('STORY modified files', newFiles)
 		setFiles(newFiles)
 	}
 
@@ -39,7 +39,7 @@ Default.args = {
 	label: 'Upload',
 	accept: 'image/*',
 	showMultiple: true,
-	multipleLabel: 'Select Multiple',
+	multipleLabel: 'Multiple',
 	icon: true,
 	size: 'md',
 }
