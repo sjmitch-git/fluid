@@ -3,8 +3,6 @@
 import React, { useEffect } from 'react'
 import Prism from 'prismjs'
 
-// require('prismjs/components/prism-jsx')
-
 import { CodeblockProps } from './types'
 
 const Codeblock = ({ language = 'plaintext', children }: CodeblockProps) => {

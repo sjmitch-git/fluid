@@ -32,7 +32,7 @@ export const Default: Story = (args: DialogProps) => {
 		<>
 			<button
 				onClick={() => setOpen(true)}
-				className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
+				className='bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600'
 			>
 				Open Dialog
 			</button>
@@ -96,7 +96,7 @@ export const ModalDialog: Story = (args: DialogProps) => {
 		<>
 			<button
 				onClick={() => setOpen(true)}
-				className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
+				className='bg-blue-800 font-semibold text-white px-4 py-2 rounded hover:bg-blue-600'
 			>
 				Log-in
 			</button>

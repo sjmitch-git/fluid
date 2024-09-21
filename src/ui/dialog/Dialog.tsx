@@ -51,8 +51,10 @@ const Dialog = ({
 		<dialog
 			id='dialog'
 			ref={dialog}
-			className={`dialog backdrop:bg-black backdrop:opacity-60 border-none dark:bg-dark dark:text-light ${
-				modal ? 'shadow-none' : 'shadow-lg'
+			className={`dialog backdrop:bg-black backdrop:opacity-60 border-none ${
+				modal
+					? 'shadow-none dark:bg-dark dark:text-light'
+					: 'shadow-md shadow-dark dark:shadow-light bg-dark text-light dark:bg-light dark:text-dark rounded-md'
 			}`}
 		>
 			<div className='dialog-header p-4'>
@@ -69,7 +71,7 @@ const Dialog = ({
 					onClick={onClose}
 					layout='circle'
 					size={closeSize}
-					className={`${modal ? 'fixed right-3 top-3' : 'absolute right-0 top-0'}  !p-0`}
+					className={`${modal ? 'fixed right-3 top-3' : 'absolute right-1 top-1'}  !p-0`}
 					background='dark'
 					color='light'
 				/>
