@@ -4,7 +4,7 @@ import { Modal } from '..'
 import Data from '@/data/dogs.json'
 const data = Data[0]
 const meta: Meta = {
-	title: 'Fluid UI/Modal',
+	title: 'Fluid UI/Media/Modal',
 	component: Modal,
 	tags: ['autodocs'],
 	argTypes: {

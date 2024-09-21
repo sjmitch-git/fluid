@@ -21,6 +21,16 @@ const sizes = {
 	xl: 'text-xl p-5 border-8',
 }
 
+const shadowColors = 'shadow-gray-500/50'
+
+const shadows = {
+	none: 'shadow-none',
+	sm: 'shadow-sm',
+	md: 'shadow-md',
+	lg: 'shadow-lg',
+	xl: 'shadow-xl',
+}
+
 const backgrounds = {
 	info: 'bg-info',
 	success: 'bg-success',
@@ -76,6 +86,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		layout = 'default',
 		outline = false,
 		outlineColor = 'current',
+		shadow = 'none',
 		type = 'button',
 		title,
 		id,
@@ -93,6 +104,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	const backgroundClasses = backgrounds[background]
 	const colorClasses = colors[color]
 	const layoutClasses = layouts[layout]
+	const shadowClasses = `${shadows[shadow]} ${shadowColors}`
 	const outlineStyles = `border-solid ${borderColors[outlineColor]}`
 	let outlineClasses = ''
 
@@ -101,7 +113,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 
 	return (
 		<button
-			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${stateStyles} ${
+			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${
 				isBold ? 'font-semibold' : 'font-normal'
 			} focus:text-accent`}
 			style={style}

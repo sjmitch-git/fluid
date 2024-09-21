@@ -21,6 +21,8 @@ export const Default: Story = {
 	name: 'Checkbox',
 	args: {
 		label: 'I accept',
+		value: 'terms',
+		name: 'terms',
 		hint: (
 			<>
 				I agree to the{' '}

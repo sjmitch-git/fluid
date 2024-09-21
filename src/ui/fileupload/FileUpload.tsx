@@ -28,7 +28,7 @@ const FileUpload = ({
 	multipleLabel = 'Select Multiple',
 }: FileUploadProps) => {
 	const [files, setLocalFiles] = useState<FileList | null>(null)
-	const [multiple, setMultiple] = useState(true)
+	const [multiple, setMultiple] = useState(false)
 	const [selectedAcceptType, setSelectedAcceptType] = useState<string>(accept)
 
 	const handleAcceptTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

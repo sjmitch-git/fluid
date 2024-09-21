@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Figure } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Figure',
+	title: 'Fluid UI/Media/Figure',
 	component: Figure,
 	argTypes: {
 		className: {

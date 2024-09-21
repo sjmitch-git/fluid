@@ -3,7 +3,7 @@ import { Badge } from '..'
 import { FaStar } from 'react-icons/fa6'
 
 const meta: Meta = {
-	title: 'Fluid UI/Badge',
+	title: 'Fluid UI/Feedback/Badge',
 	component: Badge,
 	argTypes: {
 		position: {
@@ -25,6 +25,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+	name: 'Icon',
 	args: {
 		children: <FaStar />,
 		position: 'inline',
@@ -51,23 +52,7 @@ Default.decorators = [
 	),
 ]
 
-export const WithIcon: Story = {
-	decorators: Default.decorators,
-	argTypes: {
-		layout: {
-			options: ['square', 'circle', 'rounded'],
-		},
-	},
-	args: {
-		...Default.args,
-		children: <FaStar />,
-		layout: 'circle',
-		background: 'warning',
-		color: 'light',
-	},
-}
-
-export const WithEmoji: Story = {
+export const Emoji: Story = {
 	decorators: Default.decorators,
 	argTypes: {
 		layout: {
@@ -95,11 +80,16 @@ export const WithEmoji: Story = {
 	},
 }
 
-export const WithText: Story = {
+export const Text: Story = {
 	decorators: Default.decorators,
 	argTypes: {
 		layout: {
 			options: ['rounded', 'pill'],
+		},
+		children: {
+			table: {
+				disable: false,
+			},
 		},
 	},
 	args: {
@@ -111,7 +101,7 @@ export const WithText: Story = {
 	},
 }
 
-export const WithTextAndIcon: Story = {
+export const TextAndIcon: Story = {
 	decorators: Default.decorators,
 	argTypes: {
 		layout: {

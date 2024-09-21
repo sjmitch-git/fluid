@@ -4,18 +4,49 @@ import { CardProps } from './types'
 
 const defaultStyles = 'rounded border shadow-lg'
 
+const shadowColors = 'shadow-gray-500/50'
+
+const shadows = {
+	none: 'shadow-none',
+	sm: 'shadow-sm',
+	md: 'shadow-md',
+	lg: 'shadow-lg',
+	xl: 'shadow-xl',
+}
+
 const layouts = {
 	col: 'col grid-cols-1',
 	row: 'row grid-cols-4',
 }
 
-const Card = ({ className = defaultStyles, children, layout = 'col' }: CardProps) => {
+const roundeds = {
+	none: '',
+	sm: 'rounded-sm overflow-hidden',
+	md: 'rounded-md overflow-hidden',
+	lg: 'rounded-lg overflow-hidden',
+	xl: 'rounded-xl overflow-hidden',
+}
+
+const Card = ({
+	className = '',
+	style,
+	shadow = 'none',
+	children,
+	layout = 'col',
+	rounded = 'none',
+	outline = true,
+}: CardProps) => {
 	const themeClasses = 'bg-light text-dark dark:bg-dark dark:text-light'
 	const layoutClasses = layouts[layout]
+	const shadowClasses = `${shadows[shadow]} ${shadowColors}`
+	const roundedClasses = roundeds[rounded]
 
 	return (
 		<div
-			className={`card group relative grid ${className} ${themeClasses} ${layoutClasses}`}
+			className={`card group relative grid ${className} ${themeClasses} ${shadowClasses} ${layoutClasses} ${roundedClasses} ${
+				outline ? 'border border-neutral' : ''
+			}`}
+			style={style}
 			data-testid='card'
 		>
 			{children}

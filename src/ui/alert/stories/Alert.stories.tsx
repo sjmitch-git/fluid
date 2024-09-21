@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Alert } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Alert',
+	title: 'Fluid UI/Feedback/Alert',
 	component: Alert,
 	argTypes: {
 		dismissable: {

@@ -31,5 +31,6 @@ export const Default: Story = {
 		label: 'Comments',
 		required: false,
 		layout: 'col',
+		size: 'md',
 	},
 }

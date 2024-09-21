@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@/ui'
 import Data from '@/data/dogs.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Card',
+	title: 'Fluid UI/Media/Card',
 	component: Card,
 	argTypes: {
 		children: {
@@ -15,6 +15,10 @@ const meta: Meta = {
 	},
 	args: {
 		layout: 'col',
+		shadow: 'none',
+		rounded: 'md',
+		outline: true,
+		className: '',
 	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Card>

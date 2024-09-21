@@ -46,4 +46,5 @@ export interface ButtonProps {
 	role?: string
 	textcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
 	isBold?: boolean
+	shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
 }

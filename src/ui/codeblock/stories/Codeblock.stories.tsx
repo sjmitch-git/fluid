@@ -3,7 +3,7 @@ import { Codeblock } from '..'
 import 'prismjs/themes/prism-tomorrow.min.css'
 
 const meta: Meta = {
-	title: 'Fluid UI/Codeblock',
+	title: 'Fluid UI/Misc/Codeblock',
 	component: Codeblock,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Codeblock>

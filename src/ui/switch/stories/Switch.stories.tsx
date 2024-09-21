@@ -39,11 +39,12 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 export const Default: Story = {
 	name: 'Switch',
 	args: {
-		label: 'Switch Label',
-		labelSize: 'base',
 		shape: 'circle',
 		switchColor: 'info',
 		thin: false,
+		label: 'Switch Label',
+		labelSize: 'base',
+		labelIsBold: false,
 		hint: 'Some helpful info for the user',
 		showHint: false,
 		required: false,

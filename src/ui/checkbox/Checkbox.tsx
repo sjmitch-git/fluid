@@ -37,8 +37,8 @@ const Checkbox = ({
 					required={required}
 					disabled={disabled}
 					onChange={onChange}
-					checked={checked}
-					defaultChecked={defaultChecked}
+					//checked={checked}
+					// defaultChecked={defaultChecked}
 				/>
 			</Label>
 			{hint && <p className={`hint text-sm font-normal mt-[.5em] dark:text-light`}>{hint}</p>}

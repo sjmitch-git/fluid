@@ -7,7 +7,7 @@ import { AccordionProps } from '../types'
 import Data from '@/data/dogs.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Accordion',
+	title: 'Fluid UI/Menus/Accordion',
 	component: Accordion,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Accordion>

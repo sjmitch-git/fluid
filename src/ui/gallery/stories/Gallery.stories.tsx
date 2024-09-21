@@ -4,7 +4,7 @@ import { Gallery } from '..'
 import Data from '@/data/dogs.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Gallery',
+	title: 'Fluid UI/Media/Gallery',
 	component: Gallery,
 	tags: ['autodocs'],
 	argTypes: {
@@ -24,6 +24,6 @@ export const Default: Story = {
 		data: Data,
 		aspect: 'landscape',
 		caption: true,
-		className: 'border border-neutral rounded-md p-4',
+		className: '',
 	},
 }

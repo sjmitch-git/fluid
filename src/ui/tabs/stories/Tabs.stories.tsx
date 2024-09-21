@@ -89,7 +89,7 @@ const tech = [
 ]
 
 const meta: Meta<typeof Tabs> = {
-	title: 'Fluid UI/Tabs',
+	title: 'Fluid UI/Menus/Tabs',
 	component: Tabs,
 	tags: ['autodocs'],
 }

@@ -36,6 +36,11 @@ const meta: Meta = {
 				disable: true,
 			},
 		},
+		onKeyUp: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Label>

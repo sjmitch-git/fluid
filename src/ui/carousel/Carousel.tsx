@@ -14,7 +14,7 @@ import {
 
 import { CarouselProps } from './types'
 
-const defaultStyles = 'relative flex justify-center rounded-lg w-auto border border-neutral'
+const defaultStyles = 'relative flex justify-center overflow-hidden w-auto outline outline-neutral'
 
 const iconSizes = {
 	md: 18,
@@ -22,15 +22,32 @@ const iconSizes = {
 	xl: 32,
 }
 
+const outlineWidths = {
+	none: 'outline-0',
+	thin: 'outline-1',
+	medium: 'outline-2',
+	thick: 'outline-4',
+}
+
+const roundedWidths = {
+	none: 'rounded-0',
+	md: 'rounded-md',
+	lg: 'rounded-lg',
+	xl: 'rounded-xl',
+}
+
 const Carousel = ({
 	data,
 	caption = false,
 	autoplay = false,
 	autoplayDuration = 3000,
+	outline = 'medium',
 	gallery = true,
 	className = '',
 	rtl = false,
 	aspect = 'landscape',
+	rounded = 'none',
+	buttonsPosition = 'middle',
 	buttonLayout = 'circle',
 	buttonIcon = 'chevron',
 	buttonSize = 'md',
@@ -39,13 +56,23 @@ const Carousel = ({
 	buttonOutline = true,
 	children,
 }: CarouselProps) => {
-	const iconSize = iconSizes[buttonSize]
 	const [index, setIndex] = useState(0)
 	const [position, setPosition] = useState(0)
 	const [touchPosition, setTouchPosition] = useState<number>(null!)
 	const inner = useRef<HTMLDivElement>(null!)
 	const intervalRef = useRef<number>(null!)
 	const playDirection = useRef<string>('forward')
+
+	const buttonsPositions = {
+		top: 'top-2',
+		middle: 'top-[38%]',
+		bottom: `${caption ? 'bottom-12' : 'bottom-2'}`,
+	}
+
+	const iconSize = iconSizes[buttonSize]
+	const outlineClasses = outlineWidths[outline]
+	const roundedClasses = roundedWidths[rounded]
+	const buttonsPositionClasses = buttonsPositions[buttonsPosition]
 
 	const getInnerWidth = () => {
 		return inner.current.offsetWidth
@@ -102,10 +129,21 @@ const Carousel = ({
 		}
 	})
 
+	const clickNext = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.stopPropagation()
+		setNext()
+	}
+
 	const setNext = () => {
 		if (index === data.length - 1) return
 		setPosition(position - getInnerWidth())
 		setIndex(index + 1)
+	}
+
+	const clickPrevious = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.stopPropagation()
+		e.preventDefault()
+		setPrevious()
 	}
 
 	const setPrevious = () => {
@@ -136,29 +174,10 @@ const Carousel = ({
 	return (
 		<>
 			<div
-				className={`carousel ${defaultStyles} ${className}`}
+				className={`carousel ${defaultStyles} ${outlineClasses} ${roundedClasses} ${className}`}
 				onTouchStart={handleTouchStart}
 				onTouchMove={handleTouchMove}
 			>
-				{!autoplay && (
-					<div className='lg:flex p-4 hidden'>
-						<Button
-							onClick={setPrevious}
-							className='m-auto rtl:rotate-180'
-							disabled={index === 0}
-							layout={buttonLayout}
-							background={buttonBackground}
-							color={buttonColor}
-							outline={buttonOutline}
-						>
-							{buttonIcon === 'arrow' ? (
-								<HiOutlineArrowLeft size={iconSize} />
-							) : (
-								<HiChevronLeft size={iconSize} />
-							)}
-						</Button>
-					</div>
-				)}
 				<div
 					className={`inner max-w-md relative overflow-hidden aspect-${
 						aspect === 'circle' ? 'square' : aspect === 'phone' ? '[9/16]' : aspect
@@ -184,23 +203,43 @@ const Carousel = ({
 					)}
 				</div>
 				{!autoplay && (
-					<div className='lg:flex hidden p-4'>
-						<Button
-							onClick={setNext}
-							className='m-auto rtl:rotate-180'
-							disabled={index === data.length - 1}
-							layout={buttonLayout}
-							background={buttonBackground}
-							color={buttonColor}
-							outline={buttonOutline}
-						>
-							{buttonIcon === 'arrow' ? (
-								<HiOutlineArrowRight size={iconSize} />
-							) : (
-								<HiChevronRight size={iconSize} />
-							)}
-						</Button>
-					</div>
+					<>
+						<div className={`absolute z-10 left-2 ${buttonsPositionClasses}`}>
+							<Button
+								onClick={(e) => clickPrevious(e)}
+								className={`m-auto opacity-30 hover:opacity-100 disabled:hidden`}
+								disabled={index === 0}
+								layout={buttonLayout}
+								background={buttonBackground}
+								color={buttonColor}
+								outline={buttonOutline}
+							>
+								{buttonIcon === 'arrow' ? (
+									<HiOutlineArrowLeft size={iconSize} />
+								) : (
+									<HiChevronLeft size={iconSize} />
+								)}
+							</Button>
+						</div>
+
+						<div className={`absolute z-10 right-2 ${buttonsPositionClasses}`}>
+							<Button
+								onClick={(e) => clickNext(e)}
+								className={`m-auto opacity-30 hover:opacity-100 disabled:hidden`}
+								disabled={index === data.length - 1}
+								layout={buttonLayout}
+								background={buttonBackground}
+								color={buttonColor}
+								outline={buttonOutline}
+							>
+								{buttonIcon === 'arrow' ? (
+									<HiOutlineArrowRight size={iconSize} />
+								) : (
+									<HiChevronRight size={iconSize} />
+								)}
+							</Button>
+						</div>
+					</>
 				)}
 			</div>
 		</>

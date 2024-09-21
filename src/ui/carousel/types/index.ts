@@ -13,10 +13,13 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 	caption?: boolean
 	autoplay?: boolean
 	autoplayDuration?: number
+	outline?: 'none' | 'thin' | 'medium' | 'thick'
+	rounded?: 'none' | 'md' | 'lg' | 'xl'
 	gallery?: boolean
 	rtl?: boolean
 	aspect?: 'landscape' | 'portrait' | 'square' | 'video' | 'circle' | 'phone'
 	buttonLayout?: 'rounded' | 'square' | 'circle'
+	buttonsPosition?: 'top' | 'middle' | 'bottom'
 	buttonIcon?: 'arrow' | 'chevron'
 	buttonSize?: 'md' | 'lg' | 'xl'
 	buttonBackground?: 'dark' | 'light' | 'transparent'

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Ratings } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Ratings',
+	title: 'Fluid UI/Feedback/Ratings',
 	component: Ratings,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Ratings>

@@ -3,6 +3,9 @@ export interface CardProps {
 	style?: React.CSSProperties
 	layout?: 'col' | 'row'
 	children: React.ReactNode
+	shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+	outline?: boolean
 }
 
 export interface CardHeaderProps {

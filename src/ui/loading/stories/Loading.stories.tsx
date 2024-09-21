@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Loading } from '..'
 
 const meta: Meta<typeof Loading> = {
-	title: 'Fluid UI/Loading',
+	title: 'Fluid UI/Feedback/Loading',
 	component: Loading,
 	argTypes: {
 		spinner: {

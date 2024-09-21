@@ -7,12 +7,15 @@ const meta: Meta = {
 	component: Button,
 	args: {
 		layout: 'default',
+		textcase: 'capitalize',
+		isBold: false,
 		background: 'primary',
 		color: 'light',
 		size: 'lg',
-		disabled: false,
 		outline: false,
-		textcase: 'capitalize',
+		outlineColor: 'secondary',
+		shadow: 'none',
+		disabled: false,
 	},
 	argTypes: {
 		disabled: {
@@ -48,11 +51,11 @@ const meta: Meta = {
 				disable: true,
 			},
 		},
-		children: {
+		/* children: {
 			table: {
 				disable: true,
 			},
-		},
+		}, */
 		onClick: {
 			table: {
 				disable: true,

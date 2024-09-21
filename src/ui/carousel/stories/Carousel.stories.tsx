@@ -5,14 +5,27 @@ import { Card, CardHeader, CardBody, CardFooter } from '@/ui'
 import Data from '@/data/dogs.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Carousel',
+	title: 'Fluid UI/Menus/Carousel',
 	component: Carousel,
 	args: {
-		data: Data,
-		caption: true,
 		aspect: 'landscape',
+		outline: 'medium',
+		rounded: 'none',
+		caption: true,
+
+		buttonsPosition: 'middle',
 		buttonLayout: 'circle',
 		buttonIcon: 'chevron',
+		buttonSize: 'md',
+		buttonBackground: 'dark',
+		buttonColor: 'light',
+		buttonOutline: true,
+
+		autoplay: false,
+		autoplayDuration: 3000,
+
+		className: '',
+		data: Data,
 	},
 	argTypes: {
 		children: {
@@ -65,6 +78,8 @@ export const Custom: Story = {
 			<Card
 				key={item.name}
 				className='aspect-[4/3]'
+				outline={false}
+				rounded='none'
 			>
 				<CardBody>
 					<CardHeader title={item.name} />
