@@ -73,5 +73,11 @@ const MyPage = () => {
 	>
 		<p>Another piece of custom content for this accordion item.</p>
 	</AccordionItem>
+	<AccordionItem
+		id='3'
+		title='Custom Item 3'
+	>
+		<p>Yet another piece of custom content for this accordion item.</p>
+	</AccordionItem>
 </Accordion>
 ```
