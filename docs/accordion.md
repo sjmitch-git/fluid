@@ -4,16 +4,18 @@ The `Accordion` component allows users to display collapsible content sections. 
 
 ## Props
 
-| Prop        | Type                                                                                                    | Default     | Description                                               |
-| ----------- | ------------------------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------ |
-| `size`      | `'sm'                                                                                                   | 'md'        | 'lg'`                                                     | `'md'`                                                          | Controls the size of the accordion items.        |
-| `layout`    | `'default'                                                                                              | 'flush'     | 'spaced'`                                                 | `'default'`                                                     | Defines the layout style of the accordion items. |
-| `icon`      | `'symbol'                                                                                               | 'arrow'`    | `'symbol'`                                                | Specifies the type of icon used for the expand/collapse action. |
-| `opened`    | `string`                                                                                                | `''`        | ID of the accordion item to be opened by default.         |
-| `data`      | `Array<{ id: string, name: string, title: string, description?: string, src?: string, link?: string }>` | `[]`        | Array of objects to populate the accordion items.         |
-| `className` | `string`                                                                                                | `''`        | Optional additional class names for custom styling.       |
-| `style`     | `React.CSSProperties`                                                                                   | `undefined` | Inline styles for further customization of the accordion. |
-| `children`  | `React.ReactNode`                                                                                       | `undefined` | Content to be rendered inside the accordion.              |
+### Props
+
+| Prop        | Type                                                                                                    | Default     | Description                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------- |
+| `size`      | `'sm'`, `'md'`, `'lg'`                                                                                  | `'md'`      | Controls the size of the accordion items.                       |
+| `layout`    | `'default'`, `'flush'`, `'spaced'`                                                                      | `'default'` | Defines the layout style of the accordion items.                |
+| `icon`      | `'symbol'`, `'arrow'`                                                                                   | `'symbol'`  | Specifies the type of icon used for the expand/collapse action. |
+| `opened`    | `string`                                                                                                | `''`        | ID of the accordion item to be opened by default.               |
+| `data`      | `Array<{ id: string, name: string, title: string, description?: string, src?: string, link?: string }>` | `[]`        | Array of objects to populate the accordion items.               |
+| `className` | `string`                                                                                                | `''`        | Optional additional class names for custom styling.             |
+| `style`     | `React.CSSProperties`                                                                                   | `undefined` | Inline styles for further customization of the accordion.       |
+| `children`  | `React.ReactNode`                                                                                       | `undefined` | Content to be rendered inside the accordion.                    |
 
 ## Usage
 
