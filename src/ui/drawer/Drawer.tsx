@@ -1,0 +1,85 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { CloseButton } from '@/ui'
+import { DrawerProps } from './types'
+
+const positions = {
+	top: 'top-0 border-b',
+	bottom: 'bottom-0 border-t',
+}
+
+const sidebarClasses =
+	'fixed left-0 right-0 z-100 min-h-min w-full max-h-screen bg-light text-dark dark:bg-dark dark:text-light duration-500 border-neutral'
+
+const Drawer = ({
+	open = false,
+	position = 'bottom',
+	backdrop = false,
+	className = '',
+	style,
+	children,
+	onClose,
+}: DrawerProps) => {
+	const [show, setShow] = useState<boolean>(false)
+
+	useEffect(() => {
+		if (open) {
+			setShow(true)
+			document.body.style.overflow = 'hidden'
+		} else {
+			setShow(false)
+			document.body.style.overflow = ''
+		}
+
+		return () => {
+			setShow(false)
+			document.body.style.overflow = ''
+		}
+	}, [open])
+
+	const positionClasses = positions[position]
+
+	const close = () => {
+		onClose(false)
+	}
+
+	return (
+		<>
+			{backdrop && (
+				<div
+					className={`backdrop bg-dark fixed top-0 right-0 bottom-0 left-0 w-full ${
+						show ? 'block opacity-50' : 'hidden opacity-0'
+					} transition-opacity duration-500`}
+					onClick={close}
+				></div>
+			)}
+			<aside
+				className={`sidebar ${sidebarClasses} ${positionClasses} ${className} ${
+					show
+						? 'translate-y-0'
+						: position === 'bottom'
+						? 'translate-y-full'
+						: '-translate-y-full'
+				}`}
+				style={style}
+			>
+				<header className={`sidebar-header`}>
+					<CloseButton
+						onClick={close}
+						layout='circle'
+						size='md'
+						className={`fixed top-3 right-3 !p-0`}
+						background='dark'
+						color='light'
+					/>
+				</header>
+				<div className={`sidebar-content max-h-full overflow-y-auto p-4 pt-8`}>
+					{children}
+				</div>
+			</aside>
+		</>
+	)
+}
+
+export default Drawer
