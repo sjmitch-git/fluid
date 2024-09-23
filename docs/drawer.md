@@ -54,7 +54,7 @@ Callback function to handle closing the drawer.
 ## Usage
 
 ```tsx
-import { Drawer } from '@/components'
+import { Drawer } from '@/ui'
 
 const MyPage = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)

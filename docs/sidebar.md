@@ -54,7 +54,7 @@ Callback function to handle closing the sidebar.
 ## Usage
 
 ```tsx
-import { Sidebar } from '@/components'
+import { Sidebar } from '@/ui'
 
 const MyPage = () => {
 	const [isOpen, setIsOpen] = useState(false)
