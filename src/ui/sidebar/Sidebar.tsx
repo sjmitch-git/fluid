@@ -1,0 +1,109 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { CloseButton } from '@/ui'
+import { SidebarProps } from './types'
+
+const positions = {
+	left: 'left-0 md:border-r',
+	right: 'right-0 md:border-l',
+}
+
+const sidebarClasses =
+	'fixed top-0 z-100 pb-16 max-w-md min-h-full bg-light text-dark dark:bg-dark dark:text-light duration-500 border-neutral'
+
+const Sidebar = ({
+	open = false,
+	position = 'right',
+	backdrop = false,
+	className = '',
+	style,
+	children,
+	onClose,
+}: SidebarProps) => {
+	const [show, setShow] = useState<boolean>(false)
+	const [touchPosition, setTouchPosition] = useState<number>(null!)
+
+	useEffect(() => {
+		if (open) {
+			setShow(true)
+			document.body.style.overflow = 'hidden'
+		} else {
+			setShow(false)
+			document.body.style.overflow = ''
+		}
+
+		return () => {
+			setShow(false)
+			document.body.style.overflow = ''
+		}
+	}, [open])
+
+	const positionClasses = positions[position]
+
+	const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+		setTouchPosition(e.touches[0].clientX)
+	}
+
+	const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+		if (touchPosition === null) return
+		const diff = touchPosition - e.touches[0].clientX
+
+		if (position === 'right' && diff < -5) {
+			close()
+			setTouchPosition(null!)
+		}
+
+		if (position === 'left' && diff > 5) {
+			close()
+			setTouchPosition(null!)
+		}
+	}
+
+	const close = () => {
+		onClose(false)
+	}
+
+	return (
+		<>
+			{backdrop && (
+				<div
+					className={`backdrop bg-dark fixed top-0 right-0 bottom-0 left-0 w-full ${
+						show ? 'block opacity-50' : 'hidden opacity-0'
+					} transition-opacity`}
+					onClick={close}
+				></div>
+			)}
+			<aside
+				className={`sidebar ${sidebarClasses} ${positionClasses} ${className} ${
+					show
+						? 'translate-x-0'
+						: position === 'right'
+						? 'translate-x-full'
+						: '-translate-x-full'
+				}`}
+				style={style}
+				onTouchStart={handleTouchStart}
+				onTouchMove={handleTouchMove}
+			>
+				<header className={`sidebar-header`}>
+					<CloseButton
+						onClick={close}
+						layout='circle'
+						size='md'
+						className={`fixed top-3 ${
+							position === 'right' ? 'left-3' : 'right-3'
+						}  !p-0`}
+						background='dark'
+						color='light'
+					/>
+				</header>
+				<div className={`sidebar-content max-h-full overflow-y-auto p-4 pt-8`}>
+					{children}
+				</div>
+			</aside>
+		</>
+	)
+}
+
+export default Sidebar

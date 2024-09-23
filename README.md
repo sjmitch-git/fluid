@@ -2,18 +2,18 @@
 
 A Next.js/React UI component library.
 
--   [Fluid UI](#fluid-ui)
-    -   [Overview](#overview)
-    -   [Features](#features)
-    -   [Installation](#installation)
-    -   [Basic Usage](#basic-usage)
-    -   [Components](#components)
-        -   [Buttons](#buttons)
-        -   [Forms](#forms)
-        -   [Menus](#menus)
-        -   [Feedback](#feedback)
-        -   [Media](#media)
-        -   [Misc](#misc)
+- [Fluid UI](#fluid-ui)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [Components](#components)
+    - [Buttons](#buttons)
+    - [Forms](#forms)
+    - [Menus](#menus)
+    - [Feedback](#feedback)
+    - [Media](#media)
+    - [Misc](#misc)
 
 ## Overview
 
@@ -79,6 +79,7 @@ export default App
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/accordion.md'>Accordion</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/breadcrumbs.md'>Breadcrumbs</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/carousel.md'>Carousel</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/sidebar.md'>Sidebar</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/tabs.md'>Tabs</a>
 
 ### Feedback

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { DialogProps } from './types'
 import { CloseButton } from '@/ui'
 
-import { useDisableBack } from '../_hooks/useDisableBack'
+import { useDisableBack } from './hooks/useDisableBack'
 
 const Dialog = ({
 	open = false,
@@ -15,7 +15,7 @@ const Dialog = ({
 	titleBold = false,
 	children,
 }: DialogProps) => {
-	useDisableBack()
+	if (modal) useDisableBack()
 	const dialog = useRef<HTMLDialogElement>(null!)
 	const closeSize = modal ? 'lg' : 'md'
 
