@@ -2,18 +2,18 @@
 
 A Next.js/React UI component library.
 
--   [Fluid UI](#fluid-ui)
-    -   [Overview](#overview)
-    -   [Features](#features)
-    -   [Installation](#installation)
-    -   [Basic Usage](#basic-usage)
-    -   [Components](#components)
-        -   [Buttons](#buttons)
-        -   [Forms](#forms)
-        -   [Menus](#menus)
-        -   [Feedback](#feedback)
-        -   [Media](#media)
-        -   [Misc](#misc)
+- [Fluid UI](#fluid-ui)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [Components](#components)
+    - [Buttons](#buttons)
+    - [Forms](#forms)
+    - [Menus](#menus)
+    - [Feedback](#feedback)
+    - [Media](#media)
+    - [Typography](#typography)
 
 ## Overview
 
@@ -87,8 +87,10 @@ export default App
 
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/alert.md'>Alert</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/badge.md'>Badge</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/dialog.md'>Dialog</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/loading.md'>Loading</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/ratings.md'>Ratings</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/toast.md'>Toast</a>
 
 ### Media
 
@@ -98,7 +100,6 @@ export default App
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/modal.md'>Modal</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/videoplayer.md'>Video Player</a>
 
-### Misc
+### Typography
 
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/codeblock.md'>Codeblock</a>
--   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/dialog.md'>Dialog</a>

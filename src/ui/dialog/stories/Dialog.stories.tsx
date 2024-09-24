@@ -6,7 +6,7 @@ import { Tabs } from '@/ui'
 import { LoginRegister } from '../../tabs/stories/Tabs.stories'
 
 const meta: Meta = {
-	title: 'Fluid UI/Misc/Dialog',
+	title: 'Fluid UI/Feedback/Dialog',
 	component: Dialog,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>

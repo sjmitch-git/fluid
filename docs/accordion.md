@@ -4,8 +4,6 @@ The `Accordion` component allows users to display collapsible content sections. 
 
 ## Props
 
-### Props
-
 | Prop        | Type                                                                                                    | Default     | Description                                                     |
 | ----------- | ------------------------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------- |
 | `size`      | `'sm'`, `'md'`, `'lg'`                                                                                  | `'md'`      | Controls the size of the accordion items.                       |

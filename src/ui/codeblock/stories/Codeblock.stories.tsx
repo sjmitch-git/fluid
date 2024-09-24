@@ -6,7 +6,7 @@ require('prismjs/components/prism-typescript')
 require('prismjs/components/prism-tsx')
 
 const meta: Meta = {
-	title: 'Fluid UI/Misc/Codeblock',
+	title: 'Fluid UI/Typography/Codeblock',
 	component: Codeblock,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Codeblock>

@@ -1,7 +1,5 @@
 import Button from '../Button'
 import { ButtonProps } from '../types'
-import { FaRegWindowClose } from 'react-icons/fa'
-import { FaX } from 'react-icons/fa6'
 import { HiMiniXMark } from 'react-icons/hi2'
 
 const stateClasses = 'hover:scale-100'
@@ -15,7 +13,7 @@ const sizes = {
 
 const CloseButton = ({
 	size = 'sm',
-	className = 'right-5 top-4 !p-0',
+	className = 'right-5 top-4',
 	onClick,
 	disabled = false,
 	color = 'current',
@@ -28,7 +26,7 @@ const CloseButton = ({
 
 	return (
 		<Button
-			className={`fixed ${className} ${stateClasses} ${sizeClasses}`}
+			className={`fixed !p-0 ${className} ${stateClasses} ${sizeClasses}`}
 			onClick={onClick}
 			background={background}
 			color={color}

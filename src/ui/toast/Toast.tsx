@@ -1,0 +1,132 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
+
+import { ToastProps } from './types'
+import { CloseButton } from '@/ui'
+
+const toastClasses = 'toast fixed z-100 min-w-80 py-4 px-6'
+
+const horizontals = {
+	left: 'left-4',
+	center: 'left-1/2 -translate-x-1/2',
+	right: 'right-4',
+}
+
+const verticals = {
+	top: 'top-4',
+	middle: 'top-1/2 -translate-y-1/2',
+	bottom: 'bottom-4',
+}
+
+const backgrounds = {
+	info: 'bg-info',
+	success: 'bg-success',
+	warning: 'bg-warning',
+	danger: 'bg-danger',
+	primary: 'bg-primary',
+	secondary: 'bg-secondary',
+	dark: 'bg-dark',
+	light: 'bg-white',
+}
+
+const colors = {
+	dark: 'text-dark',
+	light: 'text-light',
+}
+
+const roundeds = {
+	none: 'rounded-none',
+	md: 'rounded-md',
+	lg: 'rounded-lg',
+	xl: 'rounded-xl',
+	full: 'rounded-full',
+}
+
+const Toast = ({
+	background = 'info',
+	color = 'light',
+	closeBackground = 'dark',
+	closeColor = 'light',
+	rounded = 'md',
+	open = false,
+	body,
+	horizontal = 'center',
+	vertical = 'top',
+	autohide = true,
+	autohideDuration = 3000,
+	className = '',
+	style,
+	onClose,
+	onClick,
+	closeOnBlur = true,
+}: ToastProps) => {
+	const [show, setShow] = useState<boolean>(false)
+	const toastRef = useRef<HTMLElement>(null)
+
+	useEffect(() => {
+		if (open) {
+			setShow(true)
+			toastRef.current?.focus()
+			if (autohide) {
+				const timer = setTimeout(() => {
+					setShow(false)
+					onClose && onClose()
+				}, autohideDuration)
+				return () => clearTimeout(timer)
+			}
+		} else {
+			setShow(false)
+		}
+
+		return () => {
+			setShow(false)
+		}
+	}, [open, autohide, autohideDuration, onClose])
+
+	const horizontalClasses = horizontals[horizontal]
+	const verticalClasses = verticals[vertical]
+	const backgroundClasses = backgrounds[background]
+	const colorClasses = colors[color]
+	const roundedClasses = roundeds[rounded]
+
+	const animationClasses = `transition-opacity duration-500 ${
+		show ? 'visible opacity-100' : 'invisible opacity-0'
+	}`
+
+	const handleClick = onClick || onClose
+
+	return (
+		<aside
+			className={`${toastClasses} ${className} ${roundedClasses} ${backgroundClasses} ${colorClasses} ${horizontalClasses} ${verticalClasses} ${animationClasses}`}
+			style={style}
+			id='toast'
+			role='alert'
+			tabIndex={-1}
+			ref={toastRef}
+			onClick={handleClick}
+			onBlur={() => {
+				if (!closeOnBlur) return
+				setShow(false)
+				onClose && onClose()
+			}}
+		>
+			<div className='toast-body whitespace-nowrap'>{body}</div>
+			{!autohide && (
+				<CloseButton
+					layout='circle'
+					size='sm'
+					onClick={() => {
+						setShow(false)
+						onClose && onClose()
+					}}
+					background={closeBackground}
+					color={closeColor}
+					className='top-1 right-1'
+				/>
+			)}
+		</aside>
+	)
+}
+
+export default Toast
