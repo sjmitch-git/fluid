@@ -15,7 +15,7 @@ const Dialog = ({
 	titleBold = false,
 	children,
 }: DialogProps) => {
-	if (modal) useDisableBack()
+	useDisableBack(modal)
 	const dialog = useRef<HTMLDialogElement>(null!)
 	const closeSize = modal ? 'lg' : 'md'
 

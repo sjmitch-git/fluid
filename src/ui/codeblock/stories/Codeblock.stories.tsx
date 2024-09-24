@@ -53,7 +53,6 @@ export const Default: Story = {
 }
 
 export const CSSCode: Story = {
-	name: 'CSS Code',
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -149,7 +148,6 @@ logItems<string>(['apple', 'banana', 'cherry']);`,
 }
 
 export const JSXCode: Story = {
-	name: 'JSX Code',
 	argTypes: {
 		...Default.argTypes,
 	},
@@ -177,7 +175,6 @@ export default Counter;`,
 }
 
 export const TSXCode: Story = {
-	name: 'TSX Code',
 	argTypes: {
 		...Default.argTypes,
 	},

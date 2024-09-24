@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 
-export const useDisableBack = () => {
+export const useDisableBack = (usehook: boolean) => {
+	if (!usehook) return
 	useEffect(() => {
 		window.history.pushState(null, document.title, window.location.href)
 

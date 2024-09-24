@@ -105,6 +105,7 @@ const RegisterForm = ({
 					rounded={inputsRounded}
 				/>
 				<PasswordInput
+					name='newpassword'
 					label={passwordLabel}
 					placeholder={passwordPlaceholder}
 					title={passwordTitle}
@@ -122,7 +123,7 @@ const RegisterForm = ({
 					autocomplete='new-password'
 					placeholder={confirmPlaceholder}
 					title={confirmTitle}
-					name='new-password'
+					name='confirmpassword'
 					pattern={newpassword}
 					layout={inputsLayout}
 					size={inputsSize}
