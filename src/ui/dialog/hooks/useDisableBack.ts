@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
 export const useDisableBack = (usehook: boolean) => {
-	if (!usehook) return
 	useEffect(() => {
+		if (!usehook) return
 		window.history.pushState(null, document.title, window.location.href)
 
 		function onBackButtonEvent(e: Event) {
@@ -14,5 +14,5 @@ export const useDisableBack = (usehook: boolean) => {
 		return () => {
 			window.removeEventListener('popstate', onBackButtonEvent)
 		}
-	}, [])
+	}, [usehook])
 }
