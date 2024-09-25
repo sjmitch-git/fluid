@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { SelectProps } from './types'
 
@@ -23,7 +23,11 @@ const Select = ({
 	rounded = 'none',
 	nocaret,
 }: SelectProps) => {
-	const [value, setValue] = useState(defaultValue)
+	const [value, setValue] = useState<string | number>()
+
+	useEffect(() => {
+		setValue(defaultValue)
+	}, [defaultValue])
 
 	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 		const value = event.target.value
@@ -57,7 +61,7 @@ const Select = ({
 			onChange={handleChange}
 			value={value}
 			disabled={disabled}
-			className={`form-select select-dropdown border-2 dark:bg-dark dark:text-light color-scheme:light font-normal dark:[color-scheme:dark] ${className} ${sizeClasses} rounded-${rounded}  ${
+			className={`form-select select-dropdown cursor-pointer border-2 dark:bg-dark dark:text-light color-scheme:light font-normal dark:[color-scheme:dark] ${className} ${sizeClasses} rounded-${rounded}  ${
 				nocaret ? 'bg-none pr-3' : 'bg-right'
 			}`}
 			aria-label='select'

@@ -11,14 +11,14 @@ const layouts = {
 
 const outlines = {
 	none: '',
-	thin: 'p-[2px] gap-[2px]',
-	thick: 'p-1 gap-1',
+	thin: 'border',
+	thick: 'border-2',
 }
 
 const outlineColors = {
-	none: 'bg-transparent',
-	light: 'bg-light',
-	dark: 'bg-dark',
+	none: 'border-transparent',
+	light: 'border-light',
+	dark: 'border-dark',
 }
 
 const ButtonGroup = ({
