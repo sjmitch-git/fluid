@@ -2,18 +2,18 @@
 
 A Next.js/React UI component library.
 
--   [Fluid UI](#fluid-ui)
-    -   [Overview](#overview)
-    -   [Features](#features)
-    -   [Installation](#installation)
-    -   [Basic Usage](#basic-usage)
-    -   [Components](#components)
-        -   [Buttons](#buttons)
-        -   [Forms](#forms)
-        -   [Menus](#menus)
-        -   [Feedback](#feedback)
-        -   [Media](#media)
-        -   [Typography](#typography)
+- [Fluid UI](#fluid-ui)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [Components](#components)
+    - [Buttons](#buttons)
+    - [Forms](#forms)
+    - [Menus](#menus)
+    - [Feedback](#feedback)
+    - [Media](#media)
+    - [Typography](#typography)
 
 ## Overview
 
@@ -80,6 +80,7 @@ export default App
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/breadcrumbs.md'>Breadcrumbs</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/carousel.md'>Carousel</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/drawer.md'>Drawer</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/dropdown.md'>Dropdown</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/pagination.md'>Pagination</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/sidebar.md'>Sidebar</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/tabs.md'>Tabs</a>

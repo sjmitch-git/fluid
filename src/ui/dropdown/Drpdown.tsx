@@ -1,0 +1,137 @@
+'use client'
+
+import Link from 'next/link'
+import { useState, useMemo } from 'react'
+
+import { Button } from '@/ui'
+
+import { HiChevronDown, HiChevronUp } from 'react-icons/hi'
+
+import { DropdownProps, LinksProps } from './types'
+
+const sizes = {
+	md: 'text-md',
+	lg: 'text-lg',
+	xl: 'text-xl',
+}
+
+const Dropdown = ({
+	size = 'md',
+	className = '',
+	style,
+	links,
+	buttonBackground = 'transparent',
+	buttonColor = 'current',
+}: DropdownProps) => {
+	const [show, setShow] = useState('')
+
+	const sizeClasses = useMemo(() => sizes[size], [size])
+	const showrapClasses = 'max-h-96 min-w-[100px]'
+
+	const handleClick = (e: React.MouseEvent<HTMLButtonElement>, label: string) => {
+		e.preventDefault()
+		e.stopPropagation()
+		label === show ? closeNav() : openNav(label)
+	}
+
+	const handleBlur = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault()
+		closeNav()
+	}
+
+	const openNav = (label: string) => {
+		setTimeout(() => {
+			setShow(label)
+		}, 300)
+	}
+
+	const closeNav = () => {
+		setTimeout(() => {
+			setShow('')
+		}, 300)
+	}
+
+	return (
+		<div
+			className={`dropdown inline-block ${className} ${sizeClasses}`}
+			style={style}
+		>
+			<ul className='flex flex-col gap-4 md:flex-row;'>
+				{links.map((link) => (
+					<li
+						key={link.label}
+						className={`flex flex-wrap items-center group whitespace-nowrap ${
+							show === link.label ? 'show' : ''
+						}`}
+					>
+						<Link
+							href={link.href}
+							onClick={closeNav}
+							className='dropdown-link flex flex-row items-center gap-2 hover:!text-current'
+						>
+							{link.label}{' '}
+							{link.links && (
+								<Button
+									className={`menu_btn !p-1`}
+									onClick={(e) => handleClick(e, link.label)}
+									onBlur={(e) => handleBlur(e)}
+									title='Toggle Menu'
+									background={buttonBackground}
+									color={buttonColor}
+									size={size}
+									layout='circle'
+								>
+									{show === link.label ? <HiChevronUp /> : <HiChevronDown />}
+									<span className='sr-only'>Toggle dropdown menu</span>
+								</Button>
+							)}
+						</Link>
+						{link.links && (
+							<div className='relative top-2 w-full'>
+								<div
+									className={`wrap absolute left-0 top-full z-50 overflow-y-auto overflow-x-hidden text-base leading-7 transition-all duration-500 delay-100 ease-in-out ${
+										show ? showrapClasses : 'max-h-0'
+									}`}
+								>
+									<ul className='ms-0 block w-full border bg-dark text-light dark:bg-light dark:text-dark p-4'>
+										{link.links.map((sub) => (
+											<li key={sub.label}>
+												<Link
+													href={sub.href}
+													key={sub.label}
+													className=''
+												>
+													{sub.label}
+												</Link>
+
+												{sub.links && (
+													<ul>
+														{sub.links.map((subsub: LinksProps) => (
+															<li
+																key={subsub.label}
+																className='indent-2'
+															>
+																<Link
+																	href={subsub.href}
+																	className=''
+																>
+																	{subsub.label}
+																</Link>
+															</li>
+														))}
+													</ul>
+												)}
+											</li>
+										))}
+									</ul>
+								</div>
+							</div>
+						)}
+					</li>
+				))}
+			</ul>
+		</div>
+	)
+}
+
+export default Dropdown
