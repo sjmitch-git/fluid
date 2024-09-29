@@ -32,10 +32,10 @@ const typeClasses = (type: string) => {
 		: type === 'file'
 		? 'hidden'
 		: type === 'range'
-		? 'h-[.5em] w-full rounded [&&::-webkit-slider-thumb]:cursor-grab [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:bg-current [&&::-webkit-slider-thumb]:text-current [&&::-webkit-slider-thumb]:h-[1em] [&&::-webkit-slider-thumb]:w-[1em] [&&::-webkit-slider-thumb]:rounded-full'
+		? 'appearance-none h-[.5em] w-full [&&::-webkit-slider-thumb]:cursor-grab [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:h-[1em] [&&::-webkit-slider-thumb]:w-[1em] [&&::-webkit-slider-thumb]:bg-current'
 		: `form-input w-full border-neutral ${darkthemeClasses} read-only:cursor-default read-only:bg-transparent read-only:!border-none`
 }
-
+// [&&::-webkit-slider-thumb]:rounded-full
 const styles = {
 	required: '!bg-[var(--highlight-color)] !text-dark',
 }
@@ -48,6 +48,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		name = 'control-name',
 		id,
 		className = defaultStyles,
+		style,
 		rounded = 'md',
 		required = false,
 		readonly = false,
@@ -81,6 +82,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 				className={`input ${typeClasses(
 					type
 				)} peer ${className} ${sizeClasses} rounded-${rounded} font-normal color-scheme:light dark:[color-scheme:dark] focus:outline-none focus-visible:outline-none focus-visible:border-info disabled:bg-neutral disabled:cursor-default disabled:text-dark disabled:border-transparent invalid:!border-accent`}
+				style={style}
 				type={type}
 				name={name}
 				id={id}

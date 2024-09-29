@@ -76,6 +76,7 @@ export interface InputProps {
 	list?: string
 	pattern?: string
 	className?: string
+	style?: React.CSSProperties
 	disabled?: boolean
 	hint?: boolean
 	hidden?: boolean

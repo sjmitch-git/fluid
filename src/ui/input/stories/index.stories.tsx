@@ -615,7 +615,7 @@ export const Telephone: Story = {
 	},
 }
 
-export const Range: Story = {
+/* export const Range: Story = {
 	argTypes: {
 		...Checkbox.argTypes,
 		autocomplete: {
@@ -634,4 +634,4 @@ export const Range: Story = {
 		size: 'md',
 		name: 'range',
 	},
-}
+} */

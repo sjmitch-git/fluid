@@ -2,18 +2,19 @@
 
 A Next.js/React UI component library.
 
-- [Fluid UI](#fluid-ui)
-  - [Overview](#overview)
-  - [Features](#features)
-  - [Installation](#installation)
-  - [Basic Usage](#basic-usage)
-  - [Components](#components)
-    - [Buttons](#buttons)
-    - [Forms](#forms)
-    - [Menus](#menus)
-    - [Feedback](#feedback)
-    - [Media](#media)
-    - [Typography](#typography)
+-   [Fluid UI](#fluid-ui)
+    -   [Overview](#overview)
+    -   [Features](#features)
+    -   [Installation](#installation)
+    -   [Basic Usage](#basic-usage)
+    -   [Components](#components)
+        -   [Buttons](#buttons)
+        -   [Inputs](#inputs)
+        -   [Forms](#forms)
+        -   [Menus](#menus)
+        -   [Feedback](#feedback)
+        -   [Media](#media)
+        -   [Typography](#typography)
 
 ## Overview
 
@@ -56,23 +57,27 @@ export default App
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/button.md'>Button</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/buttongroup.md'>Button Group</a>
 
-### Forms
+### Inputs
 
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/autocomplete.md'>Autocomplete</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/checkbox.md'>Checkbox</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/counter.md'>Counter</a>
--   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/fieldset.md'>Fieldset</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/fileupload.md'>File Upload</a>
--   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/form.md'>Form</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/input.md'>Input</a>
--   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/label.md'>Label</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/passwordinput.md'>Password Input</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/radiogroup.md'>Radio Group</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/rangeinput.md'>Range Input</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/searchinput.md'>Search Input</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/select.md'>Select</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/switch.md'>Switch</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/textarea.md'>Textarea</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/textinput.md'>Text Input</a>
+
+### Forms
+
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/fieldset.md'>Fieldset</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/form.md'>Form</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/label.md'>Label</a>
 
 ### Menus
 

@@ -523,7 +523,7 @@ export const TelInput: Story = {
 	),
 }
 
-export const RangeInput: Story = (args: LabelProps) => {
+/* export const RangeInput: Story = (args: LabelProps) => {
 	const [value, setValue] = useState(50)
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -563,7 +563,7 @@ RangeInput.argTypes = {
 			disable: true,
 		},
 	},
-}
+} */
 
 const months = [
 	{ value: '01', label: 'January' },
