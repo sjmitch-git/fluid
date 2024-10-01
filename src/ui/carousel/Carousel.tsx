@@ -1,20 +1,18 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 
-import { Button, Card, Gallery } from '@/ui'
+import { twMerge } from 'tailwind-merge'
+
+import { Button, Gallery } from '@/ui'
 
 import {
 	HiChevronRight,
 	HiChevronLeft,
-	HiArrowCircleLeft,
-	HiArrowCircleRight,
 	HiOutlineArrowRight,
 	HiOutlineArrowLeft,
 } from 'react-icons/hi'
 
 import { CarouselProps } from './types'
-
-const defaultStyles = 'relative flex justify-center overflow-hidden w-auto outline outline-neutral'
 
 const iconSizes = {
 	md: 18,
@@ -174,7 +172,10 @@ const Carousel = ({
 	return (
 		<>
 			<div
-				className={`carousel ${defaultStyles} ${outlineClasses} ${roundedClasses} ${className}`}
+				className={twMerge(
+					`carousel group relative flex justify-center overflow-hidden w-auto outline outline-neutral ${outlineClasses} ${roundedClasses}`,
+					className
+				)}
 				onTouchStart={handleTouchStart}
 				onTouchMove={handleTouchMove}
 			>

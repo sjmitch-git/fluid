@@ -1,6 +1,8 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
+
+import { twMerge } from 'tailwind-merge'
 
 import { Input, Label } from '@/ui'
 
@@ -10,7 +12,7 @@ const TextInput = ({
 	type = 'text',
 	name = 'name',
 	id = 'counter',
-	className = 'font-semibold',
+	className = '',
 	value,
 	onInputChange,
 	size = 'md',
@@ -19,7 +21,7 @@ const TextInput = ({
 	title,
 	hint = false,
 	placeholder,
-	inputStyles = 'border-neutral',
+	inputStyles = '',
 	rounded = 'md',
 	required,
 	readonly,
@@ -43,7 +45,7 @@ const TextInput = ({
 			size={size}
 			type={type}
 			required={required}
-			className={`label ${className}`}
+			className={twMerge(`font-semibold`, className)}
 			data-testid={`label-${name}`}
 		>
 			<Input
@@ -54,7 +56,7 @@ const TextInput = ({
 				ref={input}
 				onChange={handleChange}
 				data-testid={`input-${name}`}
-				className={inputStyles}
+				className={twMerge(`border-neutral`, inputStyles)}
 				rounded={rounded}
 				size={size}
 				title={title}

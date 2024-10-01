@@ -6,8 +6,6 @@ export interface MediaProps {
 	preload?: 'auto' | 'metadata' | 'none'
 	formats?: string[]
 	fallback?: string
-	width?: string
-	height?: string
 }
 
 export interface VideoSpecificProps {

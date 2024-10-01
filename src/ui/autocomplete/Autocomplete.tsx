@@ -1,13 +1,13 @@
 import React from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { AutocompleteProps } from './types'
 
 import { Input, Label } from '@/ui'
 
-const defaultStyles = ''
-
 const Autocomplete = ({
-	className = defaultStyles,
+	className = '',
 	size = 'md',
 	data,
 	list,
@@ -33,10 +33,10 @@ const Autocomplete = ({
 				required={required}
 				name={name || list}
 				onChange={onChange}
-				className={`autocomplete group ${className}`}
+				className={twMerge(`autocomplete group`, className)}
 				size={size}
 				autocomplete={autocomplete}
-				data-testid='autocomplete'
+				data-testid={name || list}
 				rounded={rounded}
 			/>
 

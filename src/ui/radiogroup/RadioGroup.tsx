@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { Input, Label, Fieldset } from '@/ui'
 
 import { RadioGroupProps } from './types'
@@ -17,14 +19,13 @@ const layouts = {
 
 const RadioGroup = ({
 	className = '',
-	labelStyles = 'font-normal',
+	labelStyles = '',
 	legend,
 	data,
 	name,
 	getIcon,
 	icons = false,
 	onChange,
-	selected,
 	hideInput,
 	columns = 1,
 	size = 'md',
@@ -38,9 +39,10 @@ const RadioGroup = ({
 
 	const layoutStyles = layouts[columns]
 
-	useEffect(() => {
-		if (selected) setChecked(selected)
-	}, [selected])
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setChecked(event.target.value)
+		if (onChange && event.type === 'change') onChange(event)
+	}
 
 	return (
 		<Fieldset
@@ -51,9 +53,10 @@ const RadioGroup = ({
 			hasBorder={hasBorder}
 		>
 			<div
-				className={`radiogroup grid ${layoutStyles} gap-${spacing} ${className} ${
-					icons ? 'icons' : ''
-				}`}
+				className={twMerge(
+					`radiogroup group grid ${layoutStyles} gap-${spacing} ${icons ? 'icons' : ''}`,
+					className
+				)}
 			>
 				{data.map((item) => {
 					return (
@@ -69,7 +72,7 @@ const RadioGroup = ({
 								name={name}
 								type='radio'
 								value={item.id}
-								onChange={onChange}
+								onChange={handleChange}
 								checked={item.id === checked}
 								className={`${hideInput ? 'opacity-0 w-0 h-0 -ml-1' : ''}`}
 								size={size}

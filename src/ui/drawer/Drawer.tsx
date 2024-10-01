@@ -1,6 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
 import { CloseButton } from '@/ui'
 import { DrawerProps } from './types'
 
@@ -55,13 +58,16 @@ const Drawer = ({
 				></div>
 			)}
 			<aside
-				className={`sidebar ${sidebarClasses} ${positionClasses} ${className} ${
-					show
-						? 'translate-y-0'
-						: position === 'bottom'
-						? 'translate-y-full'
-						: '-translate-y-full'
-				}`}
+				className={twMerge(
+					`sidebar group ${sidebarClasses} ${positionClasses} ${
+						show
+							? 'translate-y-0'
+							: position === 'bottom'
+							? 'translate-y-full'
+							: '-translate-y-full'
+					}`,
+					className
+				)}
 				style={style}
 			>
 				<header className={`sidebar-header`}>

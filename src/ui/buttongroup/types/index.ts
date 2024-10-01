@@ -6,5 +6,5 @@ export interface ButtonGroupProps {
 	layout?: 'horizontal' | 'vertical'
 	rounded?: boolean
 	outline?: 'none' | 'thin' | 'thick'
-	outlineColor?: 'none' | 'light' | 'dark'
+	outlineColor?: 'none' | 'light' | 'dark' | 'grey'
 }

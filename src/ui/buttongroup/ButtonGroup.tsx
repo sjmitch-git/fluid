@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { ButtonGroupProps } from './types'
 
 const defaultStyles = 'buttongroup group inline-flex overflow-hidden'
@@ -11,14 +13,15 @@ const layouts = {
 
 const outlines = {
 	none: '',
-	thin: 'border',
-	thick: 'border-2',
+	thin: 'border-2',
+	thick: 'border-4',
 }
 
 const outlineColors = {
 	none: 'border-transparent',
 	light: 'border-light',
 	dark: 'border-dark',
+	grey: 'border-neutral',
 }
 
 const ButtonGroup = ({
@@ -41,9 +44,12 @@ const ButtonGroup = ({
 
 	return (
 		<div
-			className={`${defaultStyles} ${layoutClasses} ${outlineClasses} ${outlineColorClasses}  ${
-				rounded ? 'rounded-md' : 'rounded-none'
-			} ${className}`}
+			className={twMerge(
+				`buttongroup group inline-flex overflow-hidden ${layoutClasses} ${outlineClasses} ${outlineColorClasses} ${
+					rounded ? 'rounded-md' : 'rounded-none'
+				}`,
+				className
+			)}
 			role='group'
 			aria-label={label}
 			data-testid='buttongroup'

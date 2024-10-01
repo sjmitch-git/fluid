@@ -50,19 +50,19 @@ export const Default: Story = (args: RangeInputProps) => {
 
 Default.args = {
 	label: 'Range',
+	labelIsBold: true,
 	layout: 'col',
 	size: 'md',
 	min: 0,
 	max: 100,
 	step: '1',
 	defaultValue: 50,
-	rangeActive: '#f00',
+	rangeActive: '#ffa500',
 	rangeBackground: '#ccc',
-	thumbnailColor: '#0f0',
+	thumbnailColor: '#ffa500',
 	thumbnailShape: 'circle',
 	rounded: true,
 	title: 'Current value:',
 	hint: true,
 	required: false,
-	className: 'font-semibold',
 }

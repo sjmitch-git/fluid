@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { SearchInput } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Search Input',
+	title: 'Fluid UI/Inputs/Search Input',
 	component: SearchInput,
 	tags: ['autodocs'],
 } satisfies Meta<typeof SearchInput>
@@ -16,11 +16,6 @@ const onButtonSubmit = (value: string) => {
 
 export const Default: Story = {
 	argTypes: {
-		className: {
-			table: {
-				disable: true,
-			},
-		},
 		value: {
 			table: {
 				disable: true,
@@ -51,7 +46,7 @@ export const Default: Story = {
 		icon: true,
 		size: 'md',
 		inputStyles: 'border-neutral',
-		btnShape: 'square',
+		btnShape: 'default',
 		btnBackground: 'transparent',
 		btnColor: 'current',
 		autocomplete: 'on',

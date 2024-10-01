@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { SelectProps } from './types'
 
 const sizes = {
@@ -61,9 +63,12 @@ const Select = ({
 			onChange={handleChange}
 			value={value}
 			disabled={disabled}
-			className={`form-select select-dropdown cursor-pointer border-2 dark:bg-dark dark:text-light color-scheme:light font-normal dark:[color-scheme:dark] ${className} ${sizeClasses} rounded-${rounded}  ${
-				nocaret ? 'bg-none pr-3' : 'bg-right'
-			}`}
+			className={twMerge(
+				`form-select select-dropdown cursor-pointer border-2 dark:bg-dark dark:text-light color-scheme:light font-normal dark:[color-scheme:dark] ${sizeClasses} rounded-${rounded}  ${
+					nocaret ? 'bg-none pr-3' : 'bg-right'
+				}`,
+				className
+			)}
 			aria-label='select'
 		>
 			{placeholder && (

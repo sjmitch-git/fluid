@@ -27,7 +27,7 @@ const months = [
 ]
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Select',
+	title: 'Fluid UI/Inputs/Select',
 	component: Select,
 	tags: ['autodocs'],
 	argTypes: {
@@ -52,7 +52,7 @@ export const Object: Story = {
 		placeholder: 'Select Month',
 		options: months,
 		name: 'months',
-		dropdownSize: 'base',
+		dropdownSize: 'md',
 		className: 'border-neutral',
 		required: true,
 		rounded: 'md',
@@ -64,7 +64,7 @@ export const Numbers: Story = {
 	args: {
 		options: numberOptions,
 		name: 'numbers',
-		dropdownSize: 'base',
+		dropdownSize: 'md',
 		className: 'border-neutral',
 		required: true,
 		defaultValue: 1,

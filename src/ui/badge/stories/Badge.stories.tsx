@@ -30,6 +30,9 @@ export const Default: Story = {
 		children: <FaStar />,
 		position: 'inline',
 		size: 'md',
+		layout: 'circle',
+		background: 'info',
+		color: 'light',
 	},
 }
 
@@ -39,7 +42,7 @@ Default.decorators = [
 			style={{
 				position: 'relative',
 			}}
-			className='text-dark dark:text-light'
+			className='text-dark dark:text-light dark:bg-dark'
 		>
 			<h1
 				style={{

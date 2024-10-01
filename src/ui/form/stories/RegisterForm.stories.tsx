@@ -103,7 +103,7 @@ const meta: Meta<typeof RegisterForm> = {
 		// checkbox
 		checkLabel: 'Terms & Conditions',
 		checkLabelIsBold: true,
-		checkRounded: 'full',
+		checkRounded: 'none',
 		checkHint: (
 			<>
 				Click if you agree to the{' '}

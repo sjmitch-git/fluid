@@ -2,11 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Checkbox',
+	title: 'Fluid UI/Inputs/Checkbox',
 	component: Checkbox,
 	tags: ['autodocs'],
 	argTypes: {
 		name: {
+			table: {
+				disable: true,
+			},
+		},
+		onChange: {
 			table: {
 				disable: true,
 			},
@@ -21,35 +26,11 @@ export const Default: Story = {
 	name: 'Checkbox',
 	args: {
 		label: 'I accept',
-		value: 'terms',
 		name: 'terms',
-		hint: (
-			<>
-				I agree to the{' '}
-				<a
-					href='/terms'
-					rel='noopener noreferrer'
-				>
-					Terms
-				</a>{' '}
-				&amp;
-				<a
-					href='/conditions'
-					rel='noopener noreferrer'
-				>
-					{' '}
-					Conditions
-				</a>
-				. You can read our privacy policy{' '}
-				<a
-					href='/privacy'
-					rel='noopener noreferrer'
-				>
-					here
-				</a>
-				.
-			</>
-		),
+		hint: 'I agree to the terms and conditions',
 		required: false,
+		size: 'md',
+		labelIsBold: true,
+		rounded: 'none',
 	},
 }

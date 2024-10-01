@@ -11,7 +11,7 @@ export interface PaginationProps {
 	layout?: 'horizontal' | 'vertical'
 	rounded?: boolean
 	outline?: 'none' | 'thin' | 'thick'
-	outlineColor?: 'light' | 'dark'
+	outlineColor?: 'light' | 'dark' | 'grey'
 	onChange: (e: any) => void
 	className?: string
 	style?: React.CSSProperties

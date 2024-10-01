@@ -1,6 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
 import Video from './Video'
 import VideoControls from './VideoControls'
 
@@ -26,8 +29,6 @@ const VideoPlayer = ({
 	preload,
 	fallback,
 	formats = ['mp4'],
-	width = '100%',
-	height = 'auto',
 	defaultError = 'Oops! There was an unknown error.',
 }: VideoPlayerProps) => {
 	const [play, setPlay] = useState(false)
@@ -93,9 +94,12 @@ const VideoPlayer = ({
 	return (
 		<div
 			id='player'
-			className={`video-player w-full dark bg-black group ${className} relative ${
-				fullscreen ? 'fullscreen' : ''
-			}`}
+			className={twMerge(
+				`video-player w-full dark bg-black group relative ${
+					fullscreen ? 'fullscreen' : ''
+				}`,
+				className
+			)}
 		>
 			<figure
 				className={`video-figure overflow-hidden flex items-center relative ${aspectRatioClasses}`}
@@ -119,8 +123,6 @@ const VideoPlayer = ({
 					pictureInPicture={pictureInPicture}
 					setLoading={setLoading}
 					setError={setError}
-					width={width}
-					height={height}
 					defaultError={defaultError}
 				/>
 				{loading && (

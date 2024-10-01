@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { AccordionHead, AccordionCard } from '..'
 
 import { AccordionProps } from './types'
-
-const defaultStyles = ''
 
 const sizes = {
 	sm: 'text-sm',
@@ -21,7 +21,7 @@ const layouts = {
 }
 
 const Accordion = ({
-	className = defaultStyles,
+	className = '',
 	style,
 	size = 'md',
 	data,
@@ -41,7 +41,7 @@ const Accordion = ({
 
 	return (
 		<div
-			className={`accordion group ${className} ${sizeClasses}`}
+			className={twMerge(`accordion group ${sizeClasses}`, className)}
 			style={style}
 			data-testid='accordion'
 		>

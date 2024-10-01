@@ -5,6 +5,37 @@ import { TextInput } from '@/ui'
 const meta: Meta = {
 	title: 'Fluid UI/Forms/Fieldset',
 	component: Fieldset,
+	parameters: {
+		docs: {
+			description: {
+				component:
+					'The Fieldset component is used to group related form elements, providing a semantic wrapper for better accessibility and organization. It includes an optional legend to describe the content of the fieldset, configurable through props like legendText, legendAlign, and legendSize. The component also supports optional styles, such as making the legend text bold (isBold), and adjusting spacing between child elements (spacing). Additionally, the disabled prop can be used to disable all the form elements inside the fieldset.',
+			},
+			source: {
+				code: `import { Fieldset } from '@/ui'
+
+const ExampleForm = () => {
+  return (
+    <form>
+      <Fieldset
+        legendText="Contact Details"
+        legendAlign="center"
+        legendSize="lg"
+        hasBorder={true}
+        isBold={true}
+        spacing="4"
+      >
+        {children form elements}
+      </Fieldset>
+    </form>
+  );
+};
+
+export default ExampleForm;
+`,
+			},
+		},
+	},
 	tags: ['autodocs'],
 	argTypes: {
 		children: {
@@ -82,6 +113,7 @@ export const Default: Story = {
 		hasBorder: true,
 		isBold: true,
 		legendAlign: 'center',
+		spacing: '4',
 		children: defaultContent(),
 	},
 }

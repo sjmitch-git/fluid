@@ -1,12 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
 import { CloseButton } from '@/ui'
 import { SidebarProps } from './types'
 
 const positions = {
 	left: 'left-0 md:border-r',
-	right: 'right-0 md:border-l',
+	right: 'right-0',
 }
 
 const sidebarClasses =
@@ -75,13 +78,16 @@ const Sidebar = ({
 				></div>
 			)}
 			<aside
-				className={`sidebar ${sidebarClasses} ${positionClasses} ${className} ${
-					show
-						? 'translate-x-0'
-						: position === 'right'
-						? 'translate-x-full'
-						: '-translate-x-full'
-				}`}
+				className={twMerge(
+					`sidebar ${sidebarClasses} ${positionClasses} ${
+						show
+							? 'translate-x-0'
+							: position === 'right'
+							? 'translate-x-full'
+							: '-translate-x-full'
+					}`,
+					className
+				)}
 				style={style}
 				onTouchStart={handleTouchStart}
 				onTouchMove={handleTouchMove}

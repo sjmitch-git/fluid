@@ -2,6 +2,7 @@ interface LabelProps {
 	layout?: 'col' | 'row' | 'row_reverse'
 	size?: 'md' | 'lg' | 'xl'
 	label: string | React.ReactNode
+	labelIsBold?: boolean,
 	required?: boolean
 }
 

@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import { LabelProps } from './types'
+import { twMerge } from 'tailwind-merge'
 
-const defaultStyles = 'font-semibold'
+import { LabelProps } from './types'
 
 const fileClasses =
 	'bg-dark text-light dark:bg-light dark:text-dark rounded-md p-[1em] flex items-center justify-center whitespace-nowrap !w-auto'
@@ -37,12 +37,13 @@ const widthClasses = (type: string) => {
 }
 
 const Label = ({
-	className = defaultStyles,
+	className = '',
 	style,
 	forId,
 	size = 'md',
 	layout = 'col',
 	label,
+	isBold = true,
 	required,
 	type = 'text',
 	children,
@@ -52,7 +53,12 @@ const Label = ({
 
 	return (
 		<label
-			className={`label group relative cursor-pointer w-full ${className} ${sizeClasses} ${layoutClasses} text-dark dark:text-light  ${type}`}
+			className={twMerge(
+				`label group  cursor-pointer w-full ${sizeClasses} ${layoutClasses} ${
+					isBold ? 'font-semibold' : 'font-nomal'
+				} text-dark dark:text-light ${type}`,
+				className
+			)}
 			data-testid='label'
 			htmlFor={forId}
 			style={style}

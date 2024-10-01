@@ -4,7 +4,7 @@ import { FileUpload } from '..'
 import { FileUploadProps } from '../types'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/File Upload',
+	title: 'Fluid UI/Inputs/File Upload',
 	component: FileUpload,
 	tags: ['autodocs'],
 } satisfies Meta<typeof FileUpload>

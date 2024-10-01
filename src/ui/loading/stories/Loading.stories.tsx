@@ -25,7 +25,7 @@ export const Default: Story = {
 		spinner: 'spinner',
 		caption: 'Loading',
 		size: 'md',
-		color: 'current',
+		color: 'warning',
 		layout: 'col',
 	},
 }

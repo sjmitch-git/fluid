@@ -25,8 +25,6 @@ const Video = ({
 	pictureInPicture = false,
 	setLoading,
 	setError,
-	width = '100%',
-	height = 'auto',
 	defaultError,
 }: VideoProps) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -111,8 +109,8 @@ const Video = ({
 		<>
 			<video
 				poster={poster}
-				width={width}
-				height={height}
+				width='100%'
+				height='auto'
 				controls={controls}
 				loop={loop}
 				ref={setVideoRef}

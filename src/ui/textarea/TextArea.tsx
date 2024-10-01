@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge'
+
 import { TextareaProps } from './types'
 
 import { Label } from '@/ui'
@@ -10,7 +12,7 @@ const sizes = {
 }
 
 const TextArea = ({
-	className = 'font-semibold',
+	className = '',
 	label,
 	layout,
 	required,
@@ -30,7 +32,7 @@ const TextArea = ({
 			layout={layout}
 			size={size}
 			required={required}
-			className={`label ${className}`}
+			className={twMerge(`font-semibold`, className)}
 			data-testid={`label-${name}`}
 		>
 			<textarea

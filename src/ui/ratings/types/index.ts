@@ -1,6 +1,7 @@
 export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string
-	icon?: 'star' | 'smiley' | 'thumb' | 'heart' | 'pound' | 'dollar' | 'euro' | 'yen' | 'check'
+	icon?: 'star' | 'smiley' | 'thumb' | 'heart' | 'check'
+	customIcon?: React.ReactNode
 	rating: number
 	range?: number
 	spacing?: '0' | '1' | '2'

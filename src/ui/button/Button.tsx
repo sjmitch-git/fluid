@@ -1,15 +1,11 @@
 import React from 'react'
 import { forwardRef } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { ButtonProps } from './types'
 
 export type ButtonRef = HTMLButtonElement
-
-const defaultStyles =
-	'button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100'
-
-/* const stateStyles =
-	'disabled:opacity-50 disabled:grayscale disabled:text-gray-400 focus-visible:outline-none hover:scale-110 hover:group-[.buttongroup]:scale-100  hover:disabled:scale-100 hover:group-[.buttongroup]:opacity-50 focus:opacity-50 focus-visible:opacity-50 focus-within:opacity-50' */
 
 const stateStyles = 'disabled:opacity-50 disabled:grayscale disabled:text-gray-400'
 
@@ -113,9 +109,12 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 
 	return (
 		<button
-			className={`${defaultStyles} ${className} ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${
-				isBold ? 'font-semibold' : 'font-normal'
-			} focus:text-accent`}
+			className={twMerge(
+				`button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100 focus:text-accent ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${
+					isBold ? 'font-semibold' : 'font-normal'
+				}`,
+				className
+			)}
 			style={style}
 			data-testid='button'
 			type={type}

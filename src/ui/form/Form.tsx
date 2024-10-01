@@ -2,6 +2,8 @@
 
 import React, { useRef, useState, useCallback } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { Button } from '@/ui'
 
 import { FormProps } from './types'
@@ -76,7 +78,7 @@ const Form = ({
 
 	return (
 		<form
-			className={`form group flex flex-col gap-8 ${className}`}
+			className={twMerge(`form group flex flex-col gap-8`, className)}
 			style={style}
 			name={name}
 			id={name}

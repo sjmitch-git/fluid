@@ -1,16 +1,17 @@
 'use client'
 
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
-
 import { useState } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Input, Button, Label } from '@/ui'
 
 import { PasswordInputProps } from './types'
 
 const PasswordInput = ({
 	name = 'password',
-	className = 'font-semibold',
+	className = '',
 	label = 'Password',
 	size = 'md',
 	rounded = 'md',
@@ -39,7 +40,7 @@ const PasswordInput = ({
 	return (
 		<Label
 			label={label}
-			className={className}
+			className={twMerge(`label-pwd group`, className)}
 			size={size}
 			required={required}
 			layout={layout}

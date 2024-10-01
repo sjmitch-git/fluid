@@ -8,7 +8,7 @@ const meta: Meta = {
 		docs: {
 			description: {
 				component:
-					'YouTube Embed component is used to easily embed YouTube videos in your application. It provides various options for controlling playback behavior, player appearance, and more.',
+					'YouTube Embed component is used to easily embed YouTube videos in your application. It provides various options for controlling playback behaviour, player appearance, etc',
 			},
 		},
 	},
@@ -48,12 +48,37 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	args: {
-		videoId: 'Q4cAzEvMsHE?si=tG4Vcrq37VHs-_Us',
+		videoId: 'Q4cAzEvMsHE',
+		title: 'YouTube video player',
 		playerParams: {
-			controls: 1,
+			controls: 0,
+			autoplay: 0,
+			mute: 0,
+			loop: 0,
 		},
 		allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
 		loading: 'lazy',
 		referrerPolicy: 'no-referrer',
+	},
+}
+
+export const Autoplay: Story = {
+	args: {
+		...Default.args,
+		playerParams: {
+			...Default.args.playerParams,
+			autoplay: 1,
+		},
+		loading: 'eager',
+	},
+}
+
+export const NoControls: Story = {
+	args: {
+		...Default.args,
+		playerParams: {
+			...Default.args.playerParams,
+			controls: 0,
+		},
 	},
 }

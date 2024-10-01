@@ -2,6 +2,8 @@
 
 import React, { useRef } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { Input } from '@/ui'
 import { SwitchProps } from './types'
 
@@ -46,8 +48,8 @@ const Switch = ({
 	const colorClasses = colors[switchColor]
 	const sizeClasses = sizes[labelSize]
 
-	const sliderBeforeClasses = `before:absolute before:h-8 before:w-8 before:bg-white dark:before:bg-dark before:transition-transform before:content-[''] ${
-		thin ? 'before:left-0 before:-top-3 before:bg-inherit' : 'before:left-1 before:bottom-1'
+	const sliderBeforeClasses = `before:absolute before:h-8 before:w-8 before:transition-transform before:content-[''] ${
+		thin ? 'before:left-0 before:-top-3 before:bg-inherit' : 'before:left-1 before:bottom-1 before:bg-white dark:before:bg-dark'
 	}`
 
 	const handleKeyup = (event: any) => {
@@ -62,11 +64,14 @@ const Switch = ({
 	return (
 		<div className='switch-container'>
 			<label
-				className={`switch-label group relative ${className} ${sizeClasses} ${
-					labelIsBold ? 'font-semibold' : 'font-normal'
-				} ${
-					disabled ? 'cursor-default text-neutral' : 'cursor-pointer'
-				} h-8 w-auto flex-row-reverse items-center gap-4 flex row-reverse`}
+				className={twMerge(
+					`switch-label group relative ${sizeClasses} ${
+						labelIsBold ? 'font-semibold' : 'font-normal'
+					} ${
+						disabled ? 'cursor-default text-neutral' : 'cursor-pointer'
+					} h-8 w-auto flex-row-reverse items-center gap-4 flex row-reverse`,
+					className
+				)}
 				style={style}
 				onKeyUp={handleKeyup}
 			>

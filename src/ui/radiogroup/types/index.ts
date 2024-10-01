@@ -2,7 +2,6 @@ export interface RadioGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	data: any[]
 	getIcon?: (key: string) => void
 	legend?: string
-	selected?: string
 	icons?: boolean
 	className?: string
 	onChange?: React.ChangeEventHandler<HTMLInputElement>

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { AlertProps } from './types'
 
 import { CloseButton } from '@/ui'
@@ -58,7 +60,10 @@ const Alert = ({
 
 	return (
 		<blockquote
-			className={`alert group relative ${className} ${sizeClasses} ${statusClasses} ${layoutClasses}`}
+			className={twMerge(
+				`alert group relative ${sizeClasses} ${statusClasses} ${layoutClasses}`,
+				className
+			)}
 			style={style}
 			data-testid='alert'
 			role='alert'

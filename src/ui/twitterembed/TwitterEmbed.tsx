@@ -1,6 +1,9 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
 import { Loading, Alert } from '@/ui'
 import { TwitterEmbedProps } from './types'
 
@@ -33,9 +36,11 @@ export const TwitterEmbed = ({
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false)
 
-	let chrome = `${!header ? 'noheader' : ''} ${!borders ? 'noborders' : ''} ${
-		transparent ? 'transparent' : ''
-	} ${!scrollbars ? 'noscrollbars' : ''}`
+	const chrome = useMemo(() => {
+		return `${!header ? 'noheader' : ''} ${!borders ? 'noborders' : ''} ${
+			transparent ? 'transparent' : ''
+		} ${!scrollbars ? 'noscrollbars' : ''}`
+	}, [header, borders, transparent, scrollbars])
 
 	const errorMessage = 'Something went wrong. Please try again later!'
 
@@ -79,7 +84,10 @@ export const TwitterEmbed = ({
 
 	return (
 		<div
-			className={`twitter-wrap flex flex-col justify-center w-full max-w-lg ${className}`}
+			className={twMerge(
+				`twitter-wrap flex flex-col justify-center w-full max-w-lg`,
+				className
+			)}
 			style={style}
 		>
 			{loading && (

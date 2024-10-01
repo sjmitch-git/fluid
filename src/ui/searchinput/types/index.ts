@@ -9,7 +9,7 @@ export interface SearchInputProps extends React.HTMLAttributes<HTMLDivElement> {
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	placeholder?: string
 	inputStyles?: string
-	btnShape?: 'square' | 'circle' | 'rounded'
+	btnShape?: 'default' | 'square' | 'circle' | 'rounded'
 	btnBackground?: 'dark' | 'light' | 'primary' | 'secondary' | 'transparent'
 	btnColor?: 'dark' | 'light' | 'current'
 	autocomplete?: 'off' | 'on'

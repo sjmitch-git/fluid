@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge'
+
 import { round } from '@smitch/js-lib'
 import { Badge } from '@/ui'
 
@@ -20,6 +22,7 @@ const Ratings = ({
 	rating,
 	range,
 	icon = 'star',
+	customIcon,
 	spacing = '0',
 	shape = 'circle',
 	size = 'md',
@@ -31,7 +34,7 @@ const Ratings = ({
 	if (!range) range = rating
 	return (
 		<div
-			className={`relative flex gap-${spacing} ${className}`}
+			className={twMerge(`ratings group relative flex gap-${spacing}`, className)}
 			title={`Rating: ${rating} out of ${range}`}
 		>
 			{[...new Array(range)].map((_el, index) => (
@@ -42,20 +45,14 @@ const Ratings = ({
 					color={`${rating <= index ? 'neutral' : color}`}
 					key={index}
 				>
-					{icon === 'smiley' ? (
+					{customIcon ? (
+						customIcon
+					) : icon === 'smiley' ? (
 						<FaFaceSmile />
 					) : icon === 'thumb' ? (
 						<FaThumbsUp />
 					) : icon === 'heart' ? (
 						<FaHeart />
-					) : icon === 'pound' ? (
-						<FaSterlingSign />
-					) : icon === 'dollar' ? (
-						<FaDollarSign />
-					) : icon === 'yen' ? (
-						<FaYenSign />
-					) : icon === 'euro' ? (
-						<FaEuroSign />
 					) : icon === 'check' ? (
 						<FaCheck />
 					) : (

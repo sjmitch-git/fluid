@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 const Bars = React.lazy(() => import('./spinners/Bars'))
 const Clock = React.lazy(() => import('./spinners/Clock'))
 const Dots = React.lazy(() => import('./spinners/Dots'))
@@ -57,7 +59,7 @@ const getSpinnerComponent = (spinner: string) => {
 import { LoadingProps } from './types'
 
 const Loading = ({
-	className,
+	className = '',
 	caption = '',
 	spinner = 'spinner',
 	size = 'md',
@@ -71,7 +73,10 @@ const Loading = ({
 
 	return (
 		<div
-			className={`loading flex justify-center items-center text-dark dark:text-light ${className}`}
+			className={twMerge(
+				`loading flex justify-center items-center text-dark dark:text-light`,
+				className
+			)}
 		>
 			<figure className={`figure flex items-center gap-4 ${colorClasses} ${layoutClasses}`}>
 				<Suspense fallback={<div className='text-center'>...</div>}>
@@ -79,9 +84,7 @@ const Loading = ({
 				</Suspense>
 
 				{caption && (
-					<figcaption
-						className={`figcaption text-center text-dark dark:text-light text-${size}`}
-					>
+					<figcaption className={`figcaption text-center ${colorClasses} text-${size}`}>
 						{caption}
 					</figcaption>
 				)}

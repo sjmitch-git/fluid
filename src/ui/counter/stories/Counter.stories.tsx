@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Counter } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Counter',
+	title: 'Fluid UI/Inputs/Counter',
 	component: Counter,
 	tags: ['autodocs'],
 } satisfies Meta<typeof Counter>
@@ -44,12 +44,13 @@ export const Default: Story = {
 		spacing: '0',
 		onCountChange: onCountChange,
 		label: 'Amount',
+		labelIsBold: true,
 		layout: 'col',
+		rounded: 'md',
 		id: 'pax',
 		size: 'md',
 		title: 'Enter a value between 1 and 9',
 		hint: true,
-		className: 'font-semibold',
 		inputStyles: 'max-w-[3em] border-neutral border-2',
 	},
 }

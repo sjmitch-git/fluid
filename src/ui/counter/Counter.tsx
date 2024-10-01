@@ -2,6 +2,8 @@
 
 import { useState, useRef } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { FaPlus, FaMinus } from 'react-icons/fa6'
 
 import { Input, Button, Label } from '@/ui'
@@ -23,6 +25,7 @@ const Counter = ({
 	size = 'md',
 	spacing = '0',
 	label,
+	labelIsBold = true,
 	layout = 'col',
 	title,
 	hint = false,
@@ -63,11 +66,12 @@ const Counter = ({
 	return (
 		<Label
 			label={label}
+			isBold={labelIsBold}
 			layout={layout}
 			forId={id}
 			size={size}
 			type='number'
-			className={`counter ${className}`}
+			className={twMerge(`counter group`, className)}
 			data-testid='counter'
 		>
 			<div className={`flex items-center gap-${spacing}`}>

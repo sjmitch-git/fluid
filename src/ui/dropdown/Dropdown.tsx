@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { Button } from '@/ui'
 
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi'
@@ -15,6 +17,8 @@ const sizes = {
 	xl: 'text-xl',
 }
 
+const showrapClasses = 'max-h-96 min-w-[100px]'
+
 const Dropdown = ({
 	size = 'md',
 	className = '',
@@ -26,7 +30,6 @@ const Dropdown = ({
 	const [show, setShow] = useState('')
 
 	const sizeClasses = useMemo(() => sizes[size], [size])
-	const showrapClasses = 'max-h-96 min-w-[100px]'
 
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>, label: string) => {
 		e.preventDefault()
@@ -42,18 +45,18 @@ const Dropdown = ({
 	const openNav = (label: string) => {
 		setTimeout(() => {
 			setShow(label)
-		}, 300)
+		}, 0)
 	}
 
 	const closeNav = () => {
 		setTimeout(() => {
 			setShow('')
-		}, 300)
+		}, 0)
 	}
 
 	return (
 		<div
-			className={`dropdown inline-block ${className} ${sizeClasses}`}
+			className={twMerge(`dropdown group inline-block relative ${sizeClasses}`, className)}
 			style={style}
 		>
 			<ul className='flex flex-col gap-4 md:flex-row;'>
@@ -87,9 +90,9 @@ const Dropdown = ({
 							)}
 						</Link>
 						{link.links && (
-							<div className='relative top-2 w-full'>
+							<div className='absolute left-0 -bottom-2 w-full'>
 								<div
-									className={`wrap absolute left-0 top-full z-50 overflow-y-auto overflow-x-hidden text-base leading-7 transition-all duration-500 delay-100 ease-in-out ${
+									className={`wrap absolute left-0 top-full z-50 overflow-y-auto overflow-x-hidden text-base leading-7 transition-all duration-500 delay-500 ease-in-out ${
 										show ? showrapClasses : 'max-h-0'
 									}`}
 								>

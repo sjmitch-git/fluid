@@ -17,6 +17,7 @@ const RangeInput = ({
 	defaultValue = 50,
 	step = '1',
 	label,
+	labelIsBold,
 	size = 'md',
 	layout = 'col',
 	title = 'Current value:',
@@ -60,6 +61,7 @@ const RangeInput = ({
 			label={label}
 			size={size}
 			layout={layout}
+			isBold={labelIsBold}
 			required={required}
 			type='range'
 			className={className}

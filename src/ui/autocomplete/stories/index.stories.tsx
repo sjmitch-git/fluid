@@ -4,7 +4,7 @@ import { Autocomplete } from '..'
 import data from '@/data/countries.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Autocomplete',
+	title: 'Fluid UI/Inputs/Autocomplete',
 	component: Autocomplete,
 	argTypes: {},
 	tags: ['autodocs'],

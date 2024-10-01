@@ -5,6 +5,7 @@ export interface LabelProps {
 	layout?: 'col' | 'row' | 'row_reverse'
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	label: string | React.ReactNode
+	isBold?: boolean
 	value?: any
 	required?: boolean
 	children: React.ReactNode

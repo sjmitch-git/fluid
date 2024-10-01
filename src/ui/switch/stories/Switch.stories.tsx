@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Switch } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Switch',
+	title: 'Fluid UI/Inputs/Switch',
 	component: Switch,
 	tags: ['autodocs'],
 	argTypes: {
@@ -44,10 +44,11 @@ export const Default: Story = {
 		thin: false,
 		label: 'Switch Label',
 		labelSize: 'base',
-		labelIsBold: false,
+		labelIsBold: true,
 		hint: 'Some helpful info for the user',
 		showHint: false,
 		required: false,
 		onChange: handleChange,
+		disabled: false
 	},
 }

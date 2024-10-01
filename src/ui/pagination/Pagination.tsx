@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useMemo } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { roundUp } from '@smitch/js-lib'
 
 import {
@@ -61,7 +63,10 @@ const Pagination = ({
 
 	return (
 		<nav
-			className={`pagination flex flex-col items-center justify-center gap-1 ${className}`}
+			className={twMerge(
+				`pagination group flex flex-col items-center justify-center gap-1 `,
+				className
+			)}
 			style={style}
 			aria-label='pagination'
 		>
@@ -83,7 +88,7 @@ const Pagination = ({
 				>
 					{icons ? (
 						<>
-							<HiChevronDoubleLeft />
+							<HiChevronDoubleLeft className='mx-auto' />
 							<span className='sr-only'>First Page</span>
 						</>
 					) : (
@@ -100,7 +105,7 @@ const Pagination = ({
 				>
 					{icons ? (
 						<>
-							<HiChevronLeft />
+							<HiChevronLeft className='mx-auto' />
 							<span className='sr-only'>Previous Page</span>
 						</>
 					) : (
@@ -110,7 +115,7 @@ const Pagination = ({
 				<Select
 					title='Select Page'
 					dropdownSize={size}
-					className={`${size} border-none text-right w-12`}
+					className={`${size} border-none min-w-12 w-full text-center bg-dark text-light dark:bg-light dark:text-dark`}
 					defaultValue={selectValue}
 					onChange={handleChange}
 					nocaret={true}
@@ -127,7 +132,7 @@ const Pagination = ({
 				>
 					{icons ? (
 						<>
-							<HiChevronRight />
+							<HiChevronRight className='mx-auto' />
 							<span className='sr-only'>Next Page</span>
 						</>
 					) : (
@@ -145,7 +150,7 @@ const Pagination = ({
 				>
 					{icons ? (
 						<>
-							<HiChevronDoubleRight />
+							<HiChevronDoubleRight className='mx-auto' />
 							<span className='sr-only'>Last Page</span>
 						</>
 					) : (
@@ -154,7 +159,7 @@ const Pagination = ({
 				</Button>
 			</ButtonGroup>
 			{feedback && (
-				<div className={`feedback ${sizeClasses}`}>
+				<div className={`feedback mt-1 ${sizeClasses}`}>
 					{feedbackLabel} {selectValue} of {totalPages}
 				</div>
 			)}

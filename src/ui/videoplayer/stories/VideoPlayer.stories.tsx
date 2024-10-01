@@ -34,6 +34,7 @@ export const Default: Story = {
 		loop: false,
 		aspect: 'video',
 		formats: ['mp4'],
+		defaultError: 'Oops! There was an unknown error.',
 	},
 }
 

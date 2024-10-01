@@ -1,13 +1,14 @@
 'use client'
 
 import React, { useState } from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
 import Files from './Files'
 import { FileUploadProps, acceptTypes } from './types'
 import { Label, Input, Select, Checkbox } from '@/ui'
 
 import { FaUpload } from 'react-icons/fa'
-
-const defaultStyles = 'overflow-hidden'
 
 const sizes = {
 	sm: 'text-sm',
@@ -17,7 +18,7 @@ const sizes = {
 }
 
 const FileUpload = ({
-	className = defaultStyles,
+	className = '',
 	size = 'md',
 	accept = '*',
 	label = 'File Upload',
@@ -67,7 +68,7 @@ const FileUpload = ({
 
 	return (
 		<div
-			className={`fileupload group ${className} ${sizeClasses}`}
+			className={twMerge(`fileupload group overflow-hidden ${sizeClasses}`, className)}
 			data-testid='fileupload'
 		>
 			<div className='flex flex-row gap-2 mb-4'>
@@ -104,7 +105,6 @@ const FileUpload = ({
 								label={multipleLabel}
 								name='multiple'
 								size={size}
-								checked={multiple}
 								onChange={handleChange}
 								className='!gap-2 border-neutral'
 								rounded='full'

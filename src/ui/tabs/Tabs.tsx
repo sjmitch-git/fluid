@@ -1,9 +1,10 @@
 'use client'
 
-import TabBar from './TabBar'
-
 import { useCallback, useState, useEffect } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
+import TabBar from './TabBar'
 import { TabsProps, TabProps } from './types'
 
 const defaultTabStyles = 'border border-transparent px-4 py-2 rounded-t w-full'
@@ -77,10 +78,10 @@ const Tabs = ({
 	const sizeClasses = sizes[size]
 
 	return (
-		<div className={`tabs mx-auto w-full ${minimal ? 'minimal' : ''} ${className}`}>
+		<div className={twMerge(`tabs mx-auto w-full ${minimal ? 'minimal' : ''}`, className)}>
 			<TabBar
 				tabs={tabs}
-				tabStyles={`${tabStyles} ${minimal ? minimalTabStyles : tabStyles} ${sizeClasses}`}
+				tabStyles={`${minimal ? minimalTabStyles : tabStyles} ${sizeClasses}`}
 				activeTabStyles={`${minimal ? minimalActiveTabStyles : activeTabStyles} `}
 				activeId={activeId}
 				onClick={handleClick}

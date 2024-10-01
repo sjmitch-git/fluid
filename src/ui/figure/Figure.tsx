@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from 'react'
-import Image from 'next/image'
+
+import { twMerge } from 'tailwind-merge'
+
 import { FigureProps } from './types'
 import { Modal } from '@/ui'
-
-const defaultStyles = 'relative h-auto min-w-full'
 
 const aspects = {
 	landscape: 'aspect-[4/3]',
@@ -30,17 +30,21 @@ const Figure = ({
 
 	return (
 		<>
-			<figure className={`figure group ${defaultStyles} ${className} ${aspectClasses}`}>
-				<Image
+			<figure
+				className={twMerge(
+					`figure group relative h-auto min-w-full ${aspectClasses}`,
+					className
+				)}
+			>
+				<img
 					src={src}
-					fill
-					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					className={`img object-cover cursor-zoom-in ${
+					className={`img object-cover absolute h-full w-full inset-0 text-transparent cursor-zoom-in ${
 						aspect === 'circle' ? 'rounded-full' : ''
 					}`}
 					alt={alt}
 					onClick={() => setOpen(true)}
 				/>
+
 				{caption && (
 					<figcaption className='figcaption line-clamp-2 py-2 text-center absolute bottom-0 w-full bg-gray-700/50 text-light'>
 						{caption}

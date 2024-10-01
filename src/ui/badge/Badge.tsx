@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { BadgeProps } from './types'
+import { twMerge } from 'tailwind-merge'
 
-const defaultStyles = 'badge group inline-block leading-none min-w-[1em]'
+import { BadgeProps } from './types'
 
 const layouts = {
 	square: 'aspect-square p-[.25em]',
@@ -70,7 +70,10 @@ const Badge = ({
 
 	return (
 		<small
-			className={`${defaultStyles} ${className} ${sizeClasses} ${layoutClasses} ${backgroundClasses} ${colorClasses} ${positionClasses}`}
+			className={twMerge(
+				`badge group inline-block leading-none min-w-[1em] ${sizeClasses} ${layoutClasses} ${backgroundClasses} ${colorClasses} ${positionClasses}`,
+				className
+			)}
 			style={style}
 			data-testid='badge'
 		>

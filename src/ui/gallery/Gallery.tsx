@@ -1,23 +1,21 @@
 import React from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
 import { Figure } from '@/ui'
 import { GalleryProps } from './types'
-
-const defaultStyles = 'grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6'
 
 const getCaption = (name: string, caption: boolean): string => {
 	return caption ? name : ''
 }
 
-const Gallery = ({
-	className = 'min-w-full',
-	aspect,
-	data,
-	caption = true,
-	style,
-}: GalleryProps) => {
+const Gallery = ({ className = '', aspect, data, caption = true, style }: GalleryProps) => {
 	return (
 		<div
-			className={`gallery group ${defaultStyles} ${className}`}
+			className={twMerge(
+				`gallery group min-w-full grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6`,
+				className
+			)}
 			style={style}
 		>
 			{data.map((item, index) => (

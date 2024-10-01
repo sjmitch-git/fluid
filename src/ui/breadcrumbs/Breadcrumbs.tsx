@@ -2,12 +2,12 @@
 
 import React from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { BreadcrumbsProps } from './types'
-
-const defaultStyles = 'breadcrumbs group mx-auto w-full text-dark dark:text-light'
 
 const sizes = {
 	sm: 'text-sm',
@@ -60,7 +60,7 @@ const Breadcrumbs = ({
 		<nav></nav>
 	) : (
 		<nav
-			className={`${defaultStyles} ${sizeClasses} ${className}`}
+			className={twMerge(`breadcrumbs group mx-auto w-full text-dark dark:text-light ${sizeClasses}`, className)}
 			style={style}
 			aria-label='breadcrumb'
 			data-testid='breadcrumbs'

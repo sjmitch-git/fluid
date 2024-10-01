@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { ToastProps } from './types'
 import { CloseButton } from '@/ui'
-
-const toastClasses = 'toast fixed z-100 min-w-80 py-4 px-6'
 
 const horizontals = {
 	left: 'left-4',
@@ -98,7 +98,10 @@ const Toast = ({
 
 	return (
 		<aside
-			className={`${toastClasses} ${className} ${roundedClasses} ${backgroundClasses} ${colorClasses} ${horizontalClasses} ${verticalClasses} ${animationClasses}`}
+			className={twMerge(
+				`toast fixed z-100 min-w-80 py-4 px-6 ${className} ${roundedClasses} ${backgroundClasses} ${colorClasses} ${horizontalClasses} ${verticalClasses} ${animationClasses}`,
+				className
+			)}
 			style={style}
 			id='toast'
 			role='alert'

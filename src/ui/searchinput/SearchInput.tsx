@@ -1,8 +1,10 @@
 'use client'
 
-import { FaSearch } from 'react-icons/fa'
-
 import { useState, useRef } from 'react'
+
+import { twMerge } from 'tailwind-merge'
+
+import { FaSearch } from 'react-icons/fa'
 
 import { Input, Button } from '@/ui'
 
@@ -11,14 +13,14 @@ import { SearchInputProps } from './types'
 const SearchInput = ({
 	name = 'search',
 	id = 'search',
-	className = 'font-semibold',
+	className = '',
 	label = 'Search',
 	icon,
 	onButtonSubmit,
 	size = 'md',
 	rounded = 'md',
 	placeholder,
-	inputStyles = 'border-neutral',
+	inputStyles = '',
 	btnShape = 'circle',
 	btnBackground = 'dark',
 	btnColor = 'light',
@@ -42,7 +44,10 @@ const SearchInput = ({
 
 	return (
 		<div
-			className={`search-box flex ${className} gap-${spacing} text-dark dark:text-light`}
+			className={twMerge(
+				`search-box flex font-semi-bold gap-${spacing} text-dark dark:text-light`,
+				className
+			)}
 			data-testid={name}
 		>
 			<Input
@@ -51,7 +56,7 @@ const SearchInput = ({
 				type='search'
 				ref={input}
 				data-testid={`input-${name}`}
-				className={inputStyles}
+				className={twMerge(`border-neutral`, inputStyles)}
 				size={size}
 				placeholder={placeholder}
 				autocomplete={autocomplete}

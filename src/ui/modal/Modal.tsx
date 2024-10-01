@@ -2,6 +2,8 @@
 
 import React, { useRef, useEffect } from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { CloseButton } from '@/ui'
 
 import { useDisableBack } from './hooks/useDisableBack'
@@ -15,7 +17,15 @@ const themes = {
 	dark: 'dark backdrop:bg-black',
 }
 
-const Modal = ({ src, caption, alt, onClick, open, theme = 'dark' }: ModalProps) => {
+const Modal = ({
+	src,
+	caption,
+	alt,
+	onClick,
+	open,
+	theme = 'dark',
+	className = '',
+}: ModalProps) => {
 	useDisableBack()
 	let dialogRef = useRef<HTMLDialogElement>(null)
 	let themeClasses = themes[theme]
@@ -35,7 +45,7 @@ const Modal = ({ src, caption, alt, onClick, open, theme = 'dark' }: ModalProps)
 
 	return (
 		<dialog
-			className={`${defaultStyles} ${themeClasses}`}
+			className={twMerge(`dialog group border-none ${themeClasses}`, className)}
 			ref={dialogRef}
 		>
 			<figure>

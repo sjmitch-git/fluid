@@ -74,6 +74,7 @@ export const Custom: Story = {
 	args: {
 		gallery: false,
 		autoplay: false,
+		buttonsPosition: 'bottom',
 		children: Data.map((item, _index) => (
 			<Card
 				key={item.name}
@@ -97,6 +98,7 @@ export const Custom: Story = {
 export const RTL: Story = {
 	args: {
 		...Custom.args,
+		buttonsPosition: 'bottom',
 		rtl: true,
 	},
 	argTypes: {

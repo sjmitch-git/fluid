@@ -4,7 +4,7 @@ import { PasswordInput } from '..'
 const passwordPattern = '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/PasswordInput',
+	title: 'Fluid UI/Inputs/PasswordInput',
 	component: PasswordInput,
 	tags: ['autodocs'],
 	argTypes: {

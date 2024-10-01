@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextArea } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Textarea',
+	title: 'Fluid UI/Inputs/Textarea',
 	component: TextArea,
 	tags: ['autodocs'],
 	argTypes: {

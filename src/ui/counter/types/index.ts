@@ -7,6 +7,7 @@ export interface CounterProps extends React.HTMLAttributes<HTMLLabelElement> {
 	step?: number
 	className?: string
 	label: string
+	labelIsBold?: boolean
 	layout?: 'col' | 'row'
 	onCountChange: (count: number) => void
 	inputStyles?: string

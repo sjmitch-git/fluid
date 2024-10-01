@@ -2,20 +2,19 @@
 
 import React from 'react'
 
+import { twMerge } from 'tailwind-merge'
+
 import { forwardRef } from 'react'
 
 import { InputProps } from './types'
 
 export type InputRef = HTMLInputElement
 
-const defaultStyles = 'border-gray-400 shadow-sm font-normal'
-
 const sizes = {
 	sm: 'text-base',
 	md: 'text-lg',
 	lg: 'text-xl',
 	xl: 'text-2xl',
-	// inherit: 'text-inherit leading-inherit',
 }
 
 const darkthemeClasses = 'dark:bg-dark dark:text-light'
@@ -35,7 +34,7 @@ const typeClasses = (type: string) => {
 		? 'appearance-none h-[.5em] w-full [&&::-webkit-slider-thumb]:cursor-grab [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:h-[1em] [&&::-webkit-slider-thumb]:w-[1em] [&&::-webkit-slider-thumb]:bg-current'
 		: `form-input w-full border-neutral ${darkthemeClasses} read-only:cursor-default read-only:bg-transparent read-only:!border-none`
 }
-// [&&::-webkit-slider-thumb]:rounded-full
+
 const styles = {
 	required: '!bg-[var(--highlight-color)] !text-dark',
 }
@@ -47,7 +46,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		autocomplete = 'off',
 		name = 'control-name',
 		id,
-		className = defaultStyles,
+		className = '',
 		style,
 		rounded = 'md',
 		required = false,
@@ -79,9 +78,12 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 	return (
 		<>
 			<input
-				className={`input ${typeClasses(
-					type
-				)} peer ${className} ${sizeClasses} rounded-${rounded} font-normal color-scheme:light dark:[color-scheme:dark] focus:outline-none focus-visible:outline-none focus-visible:border-info disabled:bg-neutral disabled:cursor-default disabled:text-dark disabled:border-transparent invalid:!border-accent`}
+				className={twMerge(
+					`input ${typeClasses(
+						type
+					)} peer dark:bg-dark dark:text-light ${sizeClasses} rounded-${rounded} font-normal color-scheme:light dark:[color-scheme:dark] focus:outline-none focus-visible:outline-none focus-visible:border-info disabled:bg-neutral disabled:cursor-default disabled:text-dark disabled:border-transparent invalid:!border-accent`,
+					className
+				)}
 				style={style}
 				type={type}
 				name={name}

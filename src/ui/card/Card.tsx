@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { CardProps } from './types'
+import { twMerge } from 'tailwind-merge'
 
-const defaultStyles = 'rounded border shadow-lg'
+import { CardProps } from './types'
 
 const shadowColors = 'shadow-gray-500/50'
 
@@ -43,9 +43,12 @@ const Card = ({
 
 	return (
 		<div
-			className={`card group relative grid ${className} ${themeClasses} ${shadowClasses} ${layoutClasses} ${roundedClasses} ${
-				outline ? 'border border-neutral' : ''
-			}`}
+			className={twMerge(
+				`card group relative grid ${themeClasses} ${shadowClasses} ${layoutClasses} ${roundedClasses} ${
+					outline ? 'border border-neutral' : ''
+				}`,
+				className
+			)}
 			style={style}
 			data-testid='card'
 		>

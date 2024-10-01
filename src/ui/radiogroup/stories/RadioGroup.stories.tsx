@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RadioGroup } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Forms/Radio Group',
+	title: 'Fluid UI/Inputs/Radio Group',
 	component: RadioGroup,
 	tags: ['autodocs'],
 } satisfies Meta<typeof RadioGroup>
@@ -149,6 +149,10 @@ const getIcon = (key: string) => {
 	}
 }
 
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	console.log('name', event.target.name, 'value', event.target.value)
+}
+
 export const Default: Story = {
 	argTypes: {
 		name: {
@@ -201,6 +205,7 @@ export const Default: Story = {
 		legendBold: true,
 		legendAlign: 'center',
 		spacing: '4',
+		onChange: handleChange,
 	},
 }
 
