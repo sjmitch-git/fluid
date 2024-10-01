@@ -23,7 +23,7 @@ const Blockquote = ({ text, author, footerAlign= 'right', size = 'md', cite, cla
       cite={cite}
       style={style}
     >
-      <p className="mb-2">"{text}"</p>
+      <p className="mb-2">&ldquo;{text}&rdquo;</p>
       {author && (
         <footer className={`text-[.8em] text-${footerAlign} font-semibold text-gray-500 dark:text-gray-400`}>
           — {author}
