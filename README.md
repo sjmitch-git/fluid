@@ -111,3 +111,4 @@ export default App
 ### Typography
 
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/codeblock.md'>Codeblock</a>
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/heading.md'>Heading</a>
