@@ -109,6 +109,6 @@ export default App
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/youtubeembed.md'>YouTube Embed</a>
 
 ### Typography
-
+-   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/blockquote.md'>Blockquote</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/codeblock.md'>Codeblock</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/heading.md'>Heading</a>
