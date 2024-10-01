@@ -51,7 +51,7 @@ export const Default: Story = {
 		videoId: 'Q4cAzEvMsHE',
 		title: 'YouTube video player',
 		playerParams: {
-			controls: 0,
+			controls: 1,
 			autoplay: 0,
 			mute: 0,
 			loop: 0,
@@ -66,7 +66,7 @@ export const Autoplay: Story = {
 	args: {
 		...Default.args,
 		playerParams: {
-			...Default.args.playerParams,
+			controls: 1,
 			autoplay: 1,
 		},
 		loading: 'eager',
@@ -77,7 +77,6 @@ export const NoControls: Story = {
 	args: {
 		...Default.args,
 		playerParams: {
-			...Default.args.playerParams,
 			controls: 0,
 		},
 	},
