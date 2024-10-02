@@ -62,16 +62,18 @@ const Carousel = ({
 	const intervalRef = useRef<number>(null!)
 	const playDirection = useRef<string>('forward')
 
-	const buttonsPositions = {
-		top: 'top-2',
-		middle: 'top-[38%]',
-		bottom: `${caption ? 'bottom-12' : 'bottom-2'}`,
-	}
-
 	const iconSize = useMemo(() => iconSizes[buttonSize], [buttonSize])
 	const outlineClasses = useMemo(() => outlineWidths[outline], [outline])
 	const roundedClasses = useMemo(() => roundedWidths[rounded], [rounded])
-	const buttonsPositionClasses = useMemo(() => buttonsPositions[buttonsPosition], [buttonsPosition])
+	const buttonsPositionClasses = useMemo(() => {
+		const buttonsPositions = {
+			top: 'top-2',
+			middle: 'top-[38%]',
+			bottom: caption ? 'bottom-12' : 'bottom-2',
+		};
+
+		return buttonsPositions[buttonsPosition];
+	}, [buttonsPosition, caption]);
 
 	const getInnerWidth = () => {
 		return inner.current.offsetWidth
