@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -37,7 +37,7 @@ const Select = ({
 		if (onChange) onChange(event)
 	}
 
-	const sizeClasses = sizes[dropdownSize]
+	const sizeClasses = useMemo(() => sizes[dropdownSize], [dropdownSize])
 
 	const renderOptions = () => {
 		return (Array.isArray(options) ? options : []).map((option) => {

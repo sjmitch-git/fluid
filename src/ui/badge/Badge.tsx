@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -62,11 +62,11 @@ const Badge = ({
 	children,
 	size = 'md',
 }: BadgeProps) => {
-	const layoutClasses = layouts[layout]
-	const backgroundClasses = backgrounds[background]
-	const colorClasses = colors[color]
-	const positionClasses = positions[position]
-	const sizeClasses = sizes[size]
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
+	const backgroundClasses = useMemo(() => backgrounds[background], [background])
+	const colorClasses = useMemo(() => colors[color], [color])
+	const positionClasses = useMemo(() => positions[position], [position])
+	const sizeClasses = useMemo(() => sizes[size], [size])
 
 	return (
 		<small

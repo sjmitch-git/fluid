@@ -1,5 +1,6 @@
 'use client'
-import React, { useState, useRef, useEffect } from 'react'
+
+import React, { useState, useRef, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -67,50 +68,33 @@ const Carousel = ({
 		bottom: `${caption ? 'bottom-12' : 'bottom-2'}`,
 	}
 
-	const iconSize = iconSizes[buttonSize]
-	const outlineClasses = outlineWidths[outline]
-	const roundedClasses = roundedWidths[rounded]
-	const buttonsPositionClasses = buttonsPositions[buttonsPosition]
+	const iconSize = useMemo(() => iconSizes[buttonSize], [buttonSize])
+	const outlineClasses = useMemo(() => outlineWidths[outline], [outline])
+	const roundedClasses = useMemo(() => roundedWidths[rounded], [rounded])
+	const buttonsPositionClasses = useMemo(() => buttonsPositions[buttonsPosition], [buttonsPosition])
 
 	const getInnerWidth = () => {
 		return inner.current.offsetWidth
 	}
 
-	let style
+	const style = useMemo(() => {
+		return rtl
+			? { right: `${position}px` }
+			: { left: `${position}px` };
+	}, [rtl, position]);
 
-	if (rtl) {
-		style = {
-			right: position + 'px',
-		}
-	} else {
-		style = {
-			left: position + 'px',
-		}
-	}
+	const heightStyle = useMemo(() => {
+		const heightMap: Record<string, number> = {
+			landscape: 286,
+			portrait: 400,
+			video: 190,
+			phone: 533,
+		};
 
-	let heightStyle
-
-	if (aspect === 'landscape') {
-		heightStyle = {
-			height: 286,
-		}
-	} else if (aspect === 'portrait') {
-		heightStyle = {
-			height: 400,
-		}
-	} else if (aspect === 'video') {
-		heightStyle = {
-			height: 190,
-		}
-	} else if (aspect === 'phone') {
-		heightStyle = {
-			height: 533,
-		}
-	} else {
-		heightStyle = {
-			height: 380,
-		}
-	}
+		return {
+			height: heightMap[aspect] ?? 380,
+		};
+	}, [aspect]);
 
 	useEffect(() => {
 		const startAutoplay = () => {

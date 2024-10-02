@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -28,7 +28,7 @@ const Modal = ({
 }: ModalProps) => {
 	useDisableBack()
 	let dialogRef = useRef<HTMLDialogElement>(null)
-	let themeClasses = themes[theme]
+	const themeClasses = useMemo(() => themes[theme], [theme])
 
 	useEffect(() => {
 		if (dialogRef.current) {

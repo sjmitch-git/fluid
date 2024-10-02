@@ -1,5 +1,7 @@
 'use client'
 
+import {useMemo} from 'react'
+
 import { Tab } from './Tab'
 
 import { Spinner } from '@/ui'
@@ -21,7 +23,8 @@ const TabBar = ({
 	activeTabStyles = '',
 	tabsPosition = 'center',
 }: TabBarProps) => {
-	const positionClasses = tabsPositionStyles[tabsPosition]
+	const positionClasses = useMemo(() => tabsPositionStyles[tabsPosition], [tabsPosition])
+
 	return (
 		<nav className='tabbar'>
 			{tabs ? (

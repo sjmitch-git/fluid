@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -40,7 +40,7 @@ const FileUpload = ({
 		}
 	}
 
-	const sizeClasses = sizes[size]
+	const sizeClasses = useMemo(() => sizes[size], [size])
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setMultiple(event.target.checked)

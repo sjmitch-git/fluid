@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -48,8 +48,8 @@ const Label = ({
 	type = 'text',
 	children,
 }: LabelProps) => {
-	const sizeClasses = sizes[size]
-	const layoutClasses = layouts[layout]
+	const sizeClasses = useMemo(() => sizes[size], [size])
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
 
 	return (
 		<label

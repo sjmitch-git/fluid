@@ -2,13 +2,13 @@ import React from 'react'
 
 import Link from 'next/link'
 
+import { twMerge } from 'tailwind-merge'
+
 import { CardFooterProps } from '../types'
 
-const defaultStyles = 'flex px-2 pt-4 items-center mt-auto'
-
-const CardFooter = ({ className = defaultStyles, link, linkLabel, children }: CardFooterProps) => {
+const CardFooter = ({ className = '', link, linkLabel, children }: CardFooterProps) => {
 	return (
-		<div className={`card-footer ${className}`}>
+		<div className={twMerge(`card-footer flex px-2 pt-4 items-center mt-auto`, className)}>
 			{children}
 			{link && (
 				<Link

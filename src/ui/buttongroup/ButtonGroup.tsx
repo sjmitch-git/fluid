@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
 import { ButtonGroupProps } from './types'
-
-const defaultStyles = 'buttongroup group inline-flex overflow-hidden'
 
 const layouts = {
 	horizontal: 'flex-row',
@@ -25,7 +23,7 @@ const outlineColors = {
 }
 
 const ButtonGroup = ({
-	className,
+	className = '',
 	label = 'Button group',
 	layout = 'horizontal',
 	rounded = true,
@@ -33,14 +31,9 @@ const ButtonGroup = ({
 	outline,
 	outlineColor = 'light',
 }: ButtonGroupProps) => {
-	let layoutClasses = layouts[layout]
-	let outlineClasses = ''
-	let outlineColorClasses = ''
-
-	if (outline) {
-		outlineClasses = outlines[outline]
-		outlineColorClasses = outlineColors[outlineColor]
-	}
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
+	const outlineClasses = useMemo(() => outline ? outlines[outline] : '', [outline])
+	const outlineColorClasses = useMemo(() => outline ? outlineColors[outlineColor] : '', [outline, outlineColor])
 
 	return (
 		<div

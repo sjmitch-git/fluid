@@ -1,3 +1,4 @@
+import {useMemo} from 'react'
 import Button from '../Button'
 import { ButtonProps } from '../types'
 import { HiMiniXMark } from 'react-icons/hi2'
@@ -22,7 +23,7 @@ const CloseButton = ({
 	title = 'Close?',
 	outline,
 }: ButtonProps) => {
-	let sizeClasses = sizes[size]
+	const sizeClasses = useMemo(() => sizes[size], [size])
 
 	return (
 		<Button

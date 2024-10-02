@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -44,7 +44,7 @@ const roundeds = {
 }
 
 const Toast = ({
-	background = 'info',
+	background = 'warning',
 	color = 'light',
 	closeBackground = 'dark',
 	closeColor = 'light',
@@ -84,22 +84,28 @@ const Toast = ({
 		}
 	}, [open, autohide, autohideDuration, onClose])
 
-	const horizontalClasses = horizontals[horizontal]
-	const verticalClasses = verticals[vertical]
-	const backgroundClasses = backgrounds[background]
-	const colorClasses = colors[color]
-	const roundedClasses = roundeds[rounded]
+	const animationClasses = useMemo(() => {
+		return `transition-opacity duration-500 ${
+			show ? 'visible opacity-100' : 'invisible opacity-0'
+		}`;
+	}, [show]);
 
-	const animationClasses = `transition-opacity duration-500 ${
-		show ? 'visible opacity-100' : 'invisible opacity-0'
-	}`
+	const otherClasses = useMemo(() => {
+		const horizontalClasses = horizontals[horizontal];
+		const verticalClasses = verticals[vertical];
+		const backgroundClasses = backgrounds[background];
+		const colorClasses = colors[color];
+		const roundedClasses = roundeds[rounded];
+
+		return `${horizontalClasses} ${verticalClasses} ${backgroundClasses} ${colorClasses} ${roundedClasses}`;
+	}, [horizontal, vertical, background, color, rounded]);
 
 	const handleClick = onClick || onClose
 
 	return (
 		<aside
 			className={twMerge(
-				`toast fixed z-100 min-w-80 py-4 px-6 ${className} ${roundedClasses} ${backgroundClasses} ${colorClasses} ${horizontalClasses} ${verticalClasses} ${animationClasses}`,
+				`toast fixed z-100 min-w-80 py-4 px-6 ${className} ${otherClasses} ${animationClasses}`,
 				className
 			)}
 			style={style}
@@ -125,7 +131,7 @@ const Toast = ({
 					}}
 					background={closeBackground}
 					color={closeColor}
-					className='top-1 right-1'
+					className='absolute top-1 right-1'
 				/>
 			)}
 		</aside>

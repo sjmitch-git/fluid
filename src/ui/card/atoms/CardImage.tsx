@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 
-import Image from 'next/image'
+import { twMerge } from 'tailwind-merge'
 
 import { CardImageProps } from '../types'
-
-const defaultStyles = 'relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto'
 
 const aspects = {
 	landscape: 'aspect-landscape',
@@ -14,20 +12,20 @@ const aspects = {
 }
 
 const CardImage = ({
-	className = defaultStyles,
+	className = '',
 	title,
 	src,
 	aspect = 'landscape',
 }: CardImageProps) => {
-	let aspectClasses = aspects[aspect]
+
+	const aspectClasses = useMemo(() => aspects[aspect], [aspect])
+
 	return (
-		<div className={`card-image peer ${className}`}>
+		<div className={twMerge(`card-image peer relative w-full group-[.row]:max-w-sm group-[.row]:mb-auto`, className)}>
 			<figure className={`card-figure relative ${aspectClasses}`}>
-				<Image
+				<img
 					src={src}
-					fill
-					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					className='img object-cover'
+					className={`img object-cover absolute h-full w-full inset-0 text-transparent`}
 					alt={title}
 				/>
 			</figure>

@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -73,7 +73,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		spellcheck,
 	} = props
 
-	const sizeClasses = sizes[size]
+	const sizeClasses = useMemo(() => sizes[size], [size])
 
 	return (
 		<>

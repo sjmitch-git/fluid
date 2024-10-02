@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -37,7 +37,7 @@ const RadioGroup = ({
 }: RadioGroupProps) => {
 	const [checked, setChecked] = useState('')
 
-	const layoutStyles = layouts[columns]
+	const layoutStyles = useMemo(() => layouts[columns], [columns])
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setChecked(event.target.value)

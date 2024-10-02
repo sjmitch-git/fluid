@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -75,7 +75,7 @@ const Tabs = ({
 
 	const handleClick = (id: string) => setActiveId(id)
 
-	const sizeClasses = sizes[size]
+	const sizeClasses = useMemo(() => sizes[size], [size])
 
 	return (
 		<div className={twMerge(`tabs mx-auto w-full ${minimal ? 'minimal' : ''}`, className)}>

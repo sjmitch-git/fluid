@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -66,10 +66,11 @@ const Loading = ({
 	color = 'current',
 	layout = 'col',
 }: LoadingProps) => {
-	const SpinnerIcon = getSpinnerComponent(spinner)
-	const width = sizeToWidth[size]
-	const colorClasses = colors[color]
-	const layoutClasses = layouts[layout]
+
+	const SpinnerIcon = useMemo(() => getSpinnerComponent(spinner), [spinner])
+	const width = useMemo(() => sizeToWidth[size], [size])
+	const colorClasses = useMemo(() => colors[color], [color])
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
 
 	return (
 		<div

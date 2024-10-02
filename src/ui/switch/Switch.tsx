@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -45,12 +45,16 @@ const Switch = ({
 }: SwitchProps) => {
 	const checkbox = useRef<HTMLInputElement>(null!)
 
-	const colorClasses = colors[switchColor]
-	const sizeClasses = sizes[labelSize]
+	const colorClasses = useMemo(() => colors[switchColor], [switchColor])
+	const sizeClasses = useMemo(() => sizes[labelSize], [labelSize])
 
-	const sliderBeforeClasses = `before:absolute before:h-8 before:w-8 before:transition-transform before:content-[''] ${
-		thin ? 'before:left-0 before:-top-3 before:bg-inherit' : 'before:left-1 before:bottom-1 before:bg-white dark:before:bg-dark'
-	}`
+	const sliderBeforeClasses = useMemo(() => {
+		return `before:absolute before:h-8 before:w-8 before:transition-transform before:content-[''] ${
+			thin
+			? 'before:left-0 before:-top-3 before:bg-inherit'
+			: 'before:left-1 before:bottom-1 before:bg-white dark:before:bg-dark'
+		}`;
+	}, [thin]);
 
 	const handleKeyup = (event: any) => {
 		if (event.key !== 'Enter') return

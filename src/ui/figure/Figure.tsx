@@ -1,5 +1,6 @@
 'use client'
-import React, { useState } from 'react'
+
+import React, { useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -24,9 +25,9 @@ const Figure = ({
 	alt,
 	backdrop = 'dark',
 }: FigureProps) => {
-	let aspectClasses = aspects[aspect]
-
 	const [open, setOpen] = useState(false)
+
+	const aspectClasses = useMemo(() => aspects[aspect], [aspect])
 
 	return (
 		<>

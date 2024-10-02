@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import { Input, Label } from '@/ui'
 import { RangeInputProps } from './types'
@@ -40,7 +40,7 @@ const RangeInput = ({
 		setModifier(100 / max)
 	}, [max])
 
-	const shapeClasses = thumbnailShapes[thumbnailShape]
+	const shapeClasses = useMemo(() => thumbnailShapes[thumbnailShape], [thumbnailShape])
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const newValue = Number(e.target.value)

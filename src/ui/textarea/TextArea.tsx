@@ -1,3 +1,5 @@
+import {useMemo} from 'react'
+
 import { twMerge } from 'tailwind-merge'
 
 import { TextareaProps } from './types'
@@ -25,7 +27,8 @@ const TextArea = ({
 	maxLength,
 	disabled = false,
 }: TextareaProps) => {
-	const sizeClasses = sizes[size]
+	const sizeClasses = useMemo(() => sizes[size], [size])
+
 	return (
 		<Label
 			label={label}

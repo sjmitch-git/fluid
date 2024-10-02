@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -54,7 +54,7 @@ const VideoPlayer = ({
 		}
 	}, [setFullscreen, fullscreen])
 
-	const aspectRatioClasses = aspectRatios[aspect]
+	const aspectRatioClasses = useMemo(() => aspectRatios[aspect], [aspect])
 
 	const handleScrubChange = (time: number) => {
 		setTime(time)

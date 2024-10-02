@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -42,7 +42,7 @@ const Sidebar = ({
 		}
 	}, [open])
 
-	const positionClasses = positions[position]
+	const positionClasses = useMemo(() => positions[position], [position])
 
 	const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
 		setTouchPosition(e.touches[0].clientX)

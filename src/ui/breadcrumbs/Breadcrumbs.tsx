@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -29,8 +29,8 @@ const Breadcrumbs = ({
 	homeLabel = 'Home',
 	separator = 'slash',
 }: BreadcrumbsProps) => {
-	let sizeClasses = sizes[size]
-	let separartorContent = separators[separator]
+	const sizeClasses = useMemo(() => sizes[size], [size])
+	const separartorContent = useMemo(() => separators[separator], [separator])
 
 	const pathname = usePathname()
 	let paths: string[] = []

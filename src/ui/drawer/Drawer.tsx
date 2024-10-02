@@ -41,7 +41,7 @@ const Drawer = ({
 		}
 	}, [open])
 
-	const positionClasses = positions[position]
+	const positionClasses = useMemo(() => positions[position], [position])
 
 	const close = () => {
 		onClose(false)

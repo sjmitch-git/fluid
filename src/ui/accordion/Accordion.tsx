@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -36,8 +36,8 @@ const Accordion = ({
 		if (opened) setOpen(opened)
 	}, [opened])
 
-	const sizeClasses = sizes[size]
-	const layoutClasses = layouts[layout]
+	const sizeClasses = useMemo(() => sizes[size], [size])
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
 
 	return (
 		<div

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -47,16 +47,10 @@ const Alert = ({
 	dismissable = false,
 	onClick,
 }: AlertProps) => {
-	let sizeClasses = sizes[size]
-	let statusClasses
+	const sizeClasses = useMemo(() => sizes[size], [size])
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
 
-	if (layout === 'solid') {
-		statusClasses = `${solidStatuses[status]} text-light`
-	} else {
-		statusClasses = `${statuses[status]} text-dark`
-	}
-
-	let layoutClasses = layouts[layout]
+	const statusClasses = useMemo(() => layout === 'solid' ? `${solidStatuses[status]} text-light` : `${statuses[status]} text-dark`, [layout, status])
 
 	return (
 		<blockquote

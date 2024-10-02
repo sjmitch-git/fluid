@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
 import { CardProps } from './types'
-
-const shadowColors = 'shadow-gray-500/50'
 
 const shadows = {
 	none: 'shadow-none',
@@ -36,17 +34,16 @@ const Card = ({
 	rounded = 'none',
 	outline = true,
 }: CardProps) => {
-	const themeClasses = 'bg-light text-dark dark:bg-dark dark:text-light'
-	const layoutClasses = layouts[layout]
-	const shadowClasses = `${shadows[shadow]} ${shadowColors}`
-	const roundedClasses = roundeds[rounded]
+
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
+	const shadowClasses = useMemo(() => shadow ? `${shadows[shadow]} shadow-gray-500/50` : '', [shadow]);
+	const roundedClasses = useMemo(() => roundeds[rounded], [rounded])
+	const outlineClasses = useMemo(() => outline ? 'border border-neutral' : '', [outline])
 
 	return (
 		<div
 			className={twMerge(
-				`card group relative grid ${themeClasses} ${shadowClasses} ${layoutClasses} ${roundedClasses} ${
-					outline ? 'border border-neutral' : ''
-				}`,
+				`card group relative grid bg-light text-dark dark:bg-dark dark:text-light ${shadowClasses} ${layoutClasses} ${roundedClasses} ${outlineClasses}`,
 				className
 			)}
 			style={style}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import { forwardRef } from 'react'
 
 import { twMerge } from 'tailwind-merge'
@@ -95,17 +95,13 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		isBold = false,
 		children,
 	} = props
-
-	const sizeClasses = sizes[size]
-	const backgroundClasses = backgrounds[background]
-	const colorClasses = colors[color]
-	const layoutClasses = layouts[layout]
-	const shadowClasses = `${shadows[shadow]} ${shadowColors}`
-	const outlineStyles = `border-solid ${borderColors[outlineColor]}`
-	let outlineClasses = ''
-
-	if (outline) outlineClasses = `${outlineStyles}`
-	else outlineClasses = 'border-none'
+	const sizeClasses = useMemo(() => sizes[size], [size])
+	const backgroundClasses = useMemo(() => backgrounds[background], [background])
+	const colorClasses = useMemo(() => colors[color], [color])
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
+	const shadowClasses = useMemo(() => `${shadows[shadow]} shadow-gray-500/50`, [shadow])
+	const outlineStyles = useMemo(() => `border-solid ${borderColors[outlineColor]}`, [outlineColor])
+	const outlineClasses = useMemo(() => outline ? outlineStyles : 'border-none', [outline, outlineStyles])
 
 	return (
 		<button

@@ -1,3 +1,5 @@
+import {useMemo} from 'react'
+
 import { LegendProps } from './types'
 
 const sizes = {
@@ -20,8 +22,8 @@ const Legend = ({
 	align = 'center',
 	legendSize = 'md',
 }: LegendProps) => {
-	const sizeClasses = sizes[legendSize]
-	const alignment = alignments[align]
+	const sizeClasses = useMemo(() => sizes[legendSize], [legendSize])
+	const alignment = useMemo(() => alignments[align], [align])
 
 	return (
 		<legend
