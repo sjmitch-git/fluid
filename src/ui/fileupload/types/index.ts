@@ -39,7 +39,7 @@ export interface FileUploadProps {
 	label?: string
 	multipleLabel?: string
 	className?: string
-	size?: 'sm' | 'md' | 'lg' | 'xl'
+	size?: 'md' | 'lg' | 'xl'
 	accept?: string
 	showMultiple?: boolean
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void

@@ -46,7 +46,7 @@ Default.args = {
 
 Default.argTypes = {
 	size: {
-		options: ['sm', 'md', 'lg', 'xl'],
+		options: ['md', 'lg', 'xl'],
 	},
 	required: {
 		table: {
