@@ -1,21 +1,20 @@
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
 import { BadgeProps } from './types'
 
 const layouts = {
-	square: 'aspect-square p-[.25em]',
-	circle: 'rounded-full aspect-square p-[.25em]',
-	rounded: 'rounded-md p-[.25em]',
-	pill: 'rounded-full p-[.5em]',
+	square: 'aspect-square p-[.15em]',
+	circle: 'rounded-full aspect-square p-[.15em]',
+	rounded: 'rounded-md px-[.25em] py-[.15em]',
+	pill: 'rounded-full p-[.25em]',
 }
 
 const sizes = {
 	sm: 'text-sm',
 	md: 'text-base',
 	lg: 'text-lg',
-	xl: 'text-2xl',
 }
 
 const backgrounds = {
@@ -49,7 +48,7 @@ const colors = {
 const positions = {
 	inline: 'relative -top-3',
 	right: 'absolute end-1 top-1',
-	left: 'absolute start-0 top-0',
+	left: 'absolute -start-1 -top-2',
 }
 
 const Badge = ({
@@ -60,7 +59,7 @@ const Badge = ({
 	color = 'light',
 	position = 'inline',
 	children,
-	size = 'md',
+	size = 'sm',
 }: BadgeProps) => {
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
 	const backgroundClasses = useMemo(() => backgrounds[background], [background])
@@ -77,7 +76,7 @@ const Badge = ({
 			style={style}
 			data-testid='badge'
 		>
-			<span className='flex gap-2'>{children}</span>
+			<span className='flex items-center gap-1'>{children}</span>
 		</small>
 	)
 }

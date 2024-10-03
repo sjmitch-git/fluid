@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Badge } from '..'
+import { Heading } from '@/ui'
 import { FaStar } from 'react-icons/fa6'
 
 const meta: Meta = {
@@ -10,7 +11,7 @@ const meta: Meta = {
 			options: ['inline', 'right'],
 		},
 		size: {
-			options: ['sm', 'md', 'lg', 'xl'],
+			options: ['sm', 'md', 'lg'],
 		},
 		children: {
 			table: {
@@ -29,7 +30,7 @@ export const Default: Story = {
 	args: {
 		children: <FaStar />,
 		position: 'inline',
-		size: 'md',
+		size: 'sm',
 		layout: 'circle',
 		background: 'info',
 		color: 'light',
@@ -44,13 +45,9 @@ Default.decorators = [
 			}}
 			className='text-dark dark:text-light dark:bg-dark'
 		>
-			<h1
-				style={{
-					fontSize: '3rem',
-				}}
-			>
+			<Heading level={3}>
 				Latest Post <Story />
-			</h1>
+			</Heading>
 		</div>
 	),
 ]

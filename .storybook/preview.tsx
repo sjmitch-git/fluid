@@ -1,6 +1,7 @@
 import React from 'react'
 import { Decorator } from '@storybook/react'
 import type { Preview } from '@storybook/react'
+import { themes } from '@storybook/theming'
 
 import '../src/styles/index.css'
 
@@ -43,6 +44,9 @@ const preview: Preview = {
 		},
 	},
 	parameters: {
+		docs: {
+			theme: themes.dark,
+		},
 		actions: { argTypesRegex: '^on[A-Z].*' },
 		viewport: {
 			defaultViewport: 'mobile1',
