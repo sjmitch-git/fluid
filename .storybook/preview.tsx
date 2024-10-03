@@ -39,13 +39,13 @@ const preview: Preview = {
 	],
 	globalTypes: {
 		darkMode: {
-			defaultValue: false,
+			defaultValue: true,
 		},
 	},
 	parameters: {
 		actions: { argTypesRegex: '^on[A-Z].*' },
 		viewport: {
-			defaultViewport: 'mobile2',
+			defaultViewport: 'mobile1',
 			defaultOrientation: 'portrait',
 		},
 		backgrounds: { disable: true },

@@ -307,6 +307,11 @@ export const Checkbox: Story = {
 				disable: true,
 			},
 		},
+		defaultChecked: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		type: 'checkbox',
@@ -343,6 +348,8 @@ export const Color: Story = {
 	args: {
 		type: 'color',
 		size: 'md',
+		rounded: 'md',
+		value: '#ff00ff',
 	},
 }
 

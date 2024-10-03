@@ -1,7 +1,7 @@
 export interface CheckboxProps {
 	className?: string
 	style?: React.CSSProperties
-	size?: 'sm' | 'md' | 'lg' | 'xl'
+	size?: 'md' | 'lg' | 'xl'
 	label: string
 	labelIsBold?: boolean
 	required?: boolean

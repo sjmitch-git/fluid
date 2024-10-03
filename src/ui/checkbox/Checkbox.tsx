@@ -17,7 +17,7 @@ const Checkbox = ({
 	onChange,
 }: CheckboxProps) => {
 	return (
-		<div>
+		<div className={`text-${size}`}>
 			<Label
 				type='checkbox'
 				label={label}
@@ -42,7 +42,9 @@ const Checkbox = ({
 					onChange={onChange}
 				/>
 			</Label>
-			{hint && <p className={`hint text-sm font-normal mt-[.5em] dark:text-light`}>{hint}</p>}
+			{hint && (
+				<p className={`hint text-[.8em] font-normal mt-[.8em] dark:text-light`}>{hint}</p>
+			)}
 		</div>
 	)
 }

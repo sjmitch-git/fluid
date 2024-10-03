@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -21,11 +21,11 @@ const darkthemeClasses = 'dark:bg-dark dark:text-light'
 
 const typeClasses = (type: string) => {
 	return type === 'checkbox'
-		? `form-checkbox rounded-md w-[1.5em] h-[1.5em] cursor-pointer !text-secondary dark:bg-dark border-neutral border-2`
+		? `form-checkbox rounded-md w-[1.5em] h-[1.5em] cursor-pointer !check:dark:bg-dark !text-secondary border-neutral border-2`
 		: type === 'radio'
-		? 'form-radio w-[1.5em] h-[1.5em] cursor-pointer !text-secondary'
+		? 'form-radio w-[1.5em] h-[1.5em] cursor-pointer bg-transparent !text-secondary border-2'
 		: type === 'color'
-		? 'form-color cursor-pointer aspect-square w-[2em] h-[2em]'
+		? 'form-color cursor-pointer aspect-square w-[2em] h-[2em] border-neutral border-2'
 		: type === 'number'
 		? `form-input text-center ${darkthemeClasses} [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none me-4`
 		: type === 'file'
@@ -81,7 +81,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 				className={twMerge(
 					`input ${typeClasses(
 						type
-					)} peer dark:bg-dark dark:text-light ${sizeClasses} rounded-${rounded} font-normal color-scheme:light dark:[color-scheme:dark] focus:outline-none focus-visible:outline-none focus-visible:border-info disabled:bg-neutral disabled:cursor-default disabled:text-dark disabled:border-transparent invalid:!border-accent`,
+					)} peer ${sizeClasses} rounded-${rounded} font-normal color-scheme:light dark:[color-scheme:dark] focus:outline-none focus-visible:outline-none focus-visible:border-info disabled:bg-neutral disabled:cursor-default disabled:text-dark disabled:border-transparent invalid:!border-accent`,
 					className
 				)}
 				style={style}

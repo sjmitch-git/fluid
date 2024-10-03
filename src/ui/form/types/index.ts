@@ -93,7 +93,7 @@ export interface RegisterFormProps extends CommonFormProps {
 	confirmPlaceholder?: string
 	confirmTitle?: string
 	inputsLayout?: 'col' | 'row'
-	inputsSize?: SizeOption
+	inputsSize?: 'md' | 'lg' | 'xl'
 	inputsRounded?: 'none' | 'md' | 'lg' | 'full'
 	checkLabel: string
 	checkLabelIsBold?: boolean
