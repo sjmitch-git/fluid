@@ -3,17 +3,7 @@ import { twMerge } from 'tailwind-merge'
 import { round } from '@smitch/js-lib'
 import { Badge } from '@/ui'
 
-import {
-	FaStar,
-	FaThumbsUp,
-	FaFaceSmile,
-	FaHeart,
-	FaEuroSign,
-	FaYenSign,
-	FaDollarSign,
-	FaSterlingSign,
-	FaCheck,
-} from 'react-icons/fa6'
+import { FaStar, FaThumbsUp, FaFaceSmile, FaHeart, FaCheck } from 'react-icons/fa6'
 
 import { RatingsProps } from './types'
 

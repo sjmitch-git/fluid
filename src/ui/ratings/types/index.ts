@@ -30,5 +30,5 @@ export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 		| 'current'
 		| 'accent'
 		| 'neutral'
-	size?: 'sm' | 'md' | 'lg' | 'xl'
+	size?: 'sm' | 'md' | 'lg'
 }
