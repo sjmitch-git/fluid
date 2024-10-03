@@ -11,7 +11,6 @@ import { Label, Input, Select, Checkbox } from '@/ui'
 import { FaUpload } from 'react-icons/fa'
 
 const sizes = {
-	sm: 'text-sm',
 	md: 'text-base',
 	lg: 'text-lg',
 	xl: 'text-xl',
