@@ -31,10 +31,6 @@ jobs:
               run: |
                   cp README.md dist/
 
-            - name: Copy docs to dist
-              run: |
-                  cp -R docs dist/
-
             - name: Publish package on NPM 📦
               run: |
                   cd dist
