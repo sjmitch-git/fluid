@@ -11,7 +11,7 @@ const meta: Meta = {
 				component: `
 The **TwitterEmbed** component allows users to embed tweets or a Twitter timeline into their UI. It provides customization options such as language, theme, and visibility of Twitter's user interface elements like headers and borders.
 
-\`import { TwitterEmbed } from '@/ui'\`
+\`import { TwitterEmbed } from '@smitch/fluid'\`
 `,
 			},
 		},

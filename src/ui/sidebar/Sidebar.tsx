@@ -13,7 +13,7 @@ const positions = {
 }
 
 const sidebarClasses =
-	'fixed top-0 z-100 pb-16 max-w-md min-h-full bg-light text-dark dark:bg-dark dark:text-light duration-500 border-neutral'
+	'fixed top-0 z-100  max-w-md h-full overflow-y-auto bg-light text-dark dark:bg-dark dark:text-light duration-500 border-neutral'
 
 const Sidebar = ({
 	open = false,

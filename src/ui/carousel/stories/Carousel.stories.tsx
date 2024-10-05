@@ -9,7 +9,7 @@ const meta: Meta = {
 	component: Carousel,
 	args: {
 		aspect: 'landscape',
-		outline: 'medium',
+		outline: 'thin',
 		rounded: 'none',
 		caption: true,
 
