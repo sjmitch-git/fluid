@@ -44,7 +44,7 @@ interface CommonFormProps {
 	cancelOutline?: boolean
 	cancelOutlineColor?: ColorOption
 	buttonTextcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
-	buttonLayout?: 'default' | 'rounded' | 'pill'
+	buttonShape?: 'default' | 'rounded' | 'pill'
 	buttonIsBold?: boolean
 }
 

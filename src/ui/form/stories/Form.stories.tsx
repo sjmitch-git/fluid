@@ -61,7 +61,7 @@ const meta: Meta<typeof Form> = {
 		},
 	},
 	args: {
-		buttonLayout: 'default',
+		buttonShape: 'default',
 		buttonTextcase: 'normal-case',
 		className: '',
 	},
@@ -431,7 +431,7 @@ export const SearchForm: Story = {
 				disable: true,
 			},
 		},
-		buttonLayout: {
+		buttonShape: {
 			table: {
 				disable: true,
 			},

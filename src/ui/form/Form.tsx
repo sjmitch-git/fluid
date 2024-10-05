@@ -36,7 +36,7 @@ const Form = ({
 	cancelOutline = false,
 	cancelOutlineColor = 'current',
 	buttonTextcase = 'normal-case',
-	buttonLayout = 'default',
+	buttonShape = 'default',
 	buttonIsBold = false,
 	separator = false,
 }: FormProps) => {
@@ -108,7 +108,7 @@ const Form = ({
 								outline={cancelOutline}
 								outlineColor={cancelOutlineColor}
 								textcase={buttonTextcase}
-								layout={buttonLayout}
+								layout={buttonShape}
 								isBold={buttonIsBold}
 								onClick={onCancel}
 							>
@@ -123,7 +123,7 @@ const Form = ({
 							outline={submitOutline}
 							outlineColor={submitOutlineColor}
 							textcase={buttonTextcase}
-							layout={buttonLayout}
+							layout={buttonShape}
 							isBold={buttonIsBold}
 							disabled={!valid}
 						>
