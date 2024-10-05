@@ -198,7 +198,7 @@ export const RadioInput: Story = {
 }
 
 export const ColorInput: Story = (args: LabelProps) => {
-	const [value, setValue] = useState('#ff0000')
+	const [value, setValue] = useState(args.value)
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		console.log('event', event.target.value)
@@ -214,6 +214,7 @@ export const ColorInput: Story = (args: LabelProps) => {
 				type='color'
 				name='color'
 				size={args.size}
+				value={value}
 				onChange={handleChange}
 			/>
 		</Label>
@@ -226,6 +227,7 @@ ColorInput.args = {
 	className: 'font-normal',
 	label: 'Set Colour',
 	size: 'md',
+	value: '#FF00FF',
 }
 
 ColorInput.argTypes = {

@@ -13,13 +13,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	argTypes: {
+	/* argTypes: {
 		className: {
 			table: {
 				disable: true,
 			},
 		},
-	},
+	}, */
 	args: {
 		icon: 'star',
 		rating: 3,

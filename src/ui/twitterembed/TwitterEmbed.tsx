@@ -56,6 +56,7 @@ export const TwitterEmbed = ({
 						window.twttr.events.bind('rendered', () => {
 							setLoading(false)
 						})
+						setError(false)
 					} else {
 						setLoading(false)
 						setError(true)
@@ -74,6 +75,7 @@ export const TwitterEmbed = ({
 					window.twttr.events.bind('rendered', () => {
 						setLoading(false)
 					})
+					setError(false)
 				} else {
 					setLoading(false)
 					setError(true)

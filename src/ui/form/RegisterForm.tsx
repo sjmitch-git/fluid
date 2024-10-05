@@ -26,7 +26,7 @@ const RegisterForm = ({
 	style,
 	buttonOutline = false,
 	buttonTextcase = 'normal-case',
-	buttonLayout = 'default',
+	buttonShape = 'default',
 	buttonIsBold = true,
 	legendText = 'Register',
 	legendisBold = true,
@@ -82,7 +82,7 @@ const RegisterForm = ({
 			className={className}
 			style={style}
 			buttonTextcase={buttonTextcase}
-			buttonLayout={buttonLayout}
+			buttonShape={buttonShape}
 			buttonIsBold={buttonIsBold}
 		>
 			<Fieldset

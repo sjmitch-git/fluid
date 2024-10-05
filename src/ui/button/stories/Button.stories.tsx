@@ -74,7 +74,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	name: 'Text Label',
+	name: 'Text',
 	args: {
 		children: 'Click!',
 	},
@@ -104,7 +104,7 @@ export const Icon: Story = {
 	},
 }
 
-export const IconAndTextLabel: Story = {
+export const TextAndIcon: Story = {
 	args: {
 		children: (
 			<>
@@ -128,6 +128,7 @@ export const DeleteButton: Story = {
 		background: 'light',
 		color: 'danger',
 		outline: true,
+		outlineColor: 'danger',
 		title: 'Delete Item?',
 	},
 }

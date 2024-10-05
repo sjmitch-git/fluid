@@ -353,7 +353,7 @@ export const Color: Story = {
 	},
 }
 
-export const Date: Story = {
+export const DatesAndTime: Story = {
 	argTypes: {
 		...Default.argTypes,
 		placeholder: {
@@ -367,8 +367,10 @@ export const Date: Story = {
 			},
 		},
 		type: {
+			control: 'select',
+			options: ['date', 'datetime-local', 'month', 'week', 'time'],
 			table: {
-				disable: true,
+				disable: false,
 			},
 		},
 		list: {
@@ -426,12 +428,13 @@ export const Date: Story = {
 		type: 'date',
 		size: 'md',
 		name: 'date',
-		title: 'Select your date',
+		title: 'Some helpful info for the user',
 		hint: true,
+		rounded: 'md',
 	},
 }
 
-export const Datetime_Local: Story = {
+/* export const Datetime_Local: Story = {
 	argTypes: {
 		...Date.argTypes,
 	},
@@ -440,9 +443,9 @@ export const Datetime_Local: Story = {
 		size: 'md',
 		name: 'datetime',
 	},
-}
+} */
 
-export const Time: Story = {
+/* export const Time: Story = {
 	argTypes: {
 		...Date.argTypes,
 	},
@@ -451,9 +454,9 @@ export const Time: Story = {
 		size: 'md',
 		name: 'time',
 	},
-}
+} */
 
-export const Week: Story = {
+/* export const Week: Story = {
 	argTypes: {
 		...Date.argTypes,
 	},
@@ -462,9 +465,9 @@ export const Week: Story = {
 		size: 'md',
 		name: 'week',
 	},
-}
+} */
 
-export const Month: Story = {
+/* export const Month: Story = {
 	argTypes: {
 		...Date.argTypes,
 	},
@@ -473,7 +476,7 @@ export const Month: Story = {
 		size: 'md',
 		name: 'month',
 	},
-}
+} */
 
 export const URL: Story = {
 	argTypes: {
@@ -565,6 +568,7 @@ export const Number: Story = {
 		max: '9',
 		step: '1',
 		value: '1',
+		rounded: 'md',
 	},
 }
 
@@ -619,6 +623,7 @@ export const Telephone: Story = {
 		title: 'Enter a vaild UK mobile number',
 		pattern: '07[0-9]{9}',
 		name: 'telNo',
+		rounded: 'md',
 	},
 }
 
