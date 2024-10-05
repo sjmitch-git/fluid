@@ -2,19 +2,19 @@
 
 A Next.js/React UI component library.
 
--   [Fluid UI](#fluid-ui)
-    -   [Overview](#overview)
-    -   [Features](#features)
-    -   [Installation](#installation)
-    -   [Basic Usage](#basic-usage)
-    -   [Components](#components)
-        -   [Buttons](#buttons)
-        -   [Inputs](#inputs)
-        -   [Forms](#forms)
-        -   [Menus](#menus)
-        -   [Feedback](#feedback)
-        -   [Media](#media)
-        -   [Typography](#typography)
+- [Fluid UI](#fluid-ui)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [Components](#components)
+    - [Buttons](#buttons)
+    - [Inputs](#inputs)
+    - [Forms](#forms)
+    - [Menus](#menus)
+    - [Feedback](#feedback)
+    - [Media](#media)
+    - [Typography](#typography)
 
 ## Overview
 
@@ -54,8 +54,9 @@ export default App
 
 ### Buttons
 
--   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/button.md'>Button</a>
--   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/buttongroup.md'>Button Group</a>
+-   <a href='/?path=/docs/fluid-ui-buttons-button--docs'>Button</a>
+-   <a href='/?path=/docs/fluid-ui-buttons-button-close-button--docs'>Close Button</a>
+-   <a href='/?path=/docs/fluid-ui-buttons-button-group--docs'>Button Group</a>
 
 ### Inputs
 
@@ -109,6 +110,7 @@ export default App
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/youtubeembed.md'>YouTube Embed</a>
 
 ### Typography
+
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/blockquote.md'>Blockquote</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/codeblock.md'>Codeblock</a>
 -   <a href='https://github.com/sjmitch-git/fluent/blob/master/docs/heading.md'>Heading</a>

@@ -90,6 +90,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 				id={id}
 				autoComplete={autocomplete}
 				required={required}
+				aria-required={required}
 				hidden={hidden}
 				readOnly={readonly}
 				tabIndex={tabindex}
@@ -115,7 +116,7 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 				spellCheck={spellcheck}
 			/>
 			{hint && (
-				<p className='hint text-sm font-normal mt-[.5em] dark:text-light peer-invalid:bg-accent peer-invalid:text-dark inline-block'>
+				<p className='hint text-sm font-normal mt-[.5em] dark:text-light peer-invalid:decoration-accent peer-invalid:underline decoration-wavy underline-offset-4 inline-block'>
 					{title}
 				</p>
 			)}

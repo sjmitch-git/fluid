@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useState, useCallback } from 'react'
+import React, { useRef, useState, useCallback, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -8,12 +8,18 @@ import { Button } from '@/ui'
 
 import { FormProps } from './types'
 
+const layouts = {
+	col: 'flex-col',
+	row: 'flex-row flex-wrap',
+}
+
 const Form = ({
 	className = '',
 	style,
 	name = 'form',
 	onsubmit,
 	onCancel,
+	layout = 'col',
 	showCancel = false,
 	actions = true,
 	children,
@@ -37,6 +43,7 @@ const Form = ({
 	const form = useRef<HTMLFormElement | null>(null)
 	const [valid, setValid] = useState(false)
 	const [formData, setFormData] = useState({})
+	const layoutClasses = useMemo(() => layouts[layout], [layout])
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
@@ -78,7 +85,7 @@ const Form = ({
 
 	return (
 		<form
-			className={twMerge(`form group flex flex-col gap-8`, className)}
+			className={twMerge(`form group flex ${layoutClasses} gap-8`, className)}
 			style={style}
 			name={name}
 			id={name}
@@ -90,7 +97,7 @@ const Form = ({
 				<>
 					{separator && <hr className='border-neutral border-t-2 opacity-70' />}
 					<div
-						className={`form-actions flex group justify-between flex-${actionsLayout} gap-${actionsSpacing}`}
+						className={`form-actions mt-auto flex group justify-between flex-grow flex-${actionsLayout} gap-${actionsSpacing}`}
 					>
 						{showCancel ? (
 							<Button
@@ -110,7 +117,7 @@ const Form = ({
 						) : null}
 						<Button
 							type='submit'
-							className={`!justify-center flex-grow`}
+							className={`!justify-center flex-grow max-w-lg mx-auto`}
 							background={submitBackground}
 							color={submitColor}
 							outline={submitOutline}

@@ -10,7 +10,7 @@ export const Tab = ({
 }: TabProps) => {
 	return (
 		<button
-			className={`tab ${tabStyles} ${id === activeId ? activeTabStyles : ''}`}
+			className={`tab w-full ${tabStyles} ${id === activeId ? activeTabStyles : ''}`}
 			onClick={() => onClick(id)}
 		>
 			{title}

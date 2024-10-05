@@ -23,7 +23,7 @@ The `TwitterEmbed` component allows users to embed tweets or a Twitter timeline 
 ### Single Tweet Embed
 
 ```tsx
-import { TwitterEmbed } from '@/components'
+import { TwitterEmbed } from '@/ui'
 
 const MyPage = () => (
 	<TwitterEmbed

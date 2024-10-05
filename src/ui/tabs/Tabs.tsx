@@ -29,9 +29,9 @@ const Tabs = ({
 	activeTabStyles = defaultActiveTabStyles,
 	icons,
 	children,
-	minimal = false,
+	minimalTabs = false,
 	contentBorder = false,
-	size = 'md',
+	tabSize = 'md',
 	tabsPosition,
 }: TabsProps) => {
 	const [tabs, setTabs] = useState<TabProps[]>(null!)
@@ -75,14 +75,14 @@ const Tabs = ({
 
 	const handleClick = (id: string) => setActiveId(id)
 
-	const sizeClasses = useMemo(() => sizes[size], [size])
+	const sizeClasses = useMemo(() => sizes[tabSize], [tabSize])
 
 	return (
-		<div className={twMerge(`tabs mx-auto w-full ${minimal ? 'minimal' : ''}`, className)}>
+		<div className={twMerge(`tabs mx-auto w-full ${minimalTabs ? 'minimal' : ''}`, className)}>
 			<TabBar
 				tabs={tabs}
-				tabStyles={`${minimal ? minimalTabStyles : tabStyles} ${sizeClasses}`}
-				activeTabStyles={`${minimal ? minimalActiveTabStyles : activeTabStyles} `}
+				tabStyles={`${minimalTabs ? minimalTabStyles : tabStyles} ${sizeClasses}`}
+				activeTabStyles={`${minimalTabs ? minimalActiveTabStyles : activeTabStyles} `}
 				activeId={activeId}
 				onClick={handleClick}
 				tabsPosition={tabsPosition}

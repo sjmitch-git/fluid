@@ -9,6 +9,7 @@ export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
 	style?: React.CSSProperties
 	className?: string
 	links: LinksProps[]
+	buttonLayout: 'circle' | 'square'
 	buttonBackground?:
 		| 'dark'
 		| 'light'

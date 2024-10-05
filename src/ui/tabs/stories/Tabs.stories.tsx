@@ -219,9 +219,9 @@ export const Default: Story = {
 	},
 	args: {
 		defaultActiveId: 'tab1',
-		minimal: false,
+		minimalTabs: false,
 		children: defaultContent(),
-		size: 'md',
+		tabSize: 'md',
 		tabsPosition: 'center',
 		contentBorder: true,
 	},
@@ -234,7 +234,7 @@ export const WithEmojis: Story = {
 	args: {
 		...Default.args,
 		children: emojisContent(),
-		size: 'xxl',
+		tabSize: 'xxl',
 	},
 }
 
@@ -245,7 +245,7 @@ export const WithIcons: Story = {
 	args: {
 		...Default.args,
 		children: techContent(),
-		size: 'xxl',
+		tabSize: 'xxl',
 		icons: [
 			<ReactIcon key='react' />,
 			<NextIcon key='next' />,
@@ -261,7 +261,7 @@ export const LoginRegister: Story = {
 	args: {
 		...Default.args,
 		children: profileContent(),
-		size: 'md',
-		minimal: true,
+		tabSize: 'md',
+		minimalTabs: true,
 	},
 }

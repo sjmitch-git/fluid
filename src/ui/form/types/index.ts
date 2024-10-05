@@ -23,6 +23,7 @@ type SizeOption = 'sm' | 'md' | 'lg' | 'xl'
 interface CommonFormProps {
 	name?: string
 	action?: string
+	layout?: 'col' | 'row'
 	className?: string
 	style?: React.CSSProperties
 	onsubmit?: (formData: { [key: string]: string }) => void

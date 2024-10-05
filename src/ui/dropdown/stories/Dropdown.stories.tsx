@@ -52,6 +52,7 @@ export const Default: Story = {
 	args: {
 		links: links,
 		size: 'md',
+		buttonLayout: 'circle',
 		buttonBackground: 'transparent',
 		buttonColor: 'current',
 	},
@@ -61,8 +62,10 @@ export const Styled: Story = {
 	args: {
 		links: links,
 		size: 'lg',
-		className: 'bg-dark text-light dark:bg-light dark:text-dark rounded-full py-3 ps-6 pe-4',
+		buttonLayout: 'circle',
 		buttonBackground: 'primary',
 		buttonColor: 'light',
+		className:
+			'bg-dark text-light dark:bg-light dark:text-dark rounded-full py-3 ps-6 pe-4 border-2 border-accent',
 	},
 }

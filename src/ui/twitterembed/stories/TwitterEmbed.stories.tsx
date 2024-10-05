@@ -5,6 +5,17 @@ const meta: Meta = {
 	title: 'Fluid UI/Media/Twitter Embed',
 	component: TwitterEmbed,
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **TwitterEmbed** component allows users to embed tweets or a Twitter timeline into their UI. It provides customization options such as language, theme, and visibility of Twitter's user interface elements like headers and borders.
+
+\`import { TwitterEmbed } from '@/ui'\`
+`,
+			},
+		},
+	},
 } satisfies Meta<typeof TwitterEmbed>
 
 export default meta

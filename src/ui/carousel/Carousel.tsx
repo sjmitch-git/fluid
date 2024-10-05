@@ -58,6 +58,7 @@ const Carousel = ({
 	const [index, setIndex] = useState(0)
 	const [position, setPosition] = useState(0)
 	const [touchPosition, setTouchPosition] = useState<number>(null!)
+	const [innerWidth, setInnerWidth] = useState<number>(286)
 	const inner = useRef<HTMLDivElement>(null!)
 	const intervalRef = useRef<number>(null!)
 	const playDirection = useRef<string>('forward')
@@ -70,33 +71,40 @@ const Carousel = ({
 			top: 'top-2',
 			middle: 'top-[38%]',
 			bottom: caption ? 'bottom-12' : 'bottom-2',
-		};
+		}
 
-		return buttonsPositions[buttonsPosition];
-	}, [buttonsPosition, caption]);
+		return buttonsPositions[buttonsPosition]
+	}, [buttonsPosition, caption])
 
-	const getInnerWidth = () => {
-		return inner.current.offsetWidth
-	}
+	useEffect(() => {
+		const checkInnerWidth = () => {
+			if (inner.current) {
+				setInnerWidth(inner.current.offsetWidth)
+			} else {
+				setTimeout(checkInnerWidth, 100)
+			}
+		}
+
+		checkInnerWidth()
+	}, [inner])
 
 	const style = useMemo(() => {
-		return rtl
-			? { right: `${position}px` }
-			: { left: `${position}px` };
-	}, [rtl, position]);
+		return rtl ? { right: `${position}px` } : { left: `${position}px` }
+	}, [rtl, position])
 
 	const heightStyle = useMemo(() => {
-		const heightMap: Record<string, number> = {
-			landscape: 286,
-			portrait: 400,
-			video: 190,
-			phone: 533,
-		};
+		const aspectRatios: Record<string, number> = {
+			landscape: 4 / 3,
+			portrait: 3 / 4,
+			video: 16 / 9,
+			phone: 9 / 16,
+		}
 
-		return {
-			height: heightMap[aspect] ?? 380,
-		};
-	}, [aspect]);
+		const aspectRatio = aspectRatios[aspect] ?? 1
+		const height = innerWidth / aspectRatio
+
+		return { height }
+	}, [aspect, innerWidth])
 
 	useEffect(() => {
 		const startAutoplay = () => {
@@ -120,7 +128,7 @@ const Carousel = ({
 
 	const setNext = () => {
 		if (index === data.length - 1) return
-		setPosition(position - getInnerWidth())
+		setPosition(position - innerWidth)
 		setIndex(index + 1)
 	}
 
@@ -132,7 +140,7 @@ const Carousel = ({
 
 	const setPrevious = () => {
 		if (index === 0) return
-		setPosition(position + getInnerWidth())
+		setPosition(position + innerWidth)
 		setIndex(index - 1)
 	}
 

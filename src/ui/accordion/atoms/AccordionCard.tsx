@@ -8,6 +8,7 @@ const AccordionCard = ({ src, title, description, link }: AccordionCardProps) =>
 			<Card
 				layout='row'
 				className='p-2'
+				outline={false}
 			>
 				{src && (
 					<CardImage

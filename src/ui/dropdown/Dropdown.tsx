@@ -24,6 +24,7 @@ const Dropdown = ({
 	className = '',
 	style,
 	links,
+	buttonLayout = 'circle',
 	buttonBackground = 'transparent',
 	buttonColor = 'current',
 }: DropdownProps) => {
@@ -59,7 +60,7 @@ const Dropdown = ({
 			className={twMerge(`dropdown group inline-block relative ${sizeClasses}`, className)}
 			style={style}
 		>
-			<ul className='flex flex-col gap-4 md:flex-row;'>
+			<ul className='dropdown-list flex flex-col gap-4 md:flex-row;'>
 				{links.map((link) => (
 					<li
 						key={link.label}
@@ -70,19 +71,19 @@ const Dropdown = ({
 						<Link
 							href={link.href}
 							onClick={closeNav}
-							className='dropdown-link flex flex-row items-center gap-2 hover:!text-current'
+							className='dropdown-link flex flex-row items-center gap-2 no-underline hover:!text-current'
 						>
 							{link.label}{' '}
 							{link.links && (
 								<Button
-									className={`menu_btn !p-1`}
+									className={`menu-btn !p-1`}
 									onClick={(e) => handleClick(e, link.label)}
 									onBlur={(e) => handleBlur(e)}
 									title='Toggle Menu'
 									background={buttonBackground}
 									color={buttonColor}
 									size={size}
-									layout='circle'
+									layout={buttonLayout}
 								>
 									{show === link.label ? <HiChevronUp /> : <HiChevronDown />}
 									<span className='sr-only'>Toggle dropdown menu</span>

@@ -49,10 +49,21 @@ const meta: Meta<typeof Form> = {
 				disable: true,
 			},
 		},
+		name: {
+			table: {
+				disable: true,
+			},
+		},
+		layout: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		buttonLayout: 'default',
 		buttonTextcase: 'normal-case',
+		className: '',
 	},
 }
 
@@ -156,6 +167,40 @@ const AddressContent = () => {
 					name='postal-code'
 					id='postal-code'
 					inputStyles='max-w-[10em] border-neutral'
+					required
+				/>
+			</Fieldset>
+		</>
+	)
+}
+
+const NewsletterContent = () => {
+	return (
+		<>
+			<Fieldset
+				legendText='Sign-up for our newsletter?'
+				legendSize='md'
+				legendAlign='left'
+				spacing='4'
+				className='flex-col md:flex-row flex-grow'
+			>
+				<TextInput
+					label='Name'
+					autocomplete='name'
+					layout='col'
+					name='name'
+					id='name'
+					required
+				/>
+				<TextInput
+					label='e-Mail'
+					autocomplete='email'
+					layout='col'
+					name='email'
+					id='email'
+					placeholder='myname@email.com'
+					hint={false}
+					title='Enter a vaild e-Mail address'
 					required
 				/>
 			</Fieldset>
@@ -290,6 +335,17 @@ export const AddressForm: Story = {
 		children: AddressContent(),
 		actionsLayout: 'row',
 		actionsSpacing: '0',
+	},
+}
+
+export const NewsletterForm: Story = {
+	args: {
+		onsubmit: handleSubmit,
+		children: NewsletterContent(),
+		layout: 'row',
+		actionsLayout: 'row',
+		actionsSpacing: '0',
+		submitLabel: 'Sign-up',
 	},
 }
 
