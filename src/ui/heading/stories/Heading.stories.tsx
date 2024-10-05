@@ -48,6 +48,6 @@ export const Default: Story = {
 		align: 'left',
 		weight: 'bold',
 		transform: 'capitalize',
-		children: 'Some heading text',
+		children: 'Heading text',
 	},
 }
