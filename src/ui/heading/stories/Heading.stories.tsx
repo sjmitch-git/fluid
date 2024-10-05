@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Heading from '../Heading'
+import { Badge } from '@/ui'
+import { FaStar } from 'react-icons/fa6'
 
 const meta: Meta = {
 	title: 'Fluid UI/Typography/Heading',
@@ -10,7 +12,7 @@ const meta: Meta = {
 				component:
 					'The Heading component is used to provide predefined headline styles, such as H1, H2, H3, etc., ensuring visual consistency across the application. It offers customizable properties like alignment, font weight, and text transformation.',
 			},
-			source: {
+			/* source: {
 				code: `
 import Heading from '@/ui';
 
@@ -32,7 +34,7 @@ const ExamplePage = () => {
 
 export default ExamplePage;
 `,
-			},
+			}, */
 		},
 	},
 	tags: ['autodocs'],
@@ -49,5 +51,19 @@ export const Default: Story = {
 		weight: 'bold',
 		transform: 'capitalize',
 		children: 'Heading text',
+	},
+}
+
+export const HeadingWithBadge: Story = {
+	args: {
+		...Default.args,
+		children: (
+			<>
+				Heading text{' '}
+				<Badge size='inherit'>
+					<FaStar />
+				</Badge>
+			</>
+		),
 	},
 }

@@ -10,9 +10,9 @@ const meta: Meta = {
 		position: {
 			options: ['inline', 'right'],
 		},
-		size: {
+		/* size: {
 			options: ['sm', 'md', 'lg'],
-		},
+		}, */
 		children: {
 			table: {
 				disable: true,

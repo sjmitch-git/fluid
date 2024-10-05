@@ -28,5 +28,5 @@ export interface BadgeProps {
 		| 'current'
 		| 'accent'
 		| 'neutral'
-	size?: 'sm' | 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg' | 'inherit'
 }

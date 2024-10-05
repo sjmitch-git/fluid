@@ -15,6 +15,7 @@ const sizes = {
 	sm: 'text-sm',
 	md: 'text-base',
 	lg: 'text-lg',
+	inherit: 'text-[60%]',
 }
 
 const backgrounds = {
@@ -59,7 +60,7 @@ const Badge = ({
 	color = 'light',
 	position = 'inline',
 	children,
-	size = 'sm',
+	size = 'inherit',
 }: BadgeProps) => {
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
 	const backgroundClasses = useMemo(() => backgrounds[background], [background])
