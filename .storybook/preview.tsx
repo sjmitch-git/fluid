@@ -1,27 +1,9 @@
 import React from 'react'
 import { Decorator } from '@storybook/react'
-import { useEffect } from '@storybook/client-api'
 import type { Preview } from '@storybook/react'
 import { themes } from '@storybook/theming'
 
 import '../src/styles/index.css'
-
-export const decorators: Preview['decorators'] = [
-	(Story) => {
-		useEffect(() => {
-			let canonicalLink: HTMLLinkElement | null =
-				document.querySelector("link[rel='canonical']")
-			if (!canonicalLink) {
-				canonicalLink = document.createElement('link')
-				canonicalLink.setAttribute('rel', 'canonical')
-				document.head.appendChild(canonicalLink)
-			}
-			canonicalLink.setAttribute('href', window.location.href)
-		}, [])
-
-		return <Story />
-	},
-]
 
 const withGlobalStyles: Decorator = (Story, context) => {
 	React.useEffect(() => {
