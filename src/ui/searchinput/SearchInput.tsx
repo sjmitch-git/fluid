@@ -74,6 +74,7 @@ const SearchInput = ({
 				onClick={handleClick}
 				disabled={disabled}
 				title='Submit'
+				isBold={true}
 			>
 				{icon ? <FaSearch /> : label}
 				<span className='sr-only'>Search</span>

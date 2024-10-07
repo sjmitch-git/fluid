@@ -30,7 +30,7 @@ export interface VideoProps
 }
 
 export interface VideoPlayerProps extends React.HTMLAttributes<HTMLDivElement>, MediaProps {
-	aspect?: 'video' | 'square' | 'television' | 'cinematic' | 'portrait'
+	aspect?: 'video' | 'square' | 'television' | 'cinema' | 'phone' | 'ultrawide'
 	className?: string
 	defaultError?: string
 }

@@ -12,7 +12,7 @@ const positions = {
 	bottom: 'bottom-0 border-t',
 }
 
-const sidebarClasses =
+const drawerClasses =
 	'fixed left-0 right-0 z-100 min-h-min w-full max-h-screen bg-light text-dark dark:bg-dark dark:text-light duration-500 border-neutral'
 
 const Drawer = ({
@@ -59,7 +59,7 @@ const Drawer = ({
 			)}
 			<aside
 				className={twMerge(
-					`sidebar group ${sidebarClasses} ${positionClasses} ${
+					`sidebar group ${drawerClasses} ${positionClasses} ${
 						show
 							? 'translate-y-0'
 							: position === 'bottom'

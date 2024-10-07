@@ -23,7 +23,7 @@ const AccordionHead = ({ icon = 'symbol', id, open, setopen, title, name }: Acco
 				layout='circle'
 				onClick={() => setopen(`${open === id ? '' : id}`)}
 				background='transparent'
-				color='current'
+				color='primary'
 			>
 				<>
 					{open === id ? (

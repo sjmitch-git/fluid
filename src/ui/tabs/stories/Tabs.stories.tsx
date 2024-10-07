@@ -245,7 +245,7 @@ export const WithIcons: Story = {
 	args: {
 		...Default.args,
 		children: techContent(),
-		tabSize: 'xxl',
+		tabSize: 'xl',
 		icons: [
 			<ReactIcon key='react' />,
 			<NextIcon key='next' />,

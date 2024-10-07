@@ -21,9 +21,9 @@ const darkthemeClasses = 'dark:bg-dark dark:text-light'
 
 const typeClasses = (type: string) => {
 	return type === 'checkbox'
-		? `form-checkbox rounded-md w-[1.5em] h-[1.5em] cursor-pointer !check:dark:bg-dark !text-secondary border-neutral border-2`
+		? `form-checkbox rounded-md w-[1.5em] h-[1.5em] cursor-pointer !check:dark:bg-dark !text-info border-neutral border-2`
 		: type === 'radio'
-		? 'form-radio w-[1.5em] h-[1.5em] cursor-pointer bg-transparent !text-secondary border-2'
+		? 'form-radio w-[1.5em] h-[1.5em] cursor-pointer bg-transparent !text-info border-2'
 		: type === 'color'
 		? 'form-color cursor-pointer aspect-square w-[2em] h-[2em] border-neutral border-2'
 		: type === 'number'

@@ -8,6 +8,6 @@ export default create({
 	brandImage: '/img/logo.png',
 	brandTarget: '_self',
 
-	colorPrimary: '#9c27b0',
-	colorSecondary: '#673ab7',
+	colorPrimary: '#029CFD',
+	colorSecondary: '#ff00ff',
 })

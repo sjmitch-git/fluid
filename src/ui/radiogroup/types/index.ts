@@ -14,5 +14,5 @@ export interface RadioGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	hasBorder?: boolean
 	legendBold?: boolean
 	spacing?: '4' | '8'
-	rounded?: 'none' | 'md' | 'lg' | 'full'
+	roundedRadio?: 'none' | 'md' | 'lg' | 'full'
 }

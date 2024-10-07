@@ -35,7 +35,7 @@ Default.args = {
 	outlineColor: 'dark',
 	size: 'md',
 	btnBackground: 'info',
-	btnColor: 'light',
+	btnColor: 'dark',
 	results: 69,
 	range: 6,
 	icons: true,

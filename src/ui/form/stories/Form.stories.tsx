@@ -125,7 +125,6 @@ const AddressContent = () => {
 			<Fieldset
 				legendText='Address'
 				legendSize='xl'
-				hasBorder
 			>
 				<TextInput
 					label='Street'
@@ -217,21 +216,11 @@ const contactContent = () => {
 				spacing='8'
 			>
 				<TextInput
-					label='First Name'
-					autocomplete='given-name'
+					label='Name'
+					autocomplete='name'
 					layout='row'
-					name='given-name'
-					id='given-name'
-					pattern='[a-zA-Z]+'
-					required
-				/>
-				<TextInput
-					label='Last Name'
-					autocomplete='family-name'
-					layout='row'
-					name='family-name'
-					id='family-name'
-					pattern='[a-zA-Z]+'
+					name='name'
+					id='name'
 					required
 				/>
 				<TextInput
@@ -254,7 +243,7 @@ const contactContent = () => {
 					placeholder='07123456789'
 					hint={true}
 					title='Enter a vaild UK mobile number'
-					pattern='07[0-9]{9}'
+					pattern='^(+44s?7d{3}|(?07d{3})?)s?d{3}s?d{3}$'
 				/>
 			</Fieldset>
 		</>
@@ -305,7 +294,7 @@ export const LoginForm: Story = {
 		showCancel: true,
 		submitLabel: 'Log-in',
 		submitBackground: 'primary',
-		submitColor: 'light',
+		submitColor: 'dark',
 		cancelBackground: 'transparent',
 		cancelColor: 'current',
 		separator: true,
@@ -322,7 +311,7 @@ export const ContactForm: Story = {
 		onsubmit: handleSubmit,
 		showCancel: true,
 		submitBackground: 'primary',
-		submitColor: 'light',
+		submitColor: 'dark',
 		cancelBackground: 'transparent',
 		cancelColor: 'current',
 		separator: true,
@@ -335,6 +324,9 @@ export const AddressForm: Story = {
 		children: AddressContent(),
 		actionsLayout: 'row',
 		actionsSpacing: '0',
+		submitColor: 'dark',
+		buttonIsBold: true,
+		buttonTextcase: 'uppercase',
 	},
 }
 
@@ -346,6 +338,8 @@ export const NewsletterForm: Story = {
 		actionsLayout: 'row',
 		actionsSpacing: '0',
 		submitLabel: 'Sign-up',
+		submitColor: 'dark',
+		buttonIsBold: true,
 	},
 }
 
@@ -391,6 +385,11 @@ export const SearchForm: Story = {
 				disable: true,
 			},
 		},
+		submitOutlineColor: {
+			table: {
+				disable: true,
+			},
+		},
 		cancelBackground: {
 			table: {
 				disable: true,
@@ -411,7 +410,17 @@ export const SearchForm: Story = {
 				disable: true,
 			},
 		},
+		cancelOutlineColor: {
+			table: {
+				disable: true,
+			},
+		},
 		buttonTextcase: {
+			table: {
+				disable: true,
+			},
+		},
+		buttonIsBold: {
 			table: {
 				disable: true,
 			},

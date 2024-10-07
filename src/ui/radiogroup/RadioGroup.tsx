@@ -33,7 +33,7 @@ const RadioGroup = ({
 	legendBold = true,
 	hasBorder = false,
 	spacing = '4',
-	rounded = 'full',
+	roundedRadio = 'full',
 }: RadioGroupProps) => {
 	const [checked, setChecked] = useState('')
 
@@ -76,7 +76,7 @@ const RadioGroup = ({
 								checked={item.id === checked}
 								className={`${hideInput ? 'opacity-0 w-0 h-0 -ml-1' : ''}`}
 								size={size}
-								rounded={rounded}
+								rounded={roundedRadio}
 							/>
 						</Label>
 					)

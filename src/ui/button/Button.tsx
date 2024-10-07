@@ -1,13 +1,18 @@
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 import { forwardRef } from 'react'
 
 import { twMerge } from 'tailwind-merge'
+
+import { backgrounds, colors, borderColors } from '../@utils/themeColors'
+import { shadows } from '../@utils/themeShadows'
 
 import { ButtonProps } from './types'
 
 export type ButtonRef = HTMLButtonElement
 
-const stateStyles = 'disabled:opacity-50 disabled:grayscale disabled:text-gray-400'
+// const stateStyles = 'disabled:opacity-50 disabled:grayscale disabled:text-gray-700'
+
+const stateStyles = 'disabled:grayscale disabled:opacity-50'
 
 const sizes = {
 	xs: 'text-xs p-1 border',
@@ -15,53 +20,6 @@ const sizes = {
 	md: 'text-base p-3 border-4',
 	lg: 'text-lg p-4 border-[6px]',
 	xl: 'text-xl p-5 border-8',
-}
-
-const shadowColors = 'shadow-gray-500/50'
-
-const shadows = {
-	none: 'shadow-none',
-	sm: 'shadow-sm',
-	md: 'shadow-md',
-	lg: 'shadow-lg',
-	xl: 'shadow-xl',
-}
-
-const backgrounds = {
-	info: 'bg-info',
-	success: 'bg-success',
-	warning: 'bg-warning',
-	danger: 'bg-danger',
-	primary: 'bg-primary',
-	secondary: 'bg-secondary',
-	dark: 'bg-dark',
-	light: 'bg-white',
-	transparent: 'bg-transparent',
-}
-
-const colors = {
-	info: 'text-info',
-	success: 'text-success',
-	warning: 'text-warning',
-	danger: 'text-danger',
-	primary: 'text-primary',
-	secondary: 'text-secondary',
-	dark: 'text-dark',
-	light: 'text-light',
-	current: 'text-current',
-}
-
-const borderColors = {
-	info: 'border-info',
-	success: 'border-success',
-	warning: 'border-warning',
-	danger: 'border-danger',
-	primary: 'border-primary',
-	secondary: 'border-secondary',
-	dark: 'border-dark',
-	light: 'border-light',
-	current: 'border-current',
-	accent: 'border-accent',
 }
 
 const layouts = {
@@ -99,9 +57,15 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	const backgroundClasses = useMemo(() => backgrounds[background], [background])
 	const colorClasses = useMemo(() => colors[color], [color])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
-	const shadowClasses = useMemo(() => `${shadows[shadow]} shadow-gray-500/50`, [shadow])
-	const outlineStyles = useMemo(() => `border-solid ${borderColors[outlineColor]}`, [outlineColor])
-	const outlineClasses = useMemo(() => outline ? outlineStyles : 'border-none', [outline, outlineStyles])
+	const shadowClasses = useMemo(() => shadows[shadow], [shadow])
+	const outlineStyles = useMemo(
+		() => `border-solid ${borderColors[outlineColor]}`,
+		[outlineColor]
+	)
+	const outlineClasses = useMemo(
+		() => (outline ? outlineStyles : 'border-none'),
+		[outline, outlineStyles]
+	)
 
 	return (
 		<button

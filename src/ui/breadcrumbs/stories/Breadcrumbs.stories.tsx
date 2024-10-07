@@ -35,6 +35,7 @@ export const Default: Story = {
 Default.decorators = [
 	(Story) => (
 		<div
+			className='text-dark bg-light dark:text-light dark:bg-transparent'
 			style={{
 				padding: '.5rem',
 				position: 'relative',
@@ -55,6 +56,7 @@ export const RTL: Story = {
 RTL.decorators = [
 	(Story) => (
 		<div
+			className='text-dark bg-light dark:text-light dark:bg-transparent'
 			style={{
 				padding: '.5rem',
 				position: 'relative',

@@ -60,7 +60,11 @@ export const HeadingWithBadge: Story = {
 		children: (
 			<>
 				Heading text{' '}
-				<Badge size='inherit'>
+				<Badge
+					size='inherit'
+					color='accent'
+					background='transparent'
+				>
 					<FaStar />
 				</Badge>
 			</>

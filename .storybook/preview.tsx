@@ -9,6 +9,9 @@ const withGlobalStyles: Decorator = (Story, context) => {
 	React.useEffect(() => {
 		const style = document.createElement('style')
 		style.innerHTML = `
+	  .css-j2chfn {
+		overflow-x: hidden;
+	  }
       .sb-main-padded {
         padding: 0 !important;
       }

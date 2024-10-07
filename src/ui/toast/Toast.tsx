@@ -4,6 +4,8 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
+import { backgrounds, colors } from '../@utils/themeColors'
+
 import { ToastProps } from './types'
 import { CloseButton } from '@/ui'
 
@@ -17,22 +19,6 @@ const verticals = {
 	top: 'top-4',
 	middle: 'top-1/2 -translate-y-1/2',
 	bottom: 'bottom-4',
-}
-
-const backgrounds = {
-	info: 'bg-info',
-	success: 'bg-success',
-	warning: 'bg-warning',
-	danger: 'bg-danger',
-	primary: 'bg-primary',
-	secondary: 'bg-secondary',
-	dark: 'bg-dark',
-	light: 'bg-white',
-}
-
-const colors = {
-	dark: 'text-dark',
-	light: 'text-light',
 }
 
 const roundeds = {
@@ -87,18 +73,18 @@ const Toast = ({
 	const animationClasses = useMemo(() => {
 		return `transition-opacity duration-500 ${
 			show ? 'visible opacity-100' : 'invisible opacity-0'
-		}`;
-	}, [show]);
+		}`
+	}, [show])
 
 	const otherClasses = useMemo(() => {
-		const horizontalClasses = horizontals[horizontal];
-		const verticalClasses = verticals[vertical];
-		const backgroundClasses = backgrounds[background];
-		const colorClasses = colors[color];
-		const roundedClasses = roundeds[rounded];
+		const horizontalClasses = horizontals[horizontal]
+		const verticalClasses = verticals[vertical]
+		const backgroundClasses = backgrounds[background]
+		const colorClasses = colors[color]
+		const roundedClasses = roundeds[rounded]
 
-		return `${horizontalClasses} ${verticalClasses} ${backgroundClasses} ${colorClasses} ${roundedClasses}`;
-	}, [horizontal, vertical, background, color, rounded]);
+		return `${horizontalClasses} ${verticalClasses} ${backgroundClasses} ${colorClasses} ${roundedClasses}`
+	}, [horizontal, vertical, background, color, rounded])
 
 	const handleClick = onClick || onClose
 

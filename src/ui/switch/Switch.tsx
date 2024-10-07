@@ -7,17 +7,9 @@ import { twMerge } from 'tailwind-merge'
 import { Input } from '@/ui'
 import { SwitchProps } from './types'
 
-const requiredClasses = "after:text-accent after:content-['_*']"
+import { colors } from '../@utils/themeColors'
 
-const colors = {
-	info: 'peer-checked:bg-info',
-	success: 'peer-checked:bg-success',
-	warning: 'peer-checked:bg-warning',
-	danger: 'peer-checked:bg-danger',
-	primary: 'peer-checked:bg-primary',
-	secondary: 'peer-checked:bg-secondary',
-	current: 'peer-checked:bg-current',
-}
+const requiredClasses = "after:text-accent after:content-['_*']"
 
 const sizes = {
 	base: 'text-base',
@@ -51,10 +43,10 @@ const Switch = ({
 	const sliderBeforeClasses = useMemo(() => {
 		return `before:absolute before:h-8 before:w-8 before:transition-transform before:content-[''] ${
 			thin
-			? 'before:left-0 before:-top-3 before:bg-inherit'
-			: 'before:left-1 before:bottom-1 before:bg-white dark:before:bg-dark'
-		}`;
-	}, [thin]);
+				? 'before:left-0 before:-top-3 before:bg-inherit'
+				: 'before:left-1 before:bottom-1 before:bg-white dark:before:bg-dark'
+		}`
+	}, [thin])
 
 	const handleKeyup = (event: any) => {
 		if (event.key !== 'Enter') return

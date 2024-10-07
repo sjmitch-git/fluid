@@ -115,7 +115,7 @@ const Pagination = ({
 				<Select
 					title='Select Page'
 					dropdownSize={size}
-					className={`${size} border-none min-w-12 w-full text-center bg-dark text-light dark:bg-light dark:text-dark`}
+					className={`${size} border-none min-w-16 w-full text-center bg-dark text-light dark:bg-light dark:text-dark`}
 					defaultValue={selectValue}
 					onChange={handleChange}
 					nocaret={true}

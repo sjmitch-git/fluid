@@ -1,7 +1,7 @@
 export interface CardProps {
 	className?: string
 	style?: React.CSSProperties
-	layout?: 'col' | 'row'
+	layout?: 'col' | 'row' | 'col_reverse'
 	children: React.ReactNode
 	shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
 	rounded?: 'none' | 'sm' | 'md' | 'lg' | 'xl'

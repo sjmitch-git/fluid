@@ -10,6 +10,7 @@ import VideoControls from './VideoControls'
 import { VideoPlayerProps } from './types'
 
 import { Loading, Alert } from '@/ui'
+import { aspects } from '../@utils/themeAspects'
 
 const aspectRatios = {
 	video: 'aspect-video',
@@ -54,7 +55,7 @@ const VideoPlayer = ({
 		}
 	}, [setFullscreen, fullscreen])
 
-	const aspectRatioClasses = useMemo(() => aspectRatios[aspect], [aspect])
+	const aspectRatioClasses = useMemo(() => aspects[aspect], [aspect])
 
 	const handleScrubChange = (time: number) => {
 		setTime(time)

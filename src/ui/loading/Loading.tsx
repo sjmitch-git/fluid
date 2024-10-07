@@ -2,6 +2,8 @@ import React, { Suspense, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
+import { colors } from '../@utils/themeColors'
+
 const Bars = React.lazy(() => import('./spinners/Bars'))
 const Clock = React.lazy(() => import('./spinners/Clock'))
 const Dots = React.lazy(() => import('./spinners/Dots'))
@@ -15,18 +17,6 @@ const sizeToWidth = {
 	md: 40,
 	lg: 60,
 	xl: 80,
-}
-
-const colors = {
-	info: 'text-info',
-	success: 'text-success',
-	warning: 'text-warning',
-	danger: 'text-danger',
-	primary: 'text-primary',
-	secondary: 'text-secondary',
-	dark: 'text-dark',
-	light: 'text-light',
-	current: 'text-current',
 }
 
 const layouts = {
@@ -66,7 +56,6 @@ const Loading = ({
 	color = 'current',
 	layout = 'col',
 }: LoadingProps) => {
-
 	const SpinnerIcon = useMemo(() => getSpinnerComponent(spinner), [spinner])
 	const width = useMemo(() => sizeToWidth[size], [size])
 	const colorClasses = useMemo(() => colors[color], [color])

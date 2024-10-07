@@ -6,6 +6,8 @@ import { twMerge } from 'tailwind-merge'
 
 import { Button, Gallery } from '@/ui'
 
+import { aspects } from '../@utils/themeAspects'
+
 import {
 	HiChevronRight,
 	HiChevronLeft,
@@ -75,6 +77,7 @@ const Carousel = ({
 
 		return buttonsPositions[buttonsPosition]
 	}, [buttonsPosition, caption])
+	const aspectClasses = useMemo(() => aspects[aspect], [aspect])
 
 	useEffect(() => {
 		const checkInnerWidth = () => {
@@ -174,9 +177,7 @@ const Carousel = ({
 				onTouchMove={handleTouchMove}
 			>
 				<div
-					className={`inner max-w-lg relative overflow-hidden aspect-${
-						aspect === 'circle' ? 'square' : aspect === 'phone' ? '[9/16]' : aspect
-					}`}
+					className={`inner max-w-lg relative overflow-hidden ${aspectClasses}`}
 					ref={inner}
 					style={heightStyle}
 				>

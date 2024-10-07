@@ -508,6 +508,7 @@ export const TelInput: Story = {
 	render: (args) => (
 		<Label
 			label={args.label}
+			layout='col'
 			{...args}
 		>
 			<Input
@@ -515,7 +516,7 @@ export const TelInput: Story = {
 				type='tel'
 				autocomplete='tel'
 				title='Enter a vaild UK mobile number'
-				pattern='07[0-9]{9}'
+				pattern='^(+44s?7d{3}|(?07d{3})?)s?d{3}s?d{3}$'
 				placeholder='eg: 07111 222333'
 				hint={true}
 				required={args.required}
@@ -524,48 +525,6 @@ export const TelInput: Story = {
 		</Label>
 	),
 }
-
-/* export const RangeInput: Story = (args: LabelProps) => {
-	const [value, setValue] = useState(50)
-
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const newValue = e.target.value
-		setValue(Number(newValue))
-	}
-
-	return (
-		<Label {...args}>
-			<Input
-				name='range'
-				type='range'
-				value={50}
-				min='0'
-				max='100'
-				step='1'
-				hint={true}
-				title={`Current value: ${value}`}
-				onChange={handleChange}
-				onInput={handleChange}
-				size={args.size}
-			/>
-		</Label>
-	)
-}
-
-RangeInput.args = {
-	label: 'Range',
-	type: 'range',
-	layout: 'col',
-	size: 'md',
-}
-
-RangeInput.argTypes = {
-	required: {
-		table: {
-			disable: true,
-		},
-	},
-} */
 
 const months = [
 	{ value: '01', label: 'January' },

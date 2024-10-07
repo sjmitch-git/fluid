@@ -205,6 +205,7 @@ export const Default: Story = {
 		legendBold: true,
 		legendAlign: 'center',
 		spacing: '4',
+		roundedRadio: 'full',
 		onChange: handleChange,
 	},
 }
@@ -212,7 +213,7 @@ export const Default: Story = {
 export const HiddenInput: Story = {
 	argTypes: {
 		...Default.argTypes,
-		rounded: {
+		roundedRadio: {
 			table: {
 				disable: true,
 			},
@@ -223,14 +224,14 @@ export const HiddenInput: Story = {
 		hideInput: true,
 		columns: 1,
 		size: 'md',
-		labelStyles: `p-[.5em] gap-0 rounded-md ring-2 ring-neutral [&:has(input:checked)]:ring-info hover:ring-accent overflow-hidden relative`,
+		labelStyles: `p-[.5em] gap-0 rounded-md ring-2 ring-neutral [&:has(input:checked)]:ring-accent [&:has(input:checked)]:bg-info hover:ring-accent overflow-hidden relative`,
 	},
 }
 
 export const WithEmojis: Story = {
 	argTypes: {
 		...Default.argTypes,
-		rounded: {
+		roundedRadio: {
 			table: {
 				disable: true,
 			},
@@ -268,7 +269,7 @@ export const WithIcons: Story = {
 				disable: true,
 			},
 		}, */
-		rounded: {
+		roundedRadio: {
 			table: {
 				disable: true,
 			},
@@ -285,7 +286,7 @@ export const WithIcons: Story = {
 		columns: 6,
 		size: 'md',
 		labelStyles:
-			'p-[.1em] bg-light rounded-md ring-2 text-center ring-neutral [&:has(input:checked)]:ring-info hover:ring-accent overflow-hidden relative flex justify-center',
+			'p-[.1em] bg-light rounded-md ring-2 text-center ring-neutral [&:has(input:checked)]:ring-accent hover:ring-accent overflow-hidden relative flex justify-center',
 	},
 }
 

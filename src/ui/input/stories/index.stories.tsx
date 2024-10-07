@@ -434,50 +434,6 @@ export const DatesAndTime: Story = {
 	},
 }
 
-/* export const Datetime_Local: Story = {
-	argTypes: {
-		...Date.argTypes,
-	},
-	args: {
-		type: 'datetime-local',
-		size: 'md',
-		name: 'datetime',
-	},
-} */
-
-/* export const Time: Story = {
-	argTypes: {
-		...Date.argTypes,
-	},
-	args: {
-		type: 'time',
-		size: 'md',
-		name: 'time',
-	},
-} */
-
-/* export const Week: Story = {
-	argTypes: {
-		...Date.argTypes,
-	},
-	args: {
-		type: 'week',
-		size: 'md',
-		name: 'week',
-	},
-} */
-
-/* export const Month: Story = {
-	argTypes: {
-		...Date.argTypes,
-	},
-	args: {
-		type: 'month',
-		size: 'md',
-		name: 'month',
-	},
-} */
-
 export const URL: Story = {
 	argTypes: {
 		...Text.argTypes,
@@ -618,32 +574,11 @@ export const Telephone: Story = {
 		type: 'tel',
 		size: 'md',
 		autocomplete: 'tel',
-		placeholder: 'eg: 07123456789',
+		placeholder: 'e.g. 07123 456 789 or +44 7123 456 789',
 		hint: true,
 		title: 'Enter a vaild UK mobile number',
-		pattern: '07[0-9]{9}',
+		pattern: '^(+44s?7d{3}|(?07d{3})?)s?d{3}s?d{3}$',
 		name: 'telNo',
 		rounded: 'md',
 	},
 }
-
-/* export const Range: Story = {
-	argTypes: {
-		...Checkbox.argTypes,
-		autocomplete: {
-			table: {
-				disable: true,
-			},
-		},
-		pattern: {
-			table: {
-				disable: true,
-			},
-		},
-	},
-	args: {
-		type: 'range',
-		size: 'md',
-		name: 'range',
-	},
-} */

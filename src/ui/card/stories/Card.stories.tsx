@@ -16,8 +16,8 @@ const meta: Meta = {
 	args: {
 		layout: 'col',
 		shadow: 'none',
-		rounded: 'md',
-		outline: true,
+		rounded: 'none',
+		outline: false,
 		className: '',
 	},
 	tags: ['autodocs'],
