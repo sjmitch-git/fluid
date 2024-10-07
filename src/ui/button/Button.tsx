@@ -3,14 +3,11 @@ import { forwardRef } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { backgrounds, colors, borderColors } from '../@utils/themeColors'
-import { shadows } from '../@utils/themeShadows'
+import { backgrounds, colors, borderColors, shadows } from '../@utils'
 
 import { ButtonProps } from './types'
 
 export type ButtonRef = HTMLButtonElement
-
-// const stateStyles = 'disabled:opacity-50 disabled:grayscale disabled:text-gray-700'
 
 const stateStyles = 'disabled:grayscale disabled:opacity-50'
 

@@ -84,7 +84,7 @@ export default App
 
 ### Menus
 
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-accordian--docs'>Accordion</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-accordion--docs'>Accordion</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-breadcrumbs--docs'>Breadcrumbs</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-carousel--docs'>Carousel</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-drawer--docs'>Drawer</a>

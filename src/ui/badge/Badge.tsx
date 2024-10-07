@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { BadgeProps } from './types'
 
-import { backgrounds, colors } from '../@utils/themeColors'
+import { backgrounds, colors } from '../@utils'
 
 const layouts = {
 	square: 'aspect-square p-[.15em]',

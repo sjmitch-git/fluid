@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { CardProps } from './types'
 
-import { shadows } from '../@utils/themeShadows'
+import { shadows } from '../@utils'
 
 const layouts = {
 	col: 'col flex flex-col',

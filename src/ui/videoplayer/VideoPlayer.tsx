@@ -10,7 +10,7 @@ import VideoControls from './VideoControls'
 import { VideoPlayerProps } from './types'
 
 import { Loading, Alert } from '@/ui'
-import { aspects } from '../@utils/themeAspects'
+import { aspects } from '../@utils'
 
 const aspectRatios = {
 	video: 'aspect-video',
