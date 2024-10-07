@@ -6,4 +6,5 @@ export interface ProgressProps {
 	max?: number
 	totalSize: number
 	downloadedSize: number
+	unit?: 'kb' | 'mb' | 'gb'
 }
