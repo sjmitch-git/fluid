@@ -99,6 +99,7 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-badge--docs'>Badge</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-dialog--docs'>Dialog</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-loading--docs'>Loading</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-progress--docs'>Progress</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-ratings--docs'>Ratings</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-toast--docs'>Toast</a>
 
