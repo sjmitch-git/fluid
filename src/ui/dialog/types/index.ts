@@ -1,6 +1,7 @@
 export interface DialogProps extends React.HTMLAttributes<HTMLDialogElement> {
 	open: boolean
 	modal?: boolean
+	showClose?: boolean
 	onClose: () => void
 	submit?: (e: React.FormEvent<HTMLFormElement>) => void
 	title?: string

@@ -9,6 +9,7 @@ import { useDisableBack } from './hooks/useDisableBack'
 const Dialog = ({
 	open = false,
 	modal = true,
+	showClose = true,
 	onClose,
 	title,
 	titleSize = 'lg',
@@ -18,7 +19,7 @@ const Dialog = ({
 	useDisableBack(modal)
 	const dialog = useRef<HTMLDialogElement>(null!)
 
-	const closeSize = useMemo(() => modal ? 'lg' : 'md', [modal])
+	const closeSize = useMemo(() => (modal ? 'lg' : 'md'), [modal])
 
 	useEffect(() => {
 		const dialogRef = dialog.current
@@ -68,16 +69,20 @@ const Dialog = ({
 						{title}
 					</h2>
 				)}
-				<CloseButton
-					onClick={onClose}
-					layout='circle'
-					size={closeSize}
-					className={`${modal ? 'fixed right-3 top-3' : 'absolute right-1 top-1'}  !p-0`}
-					background='dark'
-					color='light'
-				/>
+				{showClose && (
+					<CloseButton
+						onClick={onClose}
+						layout='circle'
+						size={closeSize}
+						className={`${
+							modal ? 'fixed right-3 top-3' : 'absolute right-1 top-1'
+						}  !p-0`}
+						background='dark'
+						color='light'
+					/>
+				)}
 			</div>
-			<div className={`dialog-content p-4 pt-0 max-w-md`}>{children}</div>
+			<div className={`dialog-content p-4 pt-0 min-w-[280px] max-w-md`}>{children}</div>
 		</dialog>
 	)
 }

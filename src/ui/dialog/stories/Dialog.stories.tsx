@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dialog } from '..'
 import { DialogProps } from '../types'
-import { Tabs } from '@/ui'
+import { Tabs, Progress } from '@/ui'
 import { LoginRegister } from '../../tabs/stories/Tabs.stories'
+import { Downloading } from '../../progress/stories/Progress.stories'
 
 const meta: Meta = {
 	title: 'Fluid UI/Feedback/Dialog',
@@ -15,7 +16,7 @@ export default meta
 
 type Story = StoryObj<typeof Dialog>
 
-export const Default: Story = (args: DialogProps) => {
+export const SimpleDialog: Story = (args: DialogProps) => {
 	const [open, setOpen] = useState(args.open)
 
 	const handleClose = () => {
@@ -47,7 +48,7 @@ export const Default: Story = (args: DialogProps) => {
 	)
 }
 
-Default.args = {
+SimpleDialog.args = {
 	title: 'Dialog Title',
 	titleSize: 'lg',
 	titleBold: true,
@@ -56,7 +57,7 @@ Default.args = {
 	onClose: () => console.log('Dialog closed'),
 }
 
-Default.argTypes = {
+SimpleDialog.argTypes = {
 	submit: {
 		table: {
 			disable: true,
@@ -121,5 +122,5 @@ ModalDialog.args = {
 }
 
 ModalDialog.argTypes = {
-	...Default.argTypes,
+	...SimpleDialog.argTypes,
 }

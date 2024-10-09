@@ -3,42 +3,77 @@
 import React, { useEffect, useState } from 'react'
 import { ProgressProps } from './types'
 import { twMerge } from 'tailwind-merge'
+import { Button } from '@/ui'
 
 const Progress = ({
 	totalSize,
-	downloadedSize,
+	downloadedSize = 0,
 	unit = 'mb',
-	id = 'file',
-	value = 0,
-	max = 100,
+	id = 'progress',
+	doneMessage,
+	onDone,
+	onCancel,
+	showCancel = true,
+	feedbackClasses = '',
 	className = '',
 	style,
 }: ProgressProps) => {
-	const [progress, setProgress] = useState(value || 0)
+	const [progress, setProgress] = useState(0)
+	const [done, setDone] = useState(false)
+	const [isCancelled, setIsCancelled] = useState(false)
 
 	useEffect(() => {
+		if (isCancelled) return
+
 		if (totalSize > 0) {
 			const percentage = (downloadedSize / totalSize) * 100
 			setProgress(Math.min(percentage, 100))
 		}
-	}, [totalSize, downloadedSize])
+
+		if (downloadedSize >= totalSize) {
+			setDone(true)
+			if (onDone && !done) onDone()
+		} else {
+			setDone(false)
+		}
+	}, [totalSize, downloadedSize, onDone, done, isCancelled])
+
+	const handleCancel = () => {
+		setIsCancelled(true)
+		if (onCancel) onCancel()
+	}
 
 	return (
-		<div className='progress-wrapper'>
+		<div className='progress-wrapper min-w-96'>
 			<progress
-				className={twMerge(
-					`progress w-full h-4 rounded-lg bg-gray-200 text-dark darK:text-light`,
-					className
-				)}
+				className={twMerge(`progress w-full h-4`, className)}
 				style={style}
 				id={id}
 				value={progress}
-				max={max}
+				max={100}
 			>
 				{progress.toFixed(2)}%
 			</progress>
-			<div className='text-sm text-center mt-2'>
-				{downloadedSize.toFixed(2)} {unit} / {totalSize} {unit}
+			<div className={twMerge(`progress-feedback text-sm text-center mt-2`, feedbackClasses)}>
+				{done && doneMessage
+					? doneMessage
+					: `${progress.toFixed(0)}% of ${totalSize} ${unit}`}
+				{showCancel && !done && (
+					<div className='progress-cancel flex justify-center mt-4'>
+						{!isCancelled && (
+							<Button
+								className=''
+								background='transparent'
+								color='danger'
+								size='md'
+								isBold={true}
+								onClick={handleCancel}
+							>
+								Cancel?
+							</Button>
+						)}
+					</div>
+				)}
 			</div>
 		</div>
 	)
