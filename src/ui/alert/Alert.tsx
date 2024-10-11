@@ -11,10 +11,10 @@ const outlineStyles = 'rounded border-0 outline outline-2'
 const solidStyles = `solid rounded border-none`
 
 const statuses = {
-	info: 'border-info bg-info/25 outline-info',
-	success: 'border-success bg-success/25 outline-success',
-	warning: 'border-warning bg-warning/25 outline-warning',
-	error: 'border-error bg-error/25 outline-error',
+	info: 'border-info bg-info-dark outline-info',
+	success: 'border-success bg-success-dark outline-success',
+	warning: 'border-warning bg-warning-dark outline-warning',
+	error: 'border-error bg-error-dark outline-error',
 }
 
 const solidStatuses = {
@@ -25,8 +25,8 @@ const solidStatuses = {
 }
 
 const sizes = {
-	sm: 'text-sm px-4 py-1',
-	md: 'text-base px-4 py-1',
+	sm: 'text-sm px-2 py-1',
+	md: 'text-base px-3 py-1',
 	lg: 'text-lg px-4 py-1',
 }
 
@@ -49,7 +49,7 @@ const Alert = ({
 }: AlertProps) => {
 	const sizeClasses = useMemo(() => sizes[size], [size])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
-
+	console.log(crypto.randomUUID())
 	const statusClasses = useMemo(
 		() =>
 			layout === 'solid'
