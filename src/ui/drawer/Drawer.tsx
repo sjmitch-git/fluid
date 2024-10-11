@@ -76,8 +76,6 @@ const Drawer = ({
 						layout='circle'
 						size='md'
 						className={`fixed top-3 right-3 !p-0`}
-						background='dark'
-						color='light'
 					/>
 				</header>
 				<div className={`sidebar-content max-h-full overflow-y-auto p-4 pt-8`}>

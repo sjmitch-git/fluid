@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -11,10 +11,10 @@ const outlineStyles = 'rounded border-0 outline outline-2'
 const solidStyles = `solid rounded border-none`
 
 const statuses = {
-	info: 'border-info bg-[var(--info-color-25)] outline-info',
-	success: 'border-success bg-[var(--success-color-25)] outline-success',
-	warning: 'border-warning bg-[var(--warning-color-25)] outline-warning',
-	error: 'border-error bg-[var(--error-color-25)] outline-error',
+	info: 'border-info bg-info/25 outline-info',
+	success: 'border-success bg-success/25 outline-success',
+	warning: 'border-warning bg-warning/25 outline-warning',
+	error: 'border-error bg-error/25 outline-error',
 }
 
 const solidStatuses = {
@@ -50,7 +50,13 @@ const Alert = ({
 	const sizeClasses = useMemo(() => sizes[size], [size])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
 
-	const statusClasses = useMemo(() => layout === 'solid' ? `${solidStatuses[status]} text-light` : `${statuses[status]} text-dark`, [layout, status])
+	const statusClasses = useMemo(
+		() =>
+			layout === 'solid'
+				? `${solidStatuses[status]} text-light`
+				: `${statuses[status]} text-dark`,
+		[layout, status]
+	)
 
 	return (
 		<blockquote
@@ -79,6 +85,7 @@ const Alert = ({
 				<CloseButton
 					size={size}
 					onClick={onClick}
+					className='right-2 top-2'
 				/>
 			)}
 		</blockquote>

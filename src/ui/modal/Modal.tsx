@@ -64,9 +64,7 @@ const Modal = ({
 				onClick={onClick}
 				layout='circle'
 				size='lg'
-				className='right-3 top-3 !p-0'
-				background={theme === 'dark' ? 'light' : 'dark'}
-				color={theme === 'dark' ? 'dark' : 'light'}
+				className='right-3 top-3'
 			/>
 		</dialog>
 	)

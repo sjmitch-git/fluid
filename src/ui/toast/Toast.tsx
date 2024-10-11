@@ -32,8 +32,6 @@ const roundeds = {
 const Toast = ({
 	background = 'warning',
 	color = 'light',
-	closeBackground = 'dark',
-	closeColor = 'light',
 	rounded = 'md',
 	open = false,
 	body,
@@ -115,8 +113,6 @@ const Toast = ({
 						setShow(false)
 						onClose && onClose()
 					}}
-					background={closeBackground}
-					color={closeColor}
 					className='absolute top-1 right-1'
 				/>
 			)}

@@ -37,8 +37,6 @@ const widthClasses = (type: string) => {
 }
 
 const Label = ({
-	className = '',
-	style,
 	forId,
 	size = 'md',
 	layout = 'col',
@@ -47,6 +45,8 @@ const Label = ({
 	required,
 	type = 'text',
 	children,
+	className = '',
+	style,
 }: LabelProps) => {
 	const sizeClasses = useMemo(() => sizes[size], [size])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])

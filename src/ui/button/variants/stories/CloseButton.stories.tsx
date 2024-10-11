@@ -7,62 +7,24 @@ const meta: Meta = {
 	component: CloseButton,
 	args: {
 		layout: 'circle',
-		background: 'dark',
-		color: 'light',
 		size: 'md',
 		disabled: false,
-		outline: false,
 	},
 	argTypes: {
+		layout: {
+			options: ['square', 'circle'],
+			control: { type: 'radio' },
+		},
 		disabled: {
 			options: [false, true],
 			control: { type: 'radio' },
-		},
-		outline: {
-			options: [false, true],
-			control: { type: 'radio' },
-		},
-		role: {
-			table: {
-				disable: true,
-			},
-		},
-		tabindex: {
-			table: {
-				disable: true,
-			},
-		},
-		textcase: {
-			table: {
-				disable: true,
-			},
-		},
-		id: {
-			table: {
-				disable: true,
-			},
-		},
-		type: {
-			table: {
-				disable: true,
-			},
 		},
 		title: {
 			table: {
 				disable: true,
 			},
 		},
-		children: {
-			table: {
-				disable: true,
-			},
-		},
 		onClick: {
-			table: {
-				disable: true,
-			},
-		},
-		onBlur: {
 			table: {
 				disable: true,
 			},
@@ -79,11 +41,11 @@ export const Default: Story = {}
 Default.decorators = [
 	(Story) => (
 		<div
+			className='bg-neutral'
 			style={{
 				margin: '1rem',
 				padding: '2rem',
 				position: 'relative',
-				background: '#ffffff',
 			}}
 		>
 			<Story />

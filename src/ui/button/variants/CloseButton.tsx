@@ -1,41 +1,39 @@
-import {useMemo} from 'react'
+import { useMemo } from 'react'
 import Button from '../Button'
-import { ButtonProps } from '../types'
+import { CloseButtonProps } from './types'
 import { HiMiniXMark } from 'react-icons/hi2'
-
-const stateClasses = 'hover:scale-100'
+import { twMerge } from 'tailwind-merge'
 
 const sizes = {
-	sm: 'w-4',
+	sm: 'w-',
 	md: 'w-6',
 	lg: 'w-8',
-	xl: 'w-12',
 }
 
 const CloseButton = ({
-	size = 'sm',
-	className = 'right-5 top-4',
+	size = 'md',
+	className = '',
 	onClick,
 	disabled = false,
-	color = 'current',
-	background = 'transparent',
-	layout = 'square',
+	layout = 'circle',
 	title = 'Close?',
-	outline,
-}: ButtonProps) => {
+}: CloseButtonProps) => {
 	const sizeClasses = useMemo(() => sizes[size], [size])
 
 	return (
 		<Button
-			className={`fixed !p-0 ${className} ${stateClasses} ${sizeClasses}`}
+			className={twMerge(
+				`closebtn fixed p-0 right-4 top-4 bg-dark text-light dark:bg-light dark:text-dark ${sizeClasses}`,
+				className
+			)}
 			onClick={onClick}
-			background={background}
-			color={color}
+			background='transparent'
+			color='current'
 			layout={layout}
 			size={size}
 			title={title}
 			disabled={disabled}
-			outline={outline}
+			id='close'
 		>
 			<HiMiniXMark className={`h-auto w-full`} />
 			<span className='sr-only'>Close</span>

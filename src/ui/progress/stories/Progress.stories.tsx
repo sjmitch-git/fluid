@@ -15,9 +15,8 @@ const modalExample = `<Dialog
 	open={isOpen}
 	modal={true}
 	onClose={handleClose}
-	showClose={false}
 >
-	<Progress {...props} onDone={handleClose} onCancel={handleCancel} />
+	<Progress {...props} onDone={handleClose} />
 </Dialog>`
 
 const meta: Meta<typeof Progress> = {
@@ -85,16 +84,6 @@ ${modalExample}
 				disable: true,
 			},
 		},
-		onCancel: {
-			table: {
-				disable: true,
-			},
-		},
-		showCancel: {
-			table: {
-				disable: true,
-			},
-		},
 		downloadedSize: {
 			table: {
 				disable: true,
@@ -108,21 +97,12 @@ export default meta
 
 type Story = StoryObj<typeof Progress>
 
-const ProgressComponent = (args: {
-	totalSize: number
-	onDone?: () => void
-	onCancel?: () => void
-}) => {
+const ProgressComponent = (args: { totalSize: number; onDone?: () => void }) => {
 	const [downloadedSize, setDownloadedSize] = useState(0)
 	const [isCancelled, setIsCancelled] = useState(false)
 
 	const handleDone = () => {
 		if (args.onDone) args.onDone()
-	}
-
-	const handleCancel = () => {
-		setIsCancelled(true)
-		if (args.onCancel) args.onCancel()
 	}
 
 	useEffect(() => {
@@ -149,7 +129,6 @@ const ProgressComponent = (args: {
 			{...args}
 			downloadedSize={downloadedSize}
 			onDone={handleDone}
-			onCancel={handleCancel}
 		/>
 	)
 }
@@ -161,77 +140,101 @@ export const SimpleProgress: Story = {
 		totalSize: 245,
 		unit: 'mb',
 		doneMessage: 'Download complete!',
-		showCancel: false,
 		className: '',
 	},
+}
+
+const ModalProgressComponent = (args: {
+	totalSize: number
+	downloadedSize: number
+	onDone?: () => void
+	doneMessage?: string
+}) => {
+	const [isOpen, setIsOpen] = useState(false)
+	const [downloadedSize, setDownloadedSize] = useState(0)
+	const [title, setTitle] = useState<string>('Downloading')
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setDownloadedSize((prev) => {
+				if (prev >= args.totalSize) {
+					clearInterval(interval)
+					return args.totalSize
+				}
+				return prev + 5
+			})
+		}, 100)
+
+		return () => clearInterval(interval)
+	}, [args.totalSize])
+
+	const handleOpen = () => {
+		setIsOpen(true)
+	}
+
+	const handleClose = () => {
+		setIsOpen(false)
+	}
+
+	const handleOnDone = () => {
+		if (args.doneMessage) setTitle(args.doneMessage)
+	}
+
+	return (
+		<>
+			<button
+				onClick={handleOpen}
+				className='px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600'
+			>
+				Download
+			</button>
+
+			{isOpen && (
+				<Dialog
+					title={title}
+					titleSize='lg'
+					titleBold={true}
+					open={isOpen}
+					modal={true}
+					onClose={handleClose}
+				>
+					<Progress
+						{...args}
+						downloadedSize={downloadedSize}
+						onDone={handleOnDone}
+					/>
+				</Dialog>
+			)}
+		</>
+	)
 }
 
 export const ModalProgress: Story = {
 	parameters: {
 		docs: {
 			source: {
-				code: `${modalExample}`,
+				code: `<Dialog
+  title='Downloading'
+  titleSize='lg'
+  titleBold={true}
+  open={isOpen}
+  modal={true}
+  onClose={handleClose}
+>
+  <Progress
+    {...args}
+    onDone={handleOnDone}
+  />
+</Dialog>`,
 			},
 		},
 	},
-	render: (args) => {
-		const [isOpen, setIsOpen] = useState(false)
-
-		const handleOpen = () => {
-			setIsOpen(true)
-		}
-
-		const handleClose = () => {
-			setIsOpen(false)
-		}
-
-		const handleCancel = () => {
-			setTimeout(() => {
-				setIsOpen(false)
-			}, 800)
-		}
-
-		const handleDoneModal = () => {
-			setTimeout(() => {
-				setIsOpen(false)
-			}, 1800)
-		}
-
-		return (
-			<>
-				<button
-					onClick={handleOpen}
-					className='px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600'
-				>
-					Download
-				</button>
-
-				<Dialog
-					title='Downloading'
-					titleSize='lg'
-					titleBold={true}
-					open={isOpen}
-					modal={true}
-					onClose={handleClose}
-					showClose={false}
-				>
-					{isOpen && (
-						<ProgressComponent
-							{...args}
-							onDone={handleDoneModal}
-							onCancel={handleCancel}
-						/>
-					)}
-				</Dialog>
-			</>
-		)
-	},
+	render: (args) => <ModalProgressComponent {...args} />,
 	args: {
 		id: 'progress-demo',
-		totalSize: 245,
+		totalSize: 249,
 		downloadedSize: 0,
-		unit: 'mb',
+		unit: 'kb',
 		doneMessage: 'Download complete!',
-		showCancel: true,
 	},
 }

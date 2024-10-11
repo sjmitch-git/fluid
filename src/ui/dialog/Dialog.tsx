@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useMemo } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { DialogProps } from './types'
 import { CloseButton } from '@/ui'
 
@@ -18,8 +18,6 @@ const Dialog = ({
 }: DialogProps) => {
 	useDisableBack(modal)
 	const dialog = useRef<HTMLDialogElement>(null!)
-
-	const closeSize = useMemo(() => (modal ? 'lg' : 'md'), [modal])
 
 	useEffect(() => {
 		const dialogRef = dialog.current
@@ -73,12 +71,8 @@ const Dialog = ({
 					<CloseButton
 						onClick={onClose}
 						layout='circle'
-						size={closeSize}
-						className={`${
-							modal ? 'fixed right-3 top-3' : 'absolute right-1 top-1'
-						}  !p-0`}
-						background='dark'
-						color='light'
+						size='md'
+						className={`${modal ? 'fixed right-3 top-3' : 'absolute right-1 top-1'}`}
 					/>
 				)}
 			</div>

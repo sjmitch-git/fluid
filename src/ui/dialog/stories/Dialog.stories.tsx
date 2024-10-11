@@ -73,18 +73,13 @@ export default meta
 
 type Story = StoryObj<typeof Dialog>
 
-export const SimpleDialog: Story = (args: DialogProps) => {
+const DialogComponent = (args: DialogProps) => {
 	const [open, setOpen] = useState(args.open)
 
 	const handleClose = () => {
 		setOpen(false)
 		if (args.onClose) args.onClose()
 	}
-
-	/* const handleSubmit = (data: { [key: string]: string }) => {
-		console.log('data', data)
-		handleClose()
-	} */
 
 	return (
 		<>
@@ -99,19 +94,22 @@ export const SimpleDialog: Story = (args: DialogProps) => {
 				open={open}
 				onClose={handleClose}
 			>
-				<p>A simple dialog message!</p>
+				{args.children || <p>A simple dialog message!</p>}
 			</Dialog>
 		</>
 	)
 }
 
-SimpleDialog.args = {
-	title: 'Dialog Title',
-	titleSize: 'lg',
-	titleBold: true,
-	open: false,
-	modal: false,
-	onClose: () => console.log('Dialog closed'),
+export const SimpleDialog: Story = {
+	render: (args) => <DialogComponent {...args} />,
+	args: {
+		title: 'Dialog Title',
+		titleSize: 'lg',
+		titleBold: true,
+		open: false,
+		modal: false,
+		onClose: () => console.log('Dialog closed'),
+	},
 }
 
 SimpleDialog.argTypes = {
@@ -137,6 +135,33 @@ SimpleDialog.argTypes = {
 	},
 }
 
+const ModalDialogComponent = (args: DialogProps) => {
+	const [open, setOpen] = useState(args.open)
+
+	const handleClose = () => {
+		setOpen(false)
+		if (args.onClose) args.onClose()
+	}
+
+	return (
+		<>
+			<button
+				onClick={() => setOpen(true)}
+				className='bg-blue-800 font-semibold text-white px-4 py-2 rounded hover:bg-blue-600'
+			>
+				Log-in
+			</button>
+			<Dialog
+				{...args}
+				open={open}
+				onClose={handleClose}
+			>
+				<Tabs {...LoginRegister.args}>{LoginRegister.args?.children}</Tabs>
+			</Dialog>
+		</>
+	)
+}
+
 export const ModalDialog: Story = {
 	parameters: {
 		docs: {
@@ -145,32 +170,7 @@ export const ModalDialog: Story = {
 			},
 		},
 	},
-	render: (args) => {
-		const [open, setOpen] = useState(false)
-
-		const handleClose = () => {
-			setOpen(false)
-			if (args.onClose) args.onClose()
-		}
-
-		return (
-			<>
-				<button
-					onClick={() => setOpen(true)}
-					className='bg-blue-800 font-semibold text-white px-4 py-2 rounded hover:bg-blue-600'
-				>
-					Log-in
-				</button>
-				<Dialog
-					{...args}
-					open={open}
-					onClose={handleClose}
-				>
-					<Tabs {...LoginRegister.args}>{LoginRegister.args?.children}</Tabs>
-				</Dialog>
-			</>
-		)
-	},
+	render: (args) => <ModalDialogComponent {...args} />,
 	args: {
 		title: 'Log-in to your account',
 		titleSize: 'lg',
@@ -180,15 +180,6 @@ export const ModalDialog: Story = {
 		onClose: () => console.log('Dialog closed'),
 	},
 }
-
-/* ModalDialog.args = {
-	title: 'Log-in to your account',
-	titleSize: 'lg',
-	titleBold: true,
-	open: false,
-	modal: true,
-	onClose: () => console.log('Dialog closed'),
-} */
 
 ModalDialog.argTypes = {
 	...SimpleDialog.argTypes,

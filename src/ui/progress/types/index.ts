@@ -8,6 +8,6 @@ export interface ProgressProps {
 	unit?: 'kb' | 'mb' | 'gb'
 	doneMessage?: string
 	onDone?: () => void
-	onCancel?: () => void
-	showCancel?: boolean
+	//onCancel?: () => void
+	//showCancel?: boolean
 }

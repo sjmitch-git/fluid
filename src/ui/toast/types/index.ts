@@ -1,12 +1,4 @@
-type BackgroundOption =
-	| 'dark'
-	| 'light'
-	| 'info'
-	| 'success'
-	| 'warning'
-	| 'danger'
-	| 'primary'
-	| 'secondary'
+type BackgroundOption = 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'secondary'
 
 type ColorOption = 'dark' | 'light'
 
@@ -16,7 +8,6 @@ export interface ToastProps {
 	background?: BackgroundOption
 	closeBackground?: BackgroundOption
 	color?: ColorOption
-	closeColor?: ColorOption
 	body: React.ReactNode
 	open: boolean
 	autohideDuration?: number
