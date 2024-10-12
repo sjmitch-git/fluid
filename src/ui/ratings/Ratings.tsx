@@ -3,7 +3,15 @@ import { twMerge } from 'tailwind-merge'
 import { round } from '@smitch/js-lib'
 import { Badge } from '@/ui'
 
-import { FaStar, FaThumbsUp, FaFaceSmile, FaHeart, FaCheck } from 'react-icons/fa6'
+import {
+	FaStar,
+	FaThumbsUp,
+	FaFaceSmile,
+	FaHeart,
+	FaCheck,
+	FaThumbsDown,
+	FaFaceFrown,
+} from 'react-icons/fa6'
 
 import { RatingsProps } from './types'
 
@@ -17,40 +25,47 @@ const Ratings = ({
 	shape = 'circle',
 	size = 'md',
 	background = 'info',
-	color = 'light',
+	color = 'dark',
 }: RatingsProps) => {
 	rating = round(rating)
 	if (rating === 0) rating = 1
 	if (!range) range = rating
 	return (
-		<div
-			className={twMerge(`ratings group relative flex gap-${spacing}`, className)}
-			title={`Rating: ${rating} out of ${range}`}
-		>
-			{[...new Array(range)].map((_el, index) => (
-				<Badge
-					layout={shape}
-					size={size}
-					background={background}
-					color={`${rating <= index ? 'neutral' : color}`}
-					key={index}
-				>
-					{customIcon ? (
-						customIcon
-					) : icon === 'smiley' ? (
-						<FaFaceSmile />
-					) : icon === 'thumb' ? (
-						<FaThumbsUp />
-					) : icon === 'heart' ? (
-						<FaHeart />
-					) : icon === 'check' ? (
-						<FaCheck />
-					) : (
-						<FaStar />
-					)}
-				</Badge>
-			))}
-			<p className='sr-only'>{`Rating: ${rating} out of ${range}`}</p>
+		<div className='ratings-wrapper inline-block'>
+			<div
+				className={twMerge(`ratings group relative flex gap-${spacing}`, className)}
+				title={`Rating: ${rating} out of ${range}`}
+			>
+				{[...new Array(range)].map((_el, index) => (
+					<Badge
+						layout={shape}
+						size={size}
+						background={background}
+						color={`${rating <= index ? 'neutral' : color}`}
+						key={index}
+						className='static'
+					>
+						{customIcon ? (
+							customIcon
+						) : icon === 'smiley' ? (
+							<FaFaceSmile />
+						) : icon === 'frown' ? (
+							<FaFaceFrown />
+						) : icon === 'thumb' ? (
+							<FaThumbsUp />
+						) : icon === 'thumbdown' ? (
+							<FaThumbsDown />
+						) : icon === 'heart' ? (
+							<FaHeart />
+						) : icon === 'check' ? (
+							<FaCheck />
+						) : (
+							<FaStar />
+						)}
+					</Badge>
+				))}
+			</div>
+			<p className='sr-only'>{`Rating: ${rating}/${range}`}</p>
 		</div>
 	)
 }

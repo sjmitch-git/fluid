@@ -4,13 +4,27 @@ import { twMerge } from 'tailwind-merge'
 
 import { BadgeProps } from './types'
 
-import { backgrounds, colors } from '../@utils'
+import { colors } from '../@utils'
+
+const backgrounds = {
+	info: 'bg-info',
+	success: 'bg-success',
+	warning: 'bg-warning',
+	danger: 'bg-danger',
+	primary: 'bg-primary',
+	secondary: 'bg-secondary',
+	dark: 'bg-dark',
+	light: 'bg-white',
+	accent: 'bg-accent',
+	neutral: 'bg-neutral',
+	transparent: 'bg-transparent',
+}
 
 const layouts = {
-	square: 'aspect-square p-[.15em]',
-	circle: 'rounded-full aspect-square p-[.15em]',
-	rounded: 'rounded-md px-[.25em] py-[.15em]',
-	pill: 'rounded-full p-[.25em]',
+	square: 'aspect-square p-[.15em] leading-3',
+	circle: 'rounded-full aspect-square p-[.175em] leading-3',
+	rounded: 'rounded-md px-[.25em] py-[.1em] leading-5',
+	pill: 'rounded-full px-[.25em] py-[.1em] leading-5',
 }
 
 const sizes = {
@@ -22,8 +36,8 @@ const sizes = {
 
 const positions = {
 	inline: 'relative -top-3',
-	right: 'absolute end-1 top-1',
-	left: 'absolute -start-1 -top-2',
+	right: 'absolute end-0 top-0',
+	left: 'absolute -start-6',
 }
 
 const Badge = ({
@@ -31,7 +45,7 @@ const Badge = ({
 	style,
 	layout = 'circle',
 	background = 'info',
-	color = 'light',
+	color = 'dark',
 	position = 'inline',
 	children,
 	size = 'inherit',

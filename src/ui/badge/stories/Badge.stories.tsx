@@ -8,14 +8,46 @@ const meta: Meta = {
 	component: Badge,
 	argTypes: {
 		position: {
-			options: ['inline', 'right'],
+			options: ['inline', 'right', 'left'],
 		},
-		/* size: {
-			options: ['sm', 'md', 'lg'],
-		}, */
 		children: {
 			table: {
 				disable: true,
+			},
+		},
+	},
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Badge** component is used to display small labels or notifications on other UI elements. It supports various layouts, positions, and content types, making it versatile for indicating statuses, counts, or other contextual information.
+
+### Import
+\`\`\`tsx
+import { Badge } from '@smitch/fluid'
+\`\`\`
+
+### Example Usage:
+\`\`\`tsx
+<Badge position="inline" layout="circle" background="info" color="dark">
+  <FaStar />
+</Badge>
+\`\`\`
+
+### Key Features:
+- **Positioning**: Can be positioned inline with text, or floated to the left or right of its parent.
+- **Layout**: Configurable as \`square\`, \`circle\`, \`rounded\`, or \`pill\` shapes.
+- **Content**: Accepts any children, including icons, emojis, or plain text.
+- **Styling**: Easily customizable using Tailwind CSS classes for background, color, and size.
+
+### Props:
+- \`position\` (\`'inline'\` | \`'right'\` | \`'left'\`): Defines the position of the badge relative to its parent.
+- \`layout\` (\`'square'\` | \`'circle'\` | \`'rounded'\` | \`'pill'\`): Specifies the shape of the badge.
+- \`size\` (\`'sm'\` | \`'md'\` | \`'lg'\` | \`'inherit'\`): Controls the size of the badge.
+- \`background\` (string): Sets the background color of the badge.
+- \`color\` (string): Sets the text or icon color inside the badge.
+- \`children\` (React.ReactNode): The content inside the badge, which can be an icon, emoji, or text.
+        `,
 			},
 		},
 	},
@@ -27,13 +59,18 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	name: 'Icon',
+	argTypes: {
+		layout: {
+			options: ['square', 'circle'],
+		},
+	},
 	args: {
 		children: <FaStar />,
 		position: 'inline',
-		size: 'sm',
+		size: 'inherit',
 		layout: 'circle',
 		background: 'info',
-		color: 'light',
+		color: 'dark',
 	},
 }
 
@@ -43,9 +80,12 @@ Default.decorators = [
 			style={{
 				position: 'relative',
 			}}
-			className='text-dark dark:text-light dark:bg-dark'
+			className='bg-light dark:bg-transparent dark:text-light p-4'
 		>
-			<Heading level={3}>
+			<Heading
+				level={2}
+				className='relative'
+			>
 				Latest Post <Story />
 			</Heading>
 		</div>
@@ -77,6 +117,7 @@ export const Emoji: Story = {
 		children: '🙂',
 		layout: 'circle',
 		background: 'transparent',
+		className: 'p-0',
 	},
 }
 
@@ -85,6 +126,9 @@ export const Text: Story = {
 	argTypes: {
 		layout: {
 			options: ['rounded', 'pill'],
+		},
+		position: {
+			options: ['inline', 'right'],
 		},
 		children: {
 			table: {
@@ -96,8 +140,8 @@ export const Text: Story = {
 		...Default.args,
 		children: 'New',
 		layout: 'rounded',
-		background: 'info',
-		color: 'light',
+		background: 'accent',
+		color: 'dark',
 	},
 }
 
@@ -106,6 +150,9 @@ export const TextAndIcon: Story = {
 	argTypes: {
 		layout: {
 			options: ['rounded', 'pill'],
+		},
+		position: {
+			options: ['inline', 'right'],
 		},
 	},
 	args: {
@@ -117,8 +164,8 @@ export const TextAndIcon: Story = {
 			</>
 		),
 		layout: 'rounded',
-		background: 'info',
-		color: 'light',
+		background: 'success',
+		color: 'dark',
 	},
 }
 
@@ -138,10 +185,9 @@ export const Empty: Story = {
 		},
 	},
 	args: {
-		...Default.args,
-		position: 'right',
-		children: '',
+		position: 'inline',
 		layout: 'circle',
 		background: 'warning',
+		size: 'inherit',
 	},
 }

@@ -1,6 +1,6 @@
 export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string
-	icon?: 'star' | 'smiley' | 'thumb' | 'heart' | 'check'
+	icon?: 'star' | 'smiley' | 'thumb' | 'heart' | 'check' | 'thumbdown' | 'frown'
 	customIcon?: React.ReactNode
 	rating: number
 	range?: number
@@ -29,6 +29,5 @@ export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 		| 'secondary'
 		| 'current'
 		| 'accent'
-		| 'neutral'
-	size?: 'sm' | 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg' | 'inherit'
 }

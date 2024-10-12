@@ -32,7 +32,7 @@ const withGlobalStyles: Decorator = (Story, context) => {
 const preview: Preview = {
 	decorators: [
 		(Story) => (
-			<div className='bg-[#f5f5f5] dark:bg-[#111111] text-dark dark:text-light p-1'>
+			<div className='bg-[#f5f5f5] dark:bg-[#111111] text-dark dark:text-light p-4'>
 				<Story />
 			</div>
 		),
