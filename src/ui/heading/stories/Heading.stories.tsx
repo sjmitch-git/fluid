@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa6'
 
 const BadgeExample = `<Heading level={1} align="left" weight="bold" transform="capitalize">
 	<>
-	Example Heading
+	Heading Text
 	<Badge
 		size='inherit'
 		color='accent'

@@ -9,6 +9,70 @@ const meta: Meta = {
 	title: 'Fluid UI/Typography/Codeblock',
 	component: Codeblock,
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `The **Codeblock** component leverages [Prism.js](https://prismjs.com/) to provide syntax highlighting for code snippets in various programming languages. It supports customization for themes and languages, making it adaptable for different project requirements.
+
+### Key Features:
+- **Syntax Highlighting**: Supports a wide range of languages with automatic syntax highlighting.
+- **Customizable Language**: Specify the programming language for accurate syntax highlighting using Prism.js.
+- **Configurable Themes**: Use different CSS themes for light or dark mode.
+- **Responsive Design**: Works well in light and dark modes with configurable themes.
+
+### Prism.js Installation:
+To enable syntax highlighting using Prism.js, you need to install it as a dependency:
+
+\`\`\`bash
+npm install prismjs
+\`\`\`
+
+### Adding Languages:
+Prism.js supports a variety of programming languages, but only includes a few by default (like JavaScript and HTML). You can load additional languages as needed. For example, to add support for JSX, TypeScript, and TSX, import the following modules:
+
+\`\`\`ts
+import 'prismjs/components/prism-jsx'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-tsx'
+\`\`\`
+
+You can explore other supported languages in the [Prism.js documentation](https://prismjs.com/#languages-list).
+
+### CSS Themes:
+Prism.js provides multiple CSS themes to style the code blocks. You can apply any of the available themes or create a custom one. Here’s how you can import the Prism **Tomorrow** theme for dark mode:
+
+\`\`\`ts
+import 'prismjs/themes/prism-tomorrow.min.css'
+\`\`\`
+
+You can switch between themes for light and dark modes based on your UI requirements. Check out [Prism.js themes](https://prismjs.com/#themes) for more options.
+
+
+### Import:
+\`\`\`tsx
+import { Codeblock } from '@smitch/fluid'
+\`\`\`
+
+### Usage Example:
+\`\`\`tsx
+<Codeblock language="javascript">
+	function greet(name) {
+		return 'Hello, ' + name;
+	}
+</Codeblock>
+\`\`\`
+
+### Props:
+
+- \`children\` (string, required): The code content to be displayed inside the code block.
+
+- \`language\` (string, optional): The programming language used for syntax highlighting. Defaults to \`plaintext\`.
+
+- \`style\` (React.CSSProperties, optional): Custom inline styles for the code block.
+        `,
+			},
+		},
+	},
 } satisfies Meta<typeof Codeblock>
 
 export default meta
@@ -29,21 +93,6 @@ export const Default: Story = {
 
 <h2>Header H2</h2>
 <p><a href="https://example.com">A link</a>.</p>
-
-<ul>
-  <li>First list item</li>
-  <li>Second list item</li>
-  <li>Third list item</li>
-</ul>
-
-<ol>
-  <li>First ordered item</li>
-  <li>Second ordered item</li>
-</ol>
-
-<blockquote>
-  <p>This is a blockquote. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</blockquote>
 
 <h3>Image Example</h3>
 <p>Below is an example image:</p>
@@ -87,20 +136,7 @@ export const JSCode: Story = {
 		...Default.argTypes,
 	},
 	args: {
-		children: `// Function to calculate the factorial of a number
-function factorial(n) {
-  if (n === 0 || n === 1) {
-    return 1;
-  }
-  return n * factorial(n - 1);
-}
-
-// Calculate factorial for numbers from 1 to 5
-for (let i = 1; i <= 5; i++) {
-  console.log(\`Factorial of \${i} is \${factorial(i)}\`);
-}
-
-// Arrow function to check if a number is even
+		children: `// Arrow function to check if a number is even
 const isEven = (num) => num % 2 === 0;
 
 // Check if numbers 1 through 5 are even
@@ -129,20 +165,7 @@ function greetUser(user: User): string {
   return user.isAdmin
     ? \`Hello, Admin \${user.name}!\`
     : \`Hello, \${user.name}!\`;
-}
-
-// Create a generic function to log an array of items
-function logItems<T>(items: T[]): void {
-  items.forEach((item) => console.log(item));
-}
-
-// Example usage of the greetUser function
-const user: User = { id: 1, name: 'Alice', isAdmin: true };
-console.log(greetUser(user));
-
-// Example usage of the logItems function
-logItems<number>([1, 2, 3, 4, 5]);
-logItems<string>(['apple', 'banana', 'cherry']);`,
+}`,
 		language: 'javascript',
 	},
 }
