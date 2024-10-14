@@ -42,6 +42,7 @@ const Heading = ({
 				`${headingStyles[level]} ${headingWeights[weight]} text-${align} ${headingCase[transform]}`,
 				className
 			)}
+			role='heading'
 		>
 			{children}
 		</Tag>

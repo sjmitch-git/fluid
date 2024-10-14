@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { AlertProps } from './types'
 
-import { CloseButton } from '@/ui'
+import { CloseButton, Heading, Badge } from '@/ui'
 
 const defaultStyles = 'border-s-8'
 const outlineStyles = 'rounded border-0 outline outline-2'
@@ -24,12 +24,6 @@ const solidStatuses = {
 	error: 'bg-error',
 }
 
-const sizes = {
-	sm: 'text-sm px-2 py-1',
-	md: 'text-base px-3 py-1',
-	lg: 'text-lg px-4 py-1',
-}
-
 const layouts = {
 	default: defaultStyles,
 	outline: outlineStyles,
@@ -39,17 +33,18 @@ const layouts = {
 const Alert = ({
 	className = '',
 	style,
-	size = 'md',
 	status = 'info',
 	layout = 'default',
 	title,
 	message,
 	dismissable = false,
 	onClick,
+	badge,
+	badgeBackground = 'dark',
+	badgeColor = 'light',
 }: AlertProps) => {
-	const sizeClasses = useMemo(() => sizes[size], [size])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
-	console.log(crypto.randomUUID())
+
 	const statusClasses = useMemo(
 		() =>
 			layout === 'solid'
@@ -61,7 +56,7 @@ const Alert = ({
 	return (
 		<blockquote
 			className={twMerge(
-				`alert group relative ${sizeClasses} ${statusClasses} ${layoutClasses}`,
+				`alert group relative px-2 md:px-3 lg:px-4 py-1 ${statusClasses} ${layoutClasses}`,
 				className
 			)}
 			style={style}
@@ -69,21 +64,33 @@ const Alert = ({
 			role='alert'
 		>
 			{title && (
-				<h4
-					className='mt-2 mb-0 uppercase font-bold opacity-85'
-					role='heading'
+				<Heading
+					level={5}
+					className={`mt-2 mb-0 uppercase font-bold opacity-85 relative`}
 				>
+					{badge && (
+						<Badge
+							background={badgeBackground}
+							color={badgeColor}
+							size='md'
+							layout='circle'
+							position='left'
+							className='top-0 start-0 relative mr-2'
+						>
+							{badge}
+						</Badge>
+					)}
 					{title}
-				</h4>
+				</Heading>
 			)}
 			<div
-				className='text-size-inherit mb-[1em] mt-[1em]'
+				className='text-base md:text-lg lg:text-xl mb-[1em] mt-[1em]'
 				dangerouslySetInnerHTML={{ __html: message }}
 			></div>
 
 			{dismissable && (
 				<CloseButton
-					size={size}
+					size='md'
 					onClick={onClick}
 					className='absolute right-2 top-2'
 				/>

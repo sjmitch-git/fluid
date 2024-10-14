@@ -2,12 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Alert } from '..'
 
+import { FaExclamation } from 'react-icons/fa6'
+
 const defaultCode = `<Alert
   status="info"
   title="Alert Title"
   message="<p>This is an <strong>important</strong> message for the user.</p>"
   layout="default"
-  size="md"
 />`
 
 const meta: Meta = {
@@ -17,15 +18,16 @@ const meta: Meta = {
 		docs: {
 			description: {
 				component: `
-The \`Alert\` component is used to display important messages to the user. It supports various statuses, layouts, and sizes, and can be made dismissable if needed. The message can be a simple string or HTML content to allow more complex formatting.
+The \`Alert\` component is used to display important messages to the user. It supports various statuses and layouts, and can be made dismissable if needed. The message can be a simple string or HTML content to allow more complex formatting.
 
 ### Key Features:
 - **Status Variants**: Displays alerts with different statuses such as \`'info'\`, \`'success'\`, \`'warning'\`, or \`'error'\`, controlling the color and icon based on the alert's purpose.
 - **Customizable Title**: Optional \`title\` prop allows for a bold heading to summarize the alert's message. Can be omitted for a title-less alert.
-- **Rich Message Content**: Supports both plain text and HTML for the \`message\` prop, enabling rich text formatting, including tags like \`<strong>\`, \`<a>\`, \`<p>\`, and \`<code>\`.
+- **Rich Message Content**: Supports both plain text and HTML for the \`message\` prop, enabling rich text formatting, including tags like \`<strong>\`, \`<a>\`, \`<p>\`, and \`<code>\` tags.
 - **Layout Options**: Configurable \`layout\` with options like \`'default'\` (light background), \`'solid'\` (solid color background), or \`'outline'\` (border only, no background).
-- **Size Variants**: Offers different sizes (\`'sm'\`, \`'md'\`, \`'lg'\`), controlling the alert's padding, font size, and spacing.
 - **Dismissable**: Optional \`dismissable\` prop adds a close button to the alert, allowing users to dismiss it. Includes a callback via the \`onClick\` prop.
+- **Badge**: A badge can be added next to the title to highlight the alert. Supports icons or text with customizable background and text colors.
+
 
 ### Import
 \`\`\`tsx
@@ -55,11 +57,17 @@ ${defaultCode}
   - \`'solid'\`: Solid background color for the alert, matching the \`status\`.
   - \`'outline'\`: Alert with no background, just a colored border.
 
-- \`size\` (\`'sm'\` | \`'md'\` | \`'lg'\`, optional): Determines the size of the alert. Controls padding, font size, and spacing within the alert.
-
 - \`dismissable\` (boolean, optional): If \`true\`, the alert will have a close button, allowing users to dismiss it. Defaults to \`false\`.
 
 - \`onClick\` (function, optional): Callback function that will be triggered when the dismiss button is clicked. Only applicable if \`dismissable\` is \`true\`.
+
+- \`badge\` (React.ReactNode, optional): A badge (icon or text) that will appear next to the alert title. Useful for adding emphasis to the alert.
+
+- \`badgeBackground\` (\`'dark'\` | \`'light'\` | \`'info'\` | \`'success'\` | \`'warning'\` | \`'danger'\` | \`'transparent'\`, optional): The background color of the badge.
+
+- \`badgeColor\` (\`'dark'\` | \`'light'\` | \`'info'\` | \`'success'\` | \`'warning'\` | \`'danger'\`, optional): The text or icon color of the badge.
+
+al): Callback function that will be triggered when the dismiss button is clicked. Only applicable if \`dismissable\` is \`true\`.
 `,
 			},
 		},
@@ -86,26 +94,36 @@ const handleClick = () => {
 }
 
 export const Default: Story = {
+	argTypes: {
+		badge: {
+			table: {
+				disable: true,
+			},
+		},
+		badgeColor: {
+			table: {
+				disable: true,
+			},
+		},
+		badgeBackground: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	args: {
 		status: 'info',
 		title: 'Alert Title',
 		layout: 'default',
-		size: 'md',
 		message:
 			"<p>This is an <strong>important</strong> message for the user. It can be a simple string or <code>html</code> content. <br />Example of a <a href='#'>dummy link</a>.</p>",
 		dismissable: false,
 	},
-	/* parameters: {
-		docs: {
-			source: {
-				code: defaultCode,
-			},
-		},
-	}, */
 }
 
 export const NoTitle: Story = {
 	argTypes: {
+		...Default.argTypes,
 		title: {
 			table: {
 				disable: true,
@@ -119,6 +137,9 @@ export const NoTitle: Story = {
 }
 
 export const Solid: Story = {
+	argTypes: {
+		...Default.argTypes,
+	},
 	args: {
 		...Default.args,
 		layout: 'solid',
@@ -126,6 +147,9 @@ export const Solid: Story = {
 }
 
 export const Outline: Story = {
+	argTypes: {
+		...Default.argTypes,
+	},
 	args: {
 		...Default.args,
 		layout: 'outline',
@@ -133,9 +157,21 @@ export const Outline: Story = {
 }
 
 export const Dismissable: Story = {
+	argTypes: {
+		...Default.argTypes,
+	},
 	args: {
 		...Default.args,
 		dismissable: true,
 		onClick: handleClick,
+	},
+}
+
+export const Badge: Story = {
+	args: {
+		...Default.args,
+		badge: <FaExclamation />,
+		badgeBackground: 'dark',
+		badgeColor: 'light',
 	},
 }

@@ -1,7 +1,12 @@
-export interface AlertProps {
+interface BadgeProps {
+	badge: React.ReactNode
+	badgeBackground?: 'dark' | 'light' | 'info' | 'success' | 'warning' | 'danger' | 'transparent'
+	badgeColor?: 'dark' | 'light' | 'info' | 'success' | 'warning' | 'danger'
+}
+
+export interface AlertProps extends BadgeProps {
 	className?: string
 	style?: React.CSSProperties
-	size?: 'sm' | 'md' | 'lg'
 	title?: string
 	status?: 'info' | 'success' | 'warning' | 'error'
 	message: string
