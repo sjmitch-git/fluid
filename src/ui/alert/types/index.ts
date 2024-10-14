@@ -1,5 +1,5 @@
 interface BadgeProps {
-	badge: React.ReactNode
+	badge?: React.ReactNode
 	badgeBackground?: 'dark' | 'light' | 'info' | 'success' | 'warning' | 'danger' | 'transparent'
 	badgeColor?: 'dark' | 'light' | 'info' | 'success' | 'warning' | 'danger'
 }
