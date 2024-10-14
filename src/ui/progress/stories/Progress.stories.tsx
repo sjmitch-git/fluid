@@ -16,7 +16,13 @@ const modalExample = `<Dialog
 	modal={true}
 	onClose={handleClose}
 >
-	<Progress {...props} onDone={handleClose} />
+	<div className='pb-4 px-4'>
+		<Progress
+			{...args}
+			downloadedSize={downloadedSize}
+			onDone={handleOnDone}
+		/>
+	</div>
 </Dialog>`
 
 const meta: Meta<typeof Progress> = {
@@ -36,7 +42,9 @@ The **Progress** component represents a progress bar, which can be used to indic
 \`\`\`tsx
 // simple progress
 import { Progress } from '@smitch/fluid'
+\`\`\`
 
+\`\`\`tsx
 // modal progress
 import { Progress, Dialog } from '@smitch/fluid'
 \`\`\`
@@ -198,11 +206,13 @@ const ModalProgressComponent = (args: {
 					modal={true}
 					onClose={handleClose}
 				>
-					<Progress
-						{...args}
-						downloadedSize={downloadedSize}
-						onDone={handleOnDone}
-					/>
+					<div className='pb-4 px-4'>
+						<Progress
+							{...args}
+							downloadedSize={downloadedSize}
+							onDone={handleOnDone}
+						/>
+					</div>
 				</Dialog>
 			)}
 		</>
@@ -213,19 +223,7 @@ export const ModalProgress: Story = {
 	parameters: {
 		docs: {
 			source: {
-				code: `<Dialog
-  title='Downloading'
-  titleSize='lg'
-  titleBold={true}
-  open={isOpen}
-  modal={true}
-  onClose={handleClose}
->
-  <Progress
-    {...args}
-    onDone={handleOnDone}
-  />
-</Dialog>`,
+				code: modalExample,
 			},
 		},
 	},
