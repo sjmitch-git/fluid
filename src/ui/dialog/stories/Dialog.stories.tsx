@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dialog } from '..'
 import { DialogProps } from '../types'
-import { Tabs } from '@/ui'
-import { LoginRegister } from '../../tabs/stories/Tabs.stories'
+import { Tabs, Form, RegisterForm } from '@/ui'
+import { LoginForm } from '../../form/stories/Form.stories'
+import { Default as Register } from '../../form/stories/RegisterForm.stories'
 
 const codeExample = `<Dialog
   open={isOpen}
@@ -24,7 +25,46 @@ const modalExample = `<Dialog
   titleBold={true}
   onClose={() => console.log('Dialog closed')}
 >
-  <Tabs {...props}>{children}</Tabs>
+  	<Tabs
+		tabSize='md'
+		minimalTabs={true}
+		contentBorder={false}
+		defaultActiveId='tab1'
+	>
+		<div
+			id='tab1'
+			title='Log-in'
+		>
+			<div>
+				{
+					<Form
+						{...LoginForm.args}
+						onCancel={handleClose}
+						onsubmit={handleSubmit}
+					/>
+				}
+			</div>
+		</div>
+		<div
+			id='tab2'
+			title='Register'
+		>
+			<div>
+				{
+					<RegisterForm
+						{...Register.args}
+						legendText='Register'
+						userLabel='e-Mail'
+						passwordLabel='Password'
+						confirmLabel='Confirm'
+						checkLabel='Terms & Conditions'
+						onCancel={handleClose}
+						onsubmit={handleSubmit}
+					/>
+				}
+			</div>
+		</div>
+	</Tabs>
 </Dialog>`
 
 const meta: Meta = {
@@ -39,6 +79,15 @@ const meta: Meta = {
 				component: `
 The **Dialog** component displays a modal or non-modal dialog box with customizable content. It can be used to create a prompt or notification that the user needs to respond to.
 
+### Key Features:
+- **Modal or Non-Modal**: Supports both modal (blocks background interaction) and non-modal dialogs, controlled via the \`modal\` prop.
+- **Customizable Title**: Configurable dialog title with adjustable size (\`'sm' | 'md' | 'lg' | 'xl'\`) and bold styling via the \`titleSize\` and \`titleBold\` props.
+- **Content Flexibility**: Accepts any content inside the dialog, including simple text, forms, or complex components.
+- **Tabbed Interface**: Easily integrates with the \`Tabs\` component to provide a tabbed dialog for switching between different sections, such as login and registration forms.
+- **Form Integration**: Supports embedded forms with dynamic behavior using components like \`Form\` and \`RegisterForm\`, along with handling submit and cancel actions.
+- **Dynamic Visibility Control**: Manages open/close state with React's \`useState\` hook, allowing for controlled visibility.
+- **Close Callback**: Executes a customizable \`onClose\` callback function when the dialog is closed, useful for logging or form handling.
+
 ### Import
 \`\`\`tsx
 import { Dialog } from '@smitch/fluid'
@@ -48,11 +97,6 @@ import { Dialog } from '@smitch/fluid'
 \`\`\`tsx
 // simple dialog
 ${codeExample}
-\`\`\`
-
-\`\`\`tsx
-// modal dialog
-${modalExample}
 \`\`\`
 
 ### Props:
@@ -143,6 +187,11 @@ const ModalDialogComponent = (args: DialogProps) => {
 		if (args.onClose) args.onClose()
 	}
 
+	const handleSubmit = (data: { [key: string]: string }) => {
+		console.log('form data', data)
+		handleClose()
+	}
+
 	return (
 		<>
 			<button
@@ -156,7 +205,46 @@ const ModalDialogComponent = (args: DialogProps) => {
 				open={open}
 				onClose={handleClose}
 			>
-				<Tabs {...LoginRegister.args}>{LoginRegister.args?.children}</Tabs>
+				<Tabs
+					tabSize='md'
+					minimalTabs={true}
+					contentBorder={false}
+					defaultActiveId='tab1'
+				>
+					<div
+						id='tab1'
+						title='Log-in'
+					>
+						<div>
+							{
+								<Form
+									{...LoginForm.args}
+									onCancel={handleClose}
+									onsubmit={handleSubmit}
+								/>
+							}
+						</div>
+					</div>
+					<div
+						id='tab2'
+						title='Register'
+					>
+						<div>
+							{
+								<RegisterForm
+									{...Register.args}
+									legendText='Register'
+									userLabel='e-Mail'
+									passwordLabel='Password'
+									confirmLabel='Confirm'
+									checkLabel='Terms & Conditions'
+									onCancel={handleClose}
+									onsubmit={handleSubmit}
+								/>
+							}
+						</div>
+					</div>
+				</Tabs>
 			</Dialog>
 		</>
 	)

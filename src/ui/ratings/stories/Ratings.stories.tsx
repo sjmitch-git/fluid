@@ -98,44 +98,10 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	argTypes: {
-		icon: {
-			options: ['star', 'smiley', 'thumb', 'heart', 'check', 'thumbdown', 'frown'],
-			control: { type: 'select' },
-			description: 'Selects the default icon for the rating. Defaults to "star".',
-		},
 		customIcon: {
-			description: 'Allows a custom icon to be passed instead of using the default icons.',
-			control: { type: 'null' }, // Disables control in the default story
-		},
-		rating: {
-			control: { type: 'number', min: 1, max: 5 },
-			description: 'Sets the current rating (e.g., 3 out of 5).',
-		},
-		range: {
-			control: { type: 'number', min: 1, max: 10 },
-			description: 'Defines the total number of rating options (e.g., 5 stars).',
-		},
-		shape: {
-			options: ['square', 'circle', 'rounded'],
-			control: { type: 'select' },
-			description: 'Defines the shape of the badge background (square, circle, rounded).',
-		},
-		size: {
-			options: ['sm', 'md', 'lg', 'inherit'],
-			control: { type: 'select' },
-			description: 'Defines the size of the rating badges (small, medium, large).',
-		},
-		background: {
-			control: { type: 'color' },
-			description: 'Sets the background color of the badge.',
-		},
-		color: {
-			control: { type: 'color' },
-			description: 'Sets the color of the badge text or icon when the rating is active.',
-		},
-		spacing: {
-			control: { type: 'select', options: ['0', '1', '2'] },
-			description: 'Defines the spacing between rating badges.',
+			table: {
+				disable: true,
+			},
 		},
 	},
 	args: {
@@ -177,6 +143,7 @@ export const CustomIcon: Story = {
 		spacing: '0',
 		shape: 'square',
 		size: 'md',
+		icon: null,
 	},
 	parameters: {
 		docs: {
@@ -212,7 +179,7 @@ export const EmojiCustomIcon: Story = {
 				code: emojiIconExample,
 			},
 			description: {
-				story: 'This story demonstrates a custom emoji icon 🙂 used for the Ratings component. The rating is set to 4 out of 5.',
+				story: 'This story demonstrates a custom emoji icon 🙂 used for the Ratings component.',
 			},
 		},
 	},

@@ -76,7 +76,9 @@ const Dialog = ({
 					/>
 				)}
 			</div>
-			<div className={`dialog-content p-4 pt-0 min-w-[280px] max-w-md`}>{children}</div>
+			<div className={`dialog-content ${modal ? 'p-0' : 'p-4'} pt-0 min-w-[280px] max-w-md`}>
+				{children}
+			</div>
 		</dialog>
 	)
 }

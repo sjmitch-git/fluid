@@ -26,6 +26,13 @@ const layouts = {
 	row_reverse: 'flex-row-reverse items-center',
 }
 
+const animates = {
+	spin: 'animate-spin',
+	bounce: 'animate-bounce',
+	pulse: 'animate-pulse',
+	ping: 'animate-ping',
+}
+
 const getSpinnerComponent = (spinner: string) => {
 	switch (spinner) {
 		case 'bars':
@@ -52,6 +59,8 @@ const Loading = ({
 	className = '',
 	caption = '',
 	spinner = 'spinner',
+	customSpinner,
+	customAnimate = 'spin',
 	size = 'md',
 	color = 'current',
 	layout = 'col',
@@ -60,6 +69,7 @@ const Loading = ({
 	const width = useMemo(() => sizeToWidth[size], [size])
 	const colorClasses = useMemo(() => colors[color], [color])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
+	const animateClasses = useMemo(() => animates[customAnimate], [customAnimate])
 
 	return (
 		<div
@@ -69,10 +79,24 @@ const Loading = ({
 			)}
 		>
 			<figure className={`figure flex items-center gap-4 ${colorClasses} ${layoutClasses}`}>
-				<Suspense fallback={<div className='text-center'>...</div>}>
-					<SpinnerIcon width={width} />
-				</Suspense>
-
+				{customSpinner ? (
+					<div
+						className='flex items-center justify-center'
+						style={{
+							fontSize: `${width}px`,
+							width: `${width}px`,
+							height: `${width}px`,
+						}}
+					>
+						<div className={`flex items-center justify-center ${animateClasses}`}>
+							{customSpinner}
+						</div>
+					</div>
+				) : (
+					<Suspense fallback={<div className='text-center'>...</div>}>
+						<SpinnerIcon width={width} />
+					</Suspense>
+				)}
 				{caption && (
 					<figcaption className={`figcaption text-center ${colorClasses} text-${size}`}>
 						{caption}

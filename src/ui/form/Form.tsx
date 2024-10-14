@@ -52,6 +52,12 @@ const Form = ({
 		}
 	}
 
+	const handleCancel = () => {
+		if (onCancel) {
+			onCancel()
+		}
+	}
+
 	const handleInputChange = useCallback((event: Event) => {
 		const target = event.target as HTMLInputElement
 		const { name, value } = target
@@ -110,7 +116,7 @@ const Form = ({
 								textcase={buttonTextcase}
 								layout={buttonShape}
 								isBold={buttonIsBold}
-								onClick={onCancel}
+								onClick={handleCancel}
 							>
 								{cancelLabel}
 							</Button>

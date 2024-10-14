@@ -58,12 +58,18 @@ const RegisterForm = ({
 		setNewpassword(value)
 	}
 
+	const handleCancel = () => {
+		if (onCancel) {
+			onCancel()
+		}
+	}
+
 	return (
 		<Form
 			action={action}
 			actionsLayout={actionsLayout}
 			actionsSpacing={actionsSpacing}
-			onCancel={onCancel}
+			onCancel={handleCancel}
 			onsubmit={onsubmit}
 			showCancel={showCancel}
 			submitLabel={submitLabel}

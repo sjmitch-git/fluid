@@ -6,7 +6,7 @@ const handleSubmit = (data: { [key: string]: string }) => {
 }
 
 const handleCancel = () => {
-	console.log('Cancel')
+	console.log('Cancel Register')
 }
 
 const meta: Meta<typeof RegisterForm> = {

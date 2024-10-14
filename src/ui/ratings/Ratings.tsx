@@ -41,9 +41,9 @@ const Ratings = ({
 						layout={shape}
 						size={size}
 						background={background}
-						color={`${rating <= index ? 'neutral' : color}`}
+						color={color}
 						key={index}
-						className='static'
+						className={`static ${rating <= index ? 'grayscale' : ''}`}
 					>
 						{customIcon ? (
 							customIcon

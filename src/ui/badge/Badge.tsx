@@ -4,8 +4,6 @@ import { twMerge } from 'tailwind-merge'
 
 import { BadgeProps } from './types'
 
-import { colors } from '../@utils'
-
 const backgrounds = {
 	info: 'bg-info',
 	success: 'bg-success',
@@ -18,6 +16,20 @@ const backgrounds = {
 	accent: 'bg-accent',
 	neutral: 'bg-neutral',
 	transparent: 'bg-transparent',
+}
+
+const colors = {
+	info: '!text-info',
+	success: 'text-success',
+	warning: 'text-warning',
+	danger: '!text-danger',
+	primary: 'text-primary',
+	secondary: 'text-secondary',
+	dark: 'text-dark',
+	light: 'text-light',
+	accent: 'text-accent',
+	current: 'text-current',
+	neutral: 'text-neutral',
 }
 
 const layouts = {

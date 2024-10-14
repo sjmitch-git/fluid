@@ -97,6 +97,10 @@ const meta: Meta<typeof Tabs> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+const handleCancel = () => {
+	console.log('TABS STORY HANDLE CANCEL')
+}
+
 const defaultContent = () => {
 	return (
 		<>
@@ -128,14 +132,21 @@ const defaultContent = () => {
 	)
 }
 
-const profileContent = () => {
+const profileContent = (handleCancel: () => void) => {
 	return (
 		<>
 			<div
 				id='tab1'
 				title='Log-in'
 			>
-				<div>{<Form {...LoginForm.args} />}</div>
+				<div>
+					{
+						<Form
+							{...LoginForm.args}
+							onCancel={handleCancel}
+						/>
+					}
+				</div>
 			</div>
 			<div
 				id='tab2'
@@ -150,6 +161,7 @@ const profileContent = () => {
 							passwordLabel='Password'
 							confirmLabel='Confirm'
 							checkLabel='Terms & Conditions'
+							onCancel={handleCancel}
 						/>
 					}
 				</div>
@@ -260,8 +272,9 @@ export const LoginRegister: Story = {
 	},
 	args: {
 		...Default.args,
-		children: profileContent(),
+		children: profileContent(handleCancel),
 		tabSize: 'md',
 		minimalTabs: true,
+		contentBorder: false,
 	},
 }

@@ -22,6 +22,12 @@ const meta: Meta = {
 				component: `
 The **Badge** component is used to display small labels or notifications on other UI elements. It supports various layouts, positions, and content types, making it versatile for indicating statuses, counts, or other contextual information.
 
+### Key Features:
+- **Positioning**: Can be positioned inline with text, or floated to the left or right of its parent.
+- **Layout**: Configurable as \`square\`, \`circle\`, \`rounded\`, or \`pill\` shapes.
+- **Content**: Accepts any children, including icons, emojis, or plain text.
+- **Styling**: Easily customizable using Tailwind CSS classes for background, color, and size.
+
 ### Import
 \`\`\`tsx
 import { Badge } from '@smitch/fluid'
@@ -33,12 +39,6 @@ import { Badge } from '@smitch/fluid'
   <FaStar />
 </Badge>
 \`\`\`
-
-### Key Features:
-- **Positioning**: Can be positioned inline with text, or floated to the left or right of its parent.
-- **Layout**: Configurable as \`square\`, \`circle\`, \`rounded\`, or \`pill\` shapes.
-- **Content**: Accepts any children, including icons, emojis, or plain text.
-- **Styling**: Easily customizable using Tailwind CSS classes for background, color, and size.
 
 ### Props:
 - \`position\` (\`'inline'\` | \`'right'\` | \`'left'\`): Defines the position of the badge relative to its parent.

@@ -1,4 +1,4 @@
-export interface TabsProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface TabsProps {
 	className?: string
 	tabStyles?: string
 	activeTabStyles?: string

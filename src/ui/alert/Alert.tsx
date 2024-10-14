@@ -85,7 +85,7 @@ const Alert = ({
 				<CloseButton
 					size={size}
 					onClick={onClick}
-					className='right-2 top-2'
+					className='absolute right-2 top-2'
 				/>
 			)}
 		</blockquote>
