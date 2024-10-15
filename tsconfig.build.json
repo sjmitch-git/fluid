@@ -1,0 +1,12 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": false, // Allow emitting files
+		"declaration": true, // Generate declaration files (.d.ts)
+		"declarationDir": "./dist/lib",
+		"emitDeclarationOnly": true, // Only emit .d.ts files, not JavaScript
+		"removeComments": true // Optional: remove comments in generated files
+	},
+	"include": ["src/ui/**/*.ts", "src/ui/**/*.tsx"],
+	"exclude": ["node_modules", "src/ui/**/stories/**/*"]
+}
