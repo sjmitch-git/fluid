@@ -568,7 +568,7 @@ const fileInputExample = `<Label label='Upload an image' type='file'>
   />
 </Label>`
 
-export const fileInput: Story = {
+export const FileInput: Story = {
 	parameters: {
 		docs: {
 			source: {
