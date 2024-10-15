@@ -12,11 +12,10 @@ export type ButtonRef = HTMLButtonElement
 const stateStyles = 'disabled:grayscale disabled:opacity-50'
 
 const sizes = {
-	xs: 'text-xs p-1 border',
-	sm: 'text-sm p-2 border-2',
-	md: 'text-base p-3 border-4',
-	lg: 'text-lg p-4 border-[6px]',
-	xl: 'text-xl p-5 border-8',
+	sm: 'text-[.8em] border-[.15em]',
+	md: 'text-[1em] border-[.15em]',
+	lg: 'text-[1.5em] border-[.15em]',
+	xl: 'text-[1.75em] border-[.15em]',
 }
 
 const layouts = {
@@ -67,7 +66,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	return (
 		<button
 			className={twMerge(
-				`button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100 focus:text-accent ${sizeClasses} ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${
+				`button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100 focus:text-accent ${sizeClasses} p-[.5em] ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${
 					isBold ? 'font-semibold' : 'font-normal'
 				}`,
 				className

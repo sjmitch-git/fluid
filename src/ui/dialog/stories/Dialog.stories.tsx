@@ -79,7 +79,7 @@ const meta: Meta = {
 				component: `
 The **Dialog** component displays a modal or non-modal dialog box with customizable content. It can be used to create a prompt or notification that the user needs to respond to.
 
-### Key Features:
+## Key Features:
 - **Modal or Non-Modal**: Supports both modal (blocks background interaction) and non-modal dialogs, controlled via the \`modal\` prop.
 - **Customizable Title**: Configurable dialog title with adjustable size (\`'sm' | 'md' | 'lg' | 'xl'\`) and bold styling via the \`titleSize\` and \`titleBold\` props.
 - **Content Flexibility**: Accepts any content inside the dialog, including simple text, forms, or complex components.

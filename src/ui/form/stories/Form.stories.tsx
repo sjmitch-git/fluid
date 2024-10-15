@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form, Fieldset } from '..'
 import { TextInput, Autocomplete, SearchInput, Select, PasswordInput, Checkbox } from '@/ui'
 import { Default as Password } from '../../passwordinput/stories/PasswordInput.stories'
 import data from '@/data/countries.json'
+
+const passwordPattern = '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}'
 
 const handleSubmit = (data: { [key: string]: string }) => {
 	console.log('form data', data)
@@ -13,6 +15,13 @@ const meta: Meta<typeof Form> = {
 	title: 'Fluid UI/Forms/Form',
 	component: Form,
 	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<div className='text-dark bg-light dark:text-light dark:bg-transparent max-w-2xl mx-auto'>
+				<Story />
+			</div>
+		),
+	],
 	argTypes: {
 		children: {
 			table: {
@@ -65,6 +74,66 @@ const meta: Meta<typeof Form> = {
 		buttonTextcase: 'normal-case',
 		className: '',
 	},
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Form** component is used to create structured, flexible forms that allow users to input data. It supports various layouts, action buttons, and customization for submit and cancel actions.
+
+### Key Features:
+- **Flexible Layout**: Supports both column and row layouts.
+- **Action Buttons**: Customizable submit and cancel buttons with optional layouts.
+- **Customizable Styling**: Easily control button styles, text case, button shape, and form alignment.
+- **Form Validation**: Tracks form validity and disables submit when form is invalid.
+
+### Import:
+\`\`\`tsx
+import { Form } from '@smitch/fluid'
+\`\`\`
+
+### Usage Example:
+\`\`\`tsx
+<Form
+  onsubmit={handleSubmit}
+  actions={true}
+  showCancel={true}
+  submitLabel="Submit"
+  cancelLabel="Cancel"
+>
+  {form elements here}
+</Form>
+\`\`\`
+
+### Props:
+
+- \`onsubmit\` (function, required): Function to handle form submission. It receives the form data as an argument.
+
+- \`onCancel\` (function, optional): Function to handle the cancel action.
+
+- \`actions\` (boolean, optional): If true, shows the submit and cancel buttons. Defaults to \`true\`.
+
+- \`showCancel\` (boolean, optional): If true, shows the cancel button. Defaults to \`false\`.
+
+- \`actionsLayout\` (string, optional): Controls the layout of the action buttons. Options: \`'row'\`, \`'row-reverse'\`, \`'col'\`, \`'col-reverse'\`.
+
+- \`submitLabel\` (string, optional): Label text for the submit button. Defaults to \`'Submit'\`.
+
+- \`cancelLabel\` (string, optional): Label text for the cancel button. Defaults to \`'Cancel'\`.
+
+- \`submitBackground\` (string, optional): Background color for the submit button. Options: \`'primary'\`, \`'secondary'\`, \`'info'\`, etc.
+
+- \`submitColor\` (string, optional): Text color for the submit button. Options: \`'light'\`, \`'dark'\`, etc.
+
+- \`layout\` (string, optional): Controls the layout of form elements. Options: \`'col'\`, \`'row'\`.
+
+- \`buttonShape\` (string, optional): Controls the shape of the buttons. Options: \`'default'\`, \`'rounded'\`, \`'pill'\`.
+
+- \`buttonTextcase\` (string, optional): Controls the text case of the button labels. Options: \`'uppercase'\`, \`'lowercase'\`, \`'capitalize'\`, \`'normal-case'\`.
+
+        `,
+			},
+		},
+	},
 }
 
 export default meta
@@ -83,7 +152,179 @@ const onButtonSubmit = (value: string) => {
 }
 
 const onFormCancel = () => {
-	console.log('cancel')
+	console.log('onFormCancel')
+}
+
+const contactContent = () => {
+	return (
+		<Fieldset
+			legendText='Contact'
+			legendSize='xl'
+			spacing='8'
+		>
+			<TextInput
+				label='Name'
+				autocomplete='name'
+				layout='row'
+				name='name'
+				id='name'
+				required
+			/>
+			<TextInput
+				label='e-Mail'
+				autocomplete='email'
+				layout='row'
+				name='email'
+				id='email'
+				placeholder='myname@email.com'
+				hint={true}
+				title='Enter a vaild e-Mail address'
+				required
+			/>
+			<TextInput
+				label='Mobile'
+				autocomplete='tel'
+				layout='row'
+				name='tel'
+				id='tel'
+				placeholder='07123456789'
+				hint={true}
+				title='Enter a vaild UK mobile number'
+				pattern='^(+44s?7d{3}|(?07d{3})?)s?d{3}s?d{3}$'
+			/>
+		</Fieldset>
+	)
+}
+
+export const ContactForm: Story = {
+	args: {
+		children: contactContent(),
+		actionsLayout: 'row',
+		actionsSpacing: '0',
+		onCancel: onFormCancel,
+		onsubmit: handleSubmit,
+		showCancel: true,
+		submitBackground: 'primary',
+		submitColor: 'dark',
+		cancelBackground: 'transparent',
+		cancelColor: 'current',
+		separator: true,
+	},
+}
+
+export const RegisterForm: Story = {
+	args: {
+		onsubmit: (formData) => console.log('Form Submitted', formData),
+		onCancel: onFormCancel,
+		showCancel: true,
+		submitLabel: 'Register',
+		submitBackground: 'primary',
+		submitColor: 'light',
+		submitOutlineColor: 'primary',
+		cancelBackground: 'dark',
+		cancelColor: 'light',
+		cancelOutlineColor: 'dark',
+		separator: true,
+		name: 'register',
+		buttonTextcase: 'uppercase',
+		buttonShape: 'default',
+		buttonIsBold: true,
+	},
+	render: (args) => {
+		const [newpassword, setNewpassword] = useState('')
+
+		const handleCreatePassword = (value: string) => {
+			setNewpassword(value)
+		}
+
+		return (
+			<Form {...args}>
+				<Fieldset
+					legendText='Create Account'
+					legendSize='lg'
+					isBold={true}
+					spacing='8'
+					legendAlign='center'
+					hasBorder={false}
+				>
+					<TextInput
+						label='Username'
+						autocomplete='username'
+						placeholder='Enter your username'
+						name='user-name'
+						id='user-name'
+						required
+						layout='col'
+						size='md'
+						rounded='md'
+					/>
+					<PasswordInput
+						name='newpassword'
+						label='New Password'
+						placeholder='Enter your password'
+						title='Password must be 8-12 characters long, include at least one digit, one uppercase letter, and one symbol'
+						autocomplete='new-password'
+						pattern={passwordPattern}
+						onInputChange={handleCreatePassword}
+						layout='col'
+						size='md'
+						rounded='md'
+						required
+						hint
+					/>
+					<PasswordInput
+						label='Confirm Password'
+						autocomplete='new-password'
+						placeholder='Re-enter your password'
+						title='Passwords must match'
+						name='confirmpassword'
+						pattern={newpassword}
+						layout='col'
+						size='md'
+						rounded='md'
+						required
+						hint
+					/>
+					<Checkbox
+						label='I agree to terms & conditions'
+						labelIsBold={false}
+						size='md'
+						rounded='none'
+						name='terms'
+						required
+						hint={
+							<>
+								Click if you agree to the{' '}
+								<a
+									href='#'
+									rel='noopener noreferrer'
+								>
+									Terms
+								</a>{' '}
+								&amp;
+								<a
+									href='#'
+									rel='noopener noreferrer'
+								>
+									{' '}
+									Conditions
+								</a>
+								. <br />
+								You can read our privacy policy{' '}
+								<a
+									href='#'
+									rel='noopener noreferrer'
+								>
+									here
+								</a>
+								.
+							</>
+						}
+					/>
+				</Fieldset>
+			</Form>
+		)
+	},
 }
 
 const options = ['All', 'Books', 'Home', 'Sports', 'Toys']
@@ -121,132 +362,85 @@ const searchContent = () => {
 
 const AddressContent = () => {
 	return (
-		<>
-			<Fieldset
-				legendText='Address'
-				legendSize='xl'
-			>
-				<TextInput
-					label='Street'
-					autocomplete='address-line1'
-					layout='row'
-					name='address-line1'
-					id='address-line1'
-					required
-				/>
-				<TextInput
-					label='Town/City'
-					autocomplete='address-level2'
-					layout='row'
-					name='address-line2'
-					id='address-line2'
-					required
-				/>
-				<TextInput
-					label='County'
-					autocomplete='address-level1'
-					layout='row'
-					name='address-line3'
-					id='address-line3'
-					required
-				/>
-				<Autocomplete
-					data={data}
-					list='countries'
-					placeholder='Select Country'
-					autocomplete='country-name'
-					label='Country'
-					layout='row'
-					required
-				/>
-				<TextInput
-					label='Post Code'
-					autocomplete='postal-code'
-					layout='row'
-					name='postal-code'
-					id='postal-code'
-					inputStyles='max-w-[10em] border-neutral'
-					required
-				/>
-			</Fieldset>
-		</>
+		<Fieldset
+			legendText='Address'
+			legendSize='xl'
+		>
+			<TextInput
+				label='Street'
+				autocomplete='address-line1'
+				layout='row'
+				name='address-line1'
+				id='address-line1'
+				required
+			/>
+			<TextInput
+				label='Town/City'
+				autocomplete='address-level2'
+				layout='row'
+				name='address-line2'
+				id='address-line2'
+				required
+			/>
+			<TextInput
+				label='County'
+				autocomplete='address-level1'
+				layout='row'
+				name='address-line3'
+				id='address-line3'
+				required
+			/>
+			<Autocomplete
+				data={data}
+				list='countries'
+				placeholder='Select Country'
+				autocomplete='country-name'
+				label='Country'
+				layout='row'
+				required
+			/>
+			<TextInput
+				label='Post Code'
+				autocomplete='postal-code'
+				layout='row'
+				name='postal-code'
+				id='postal-code'
+				inputStyles='max-w-[10em] border-neutral'
+				required
+			/>
+		</Fieldset>
 	)
 }
 
 const NewsletterContent = () => {
 	return (
-		<>
-			<Fieldset
-				legendText='Sign-up for our newsletter?'
-				legendSize='md'
-				legendAlign='left'
-				spacing='4'
-				className='flex-col md:flex-row flex-grow'
-			>
-				<TextInput
-					label='Name'
-					autocomplete='name'
-					layout='col'
-					name='name'
-					id='name'
-					required
-				/>
-				<TextInput
-					label='e-Mail'
-					autocomplete='email'
-					layout='col'
-					name='email'
-					id='email'
-					placeholder='myname@email.com'
-					hint={false}
-					title='Enter a vaild e-Mail address'
-					required
-				/>
-			</Fieldset>
-		</>
-	)
-}
-
-const contactContent = () => {
-	return (
-		<>
-			<Fieldset
-				legendText='Contact'
-				legendSize='xl'
-				spacing='8'
-			>
-				<TextInput
-					label='Name'
-					autocomplete='name'
-					layout='row'
-					name='name'
-					id='name'
-					required
-				/>
-				<TextInput
-					label='e-Mail'
-					autocomplete='email'
-					layout='row'
-					name='email'
-					id='email'
-					placeholder='myname@email.com'
-					hint={true}
-					title='Enter a vaild e-Mail address'
-					required
-				/>
-				<TextInput
-					label='Mobile'
-					autocomplete='tel'
-					layout='row'
-					name='tel'
-					id='tel'
-					placeholder='07123456789'
-					hint={true}
-					title='Enter a vaild UK mobile number'
-					pattern='^(+44s?7d{3}|(?07d{3})?)s?d{3}s?d{3}$'
-				/>
-			</Fieldset>
-		</>
+		<Fieldset
+			legendText='Sign-up for our newsletter?'
+			legendSize='md'
+			legendAlign='left'
+			spacing='4'
+			className='flex-col md:flex-row flex-grow'
+		>
+			<TextInput
+				label='Name'
+				autocomplete='name'
+				layout='col'
+				name='name'
+				id='name'
+				required
+			/>
+			<TextInput
+				label='e-Mail'
+				autocomplete='email'
+				layout='col'
+				name='email'
+				id='email'
+				placeholder='myname@email.com'
+				hint={false}
+				title='Enter a vaild e-Mail address'
+				required
+			/>
+		</Fieldset>
 	)
 }
 
@@ -299,22 +493,6 @@ export const LoginForm: Story = {
 		cancelColor: 'current',
 		separator: true,
 		name: 'login',
-	},
-}
-
-export const ContactForm: Story = {
-	args: {
-		children: contactContent(),
-		actionsLayout: 'row',
-		actionsSpacing: '0',
-		onCancel: onFormCancel,
-		onsubmit: handleSubmit,
-		showCancel: true,
-		submitBackground: 'primary',
-		submitColor: 'dark',
-		cancelBackground: 'transparent',
-		cancelColor: 'current',
-		separator: true,
 	},
 }
 

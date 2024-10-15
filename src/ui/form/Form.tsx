@@ -123,7 +123,7 @@ const Form = ({
 						) : null}
 						<Button
 							type='submit'
-							className={`!justify-center flex-grow max-w-lg mx-auto`}
+							className={`!justify-center flex-grow`}
 							background={submitBackground}
 							color={submitColor}
 							outline={submitOutline}

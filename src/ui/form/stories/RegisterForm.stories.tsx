@@ -13,6 +13,57 @@ const meta: Meta<typeof RegisterForm> = {
 	title: 'Fluid UI/Forms/Form/Register Form',
 	component: RegisterForm,
 	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<div className='text-dark bg-light dark:text-light dark:bg-transparent max-w-2xl mx-auto'>
+				<Story />
+			</div>
+		),
+	],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **RegisterForm** component is a customizable form for user registration, including email, password, and terms acceptance. It provides flexible layout options, action buttons, and customizable styles.
+
+### Key Features:
+- **Flexible Layout**: Supports column or row-based layout for form inputs.
+- **Action Buttons**: Configurable submit and cancel buttons with custom layouts.
+- **Password Validation**: Built-in support for password and confirm password validation.
+- **Customizable Styling**: Control button appearance, text case, button shape, and form alignment.
+
+### Import:
+\`\`\`tsx
+import { RegisterForm } from '@smitch/fluid'
+\`\`\`
+
+### Usage Example:
+\`\`\`tsx
+<RegisterForm
+  onsubmit={handleSubmit}
+  showCancel={true}
+  submitLabel="Register"
+  cancelLabel="Cancel"
+/>
+\`\`\`
+
+### Props:
+
+- \`onsubmit\` (function, required): Callback function for form submission, receiving form data.
+- \`onCancel\` (function, optional): Callback function to handle cancel action.
+- \`actionsLayout\` (string, optional): Layout for action buttons. Options: \`'row'\`, \`'row-reverse'\`, \`'col'\`, \`'col-reverse'\`.
+- \`submitLabel\` (string, optional): Text for the submit button. Defaults to \`'Register'\`.
+- \`cancelLabel\` (string, optional): Text for the cancel button. Defaults to \`'Cancel'\`.
+- \`submitBackground\` (string, optional): Background color for the submit button.
+- \`submitColor\` (string, optional): Text color for the submit button.
+- \`buttonTextcase\` (string, optional): Controls the text case of button labels. Options: \`'uppercase'\`, \`'lowercase'\`, \`'capitalize'\`, \`'normal-case'\`.
+- \`inputsLayout\` (string, optional): Layout for the form inputs. Options: \`'row'\`, \`'col'\`.
+- \`inputsRounded\` (string, optional): Controls input border rounding. Options: \`'none'\`, \`'sm'\`, \`'md'\`, \`'lg'\`.
+- \`passwordPattern\` (string, optional): Pattern for password validation.
+        `,
+			},
+		},
+	},
 	argTypes: {
 		onsubmit: {
 			table: {
