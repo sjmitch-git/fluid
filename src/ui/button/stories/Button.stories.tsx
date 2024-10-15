@@ -171,6 +171,7 @@ export const DeleteButton: Story = {
 		background: 'warning',
 		color: 'danger',
 		outline: false,
+		size: 'lg',
 		title: 'Delete Item?',
 	},
 }

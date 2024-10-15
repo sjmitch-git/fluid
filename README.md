@@ -5,6 +5,11 @@ A Next.js/React UI component library.
 - [Fluid UI](#fluid-ui)
   - [Overview](#overview)
   - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [1. Install Next.js and React](#1-install-nextjs-and-react)
+    - [2. Configure Tailwind](#2-configure-tailwind)
+      - [1. Install Tailwind CSS Forms Plugin](#1-install-tailwind-css-forms-plugin)
+      - [2. Configure `tailwind.config.js`](#2-configure-tailwindconfigjs)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
   - [Components](#components)
@@ -15,6 +20,7 @@ A Next.js/React UI component library.
     - [Feedback](#feedback)
     - [Media](#media)
     - [Typography](#typography)
+  - [Author](#author)
 
 ## Overview
 
@@ -28,23 +34,132 @@ Fluid UI is a comprehensive library of reusable UI components for Next.js/React 
 -   Supports TypeScript
 -   Storybook for component documentation
 
+## Getting Started
+
+To use Fluid UI in your Next.js/React project, follow these steps:
+
+### 1. Install Next.js and React
+
+If you haven't set up your Next.js project yet, start by initializing it:
+
+```bash
+npx create-next-app@latest
+```
+
+When prompted:
+
+- **Use TypeScript?**: Select **Yes** to enable TypeScript in your project.
+- **Use Tailwind CSS?**: Select **Yes** to install and configure Tailwind CSS automatically.
+
+Next.js will then generate the necessary configuration for both **TypeScript** and **Tailwind CSS**, including `tsconfig.json`, `tailwind.config.js`, and PostCSS setup.
+
+
+### 2. Configure Tailwind
+
+To ensure that **Fluid UI** works correctly, you need to configure **Tailwind CSS** and install the **Tailwind Forms** plugin. Follow the steps below:
+
+#### 1. Install Tailwind CSS Forms Plugin
+
+You need to install the Tailwind CSS forms plugin for proper form styling:
+
+```bash
+npm install @tailwindcss/forms
+```
+
+#### 2. Configure `tailwind.config.js`
+
+Update your `tailwind.config.js` file to match the configuration below:
+
+```js
+import type { Config } from 'tailwindcss'
+/* Import colors if using Tailwind's color palette */
+import colors from 'tailwindcss/colors'
+
+const config: Config = {
+    /* The selector strategy replaced the class strategy in Tailwind CSS v3.4.1.*/
+	darkMode: 'selector',
+	content: [
+		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+	],
+	theme: {
+		extend: {
+			colors: {
+                /* Modify color values as desired to suit your theme */
+				primary: {
+					DEFAULT: colors.indigo[600],
+					light: colors.indigo[300],
+					dark: colors.indigo[900],
+				},
+				secondary: {
+					DEFAULT: colors.gray[600],
+					light: colors.gray[300],
+					dark: colors.gray[900],
+				},
+				accent: {
+					DEFAULT: colors.orange[500],
+					light: colors.orange[300],
+					dark: colors.orange[700],
+				},
+				neutral: colors.gray[400],
+				dark: colors.gray[900],
+				light: colors.gray[100],
+				info: {
+					DEFAULT: colors.sky[400],
+					light: colors.sky[200],
+					dark: colors.sky[600],
+				},
+				success: {
+					DEFAULT: colors.green[600],
+					light: colors.green[400],
+					dark: colors.green[800],
+				},
+				warning: {
+					DEFAULT: colors.amber[500],
+					light: colors.amber[300],
+					dark: colors.amber[700],
+				},
+				error: {
+					DEFAULT: colors.red[600],
+					light: colors.red[400],
+					dark: colors.red[800],
+				},
+				danger: {
+					DEFAULT: colors.red[600],
+					light: colors.red[400],
+					dark: colors.red[800],
+				},
+				current: 'currentColor',
+				transparent: 'transparent',
+			},
+		},
+	},
+	plugins: [
+        /* Tailwind Forms plugin for consistent form styling */
+		require('@tailwindcss/forms')({
+			strategy: 'class',
+		}),
+	],
+}
+export default config
+```
+
 ## Installation
 
-To install the library, use npm:
-
-```sh
-npm i @smitch/fluid
+```bash
+npm install @smitch/fluid
 ```
 
 ## Basic Usage
 
+Now, you can import and use any Fluid UI [component](#components) in your Next.js project:
+
 ```jsx
-import { Input } from '@smitch/fluid'
+import { Button } from '@smitch/fluid'
 
 const App = () => (
-	<div>
-		<Input placeholder='Enter text' />
-	</div>
+  <Button>Click me</Button>
 )
 
 export default App
@@ -118,3 +233,7 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-blockquote--docs'>Blockquote</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-codeblock--docs'>Codeblock</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-heading--docs'>Heading</a>
+
+## Author
+
+Fluid UI is developed and maintained by [Stephen Mitchell](mailto:sjmitch20@outlook.com).

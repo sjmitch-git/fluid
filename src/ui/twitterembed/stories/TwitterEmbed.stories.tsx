@@ -66,6 +66,6 @@ export const TwitterTimeline: Story = {
 		borders: true,
 		lang: 'en',
 		theme: 'dark',
-		height: 600,
+		height: 500,
 	},
 }
