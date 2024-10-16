@@ -1,6 +1,6 @@
 {
 	"presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
-	"ignore": ["node_modules"],
+	"ignore": ["node_modules", "**/*.ts", "**/*.tsx"],
 	"overrides": [
 		{
 			"test": "./src/ui/**/*",
