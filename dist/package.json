@@ -1,6 +1,6 @@
 {
 	"name": "@smitch/fluid",
-	"version": "0.3.85",
+	"version": "0.3.86",
 	"description": "A React ui-component libray.",
 	"main": "index.js",
 	"keywords": [
@@ -16,7 +16,7 @@
 	"license": "MIT",
 	"files": [
 		"lib",
-		"docs",
+		"index.d.ts",
 		"package.json",
 		"README.md",
 		".npmignore"
