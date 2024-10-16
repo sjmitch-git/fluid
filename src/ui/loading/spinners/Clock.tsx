@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Clock = ({ width }: { width: number }) => {
 	return (
 		<div className={`spinner`}>

@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 import { AccordionItemProps } from '../types'
 
 import { AccordionHead, AccordionSection } from '..'

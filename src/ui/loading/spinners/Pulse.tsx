@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Pulse = ({ width }: { width: number }) => {
 	return (
 		<div className={`spinner`}>

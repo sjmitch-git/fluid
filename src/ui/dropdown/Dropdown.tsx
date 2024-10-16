@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 

@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Wifi = ({ width }: { width: number }) => {
 	return (
 		<div className={`spinner`}>

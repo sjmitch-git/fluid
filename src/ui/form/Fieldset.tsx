@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { twMerge } from 'tailwind-merge'
 
 import { FieldsetProps } from './types'
@@ -12,14 +14,17 @@ const Fieldset = ({
 	isBold = false,
 	children,
 	spacing = '4',
-	className = ''
+	className = '',
 }: FieldsetProps) => {
 	return (
 		<fieldset
 			disabled={disabled}
-			className={twMerge(`fieldset group border-neutral flex flex-col gap-${spacing} ${
-				hasBorder ? 'border p-4' : 'border-0'
-			}`, className)}
+			className={twMerge(
+				`fieldset group border-neutral flex flex-col gap-${spacing} ${
+					hasBorder ? 'border p-4' : 'border-0'
+				}`,
+				className
+			)}
 		>
 			{legendText && (
 				<Legend

@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 import { AccordionHeadProps } from '../types'
 
 import { Button } from '../../'

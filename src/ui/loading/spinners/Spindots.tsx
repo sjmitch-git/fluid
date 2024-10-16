@@ -1,3 +1,5 @@
+import React from 'react'
+
 const SpinDots = ({ width }: { width: number }) => {
 	return (
 		<div className={`spinner`}>

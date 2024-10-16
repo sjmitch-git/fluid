@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { AccordionCardProps } from '../types'
 
 import { AccordionSection } from '..'

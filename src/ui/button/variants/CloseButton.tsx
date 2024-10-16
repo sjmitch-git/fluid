@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import Button from '../Button'
 import { CloseButtonProps } from './types'
 import { HiMiniXMark } from 'react-icons/hi2'

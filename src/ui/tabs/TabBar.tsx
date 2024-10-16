@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 
 import { Tab } from './Tab'
 import { Spinner } from '..'
