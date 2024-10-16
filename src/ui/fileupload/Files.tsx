@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './ui'
+import { Button } from '..'
 import { FileProps } from './types'
 
 const Files = ({ files, deleteFile }: FileProps) => {
