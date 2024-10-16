@@ -4,8 +4,10 @@
 		"noEmit": false,
 		"declaration": true,
 		"declarationDir": "./dist/lib",
-		"emitDeclarationOnly": true,
-		"removeComments": true
+		"emitDeclarationOnly": false,
+		"removeComments": true,
+		"outDir": "./dist/lib",
+    "rootDir": "./src/ui",
 	},
 	"include": ["src/ui/**/*.ts", "src/ui/**/*.tsx"],
 	"exclude": ["node_modules", "src/ui/**/stories/**/*"]
