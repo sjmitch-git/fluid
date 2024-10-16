@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Badge } from '..'
-import { Heading } from '@/ui'
+import { Heading } from '../..'
 import { FaStar } from 'react-icons/fa6'
 
 const meta: Meta = {

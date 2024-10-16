@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Sidebar } from '..'
 import { SidebarProps } from '../types'
-import { Tabs } from '@/ui'
+import { Tabs } from '../..'
 import { LoginRegister } from '../../tabs/stories/Tabs.stories'
 
 const meta: Meta = {

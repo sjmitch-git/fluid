@@ -4,7 +4,7 @@ import React, { useRef, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Input } from '@/ui'
+import { Input } from '..'
 import { SwitchProps } from './types'
 
 import { colors } from '../@utils'

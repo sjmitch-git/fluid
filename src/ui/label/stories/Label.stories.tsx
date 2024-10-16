@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Label } from '..'
-import { Input, Select } from '@/ui'
+import { Input, Select } from '../..'
 import { LabelProps } from '../types'
 
 const textInputExample = `<Label label="Label:" layout="col">

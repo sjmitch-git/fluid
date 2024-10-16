@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Heading from '../Heading'
-import { Badge } from '@/ui'
+import { Heading } from '..'
+import { Badge } from '../..'
 import { FaStar } from 'react-icons/fa6'
 
 const BadgeExample = `<Heading level={1} align="left" weight="bold" transform="capitalize">

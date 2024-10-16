@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { FaPlus, FaMinus } from 'react-icons/fa6'
 
-import { Input, Button, Label } from '@/ui'
+import { Input, Button, Label } from '..'
 
 import { CounterProps } from './types'
 

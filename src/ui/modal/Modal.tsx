@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { CloseButton } from '@/ui'
+import { CloseButton } from '..'
 
 import { useDisableBack } from './hooks/useDisableBack'
 

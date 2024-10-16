@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Form, Fieldset } from '..'
-import { TextInput, PasswordInput, Checkbox } from '@/ui'
+import { Form, Fieldset, TextInput, PasswordInput, Checkbox } from '..'
 import { RegisterFormProps } from './types'
 
 const RegisterForm = ({

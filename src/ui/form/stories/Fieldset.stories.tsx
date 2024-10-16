@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Fieldset } from '..'
-import { TextInput } from '@/ui'
+import { TextInput } from '../..'
 
 const meta: Meta = {
 	title: 'Fluid UI/Forms/Fieldset',
@@ -58,7 +58,7 @@ import { Fieldset } from '@smitch/fluid'
         `,
 			},
 			source: {
-				code: `import { Fieldset } from '@/ui'
+				code: `import { Fieldset } from './ui'
 
 const ExampleForm = () => {
   return (

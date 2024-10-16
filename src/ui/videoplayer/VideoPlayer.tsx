@@ -9,7 +9,7 @@ import VideoControls from './VideoControls'
 
 import { VideoPlayerProps } from './types'
 
-import { Loading, Alert } from '@/ui'
+import { Loading, Alert } from '..'
 import { aspects } from '../@utils'
 
 const aspectRatios = {

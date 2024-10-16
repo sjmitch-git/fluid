@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Button, Gallery } from '@/ui'
+import { Button, Gallery } from '..'
 
 import { aspects } from '../@utils'
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { FaPlay, FaPause, FaStop } from 'react-icons/fa'
 import { ButtonGroup } from '..'
-import { Button } from '@/ui'
+import { Button } from '../..'
 
 const meta: Meta = {
 	title: 'Fluid UI/Buttons/Button Group',

@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 
-import { Input, Label } from '@/ui'
+import { Input, Label } from '..'
 
 import { CheckboxProps } from './types'
 

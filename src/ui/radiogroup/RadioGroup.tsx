@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Input, Label, Fieldset } from '@/ui'
+import { Input, Label, Fieldset } from '..'
 
 import { RadioGroupProps } from './types'
 

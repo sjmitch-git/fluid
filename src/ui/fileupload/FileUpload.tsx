@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 
 import Files from './Files'
 import { FileUploadProps, acceptTypes } from './types'
-import { Label, Input, Select, Checkbox } from '@/ui'
+import { Label, Input, Select, Checkbox } from '..'
 
 import { FaUpload } from 'react-icons/fa'
 

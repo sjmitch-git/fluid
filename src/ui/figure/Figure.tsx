@@ -5,7 +5,7 @@ import React, { useState, useMemo } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { FigureProps } from './types'
-import { Modal } from '@/ui'
+import { Modal } from '..'
 
 const aspects = {
 	landscape: 'aspect-[4/3]',

@@ -5,7 +5,7 @@ import { useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Button } from '@/ui'
+import { Button } from '..'
 
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi'
 

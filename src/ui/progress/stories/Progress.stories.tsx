@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import Progress from '../Progress'
-import { Dialog } from '@/ui'
+import { Dialog } from '../..'
 
 const codeExample = `<Progress
 	totalSize={245}   // Size of data

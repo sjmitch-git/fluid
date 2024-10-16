@@ -4,7 +4,7 @@ import { FaPlay, FaPause, FaExpand, FaCompress, FaVolumeMute, FaVolumeUp } from 
 
 import { MdPictureInPictureAlt } from 'react-icons/md'
 
-import { Button } from '@/ui'
+import { Button } from '..'
 
 import { VideoControlProps } from './types'
 

@@ -1,6 +1,8 @@
 import { AccordionCardProps } from '../types'
 
-import { Card, CardBody, CardImage, CardFooter, AccordionSection } from '@/ui'
+import { AccordionSection } from '..'
+
+import { Card, CardBody, CardImage, CardFooter } from '../../'
 
 const AccordionCard = ({ src, title, description, link }: AccordionCardProps) => {
 	return (

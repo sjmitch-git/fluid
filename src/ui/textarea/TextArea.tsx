@@ -1,10 +1,10 @@
-import {useMemo} from 'react'
+import { useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
 import { TextareaProps } from './types'
 
-import { Label } from '@/ui'
+import { Label } from '..'
 
 const sizes = {
 	sm: 'text-sm',

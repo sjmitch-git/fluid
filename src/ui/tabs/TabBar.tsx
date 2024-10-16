@@ -3,9 +3,7 @@
 import { useMemo } from 'react'
 
 import { Tab } from './Tab'
-
-import { Spinner } from '@/ui'
-
+import { Spinner } from '..'
 import { TabBarProps } from './types'
 
 const tabsPositionStyles = {

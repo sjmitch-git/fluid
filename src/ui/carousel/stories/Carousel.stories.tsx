@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Carousel } from '..'
-import { Card, CardHeader, CardBody, CardFooter } from '@/ui'
+import { Card, CardHeader, CardBody, CardFooter } from '../..'
 
 import Data from '@/data/dogs.json'
 

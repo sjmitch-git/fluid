@@ -4,7 +4,7 @@ import React, { useRef, useState, useCallback, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Button } from '@/ui'
+import { Button } from '..'
 
 import { FormProps } from './types'
 

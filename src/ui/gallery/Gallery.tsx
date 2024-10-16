@@ -2,7 +2,7 @@ import React from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Figure } from '@/ui'
+import { Figure } from '..'
 import { GalleryProps } from './types'
 
 const getCaption = (name: string, caption: boolean): string => {

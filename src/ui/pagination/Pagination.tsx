@@ -12,7 +12,7 @@ import {
 	HiChevronDoubleRight,
 	HiChevronDoubleLeft,
 } from 'react-icons/hi'
-import { ButtonGroup, Select, Button } from '@/ui'
+import { ButtonGroup, Select, Button } from '..'
 import { PaginationProps } from './types'
 
 const sizes = {

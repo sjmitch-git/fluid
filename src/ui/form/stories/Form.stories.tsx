@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form, Fieldset } from '..'
-import { TextInput, Autocomplete, SearchInput, Select, PasswordInput, Checkbox } from '@/ui'
+import { TextInput, Autocomplete, SearchInput, Select, PasswordInput, Checkbox } from '../..'
 import { Default as Password } from '../../passwordinput/stories/PasswordInput.stories'
 import data from '@/data/countries.json'
 

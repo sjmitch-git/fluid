@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion } from '..'
-import { AccordionItem, Label, Input } from '@/ui'
+import { AccordionItem, Label, Input } from '../../'
 import { AccordionProps } from '../types'
 
 import Data from '@/data/dogs.json'

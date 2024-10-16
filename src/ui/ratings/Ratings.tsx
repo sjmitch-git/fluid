@@ -1,7 +1,7 @@
 import { twMerge } from 'tailwind-merge'
 
 import { round } from '@smitch/js-lib'
-import { Badge } from '@/ui'
+import { Badge } from '..'
 
 import {
 	FaStar,

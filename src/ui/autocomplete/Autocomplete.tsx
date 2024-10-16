@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { AutocompleteProps } from './types'
 
-import { Input, Label } from '@/ui'
+import { Input, Label } from '../'
 
 const Autocomplete = ({
 	className = '',

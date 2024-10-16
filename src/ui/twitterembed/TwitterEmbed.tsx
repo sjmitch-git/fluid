@@ -4,7 +4,7 @@ import React, { useCallback, useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Loading, Alert } from '@/ui'
+import { Loading, Alert } from '..'
 import { TwitterEmbedProps } from './types'
 
 declare global {
@@ -55,8 +55,8 @@ export const TwitterEmbed = ({
 						window.twttr.widgets.load(embedRefNode)
 						window.twttr.events.bind('rendered', () => {
 							setLoading(false)
+							setError(false)
 						})
-						setError(false)
 					} else {
 						setLoading(false)
 						setError(true)
@@ -74,8 +74,8 @@ export const TwitterEmbed = ({
 					window.twttr.widgets.load(embedRefNode)
 					window.twttr.events.bind('rendered', () => {
 						setLoading(false)
+						setError(false)
 					})
-					setError(false)
 				} else {
 					setLoading(false)
 					setError(true)

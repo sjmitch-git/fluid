@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge'
 import { backgrounds, colors } from '../@utils'
 
 import { ToastProps } from './types'
-import { CloseButton } from '@/ui'
+import { CloseButton } from '..'
 
 const horizontals = {
 	left: 'left-4',

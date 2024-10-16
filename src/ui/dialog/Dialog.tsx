@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { DialogProps } from './types'
-import { CloseButton } from '@/ui'
+import { CloseButton } from '..'
 
 import { useDisableBack } from './hooks/useDisableBack'
 

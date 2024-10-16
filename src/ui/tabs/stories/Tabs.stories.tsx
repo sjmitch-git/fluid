@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import Tabs from '../Tabs'
-import { Form, RegisterForm } from '@/ui'
+import { Form, RegisterForm } from '../..'
 import { LoginForm } from '../../form/stories/Form.stories'
 import { Default as Register } from '../../form/stories/RegisterForm.stories'
 

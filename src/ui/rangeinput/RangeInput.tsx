@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react'
 
-import { Input, Label } from '@/ui'
+import { Input, Label } from '..'
 import { RangeInputProps } from './types'
 
 const thumbnailShapes = {

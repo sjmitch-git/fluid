@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import { Input, Button, Label } from '@/ui'
+import { Input, Button, Label } from '..'
 
 import { PasswordInputProps } from './types'
 

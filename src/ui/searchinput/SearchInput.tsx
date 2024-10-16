@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { FaSearch } from 'react-icons/fa'
 
-import { Input, Button } from '@/ui'
+import { Input, Button } from '..'
 
 import { SearchInputProps } from './types'
 

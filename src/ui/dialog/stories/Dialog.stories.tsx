@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dialog } from '..'
 import { DialogProps } from '../types'
-import { Tabs, Form, RegisterForm } from '@/ui'
+import { Tabs, Form, RegisterForm } from '../..'
 import { LoginForm } from '../../form/stories/Form.stories'
 import { Default as Register } from '../../form/stories/RegisterForm.stories'
 

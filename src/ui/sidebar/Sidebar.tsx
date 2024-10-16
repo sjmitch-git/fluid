@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { CloseButton } from '@/ui'
+import { CloseButton } from '..'
 import { SidebarProps } from './types'
 
 const positions = {

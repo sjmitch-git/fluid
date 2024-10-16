@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Drawer } from '..'
 import { DrawerProps } from '../types'
-import { Form } from '@/ui'
+import { Form } from '../..'
 import { NewsletterForm } from '../../form/stories/Form.stories'
 
 const meta: Meta = {
