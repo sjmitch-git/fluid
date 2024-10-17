@@ -13,4 +13,5 @@ export interface AlertProps extends BadgeProps {
 	layout?: 'default' | 'solid' | 'outline'
 	onClick?: (e: any) => void
 	dismissable?: boolean
+	rounded?: 'none' | 'md' | 'lg'
 }

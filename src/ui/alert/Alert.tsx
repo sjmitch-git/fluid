@@ -7,8 +7,8 @@ import { AlertProps } from './types'
 import { CloseButton, Heading, Badge } from '../'
 
 const defaultStyles = 'border-s-8'
-const outlineStyles = 'rounded border-0 outline outline-2'
-const solidStyles = `solid rounded border-none`
+const outlineStyles = 'border-0 outline outline-2 md:outline-4'
+const solidStyles = `solid border-none`
 
 const statuses = {
 	info: 'border-info bg-info-dark outline-info',
@@ -18,16 +18,22 @@ const statuses = {
 }
 
 const solidStatuses = {
-	info: 'bg-info',
-	success: 'bg-success',
-	warning: 'bg-warning',
-	error: 'bg-error',
+	info: 'bg-info-dark',
+	success: 'bg-success-dark',
+	warning: 'bg-warning-dark',
+	error: 'bg-error-dark',
 }
 
 const layouts = {
 	default: defaultStyles,
 	outline: outlineStyles,
 	solid: solidStyles,
+}
+
+const roundeds = {
+	none: 'rounded-0',
+	md: 'rounded',
+	lg: 'rounded-lg',
 }
 
 const Alert = ({
@@ -42,21 +48,22 @@ const Alert = ({
 	badge,
 	badgeBackground = 'dark',
 	badgeColor = 'light',
+	rounded = 'none',
 }: AlertProps) => {
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
-
+	const roundedClasses = useMemo(() => roundeds[rounded], [rounded])
 	const statusClasses = useMemo(
 		() =>
 			layout === 'solid'
 				? `${solidStatuses[status]} text-light`
-				: `${statuses[status]} text-dark`,
+				: `${statuses[status]} text-light`,
 		[layout, status]
 	)
 
 	return (
 		<blockquote
 			className={twMerge(
-				`alert group relative px-2 md:px-3 lg:px-4 py-1 ${statusClasses} ${layoutClasses}`,
+				`alert group relative px-2 md:px-3 lg:px-4 py-1 ${statusClasses} ${layoutClasses} ${roundedClasses}`,
 				className
 			)}
 			style={style}

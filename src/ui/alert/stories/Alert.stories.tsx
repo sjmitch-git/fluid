@@ -115,6 +115,7 @@ export const Default: Story = {
 		status: 'info',
 		title: 'Alert Title',
 		layout: 'default',
+		rounded: 'md',
 		message:
 			"<p>This is an <strong>important</strong> message for the user. It can be a simple string or <code>html</code> content. <br />Example of a <a href='#'>dummy link</a>.</p>",
 		dismissable: false,

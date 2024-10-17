@@ -3,24 +3,24 @@
 A Next.js/React UI component library.
 
 - [Fluid UI](#fluid-ui)
-  - [Overview](#overview)
-  - [Features](#features)
-  - [Getting Started](#getting-started)
-    - [1. Install Next.js and React](#1-install-nextjs-and-react)
-    - [2. Configure Tailwind](#2-configure-tailwind)
-      - [1. Install Tailwind CSS Forms Plugin](#1-install-tailwind-css-forms-plugin)
-      - [2. Configure `tailwind.config.js`](#2-configure-tailwindconfigjs)
-  - [Installation](#installation)
-  - [Basic Usage](#basic-usage)
-  - [Components](#components)
-    - [Buttons](#buttons)
-    - [Inputs](#inputs)
-    - [Forms](#forms)
-    - [Menus](#menus)
-    - [Feedback](#feedback)
-    - [Media](#media)
-    - [Typography](#typography)
-  - [Author](#author)
+	- [Overview](#overview)
+	- [Features](#features)
+	- [Getting Started](#getting-started)
+		- [1. Install Next.js and React](#1-install-nextjs-and-react)
+		- [2. Configure Tailwind](#2-configure-tailwind)
+			- [1. Install Tailwind CSS Forms Plugin](#1-install-tailwind-css-forms-plugin)
+			- [2. Configure `tailwind.config.js`](#2-configure-tailwindconfigjs)
+	- [Installation](#installation)
+	- [Basic Usage](#basic-usage)
+	- [Components](#components)
+		- [Buttons](#buttons)
+		- [Inputs](#inputs)
+		- [Forms](#forms)
+		- [Menus](#menus)
+		- [Feedback](#feedback)
+		- [Media](#media)
+		- [Typography](#typography)
+	- [Author](#author)
 
 ## Overview
 
@@ -82,6 +82,8 @@ const config: Config = {
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+		/* Add this line: */
+		 "./node_modules/@smitch/fluid/**/*.js",
 	],
 	theme: {
 		extend: {
