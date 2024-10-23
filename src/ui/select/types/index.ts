@@ -5,7 +5,7 @@ export interface Option {
 
 export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
 	options?: string[] | number[] | Option[]
-	children: React.ReactNode
+	children?: React.ReactNode
 	onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
 	name?: string
 	placeholder?: string
