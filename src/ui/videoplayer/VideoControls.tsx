@@ -89,7 +89,7 @@ const pipControl = (onPIP: any, duration: number) => {
 	)
 }
 
-const useCaptionsControl = (handleCaptionChange: any, tracks: string[], srcLangs: string[]) => {
+const CaptionsControl = (handleCaptionChange: any, tracks: string[], srcLangs: string[]) => {
 	const [showSelect, setShowSelect] = useState(false)
 
 	const onCaptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -265,7 +265,7 @@ const VideoControls = ({
 									case 'captions':
 										return (
 											<div key={index}>
-												{useCaptionsControl(
+												{CaptionsControl(
 													handleCaptionChange,
 													tracks || [],
 													srcLangs || []
