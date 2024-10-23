@@ -4,7 +4,8 @@ export interface Option {
 }
 
 export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
-	options: string[] | number[] | Option[]
+	options?: string[] | number[] | Option[]
+	children: React.ReactNode
 	onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
 	name?: string
 	placeholder?: string
@@ -15,4 +16,5 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
 	className?: string
 	dropdownSize?: 'sm' | 'md' | 'lg' | 'xl'
 	rounded?: 'none' | 'md' | 'lg' | 'full'
+	rows?: number
 }

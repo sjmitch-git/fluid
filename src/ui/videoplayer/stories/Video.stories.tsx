@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { VideoPlayer } from '..'
+import { Video } from '..'
 
 const videoSrc =
 	'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
 const videoPoster = 'http://media.w3.org/2010/05/bunny/poster.png'
 
 const meta: Meta = {
-	title: 'Fluid UI/Media/Video Player',
-	component: VideoPlayer,
+	title: 'Fluid UI/Media/Video',
+	component: Video,
 	argTypes: {
 		aspect: {
-			description: 'The aspect ratio for the video player.',
+			description: 'The aspect ratio for the video.',
 			control: 'select',
 			options: ['video', 'square', 'television', 'cinema', 'phone', 'ultrawide'],
 		},
@@ -56,41 +56,72 @@ const meta: Meta = {
 				disable: true,
 			},
 		},
-		progressBg: {
-			description: 'Sets background color for scrub bar',
-			control: 'color',
+		setDuration: {
+			table: {
+				disable: true,
+			},
 		},
-		progressColor: {
-			description: 'Sets active background color for scrub bar',
-			control: 'color',
+		setTime: {
+			table: {
+				disable: true,
+			},
+		},
+		currentTime: {
+			table: {
+				disable: true,
+			},
+		},
+		volume: {
+			table: {
+				disable: true,
+			},
+		},
+		play: {
+			table: {
+				disable: true,
+			},
+		},
+		togglePlay: {
+			table: {
+				disable: true,
+			},
+		},
+		playEnded: {
+			table: {
+				disable: true,
+			},
+		},
+		pictureInPicture: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 	parameters: {
 		docs: {
 			description: {
 				component: `
-The **VideoPlayer** component provides a customizable interface for embedding video content in your UI. This component offers a range of playback controls, aspect ratios, subtitle support, and error handling.
+The **Video** component allows embedding and customizing videos in your UI. It supports various video sources, aspect ratios, and playback options. You can also add error messages, preloading strategies, and loop control.
 
 ### Key Features:
-- Supports multiple video formats (MP4, WebM, OGG) for cross-browser compatibility.
-- Customizable playback options, including autoplay, looping, and preloading.
-- Supports a variety of aspect ratios: video, square, cinema, ultrawide, etc.
-- Ability to add custom error messages when the video fails to load.
-- Poster images to display before playback starts.
-- Subtitle and caption track support, with multiple languages.
-- Fine-grained control over video player elements, including sound, fullscreen, picture-in-picture (PiP), and captions.
+- Customizable aspect ratio.
+- Error message display when the video source fails to load.
+- Support for video formats such as MP4, WebM, and OGG.
+- Options to preload video metadata or entire content.
+- Looping and custom poster image support.
+- Control visibility of play, volume, and fullscreen options.
 
 ### Example Usage:
 \`\`\`jsx
-import VideoPlayer from '@smitch/fluid';
+import Video from '@smitch/fluid';
 
-<VideoPlayer
+<Video
   src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
   poster="http://media.w3.org/2010/05/bunny/poster.png"
   preload="metadata"
   loop={false}
-  aspect="cinema"
-  defaultError="Oops! There was an error loading the video."
+  aspect="video"
+  defaultError="Video failed to load."
 />
 \`\`\`
         `,
@@ -98,7 +129,7 @@ import VideoPlayer from '@smitch/fluid';
 		},
 	},
 	tags: ['autodocs'],
-} satisfies Meta<typeof VideoPlayer>
+} satisfies Meta<typeof Video>
 
 export default meta
 
@@ -108,16 +139,15 @@ export const Default: Story = {
 	args: {
 		src: videoSrc,
 		poster: videoPoster,
-		preload: 'metadata',
+		preload: 'none',
 		loop: false,
 		aspect: 'video',
 		muted: false,
-		defaultError: 'Oops! There was an unknown error loading the video.',
 	},
 	parameters: {
 		docs: {
 			description: {
-				story: 'This is the default video player with custom controls.',
+				story: 'This is the default video player with standard controls and video format support.',
 			},
 		},
 	},
@@ -129,7 +159,7 @@ export const WithError: Story = {
 		poster: undefined,
 		muted: false,
 		autoplay: true,
-		defaultError: 'Video cannot be loaded.',
+		defaultError: 'Error: Video cannot be loaded.',
 	},
 	parameters: {
 		docs: {
@@ -139,13 +169,32 @@ export const WithError: Story = {
 }
 
 export const Subtitles: Story = {
+	argTypes: {
+		defaultError: {
+			table: {
+				disable: true,
+			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		muted: {
+			table: {
+				disable: true,
+			},
+		},
+		autoplay: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	args: {
-		...Default.args,
 		src: './example.mp4',
-		poster: undefined,
 		tracks: ['./subs.vtt', './subs_fr.vtt', './subs_ja.vtt'],
 		srcLangs: ['en', 'fr', 'ja'],
-		controlOptions: ['captions'],
 	},
 	parameters: {
 		docs: {

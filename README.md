@@ -227,6 +227,8 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-gallery--docs'>Gallery</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-modal--docs'>Modal</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs'>Twitter Embed</a>
+    -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs#twitter-timeline'>Twitter Timeline</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-video--docs'>Video Player</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-video-player--docs'>Video Player</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-youtube-embed--docs'>YouTube Embed</a>
 

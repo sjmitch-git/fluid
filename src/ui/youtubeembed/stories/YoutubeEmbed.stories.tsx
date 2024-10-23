@@ -4,11 +4,38 @@ import YoutubeEmbed from '../YoutubeEmbed'
 const meta: Meta = {
 	title: 'Fluid UI/Media/YouTube Embed',
 	component: YoutubeEmbed,
+	tags: ['autodocs'],
 	parameters: {
 		docs: {
 			description: {
-				component:
-					'YouTube Embed component is used to easily embed YouTube videos in your application. It provides various options for controlling playback behaviour, player appearance, etc',
+				component: `
+The **YouTube Embed** component allows users to embed YouTube videos seamlessly in their application. It provides several options to control the player's appearance and behavior, such as autoplay, controls, loop, and mute.
+
+### Key Features:
+- Easily embed YouTube videos via a simple video ID.
+- Control player behavior with parameters like autoplay, loop, and mute.
+- Customizable iframe options such as lazy loading and referrer policy.
+- Control permissions through the \`allow\` attribute for enhanced security and customization.
+
+### Props:
+- **videoId**: The YouTube video ID (required).
+- **playerParams**: Object that specifies YouTube player parameters, such as autoplay and controls.
+- **loading**: Determines whether the iframe loads eagerly or lazily.
+- **referrerPolicy**: Controls how referrer information is sent.
+- **allow**: Specifies which features the iframe is allowed to use (e.g., autoplay, encrypted media).
+
+### Example Usage:
+\`\`\`jsx
+import { YoutubeEmbed } from '@smitch/fluid'
+
+<YoutubeEmbed
+  videoId="Q4cAzEvMsHE"
+  playerParams={{ autoplay: 1, controls: 1 }}
+  loading="lazy"
+  referrerPolicy="no-referrer"
+/>
+\`\`\`
+				`,
 			},
 		},
 	},
@@ -18,7 +45,8 @@ const meta: Meta = {
 			description: 'The ID of the YouTube video to embed.',
 		},
 		playerParams: {
-			description: 'Additional parameters for the YouTube player.',
+			description:
+				'Additional parameters for the YouTube player, such as autoplay, controls, mute, and loop.',
 			control: 'object',
 			defaultValue: {},
 		},
@@ -39,7 +67,6 @@ const meta: Meta = {
 				'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
 		},
 	},
-	tags: ['autodocs'],
 } satisfies Meta<typeof YoutubeEmbed>
 
 export default meta
@@ -60,6 +87,13 @@ export const Default: Story = {
 		loading: 'lazy',
 		referrerPolicy: 'no-referrer',
 	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Default YouTube embed with standard controls and lazy loading.',
+			},
+		},
+	},
 }
 
 export const Autoplay: Story = {
@@ -71,6 +105,11 @@ export const Autoplay: Story = {
 		},
 		loading: 'eager',
 	},
+	parameters: {
+		docs: {
+			disable: true,
+		},
+	},
 }
 
 export const NoControls: Story = {
@@ -78,6 +117,30 @@ export const NoControls: Story = {
 		...Default.args,
 		playerParams: {
 			controls: 0,
+		},
+	},
+	parameters: {
+		docs: {
+			disable: true,
+		},
+	},
+}
+
+export const AutoplayMuteLoop: Story = {
+	args: {
+		...Default.args,
+		playerParams: {
+			controls: 1,
+			autoplay: 1,
+			mute: 1,
+			loop: 1,
+		},
+		allow: 'autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop',
+		loading: 'lazy',
+	},
+	parameters: {
+		docs: {
+			disable: true,
 		},
 	},
 }

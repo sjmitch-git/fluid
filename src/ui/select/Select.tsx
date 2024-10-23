@@ -15,12 +15,14 @@ const sizes = {
 
 const Select = ({
 	className = '',
+	rows,
 	dropdownSize = 'md',
 	onChange,
 	placeholder,
 	name = 'select',
 	disabled,
 	options,
+	children,
 	defaultValue = '',
 	rounded = 'none',
 	nocaret,
@@ -62,6 +64,7 @@ const Select = ({
 			name={name}
 			onChange={handleChange}
 			value={value}
+			size={rows}
 			disabled={disabled}
 			className={twMerge(
 				`form-select select-dropdown cursor-pointer border-2 dark:bg-dark dark:text-light color-scheme:light font-normal dark:[color-scheme:dark] ${sizeClasses} rounded-${rounded}  ${
@@ -71,6 +74,7 @@ const Select = ({
 			)}
 			aria-label='select'
 		>
+			children ? {children} :
 			{placeholder && (
 				<option
 					value=''

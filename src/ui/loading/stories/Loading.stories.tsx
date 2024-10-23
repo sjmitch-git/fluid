@@ -135,11 +135,11 @@ export const CustomEmoji: Story = {
 		...CustomIcons.argTypes,
 	},
 	args: {
-		customSpinner: '💡',
+		customSpinner: '☎️',
 		customAnimate: 'pulse',
-		caption: 'Thinking',
+		caption: 'Incoming Call',
 		size: 'lg',
-		color: 'info',
+		color: 'warning',
 		layout: 'col',
 	},
 }
