@@ -91,9 +91,9 @@ const Video = ({
 		if (togglePlay) togglePlay()
 	}
 
-	const handleEnd = () => {
+	const handleEnd = useCallback(() => {
 		if (playEnded) playEnded()
-	}
+	}, [playEnded])
 
 	const handleTime = useCallback(() => {
 		if (videoRef.current && setTime) setTime(videoRef.current.currentTime)
@@ -108,8 +108,13 @@ const Video = ({
 		}
 	}, [setError, defaultError])
 
-	const handleWaiting = () => setLoading(true)
-	const handleCanPlay = () => setLoading(false)
+	const handleWaiting = useCallback(() => {
+		setLoading(true)
+	}, [setLoading])
+
+	const handleCanPlay = useCallback(() => {
+		setLoading(false)
+	}, [setLoading])
 
 	const setVideoRef = useCallback(
 		(node: HTMLVideoElement) => {

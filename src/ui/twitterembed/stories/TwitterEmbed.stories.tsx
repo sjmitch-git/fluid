@@ -108,7 +108,6 @@ export const Default: Story = {
 }
 
 export const TwitterTimeline: Story = {
-	name: 'Twitter Timeline',
 	argTypes: {
 		...Default.argTypes,
 		handle: {
