@@ -122,7 +122,7 @@ export const Default: Story = {
 	},
 }
 
-export const WithError: Story = {
+/* export const WithError: Story = {
 	args: {
 		src: 'https://media.w3.org/2010/05/sintel/undefined.mp4',
 		poster: undefined,
@@ -135,7 +135,7 @@ export const WithError: Story = {
 			disable: true,
 		},
 	},
-}
+} */
 
 export const Subtitles: Story = {
 	args: {

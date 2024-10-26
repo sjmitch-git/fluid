@@ -177,7 +177,7 @@ export const Default: Story = {
 	},
 }
 
-export const WithError: Story = {
+/* export const WithError: Story = {
 	argTypes: {
 		aspect: {
 			table: {
@@ -257,7 +257,7 @@ export const WithError: Story = {
 			disable: true,
 		},
 	},
-}
+} */
 
 export const Subtitles: Story = {
 	argTypes: {
