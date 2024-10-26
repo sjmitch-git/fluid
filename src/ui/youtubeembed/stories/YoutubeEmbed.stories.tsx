@@ -17,17 +17,13 @@ The **YouTube Embed** component allows users to embed YouTube videos seamlessly 
 - Customizable iframe options such as lazy loading and referrer policy.
 - Control permissions through the \`allow\` attribute for enhanced security and customization.
 
-### Props:
-- **videoId**: The YouTube video ID (required).
-- **playerParams**: Object that specifies YouTube player parameters, such as autoplay and controls.
-- **loading**: Determines whether the iframe loads eagerly or lazily.
-- **referrerPolicy**: Controls how referrer information is sent.
-- **allow**: Specifies which features the iframe is allowed to use (e.g., autoplay, encrypted media).
+### Import:
+\`\`\`jsx
+import { YoutubeEmbed } from '@smitch/fluid'
+\`\`\`
 
 ### Example Usage:
 \`\`\`jsx
-import { YoutubeEmbed } from '@smitch/fluid'
-
 <YoutubeEmbed
   videoId="Q4cAzEvMsHE"
   playerParams={{ autoplay: 1, controls: 1 }}

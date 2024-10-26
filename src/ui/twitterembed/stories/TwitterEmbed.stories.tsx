@@ -17,19 +17,13 @@ The **TwitterEmbed** component allows users to embed a single tweet or a user's 
 - Dynamic control over height, headers, borders, transparency, and scrollbars.
 - Support for multiple languages in the embed.
 
-### Props:
-- **handle**: The Twitter username whose tweet, timeline, or collection will be embedded.
-- **status**: The ID of the tweet (for single tweet embeds).
-- **theme**: 'light' or 'dark', controlling the visual theme of the embed.
-- **header**: Toggles the visibility of the Twitter header.
-- **borders**: Shows or hides borders around the embed.
-- **transparent**: If true, the background will be transparent.
-- **scrollbars**: Toggles scrollbars for embedded timelines when the content exceeds the height.
+### Import:
+\`\`\`jsx
+import { TwitterEmbed } from '@smitch/fluid';
+\`\`\`
 
 ### Example Usage:
 \`\`\`jsx
-import { TwitterEmbed } from '@smitch/fluid';
-
 <TwitterEmbed
   handle="storybookjs"
   header

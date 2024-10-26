@@ -2,7 +2,7 @@ import React, { Suspense, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { colors } from '../@utils'
+import { colors } from '../@styles'
 
 const Bars = React.lazy(() => import('./spinners/Bars'))
 const Clock = React.lazy(() => import('./spinners/Clock'))

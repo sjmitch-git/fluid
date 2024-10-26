@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { backgrounds, colors, borderColors, shadows } from '../@utils'
+import { backgrounds, colors, borderColors, shadows } from '../@styles'
 
 import { ButtonProps } from './types'
 

@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useCallback, useMemo, useState } from 'react'
 import VideoTracks from './VideoTracks'
 import { twMerge } from 'tailwind-merge'
 import { Loading, Alert } from '..'
-import { aspects } from '../@utils'
+import { aspects } from '../@styles'
 
 import { VideoProps } from './types'
 
@@ -21,21 +21,23 @@ const Video = ({
 	trackIndex,
 	controls = true,
 	aspect = 'video',
+	videoWidth = '100%',
+	videoHeight = 'auto',
 	loop = false,
 	muted,
-	autoplay = false,
+	autoplay,
 	setDuration,
 	setTime,
 	play,
 	togglePlay,
-	preload = 'none',
+	preload = 'metadata',
 	fallback = 'Your browser does not support the video tag.',
 	currentTime,
 	playEnded,
 	volume = 5,
 	formats = ['mp4'],
 	pictureInPicture = false,
-	defaultError,
+	defaultError = 'Video cannot be loaded.',
 	className = '',
 }: VideoProps) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -150,12 +152,14 @@ const Video = ({
 		>
 			<video
 				poster={poster}
-				width='100%'
-				height='auto'
+				width={videoWidth}
+				height={videoHeight}
 				controls={controls}
 				loop={loop}
 				ref={setVideoRef}
-				className={`video bg-black' ${loading ? loadingClasses : ''}`}
+				className={`video bg-black ${videoHeight === '100%' ? 'object-cover h-full' : ''} ${
+					loading ? loadingClasses : ''
+				}`}
 				muted={muted}
 				autoPlay={autoplay}
 				preload={preload}

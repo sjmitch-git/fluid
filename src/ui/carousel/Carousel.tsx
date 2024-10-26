@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { Button, Gallery } from '..'
 
-import { aspects } from '../@utils'
+import { aspects } from '../@styles'
 
 import {
 	HiChevronRight,

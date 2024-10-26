@@ -61,15 +61,7 @@ import { Codeblock } from '@smitch/fluid'
 	}
 </Codeblock>
 \`\`\`
-
-### Props:
-
-- \`children\` (string, required): The code content to be displayed inside the code block.
-
-- \`language\` (string, optional): The programming language used for syntax highlighting. Defaults to \`plaintext\`.
-
-- \`style\` (React.CSSProperties, optional): Custom inline styles for the code block.
-        `,
+`,
 			},
 		},
 	},

@@ -1,142 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-import {
-	FaPlay,
-	FaPause,
-	FaExpand,
-	FaCompress,
-	FaVolumeMute,
-	FaVolumeUp,
-	FaClosedCaptioning,
-} from 'react-icons/fa'
+import { CaptionsControl, FullscreenControl, SoundControl, PipControl } from './controls/'
 
-import { MdPictureInPictureAlt } from 'react-icons/md'
+import { FaPlay, FaPause } from 'react-icons/fa'
 
-import { Button, Select } from '..'
+import { Button } from '..'
 
 import { VideoControlProps } from './types'
-
-const soundControl = (
-	muted: boolean,
-	onMute: any,
-	duration: number,
-	volumeLevel: number,
-	handleVolumeChange: any
-) => {
-	return (
-		<div
-			id='sound'
-			className='flex gap-1 items-center'
-		>
-			<Button
-				title={muted ? 'Unmute Sound' : 'Mute Sound'}
-				onClick={onMute}
-				background='transparent'
-				color='light'
-				size='sm'
-			>
-				{muted ? <FaVolumeMute /> : <FaVolumeUp />}
-				<span className='sr-only'>Toggle Mute Sound</span>
-			</Button>
-			<input
-				type='range'
-				min='0'
-				max='10'
-				step='1'
-				value={volumeLevel}
-				onChange={handleVolumeChange}
-				className='volume-slider w-16 hidden lg:block'
-				disabled={duration === 0}
-			/>
-		</div>
-	)
-}
-
-const fullscreenControl = (fullscreen: boolean, onFullscreen: any, duration: number) => {
-	return (
-		<div id='fullscreen'>
-			<Button
-				title={fullscreen ? 'Exit Fullscreen' : 'View Fullscreen'}
-				onClick={onFullscreen}
-				background='transparent'
-				color='light'
-				size='sm'
-				disabled={duration === 0}
-			>
-				{fullscreen ? <FaCompress /> : <FaExpand />}
-				<span className='sr-only'>Toggle Fullscreen</span>
-			</Button>
-		</div>
-	)
-}
-
-const pipControl = (onPIP: any, duration: number) => {
-	return (
-		<div id='pip'>
-			<Button
-				title='Toggle Picture in Picture'
-				onClick={onPIP}
-				background='transparent'
-				color='light'
-				size='sm'
-				className='lg:-ml-2'
-				disabled={duration === 0}
-			>
-				<MdPictureInPictureAlt />
-				<span className='sr-only'>Toggle Picture in Picture</span>
-			</Button>
-		</div>
-	)
-}
-
-const CaptionsControl = (handleCaptionChange: any, tracks: string[], srcLangs: string[]) => {
-	const [showSelect, setShowSelect] = useState(false)
-
-	const onCaptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		setShowSelect(false)
-		if (handleCaptionChange) handleCaptionChange(e.target.value)
-	}
-
-	return tracks ? (
-		<div
-			id='captions-control'
-			className='relative'
-		>
-			<Button
-				title='Toggle caption options'
-				onClick={() => setShowSelect(!showSelect)}
-				background='transparent'
-				color='light'
-				size='sm'
-				className='lg:-ml-2'
-			>
-				<FaClosedCaptioning />
-				<span className='sr-only'>Toggle caption options</span>
-			</Button>
-			<Select
-				title='Select Captions'
-				className={`!bg-light !text-dark bottom-8 right-0 absolute ${
-					showSelect ? 'block' : 'hidden'
-				}`}
-				onChange={onCaptionChange}
-				dropdownSize='sm'
-				rows={tracks.length + 1}
-			>
-				<>
-					<option value='-1'>off</option>
-					{tracks.map((_track, index) => (
-						<option
-							key={index}
-							value={`${index}`}
-						>
-							{srcLangs[index]}
-						</option>
-					))}
-				</>
-			</Select>
-		</div>
-	) : null
-}
 
 const toHHMMSS = (secs: any) => {
 	secs = secs || 0
@@ -241,7 +111,7 @@ const VideoControls = ({
 									case 'sound':
 										return (
 											<div key={index}>
-												{soundControl(
+												{SoundControl(
 													muted,
 													onMute,
 													duration,
@@ -253,7 +123,7 @@ const VideoControls = ({
 									case 'fullscreen':
 										return (
 											<div key={index}>
-												{fullscreenControl(
+												{FullscreenControl(
 													fullscreen,
 													onFullscreen,
 													duration
@@ -261,7 +131,7 @@ const VideoControls = ({
 											</div>
 										)
 									case 'pip':
-										return <div key={index}>{pipControl(onPIP, duration)}</div>
+										return <div key={index}>{PipControl(onPIP, duration)}</div>
 									case 'captions':
 										return (
 											<div key={index}>

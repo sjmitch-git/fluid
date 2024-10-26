@@ -30,30 +30,7 @@ import { Blockquote } from '@smitch/fluid'
   size="lg"
 />
 \`\`\`
-
-### Props:
-
-- \`text\` (string, required): The blockquote content. This is the primary text displayed inside the blockquote.
-
-- \`author\` (string, optional): The name of the person being quoted. Displays in the footer, if provided.
-
-- \`footerAlign\` (string, optional): Controls the alignment of the footer (author's name). Options:
-  - \`'left'\`: Aligns the footer to the left.
-  - \`'right'\`: Aligns the footer to the right.
-  - **Default**: \`'right'\`.
-
-- \`cite\` (string, optional): A citation URL that refers to the source of the quote.
-
-- \`size\` (string, optional): Controls the size of the blockquote text. Options:
-  - \`'md'\`: Medium text size.
-  - \`'lg'\`: Large text size.
-  - \`'xl'\`: Extra large text size.
-  - **Default**: \`'md'\`.
-
-- \`className\` (string, optional): Additional CSS classes to apply custom styles.
-
-- \`style\` (React.CSSProperties, optional): Inline styles to apply custom styles.
-        `,
+`,
 			},
 		},
 	},

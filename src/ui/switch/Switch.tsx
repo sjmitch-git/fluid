@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge'
 import { Input } from '..'
 import { SwitchProps } from './types'
 
-import { colors } from '../@utils'
+import { colors } from '../@styles'
 
 const requiredClasses = "after:text-accent after:content-['_*']"
 

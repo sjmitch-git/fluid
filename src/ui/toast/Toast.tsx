@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { backgrounds, colors } from '../@utils'
+import { backgrounds, colors } from '../@styles'
 
 import { ToastProps } from './types'
 import { CloseButton } from '..'

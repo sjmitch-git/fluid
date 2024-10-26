@@ -1,3 +1,11 @@
+import { aspects } from '../../@styles'
+
+export type VideoFormat = 'mp4' | 'webm' | 'ogg'
+export type PreloadOption = 'auto' | 'metadata' | 'none'
+export type AspectRatio = Exclude<keyof typeof aspects, 'circle' | 'landscape' | 'portrait'>
+// export type AspectRatio = 'video' | 'square' | 'television' | 'cinema' | 'phone' | 'ultrawide'
+export type ControlOption = 'sound' | 'fullscreen' | 'pip' | 'captions'
+
 export interface VideoTracksProps {
 	tracks?: string[]
 	srcLangs?: string[]
@@ -7,21 +15,24 @@ export interface MediaProps extends VideoTracksProps {
 	src: string
 	poster?: string
 	loop?: boolean
-	preload?: 'auto' | 'metadata' | 'none'
-	formats?: ('mp4' | 'webm' | 'ogg')[]
+	preload?: PreloadOption
+	formats?: VideoFormat[]
 	fallback?: string
 	muted?: boolean
 	autoplay?: boolean
-	aspect?: 'video' | 'square' | 'television' | 'cinema' | 'phone' | 'ultrawide'
+	aspect?: AspectRatio
 }
 
 export interface VideoSpecificProps {
-	defaultError: string
+	defaultError?: string
 	play?: boolean
 	togglePlay?: () => void
 	playEnded?: () => void
 	pictureInPicture?: boolean
 	controls?: boolean
+	trackIndex?: string
+	videoWidth?: string
+	videoHeight?: string
 }
 
 export interface VideoProps extends MediaProps, VideoSpecificProps {
@@ -29,14 +40,13 @@ export interface VideoProps extends MediaProps, VideoSpecificProps {
 	setTime?: (time: number) => void
 	currentTime?: number
 	volume?: number
-	trackIndex?: string
 	className?: string
 }
 
 export interface VideoPlayerProps extends React.HTMLAttributes<HTMLDivElement>, MediaProps {
 	className?: string
 	defaultError?: string
-	controlOptions?: ('sound' | 'fullscreen' | 'pip' | 'captions')[]
+	controlOptions?: ControlOption[]
 	progressBg?: string
 	progressColor?: string
 }
@@ -46,15 +56,15 @@ export interface VideoControlProps extends React.HTMLAttributes<HTMLDivElement>,
 	time: number
 	togglePlay: () => void
 	play: boolean
-	onScrubChange?: (time: number) => void
 	fullscreen: boolean
+	muted: boolean
+	onScrubChange?: (time: number) => void
 	onFullscreen?: () => void
 	onPIP?: () => void
-	muted: boolean
 	onMute: () => void
 	onVolume: (volume: number) => void
 	onCaption: (index: string) => void
-	controlOptions?: ('sound' | 'fullscreen' | 'pip' | 'captions')[]
+	controlOptions?: ControlOption[]
 	progressBg?: string
 	progressColor?: string
 }

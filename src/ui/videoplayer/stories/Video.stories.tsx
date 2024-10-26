@@ -109,21 +109,50 @@ The **Video** component allows embedding and customizing videos in your UI. It s
 - Support for video formats such as MP4, WebM, and OGG.
 - Options to preload video metadata or entire content.
 - Looping and custom poster image support.
-- Control visibility of play, volume, and fullscreen options.
+- Control visibility of video controls.
+- **Subtitles & Captions**: Integrate subtitle tracks in WebVTT format for accessibility, supporting multiple languages.
+
+
+### Import:
+\`\`\`jsx
+import Video from '@smitch/fluid';
+\`\`\`
 
 ### Example Usage:
 \`\`\`jsx
-import Video from '@smitch/fluid';
-
 <Video
   src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
   poster="http://media.w3.org/2010/05/bunny/poster.png"
-  preload="metadata"
-  loop={false}
-  aspect="video"
-  defaultError="Video failed to load."
 />
 \`\`\`
+
+### Subtitles Configuration:
+- **Format**: The component supports the WebVTT format for subtitles.
+- **Usage**: Provide an array of subtitle file URLs (\`tracks\`) and an array of corresponding language codes (\`srcLangs\`) for multilingual support.
+
+**Example Subtitle File (WebVTT):**
+
+\`\`\`
+WEBVTT
+
+00:00:00.000 --> 00:00:00.999 line:80%
+Hildy!
+
+00:00:01.000 --> 00:00:01.499 line:80%
+How are you?
+
+00:00:01.500 --> 00:00:02.999 line:80%
+Tell me, is the <i>Lord of the Universe</i> in?
+
+00:00:03.000 --> 00:00:04.299 line:80%
+Yes, he's in - in a bad humor
+
+00:00:04.300 --> 00:00:06.000 line:80%
+Somebody must've stolen the crown jewels
+\`\`\`
+
+This configuration enables viewers to select subtitle tracks in their preferred language, enhancing accessibility and user experience.
+
         `,
 			},
 		},
@@ -139,26 +168,89 @@ export const Default: Story = {
 	args: {
 		src: videoSrc,
 		poster: videoPoster,
-		preload: 'none',
-		loop: false,
-		aspect: 'video',
-		muted: false,
 	},
 	parameters: {
 		docs: {
 			description: {
-				story: 'This is the default video player with standard controls and video format support.',
+				story: 'This is the default video player with standard controls.',
 			},
 		},
 	},
 }
 
 export const WithError: Story = {
+	argTypes: {
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		muted: {
+			table: {
+				disable: true,
+			},
+		},
+		autoplay: {
+			table: {
+				disable: true,
+			},
+		},
+		className: {
+			table: {
+				disable: true,
+			},
+		},
+		videoWidth: {
+			table: {
+				disable: true,
+			},
+		},
+		videoHeight: {
+			table: {
+				disable: true,
+			},
+		},
+		trackIndex: {
+			table: {
+				disable: true,
+			},
+		},
+		poster: {
+			table: {
+				disable: true,
+			},
+		},
+		loop: {
+			table: {
+				disable: true,
+			},
+		},
+		preload: {
+			table: {
+				disable: true,
+			},
+		},
+		controls: {
+			table: {
+				disable: true,
+			},
+		},
+		tracks: {
+			table: {
+				disable: true,
+			},
+		},
+		srcLangs: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	args: {
 		src: 'https://media.w3.org/2010/05/sintel/undefined.mp4',
 		poster: undefined,
-		muted: false,
-		autoplay: true,
+		muted: true,
+		autoplay: 'autoplay',
 		defaultError: 'Error: Video cannot be loaded.',
 	},
 	parameters: {
@@ -190,15 +282,97 @@ export const Subtitles: Story = {
 				disable: true,
 			},
 		},
+		className: {
+			table: {
+				disable: true,
+			},
+		},
+		videoWidth: {
+			table: {
+				disable: true,
+			},
+		},
+		videoHeight: {
+			table: {
+				disable: true,
+			},
+		},
+		trackIndex: {
+			table: {
+				disable: true,
+			},
+		},
+		poster: {
+			table: {
+				disable: true,
+			},
+		},
+		loop: {
+			table: {
+				disable: true,
+			},
+		},
+		preload: {
+			table: {
+				disable: true,
+			},
+		},
+		controls: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 	args: {
 		src: './example.mp4',
 		tracks: ['./subs.vtt', './subs_fr.vtt', './subs_ja.vtt'],
 		srcLangs: ['en', 'fr', 'ja'],
 	},
-	parameters: {
-		docs: {
-			disable: true,
+}
+
+export const LoopingBackground: Story = {
+	args: {
+		src: 'https://cdn.pixabay.com/video/2020/11/07/55859-504238916_small.mp4',
+		poster: '/looping-poster.png',
+		muted: true,
+		autoplay: true,
+		loop: true,
+		play: true,
+		preload: 'auto',
+		controls: false,
+		aspect: 'video',
+		videoHeight: '100%',
+	},
+	argTypes: {
+		defaultError: {
+			table: {
+				disable: true,
+			},
+		},
+		tracks: {
+			table: {
+				disable: true,
+			},
+		},
+		srcLangs: {
+			table: {
+				disable: true,
+			},
+		},
+		trackIndex: {
+			table: {
+				disable: true,
+			},
+		},
+		className: {
+			table: {
+				disable: true,
+			},
+		},
+		videoWidth: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 }

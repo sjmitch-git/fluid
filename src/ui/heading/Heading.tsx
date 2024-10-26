@@ -29,7 +29,7 @@ const headingCase = {
 }
 
 const Heading = ({
-	level,
+	level = 1,
 	weight = 'semibold',
 	align = 'left',
 	transform = 'normal',
