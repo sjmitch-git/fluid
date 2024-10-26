@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { VideoPlayer } from '..'
 
-const videoSrc =
-	'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-const videoPoster = 'http://media.w3.org/2010/05/bunny/poster.png'
+const videoSrc = '/video//BigBuckBunny.mp4'
+const videoPoster = '/bunny-poster.png'
 
 const meta: Meta = {
 	title: 'Fluid UI/Media/Video Player',
