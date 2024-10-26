@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Video } from '..'
 
-const videoSrc = '/video//BigBuckBunny.mp4'
+const videoSrc = '/video//trailer.mp4'
 const videoPoster = '/bunny-poster.png'
 
 const meta: Meta = {
