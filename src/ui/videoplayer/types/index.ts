@@ -21,6 +21,8 @@ export interface MediaProps extends VideoTracksProps {
 	muted?: boolean
 	autoplay?: boolean
 	aspect?: AspectRatio
+	grayscale?: 'none' | 'grayscale' | 'sepia'
+	blur?: 'none' | 'blur'
 }
 
 export interface VideoSpecificProps {

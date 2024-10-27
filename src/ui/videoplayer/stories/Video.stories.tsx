@@ -271,6 +271,11 @@ export const Subtitles: Story = {
 				disable: true,
 			},
 		},
+		grayscale: {
+			table: {
+				disable: true,
+			},
+		},
 		muted: {
 			table: {
 				disable: true,
@@ -340,6 +345,7 @@ export const LoopingBackground: Story = {
 		preload: 'auto',
 		controls: false,
 		videoHeight: '100%',
+		aspect: 'video',
 	},
 	argTypes: {
 		defaultError: {

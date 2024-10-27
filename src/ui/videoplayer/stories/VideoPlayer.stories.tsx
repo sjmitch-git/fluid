@@ -79,17 +79,16 @@ The **VideoPlayer** component provides a customizable interface for embedding vi
 - Subtitle and caption track support, with multiple languages.
 - Fine-grained control over video player elements, including sound, fullscreen, picture-in-picture (PiP), and captions.
 
+### Import:
+\`\`\`jsx
+import VideoPlayer from '@smitch/fluid'
+\`\`\`
+
 ### Example Usage:
 \`\`\`jsx
-import VideoPlayer from '@smitch/fluid';
-
 <VideoPlayer
   src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
   poster="http://media.w3.org/2010/05/bunny/poster.png"
-  preload="metadata"
-  loop={false}
-  aspect="cinema"
-  defaultError="Oops! There was an error loading the video."
 />
 \`\`\`
         `,

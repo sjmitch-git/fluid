@@ -13,6 +13,17 @@ const posterSrc = '/poster.png'
 const loadingClasses =
 	'[&&::-webkit-media-controls-panel]:!hidden [&&::-webkit-media-controls-enclosure]:!hidden [&&::-webkit-media-controls]:!hidden'
 
+const grayscaleClasses = {
+	none: '',
+	grayscale: 'grayscale',
+	sepia: 'sepia',
+}
+
+const blurClasses = {
+	none: '',
+	blur: 'blur',
+}
+
 const Video = ({
 	src,
 	poster = posterSrc,
@@ -38,6 +49,8 @@ const Video = ({
 	formats = ['mp4'],
 	pictureInPicture = false,
 	defaultError = 'Video cannot be loaded.',
+	grayscale = 'none',
+	blur = 'none',
 	className = '',
 }: VideoProps) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -94,6 +107,10 @@ const Video = ({
 	}
 
 	const handleEnd = useCallback(() => {
+		const node = videoRef.current
+		if (node && !loop) {
+			node.currentTime = 0
+		}
 		if (playEnded) playEnded()
 	}, [playEnded])
 
@@ -157,9 +174,9 @@ const Video = ({
 				controls={controls}
 				loop={loop}
 				ref={setVideoRef}
-				className={`video bg-black ${videoHeight === '100%' ? 'object-cover h-full' : ''} ${
-					loading ? loadingClasses : ''
-				}`}
+				className={`video bg-black ${grayscaleClasses[grayscale]} ${blurClasses[blur]} ${
+					videoHeight === '100%' ? 'object-cover h-full' : ''
+				} ${loading ? loadingClasses : ''}`}
 				muted={muted}
 				autoPlay={autoplay}
 				preload={preload}

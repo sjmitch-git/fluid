@@ -5,7 +5,7 @@ export default create({
 
 	brandTitle: 'Fluid UI',
 	brandUrl: 'https://fluid-ui.vercel.app/',
-	brandImage: '/img/logo.png',
+	brandImage: '/img/fluid.svg',
 	brandTarget: '_self',
 
 	colorPrimary: '#029CFD',

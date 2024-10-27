@@ -25,6 +25,8 @@ const VideoPlayer = ({
 	progressColor = '#fff',
 	tracks,
 	srcLangs,
+	grayscale,
+	blur,
 }: VideoPlayerProps) => {
 	const [play, setPlay] = useState(false)
 	const [duration, setDuration] = useState(0)
@@ -124,6 +126,8 @@ const VideoPlayer = ({
 				tracks={tracks}
 				srcLangs={srcLangs}
 				trackIndex={trackIndex}
+				grayscale={grayscale}
+				blur={blur}
 			/>
 			<VideoControls
 				duration={duration}
