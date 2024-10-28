@@ -19,11 +19,6 @@ const grayscaleClasses = {
 	sepia: 'sepia',
 }
 
-const blurClasses = {
-	none: '',
-	blur: 'blur',
-}
-
 const Video = ({
 	src,
 	poster = posterSrc,
@@ -50,7 +45,7 @@ const Video = ({
 	pictureInPicture = false,
 	defaultError = 'Video cannot be loaded.',
 	grayscale = 'none',
-	blur = 'none',
+	blur = false,
 	className = '',
 }: VideoProps) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -174,7 +169,7 @@ const Video = ({
 				controls={controls}
 				loop={loop}
 				ref={setVideoRef}
-				className={`video bg-black ${grayscaleClasses[grayscale]} ${blurClasses[blur]} ${
+				className={`video bg-black ${grayscaleClasses[grayscale]} ${blur ? 'blur' : ''} ${
 					videoHeight === '100%' ? 'object-cover h-full' : ''
 				} ${loading ? loadingClasses : ''}`}
 				muted={muted}

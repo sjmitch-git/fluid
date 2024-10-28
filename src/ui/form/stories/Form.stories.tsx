@@ -401,7 +401,7 @@ export const NewsletterForm: Story = {
 		actionsLayout: 'row',
 		actionsSpacing: '0',
 		submitLabel: 'Sign-up',
-		submitColor: 'dark',
+		submitColor: 'light',
 		buttonIsBold: true,
 	},
 }
