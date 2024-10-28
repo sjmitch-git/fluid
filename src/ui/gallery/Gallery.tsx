@@ -13,7 +13,7 @@ const Gallery = ({ className = '', aspect, data, caption = true, style }: Galler
 	return (
 		<div
 			className={twMerge(
-				`gallery group min-w-full grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6`,
+				`gallery group min-w-full grid grid-cols-2 gap-2 md:gap-4 md:grid-cols-3 lg:grid-cols-6`,
 				className
 			)}
 			style={style}

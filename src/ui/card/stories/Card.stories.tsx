@@ -21,6 +21,44 @@ const meta: Meta = {
 		className: '',
 	},
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Card** component offers a flexible and composable structure for displaying content in a card layout. It includes sections like an image, header, body, and footer, making it versatile for various content types. The Card can also be customized with layout orientations, shadow, border outline, and rounded corners.
+
+### Key Features:
+- **Composable Structure:** Use \`CardImage\`, \`CardHeader\`, \`CardBody\`, and \`CardFooter\` to organize content within the Card.
+- **Layout Variants:** Choose between \`col\`, \`row\`, and \`col_reverse\` for arranging content.
+- **Shadow and Rounding Options:** Apply different shadow and rounding options for visual depth and style.
+- **Outline Control:** Toggle the card's border outline for added contrast or minimalism.
+
+### Import:
+\`\`\`jsx
+import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Card layout="col" shadow="md" rounded="lg" outline>
+  <CardImage
+    title="Dog"
+    src="https://example.com/dog.jpg"
+    aspect="landscape"
+  />
+  <CardBody>
+    <CardHeader title="Dog" />
+    <p className="line-clamp-2">Description about the dog</p>
+    <CardFooter link="https://example.com" linkLabel="Learn More" />
+  </CardBody>
+</Card>
+\`\`\`
+
+This example shows a Card with an image, header, description, and footer link. The layout is a column with a medium shadow, large rounded corners, and an outlined border.
+`,
+			},
+		},
+	},
 } satisfies Meta<typeof Card>
 
 export default meta
