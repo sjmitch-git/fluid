@@ -29,10 +29,15 @@ The **Modal** component is a flexible UI element that displays an image in a pop
 - Ability to open and close the modal dynamically through props or user interaction.
 - Configurable with captions and alt text for media accessibility.
 
-### Example Usage:
+### Import:
 \`\`\`jsx
 import { Modal } from '@smitch/fluid'
+ick={() => setOpen(false)}
+/>
+\`\`\`
 
+### Example Usage:
+\`\`\`jsx
 const [open, setOpen] = useState(true)
 
 <Modal

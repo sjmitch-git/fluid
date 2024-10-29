@@ -158,11 +158,11 @@ const Pagination = ({
 					)}
 				</Button>
 			</ButtonGroup>
-			{feedback && (
+			{feedback ? (
 				<div className={`feedback mt-1 ${sizeClasses}`}>
 					{feedbackLabel} {selectValue} of {totalPages}
 				</div>
-			)}
+			) : null}
 		</nav>
 	)
 }

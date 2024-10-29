@@ -35,29 +35,9 @@ import { Fieldset } from '@smitch/fluid'
   {form elements here}
 </Fieldset>
 \`\`\`
-
-### Props:
-
-- \`legendText\` (string, optional): The text for the legend that labels the fieldset.
-
-- \`disabled\` (boolean, optional): Disables all the form elements within the fieldset.
-
-- \`legendAlign\` (string, optional): Aligns the legend text. Options: \`'left'\`, \`'center'\`, \`'right'\`.
-
-- \`legendSize\` (string, optional): Sets the size of the legend text. Options: \`'sm'\`, \`'md'\`, \`'lg'\`, \`'xl'\`.
-
-- \`hasBorder\` (boolean, optional): Toggles whether the fieldset has a border. Defaults to \`false\`.
-
-- \`isBold\` (boolean, optional): Makes the legend text bold.
-
-- \`spacing\` (string, optional): Controls the vertical spacing between elements within the fieldset. Options: \`'4'\`, \`'8'\`. Defaults to \`'4'\`.
-
-- \`className\` (string, optional): Adds custom CSS classes for additional styling.
-
-- \`style\` (React.CSSProperties, optional): Inline styles for custom design.
-        `,
+ `,
 			},
-			source: {
+			/* source: {
 				code: `import { Fieldset } from './ui'
 
 const ExampleForm = () => {
@@ -79,7 +59,7 @@ const ExampleForm = () => {
 
 export default ExampleForm;
 `,
-			},
+			}, */
 		},
 	},
 	tags: ['autodocs'],
@@ -145,7 +125,7 @@ const defaultContent = () => {
 				placeholder='eg: 07123456789'
 				title='Enter a vaild UK mobile number'
 				hint
-				pattern='07[0-9]{9}'
+				pattern='^(\+44\s?|0)7\d{9}$'
 			/>
 		</>
 	)

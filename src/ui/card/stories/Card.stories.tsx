@@ -102,7 +102,7 @@ export const NoImage: Story = {
 			<>
 				<CardBody>
 					<CardHeader title={data.name} />
-					<p>{data.description}</p>
+					<p className='line-clamp-2'>{data.description}</p>
 					<CardFooter
 						link={data.link}
 						linkLabel={data.name}

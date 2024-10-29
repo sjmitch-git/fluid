@@ -577,7 +577,7 @@ export const Telephone: Story = {
 		placeholder: 'e.g. 07123 456 789 or +44 7123 456 789',
 		hint: true,
 		title: 'Enter a vaild UK mobile number',
-		pattern: '^(+44s?7d{3}|(?07d{3})?)s?d{3}s?d{3}$',
+		pattern: '^(+44s?|0)7d{9}$',
 		name: 'telNo',
 		rounded: 'md',
 	},

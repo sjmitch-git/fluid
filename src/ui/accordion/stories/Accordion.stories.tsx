@@ -10,6 +10,38 @@ const meta: Meta = {
 	title: 'Fluid UI/Menus/Accordion',
 	component: Accordion,
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Accordion** component provides a collapsible section interface, useful for grouping and hiding content under expandable headers. With built-in options for layout styles, icon types, and customizable sections, it allows for flexible and organized content displays.
+
+### Key Features:
+- **Multiple Layout Options:** Includes 'default', 'flush', and 'spaced' layouts for different presentation styles.
+- **Dynamic Icon Types:** Choose between 'symbol' and 'arrow' icons for section headers.
+- **Size Customization:** Supports 'sm', 'md', and 'lg' sizes for responsive design.
+
+### Import:
+\`\`\`jsx
+import { Accordion, AccordionItem, Label, Input } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Accordion layout="flush" icon="symbol" size="md">
+  <AccordionItem id="1" title="Category 1">
+    <p>Content for Category 1</p>
+  </AccordionItem>
+  <AccordionItem id="2" title="Category 2">
+    <p>Content for Category 2</p>
+  </AccordionItem>
+</Accordion>
+\`\`\`
+
+`,
+			},
+		},
+	},
 } satisfies Meta<typeof Accordion>
 
 export default meta

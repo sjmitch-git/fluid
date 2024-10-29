@@ -9,6 +9,37 @@ const meta: Meta = {
 	title: 'Fluid UI/Menus/Drawer',
 	component: Drawer,
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Drawer** component provides a convenient sliding panel to display additional content without leaving the main screen. It’s highly customizable, making it adaptable to various layouts and contexts within your UI.
+
+### Key Features:
+- **Backdrop Support:** Enables an overlay behind the drawer to focus user attention.
+- **Positioning Options:** Choose between \`top\` or \`bottom\` placement.
+- **Flexible Content:** Accepts any content, including forms, lists, and media.
+- **Interactive Control:** Built-in event handling to easily toggle open and close states.
+
+### Import:
+\`\`\`jsx
+import { Drawer } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Drawer
+  backdrop={true}
+  position="bottom"
+  open={false}
+  onClose={() => console.log("Drawer closed")}
+/>
+\`\`\`
+
+`,
+			},
+		},
+	},
 	argTypes: {
 		open: {
 			table: {

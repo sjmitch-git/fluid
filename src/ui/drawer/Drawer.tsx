@@ -59,7 +59,7 @@ const Drawer = ({
 			)}
 			<aside
 				className={twMerge(
-					`sidebar group ${drawerClasses} ${positionClasses} ${
+					`drawer group ${drawerClasses} ${positionClasses} ${
 						show
 							? 'translate-y-0'
 							: position === 'bottom'

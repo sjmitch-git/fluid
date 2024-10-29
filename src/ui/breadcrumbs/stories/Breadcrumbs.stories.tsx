@@ -12,6 +12,34 @@ const meta: Meta = {
 				pathname: '/components/breadcrumbs',
 			},
 		},
+		docs: {
+			description: {
+				component: `
+The **Breadcrumbs** component provides a navigational aid, allowing users to keep track of their locations within the application. It displays the path from the home page to the current page and allows for easy navigation back to previous pages.
+
+### Key Features:
+- **Customizable Separator:** Choose between 'slash', 'arrow', 'pipe', and 'dot' separators for visual distinction.
+- **Size Options:** Supports small, medium, and large sizes to fit different design needs.
+- **Home Label Customization:** Easily set the label for the home link.
+
+### Import:
+\`\`\`jsx
+import { Breadcrumbs } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Breadcrumbs
+	homeLabel="Home"
+	separator="slash"
+	size="md"
+/>
+\`\`\`
+
+This example shows a Breadcrumbs component with a medium size, using a slash as the separator.
+`,
+			},
+		},
 	},
 } satisfies Meta<typeof Breadcrumbs>
 

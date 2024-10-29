@@ -36,6 +36,70 @@ const meta: Meta = {
 	title: 'Fluid UI/Menus/Dropdown',
 	component: Dropdown,
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Dropdown** component is a versatile menu system that enables easy access to nested links or items within a hierarchical structure. It supports custom button styling, various sizes, and flexible layouts, making it adaptable to a wide range of interfaces.
+
+### Key Features:
+- **Nested Links:** Supports multi-level submenus to organize links into groups and subgroups.
+- **Button Customization:** Choose from different layouts, backgrounds, and colors for the dropdown trigger button.
+- **Size Options:** Provides three size variants (\`md\`, \`lg\`, \`xl\`) to suit different UI requirements.
+- **Flexible Styling:** Apply custom classes for specific themes or layouts.
+
+### Import:
+\`\`\`jsx
+import { Dropdown } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+const links = [
+	{
+		href: '#',
+		label: 'Group Link',
+		links: [
+			{
+				href: '#',
+				label: 'Sub Link 1',
+				links: [
+					{
+						href: '#',
+						label: 'Sub sub link 1',
+					},
+					{
+						href: '#',
+						label: 'Sub sub link 2',
+					},
+				],
+			},
+			{
+				href: '#',
+				label: 'Sub Link 2',
+			},
+			{
+				href: '#',
+				label: 'Sub Link 3',
+			},
+		],
+	},
+]
+
+<Dropdown
+    size="md"
+    buttonLayout="circle"
+    buttonBackground="transparent"
+    buttonColor="current"
+    links={links}
+/>
+\`\`\`
+
+In this example, a Dropdown component with a circular, transparent button is displayed, using the nested \`links\` data to populate the menu.
+`,
+			},
+		},
+	},
 	argTypes: {
 		links: {
 			table: {
@@ -69,3 +133,11 @@ export const Styled: Story = {
 			'bg-dark text-light dark:bg-light dark:text-dark rounded-full py-3 ps-6 pe-4 border-2 border-accent',
 	},
 }
+
+Default.decorators = [
+	(Story) => (
+		<div className='bg-light dark:bg-transparent dark:text-light p-4'>
+			<Story />
+		</div>
+	),
+]

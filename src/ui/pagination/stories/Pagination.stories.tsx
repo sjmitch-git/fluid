@@ -7,6 +7,40 @@ const meta: Meta = {
 	title: 'Fluid UI/Menus/Pagination',
 	component: Pagination,
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Pagination** component allows users to navigate through paginated content in a user-friendly way. It includes multiple customization options to adapt the layout, style, and feedback to the needs of the UI, making it versatile for any interface requiring pagination.
+
+### Key Features:
+- **Layout Options:** Choose between \`horizontal\` and \`vertical\` to fit your design.
+- **Customizable Buttons:** Adjust background, color, size, and rounded options for pagination buttons.
+- **Feedback and Icons:** Enable feedback to display current page, with optional icons for next/previous navigation.
+- **Results Range Control:** Easily set the total results and the number of items displayed per page.
+
+### Import:
+\`\`\`jsx
+import { Pagination } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Pagination
+    layout="horizontal"
+    size="md"
+    btnBackground="info"
+    btnColor="dark"
+    results={69}
+    range={6}
+    feedback={true}
+    feedbackLabel="Page:"
+/>
+\`\`\`
+`,
+			},
+		},
+	},
 } satisfies Meta<typeof Pagination>
 
 export default meta
@@ -46,21 +80,6 @@ Default.args = {
 
 Default.argTypes = {
 	onChange: {
-		table: {
-			disable: true,
-		},
-	},
-	page: {
-		table: {
-			disable: true,
-		},
-	},
-	results: {
-		table: {
-			disable: true,
-		},
-	},
-	range: {
 		table: {
 			disable: true,
 		},

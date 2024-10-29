@@ -91,6 +91,39 @@ const tech = [
 const meta: Meta<typeof Tabs> = {
 	title: 'Fluid UI/Menus/Tabs',
 	component: Tabs,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Tabs** component organizes content into multiple panels, providing an interactive and intuitive way to switch between different sections or categories. It offers various customization options, including tab positioning, sizes, and optional icons.
+
+### Key Features:
+- **Customizable Layout:** Position tabs at the \`left\`, \`center\`, \`right\`, or use the full-width option.
+- **Icons and Emojis Support:** Embed icons or emojis to enhance visual navigation.
+- **Content Border Control:** Toggle borders around the content area for a cleaner layout.
+- **Interactive Components:** Easily switch between different forms or information categories.
+
+### Import:
+\`\`\`jsx
+import { Tabs } from '@smitch/fluid-ui'
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Tabs
+    defaultActiveId="tab1"
+    tabSize="sm"
+    tabsPosition="center"
+    contentBorder={true}
+>
+    <div id="tab1" title="Tab 1">Content for Tab 1</div>
+    <div id="tab2" title="Tab 2">Content for Tab 2</div>
+</Tabs>
+\`\`\`
+`,
+			},
+		},
+	},
 	tags: ['autodocs'],
 }
 
@@ -233,11 +266,19 @@ export const Default: Story = {
 		defaultActiveId: 'tab1',
 		minimalTabs: false,
 		children: defaultContent(),
-		tabSize: 'md',
+		tabSize: 'sm',
 		tabsPosition: 'center',
 		contentBorder: true,
 	},
 }
+
+Default.decorators = [
+	(Story) => (
+		<div className='bg-white dark:bg-transparent dark:text-light py-1'>
+			<Story />
+		</div>
+	),
+]
 
 export const WithEmojis: Story = {
 	argTypes: {
@@ -246,7 +287,7 @@ export const WithEmojis: Story = {
 	args: {
 		...Default.args,
 		children: emojisContent(),
-		tabSize: 'xxl',
+		tabSize: 'xl',
 	},
 }
 
@@ -276,5 +317,11 @@ export const LoginRegister: Story = {
 		tabSize: 'md',
 		minimalTabs: true,
 		contentBorder: false,
+	},
+	decorators: Default.decorators,
+	parameters: {
+		actions: {
+			argTypesRegex: '^on.*',
+		},
 	},
 }
