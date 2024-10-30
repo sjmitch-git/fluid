@@ -20,6 +20,7 @@ A Next.js/React UI component library.
 		- [Feedback](#feedback)
 		- [Media](#media)
 		- [Typography](#typography)
+		- [Data Presentation](#data-presentation)
 	- [Author](#author)
 
 ## Overview
@@ -238,6 +239,10 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-blockquote--docs'>Blockquote</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-codeblock--docs'>Codeblock</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-heading--docs'>Heading</a>
+
+### Data Presentation
+
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-presentation-datatable--docs'>Data Table</a>
 
 ## Author
 

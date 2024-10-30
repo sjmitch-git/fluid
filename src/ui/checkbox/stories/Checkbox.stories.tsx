@@ -5,6 +5,47 @@ const meta: Meta = {
 	title: 'Fluid UI/Inputs/Checkbox',
 	component: Checkbox,
 	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<div className='bg-light dark:bg-transparent dark:text-light p-4'>
+				<Story />
+			</div>
+		),
+	],
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Checkbox** component allows users to toggle selections on and off, making it ideal for forms, settings, and preference controls. This component provides options for size, rounded corners, and bold labels to improve usability and flexibility within a variety of UI designs.
+
+### Key Features:
+- **Customizable Sizes**: Available in \`md\`, \`lg\`, and \`xl\` to match UI needs.
+- **Rounded Corners**: Optionally apply rounded corners for a softer look.
+- **Hint Text**: Add additional descriptive text below the checkbox for context.
+- **Event Handling**: Supports custom \`onChange\` events for responsive feedback.
+
+### Import:
+\`\`\`jsx
+import { Checkbox } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Checkbox
+    label="I accept"
+    name="terms"
+    hint="I agree to the terms and conditions"
+    required={false}
+    size="md"
+    labelIsBold={true}
+/>
+\`\`\`
+
+In this example, the Checkbox component includes a medium size, a bold label, and hint text. The required property is set to false, making it optional for the user.
+`,
+			},
+		},
+	},
 	argTypes: {
 		name: {
 			table: {
@@ -12,6 +53,8 @@ const meta: Meta = {
 			},
 		},
 		onChange: {
+			action: 'changed',
+			description: 'Triggered when the checkbox is checked or unchecked',
 			table: {
 				disable: true,
 			},
@@ -33,4 +76,16 @@ export const Default: Story = {
 		labelIsBold: true,
 		rounded: 'none',
 	},
+	parameters: {
+		actions: {
+			argTypesRegex: '^on.*',
+		},
+	},
+	decorators: [
+		(Story) => (
+			<div className='bg-light dark:bg-transparent dark:text-light p-4'>
+				<Story />
+			</div>
+		),
+	],
 }
