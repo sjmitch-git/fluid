@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { titleCase } from '@smitch/js-lib'
 
@@ -17,6 +17,7 @@ const DataTable = ({
 	const [tabledata, setTabledata] = useState(data)
 	const [sortby, setSortby] = useState('')
 	const [ascending, setAscending] = useState(true)
+	const scrollRef = useRef<HTMLDivElement>(null)
 
 	const isIgnore = (key: any) => {
 		if (!ignore?.length) return false
@@ -34,12 +35,19 @@ const DataTable = ({
 			)
 			setAscending(asc)
 			setSortby(key)
+
+			if (scrollRef.current) {
+				scrollRef.current.scrollTop = 0
+			}
 		},
 		[data, ascending, sortby]
 	)
 
 	return (
-		<div className='overflow-auto max-h-96 lg:max-h-none'>
+		<div
+			ref={scrollRef}
+			className='overflow-auto max-h-96 lg:max-h-none'
+		>
 			<table
 				className={twMerge(
 					`table table-fixed bg-white dark:bg-black group dark:border-slate-800 border text-base md:text-lg lg:text-xl ${
@@ -49,7 +57,7 @@ const DataTable = ({
 				)}
 			>
 				{caption && (
-					<caption className='pb-2 text-start text-lg md:text-xl lg:text-2xl uppercase'>
+					<caption className='pb-2 text-start text-lg md:text-xl lg:text-2x'>
 						{caption}
 					</caption>
 				)}
