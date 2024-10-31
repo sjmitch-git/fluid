@@ -4,7 +4,7 @@ import { DataTable } from '..'
 import data from '@/data/carts.json'
 
 const meta: Meta = {
-	title: 'Fluid UI/Data Presentation/Data Table',
+	title: 'Fluid UI/Data Visualization/Data Table',
 	component: DataTable,
 	tags: ['autodocs'],
 	decorators: [

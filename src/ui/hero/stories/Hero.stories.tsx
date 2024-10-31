@@ -22,7 +22,7 @@ The **Hero** component is a versatile component used to create visually engaging
 
 ### Import:
 \`\`\`jsx
-import Hero from '@smitch/fluid';
+import { Hero } from '@smitch/fluid';
 \`\`\`
 
 ### Example Usage:

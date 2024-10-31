@@ -20,7 +20,7 @@ A Next.js/React UI component library.
 		- [Feedback](#feedback)
 		- [Media](#media)
 		- [Typography](#typography)
-		- [Data Presentation](#data-presentation)
+		- [Data Visualization](#data-visualization)
 	- [Author](#author)
 
 ## Overview
@@ -240,9 +240,13 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-codeblock--docs'>Codeblock</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-heading--docs'>Heading</a>
 
-### Data Presentation
+### Data Visualization
 
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-presentation-datatable--docs'>Data Table</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-datatable--docs'>Data Table</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-line-chart--docs'>Line Chart</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-bar-chart--docs'>Bar Chart</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-pie-chart--docs'>Pie Chart</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-pie-chart--docs#donut-chart'>Donut Chart</a>
 
 ## Author
 
