@@ -13,7 +13,6 @@ The **BarChart** component renders clear and responsive bar charts for visualizi
 
 ### Key Features:
 - **Responsive Design**: Automatically adjusts size and layout to fit different screen sizes, ensuring accessibility across devices.
-- **Dynamic Axis Labels**: Customizable x and y-axis labels make it versatile for various datasets.
 - **Legend Positioning**: The position of the chart\’s legend can be specified with the \`legendPosition\` prop.
 - **Chart.js Configuration**: Accepts additional Chart.js options via the \`options\` prop, allowing further customization of appearance and behavior.
 - **Title Customization**: Optionally display a title with the \`title\` prop, making it easy to label data context.
@@ -46,8 +45,6 @@ import { BarChart } from '@smitch/fluid'
     }}
 	title = 'Weekly Temperature Ranges',
 	legendPosition = 'bottom',
-    xAxisLabel = 'Days',
-	yAxisLabel = '°C'
 />
 \`\`\`
 `,
@@ -60,7 +57,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	name: 'Vertical Bar Chart',
+	name: 'Vertical Bars',
 	args: {
 		data: {
 			labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -81,8 +78,6 @@ export const Default: Story = {
 		},
 		title: 'Weekly Temperature Ranges',
 		legendPosition: 'bottom',
-		xAxisLabel: 'Days',
-		yAxisLabel: '°C',
 		layout: 'vertical',
 	},
 	argTypes: {
@@ -96,10 +91,15 @@ export const Default: Story = {
 				disable: true,
 			},
 		},
+		layout: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 }
 
-export const HorizontalBarChart: Story = {
+export const HorizontalBars: Story = {
 	args: {
 		data: {
 			labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -120,8 +120,6 @@ export const HorizontalBarChart: Story = {
 		},
 		title: 'Weekly Temperature Ranges',
 		legendPosition: 'bottom',
-		xAxisLabel: 'Days',
-		yAxisLabel: '°C',
 		layout: 'horizontal',
 	},
 	argTypes: {

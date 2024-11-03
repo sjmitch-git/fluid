@@ -1,26 +1,23 @@
 'use client'
 
 import React from 'react'
-
 import ChartWrap from './ChartWrap'
-import { BarChartProps } from './types'
+import { MixedChartProps } from './types'
 
-const BarChart = ({
+const MixedChart = ({
 	data,
 	options,
 	title,
 	legendPosition,
+	gridColor = '#444',
 	style,
 	className,
-	layout,
-	gridColor = '#444',
-}: BarChartProps) => {
+}: MixedChartProps) => {
 	return (
 		<ChartWrap
 			data={data}
 			options={{
 				...options,
-				indexAxis: layout === 'horizontal' ? 'y' : 'x',
 				scales: {
 					x: {
 						grid: {
@@ -43,4 +40,4 @@ const BarChart = ({
 	)
 }
 
-export default BarChart
+export default MixedChart

@@ -7,12 +7,13 @@ import { titleCase } from '@smitch/js-lib'
 import { DataTableProps } from './types'
 
 const DataTable = ({
-	className = '',
+	className,
 	data,
 	ignore,
 	caption,
 	dividersX,
 	dividersY,
+	sortable = true,
 }: DataTableProps) => {
 	const [tabledata, setTabledata] = useState(data)
 	const [sortby, setSortby] = useState('')
@@ -69,17 +70,21 @@ const DataTable = ({
 									<th
 										key={index}
 										onClick={() => sort(key)}
-										className={`cursor-pointer p-2 group-[.dividersY]:border-r dark:border-slate-800
+										className={`p-2 group-[.dividersY]:border-r dark:border-slate-800
 											${typeof data[0][key] === 'number' ? 'justify-end text-end' : 'justify-start text-start'}
 										`}
 									>
-										<span
-											className={`border-b border-dashed border-current hover:text-info ${
-												key === sortby ? 'text-info' : ''
-											}`}
-										>
-											{titleCase(key)}
-										</span>
+										{sortable ? (
+											<span
+												className={`cursor-pointer border-b border-dashed border-current hover:text-info ${
+													key === sortby ? 'text-info' : ''
+												}`}
+											>
+												{titleCase(key)}
+											</span>
+										) : (
+											titleCase(key)
+										)}
 									</th>
 								)
 						)}

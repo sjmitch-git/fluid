@@ -1,28 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PieChart } from '..'
+import { DoughnutChart } from '..'
 
 const meta: Meta = {
-	title: 'Fluid UI/Data Visualization/Charts/Pie Chart',
-	component: PieChart,
+	title: 'Fluid UI/Data Visualization/Charts/Doughnut Chart',
+	component: DoughnutChart,
 	tags: ['autodocs'],
 	parameters: {
 		docs: {
 			description: {
 				component: `
-The **PieChart** component is a circular chart divided into slices to illustrate numerical proportions. It is ideal for displaying relative data proportions for various categories.
+The **DoughnutChart** component is a circular chart divided into slices to illustrate numerical proportions. It is ideal for displaying relative data proportions for various categories.
 
 ### Key Features:
 - **Responsive Design**: Automatically adjusts size and layout for any screen size.
 - **Chart.js Configuration**: Options can be passed to customize appearance and behavior.
+- **Legend Positioning**: Customizable legend position with the \`legendPosition\` prop.
 
 ### Import:
 \`\`\`jsx
-import { PieChart } from '@smitch/fluid'
+import { DoughnutChart } from '@smitch/fluid'
 \`\`\`
 
 ### Example Usage:
 \`\`\`jsx
-<PieChart
+<DoughnutChart
   data={{
     labels: ['Electronics', 'Furniture', 'Clothing', 'Books', 'Other'],
     datasets: [
@@ -59,13 +60,13 @@ data = {
 			},
 		},
 	},
-} satisfies Meta<typeof PieChart>
+} satisfies Meta<typeof DoughnutChart>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	name: 'Pie Chart',
+	name: 'Doughnut Chart',
 	args: {
 		data: {
 			labels: ['Electronics', 'Furniture', 'Clothing', 'Books', 'Other'],

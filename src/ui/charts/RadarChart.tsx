@@ -3,31 +3,37 @@
 import React from 'react'
 
 import ChartWrap from './ChartWrap'
-import { PieChartProps } from './types'
+import { RadarChartProps } from './types'
 
-const PieChart = ({
+const RadarChart = ({
 	data,
 	options,
 	title,
 	legendPosition,
-	border = false,
+	gridColor = '#444',
 	style,
 	className,
-}: PieChartProps) => {
+}: RadarChartProps) => {
 	return (
 		<ChartWrap
 			data={data}
 			options={{
-				...(options as any),
-				borderWidth: border ? 1 : 0,
+				...options,
+				scales: {
+					r: {
+						grid: {
+							color: gridColor,
+						},
+					},
+				},
 			}}
 			title={title}
 			legendPosition={legendPosition}
-			chartType='pie'
+			chartType='radar'
 			className={className}
 			style={style}
 		/>
 	)
 }
 
-export default PieChart
+export default RadarChart

@@ -1,26 +1,23 @@
 'use client'
 
 import React from 'react'
-
 import ChartWrap from './ChartWrap'
-import { BarChartProps } from './types'
+import { ScatterChartProps } from './types'
 
-const BarChart = ({
+const ScatterChart = ({
 	data,
 	options,
 	title,
 	legendPosition,
+	gridColor = '#444',
 	style,
 	className,
-	layout,
-	gridColor = '#444',
-}: BarChartProps) => {
+}: ScatterChartProps) => {
 	return (
 		<ChartWrap
 			data={data}
 			options={{
 				...options,
-				indexAxis: layout === 'horizontal' ? 'y' : 'x',
 				scales: {
 					x: {
 						grid: {
@@ -36,11 +33,11 @@ const BarChart = ({
 			}}
 			title={title}
 			legendPosition={legendPosition}
-			chartType='bar'
+			chartType='scatter'
 			className={className}
 			style={style}
 		/>
 	)
 }
 
-export default BarChart
+export default ScatterChart

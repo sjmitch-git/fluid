@@ -100,6 +100,11 @@ export const Default: Story = {
 				disable: true,
 			},
 		},
+		options: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 }
 
@@ -142,5 +147,8 @@ export const MultiLine: Story = {
 		},
 		title: 'Monthly Sales Data Comparison (2019-2023)',
 		legendPosition: 'bottom',
+	},
+	argTypes: {
+		...Default.argTypes,
 	},
 }

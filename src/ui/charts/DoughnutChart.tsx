@@ -3,9 +3,9 @@
 import React from 'react'
 
 import ChartWrap from './ChartWrap'
-import { PieChartProps } from './types'
+import { DoughnutChartProps } from './types'
 
-const PieChart = ({
+const DoughnutChart = ({
 	data,
 	options,
 	title,
@@ -13,7 +13,7 @@ const PieChart = ({
 	border = false,
 	style,
 	className,
-}: PieChartProps) => {
+}: DoughnutChartProps) => {
 	return (
 		<ChartWrap
 			data={data}
@@ -23,11 +23,11 @@ const PieChart = ({
 			}}
 			title={title}
 			legendPosition={legendPosition}
-			chartType='pie'
+			chartType='doughnut'
 			className={className}
 			style={style}
 		/>
 	)
 }
 
-export default PieChart
+export default DoughnutChart
