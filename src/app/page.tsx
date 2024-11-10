@@ -72,14 +72,6 @@ export default function Home() {
 				<Carousel
 					data={Dogs}
 					gallery={true}
-					aspect='phone'
-				/>
-			</div>
-
-			<div className='mb-12'>
-				<Carousel
-					data={Dogs}
-					gallery={true}
 					aspect='video'
 				/>
 			</div>
