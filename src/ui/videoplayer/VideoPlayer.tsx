@@ -26,7 +26,6 @@ const VideoPlayer = ({
 	tracks,
 	srcLangs,
 	grayscale,
-	blur,
 }: VideoPlayerProps) => {
 	const [play, setPlay] = useState(false)
 	const [duration, setDuration] = useState(0)
@@ -127,7 +126,6 @@ const VideoPlayer = ({
 				srcLangs={srcLangs}
 				trackIndex={trackIndex}
 				grayscale={grayscale}
-				blur={blur}
 			/>
 			<VideoControls
 				duration={duration}
