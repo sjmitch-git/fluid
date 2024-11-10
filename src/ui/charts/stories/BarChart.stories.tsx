@@ -51,6 +51,13 @@ import { BarChart } from '@smitch/fluid'
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof BarChart>
 
 export default meta

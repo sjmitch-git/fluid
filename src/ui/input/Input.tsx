@@ -39,7 +39,7 @@ const styles = {
 	required: '!bg-[var(--highlight-color)] !text-dark',
 }
 
-export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
+const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 	const {
 		type = 'text',
 		size = 'md',
@@ -123,3 +123,5 @@ export const Input = forwardRef<InputRef, InputProps>(function Input(props, ref)
 		</>
 	)
 })
+
+export default Input

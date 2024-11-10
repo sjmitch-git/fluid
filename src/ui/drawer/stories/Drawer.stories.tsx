@@ -118,12 +118,12 @@ export const WithForm: Story = (args: DrawerProps) => {
 
 Default.args = {
 	backdrop: true,
-	position: 'bottom',
+	position: 'top',
 	open: false,
 }
 
 WithForm.args = {
 	backdrop: true,
-	position: 'bottom',
+	position: 'top',
 	open: false,
 }

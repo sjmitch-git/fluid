@@ -47,4 +47,5 @@ export interface ButtonProps {
 	textcase?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
 	isBold?: boolean
 	shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+	hoverScale?: boolean
 }

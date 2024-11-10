@@ -4,7 +4,7 @@ import React from 'react'
 
 import { AccordionHeadProps } from '../types'
 
-import { Button } from '../../'
+import { Button } from '../..'
 
 import { FaPlus, FaMinus, FaChevronLeft, FaChevronDown } from 'react-icons/fa'
 

@@ -8,6 +8,6 @@ export default create({
 	brandImage: '/img/fluid.svg',
 	brandTarget: '_self',
 
-	colorPrimary: '#029CFD',
-	colorSecondary: '#ff00ff',
+	// colorPrimary: '#029CFD',
+	// colorSecondary: '#ff00ff',
 })

@@ -19,7 +19,7 @@ const DoughnutChart = ({
 			data={data}
 			options={{
 				...(options as any),
-				borderWidth: border ? 1 : 0,
+				borderWidth: border ? 2 : 0,
 			}}
 			title={title}
 			legendPosition={legendPosition}

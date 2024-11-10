@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { AccordionHead, AccordionCard } from '..'
+import { AccordionHead, AccordionCard } from './atoms'
 
 import { AccordionProps } from './types'
 

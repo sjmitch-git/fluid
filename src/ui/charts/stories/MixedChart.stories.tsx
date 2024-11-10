@@ -59,6 +59,13 @@ import { MixedChart } from '@smitch/fluid';
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof MixedChart>
 
 export default meta

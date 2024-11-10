@@ -1,8 +1,5 @@
-import { aspects } from '../../@styles'
-
 export type VideoFormat = 'mp4' | 'webm' | 'ogg'
 export type PreloadOption = 'auto' | 'metadata' | 'none'
-export type AspectRatio = Exclude<keyof typeof aspects, 'circle' | 'landscape' | 'portrait'>
 export type ControlOption = 'sound' | 'fullscreen' | 'pip' | 'captions'
 
 export interface VideoTracksProps {
@@ -19,9 +16,8 @@ export interface MediaProps extends VideoTracksProps {
 	fallback?: string
 	muted?: boolean
 	autoplay?: boolean
-	aspect?: AspectRatio
+	aspect?: 'square' | 'phone' | 'video' | 'television' | 'cinema' | 'ultrawide'
 	grayscale?: 'none' | 'grayscale' | 'sepia'
-	blur?: boolean
 }
 
 export interface VideoSpecificProps {
@@ -34,6 +30,7 @@ export interface VideoSpecificProps {
 	trackIndex?: string
 	videoWidth?: string
 	videoHeight?: string
+	blur?: boolean
 }
 
 export interface VideoProps extends MediaProps, VideoSpecificProps {

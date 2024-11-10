@@ -22,7 +22,6 @@ const config: Config = {
 					light: colors.orange[300],
 					dark: colors.orange[700],
 				},
-				neutral: colors.gray[400],
 				dark: colors.gray[900],
 				light: colors.gray[100],
 				info: {
@@ -50,6 +49,7 @@ const config: Config = {
 					light: colors.red[400],
 					dark: colors.red[800],
 				},
+				neutral: colors.gray[400],
 				current: 'currentColor',
 				transparent: 'transparent',
 			},

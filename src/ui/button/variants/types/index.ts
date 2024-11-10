@@ -5,4 +5,5 @@ export interface CloseButtonProps {
 	onClick?: (e: any) => void
 	disabled?: boolean
 	title?: string
+	hoverScale?: boolean
 }

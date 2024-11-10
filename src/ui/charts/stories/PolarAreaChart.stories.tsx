@@ -66,6 +66,13 @@ import { PolarAreaChart } from '@smitch/fluid'
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 }
 
 export default meta

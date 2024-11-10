@@ -9,6 +9,7 @@ const meta: Meta = {
 		layout: 'circle',
 		size: 'md',
 		disabled: false,
+		hoverScale: true,
 	},
 	argTypes: {
 		layout: {

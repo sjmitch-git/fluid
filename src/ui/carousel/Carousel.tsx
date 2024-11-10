@@ -6,8 +6,6 @@ import { twMerge } from 'tailwind-merge'
 
 import { Button, Gallery } from '..'
 
-import { aspects } from '../@styles'
-
 import {
 	HiChevronRight,
 	HiChevronLeft,
@@ -16,6 +14,14 @@ import {
 } from 'react-icons/hi'
 
 import { CarouselProps } from './types'
+
+const aspects = {
+	landscape: 'aspect-[4/3]',
+	portrait: 'aspect-[3/4]',
+	square: 'aspect-square',
+	circle: 'aspect-square',
+	video: 'aspect-video',
+}
 
 const iconSizes = {
 	md: 18,

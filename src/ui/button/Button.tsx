@@ -3,8 +3,6 @@ import { forwardRef } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { backgrounds, colors, borderColors, shadows } from '../@styles'
-
 import { ButtonProps } from './types'
 
 export type ButtonRef = HTMLButtonElement
@@ -24,6 +22,55 @@ const layouts = {
 	pill: 'rounded-full',
 	square: 'aspect-square',
 	circle: 'aspect-square rounded-full',
+}
+
+const backgrounds = {
+	info: 'bg-info',
+	success: 'bg-success',
+	warning: 'bg-warning',
+	danger: 'bg-error',
+	primary: 'bg-primary',
+	secondary: 'bg-secondary',
+	accent: 'bg-accent',
+	dark: 'bg-dark',
+	light: 'bg-light',
+	transparent: 'bg-transparent',
+	neutral: 'bg-neutral',
+}
+
+const colors = {
+	info: 'text-info',
+	success: 'text-success',
+	warning: 'text-warning',
+	danger: 'text-error',
+	primary: 'text-primary',
+	secondary: 'text-secondary',
+	accent: 'text-accent',
+	dark: 'text-dark',
+	light: 'text-light',
+	current: 'text-current',
+	neutral: 'text-neutral',
+}
+
+const borderColors = {
+	info: 'border-info',
+	success: 'border-success',
+	warning: 'border-warning',
+	danger: 'border-error',
+	primary: 'border-primary',
+	secondary: 'border-secondary',
+	accent: 'border-accent',
+	dark: 'border-dark',
+	light: 'border-light',
+	current: 'border-current',
+}
+
+const shadows = {
+	sm: 'shadow-sm shadow-[2px_2px_2px_0_rgba(0,0,0,0.15)] rtl:shadow-[-2px_2px_2px_0_rgba(0,0,0,0.15)] dark:shadow-[2px_2px_2px_0_rgba(255,255,255,0.2)] rtl:dark:shadow-[-2px_2px_2px_0_rgba(255,255,255,0.2)]',
+	md: 'shadow-md shadow-[4px_4px_4px_0_rgba(0,0,0,0.15)] rtl:shadow-[-4px_4px_4px_0_rgba(0,0,0,0.15)] dark:shadow-[4px_4px_4px_0_rgba(255,255,255,0.2)] rtl:dark:shadow-[-4px_4px_4px_0_rgba(255,255,255,0.2)]',
+	lg: 'shadow-lg shadow-[6px_6px_6px_0_rgba(0,0,0,0.15)] rtl:shadow-[-6px_6px_10px_6px_rgba(0,0,0,0.15)] dark:shadow-[6px_6px_6px_0_rgba(255,255,255,0.2)] rtl:dark:shadow-[-6px_6px_6px_0_rgba(255,255,255,0.2)]',
+	xl: 'shadow-xl shadow-[8px_8px_8px_0_rgba(0,0,0,0.15)] rtl:shadow-[-8px_8px_8px_0_rgba(0,0,0,0.15)] dark:shadow-[8px_8px_8px_0_rgba(255,255,255,0.2)] rtl:dark:shadow-[-8px_8px_8px_0_rgba(255,255,255,0.2)]',
+	none: 'shadow-none',
 }
 
 const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
@@ -47,6 +94,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		role = 'button',
 		textcase = 'capitalize',
 		isBold = false,
+		hoverScale = false,
 		children,
 	} = props
 	const sizeClasses = useMemo(() => sizes[size], [size])
@@ -68,7 +116,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 			className={twMerge(
 				`button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100 focus:text-accent ${sizeClasses} p-[.5em] ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${
 					isBold ? 'font-semibold' : 'font-normal'
-				}`,
+				} hover:${hoverScale ? 'scale-105' : ''}`,
 				className
 			)}
 			style={style}

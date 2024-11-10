@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { AlertProps } from './types'
 
-import { CloseButton, Heading, Badge } from '../'
+import { CloseButton, Heading, Badge } from '..'
 
 const defaultStyles = 'border-s-8'
 const outlineStyles = 'border-0 outline outline-2 md:outline-4'

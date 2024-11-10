@@ -65,6 +65,13 @@ import { LineChart } from '@smitch/fluid'
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof LineChart>
 
 export default meta

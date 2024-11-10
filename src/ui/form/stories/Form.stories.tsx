@@ -103,34 +103,7 @@ import { Form } from '@smitch/fluid'
   {form elements here}
 </Form>
 \`\`\`
-
-### Props:
-
-- \`onsubmit\` (function, required): Function to handle form submission. It receives the form data as an argument.
-
-- \`onCancel\` (function, optional): Function to handle the cancel action.
-
-- \`actions\` (boolean, optional): If true, shows the submit and cancel buttons. Defaults to \`true\`.
-
-- \`showCancel\` (boolean, optional): If true, shows the cancel button. Defaults to \`false\`.
-
-- \`actionsLayout\` (string, optional): Controls the layout of the action buttons. Options: \`'row'\`, \`'row-reverse'\`, \`'col'\`, \`'col-reverse'\`.
-
-- \`submitLabel\` (string, optional): Label text for the submit button. Defaults to \`'Submit'\`.
-
-- \`cancelLabel\` (string, optional): Label text for the cancel button. Defaults to \`'Cancel'\`.
-
-- \`submitBackground\` (string, optional): Background color for the submit button. Options: \`'primary'\`, \`'secondary'\`, \`'info'\`, etc.
-
-- \`submitColor\` (string, optional): Text color for the submit button. Options: \`'light'\`, \`'dark'\`, etc.
-
-- \`layout\` (string, optional): Controls the layout of form elements. Options: \`'col'\`, \`'row'\`.
-
-- \`buttonShape\` (string, optional): Controls the shape of the buttons. Options: \`'default'\`, \`'rounded'\`, \`'pill'\`.
-
-- \`buttonTextcase\` (string, optional): Controls the text case of the button labels. Options: \`'uppercase'\`, \`'lowercase'\`, \`'capitalize'\`, \`'normal-case'\`.
-
-        `,
+`,
 			},
 		},
 	},

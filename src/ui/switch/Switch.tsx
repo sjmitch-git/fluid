@@ -7,14 +7,22 @@ import { twMerge } from 'tailwind-merge'
 import { Input } from '..'
 import { SwitchProps } from './types'
 
-import { colors } from '../@styles'
-
 const requiredClasses = "after:text-accent after:content-['_*']"
 
 const sizes = {
 	base: 'text-base',
 	lg: 'text-lg',
 	xl: 'text-2xl',
+}
+
+const colors = {
+	info: 'peer-checked:bg-info',
+	success: 'peer-checked:bg-success',
+	warning: 'peer-checked:bg-warning',
+	danger: 'peer-checked:bg-danger',
+	primary: 'peer-checked:bg-primary',
+	secondary: 'peer-checked:bg-secondary',
+	current: 'peer-checked:bg-current',
 }
 
 const Switch = ({
@@ -88,11 +96,9 @@ const Switch = ({
 					ref={checkbox}
 				/>
 				<span
-					className={`slider block relative bottom-0 left-0 right-0 top-0 ${
+					className={`slider block relative bg-neutral bottom-0 left-0 right-0 top-0 ${
 						thin ? 'h-2 w-[60px]' : 'h-10 w-[67px]'
-					} ${
-						disabled ? 'cursor-default' : 'cursor-pointer'
-					} bg-neutral transition-transform ${
+					} ${disabled ? 'cursor-default' : 'cursor-pointer'} transition-transform ${
 						shape === 'circle' ? 'rounded-full before:rounded-full' : ''
 					} ${sliderBeforeClasses} peer-checked:before:translate-x-7 ${colorClasses}`}
 				></span>

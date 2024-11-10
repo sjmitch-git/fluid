@@ -4,7 +4,7 @@ import React from 'react'
 
 import { AccordionItemProps } from '../types'
 
-import { AccordionHead, AccordionSection } from '..'
+import { AccordionHead, AccordionSection } from '../atoms'
 
 const themeClasses = 'bg-light text-dark dark:bg-dark dark:text-light border-neutral'
 

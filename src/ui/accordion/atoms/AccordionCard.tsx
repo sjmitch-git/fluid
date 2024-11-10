@@ -2,9 +2,9 @@ import React from 'react'
 
 import { AccordionCardProps } from '../types'
 
-import { AccordionSection } from '..'
+import { AccordionSection } from '../atoms'
 
-import { Card, CardBody, CardImage, CardFooter } from '../../'
+import { Card, CardBody, CardImage, CardFooter } from '../..'
 
 const AccordionCard = ({ src, title, description, link }: AccordionCardProps) => {
 	return (

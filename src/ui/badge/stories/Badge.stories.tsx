@@ -39,15 +39,7 @@ import { Badge } from '@smitch/fluid'
   <FaStar />
 </Badge>
 \`\`\`
-
-### Props:
-- \`position\` (\`'inline'\` | \`'right'\` | \`'left'\`): Defines the position of the badge relative to its parent.
-- \`layout\` (\`'square'\` | \`'circle'\` | \`'rounded'\` | \`'pill'\`): Specifies the shape of the badge.
-- \`size\` (\`'sm'\` | \`'md'\` | \`'lg'\` | \`'inherit'\`): Controls the size of the badge.
-- \`background\` (string): Sets the background color of the badge.
-- \`color\` (string): Sets the text or icon color inside the badge.
-- \`children\` (React.ReactNode): The content inside the badge, which can be an icon, emoji, or text.
-        `,
+`,
 			},
 		},
 	},

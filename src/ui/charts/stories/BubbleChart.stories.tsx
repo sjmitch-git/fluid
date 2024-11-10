@@ -56,6 +56,13 @@ import { BubbleChart } from '@smitch/fluid'
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof BubbleChart>
 
 export default meta

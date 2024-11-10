@@ -17,6 +17,7 @@ const CloseButton = ({
 	disabled = false,
 	layout = 'circle',
 	title = 'Close?',
+	hoverScale = true,
 }: CloseButtonProps) => {
 	const sizeClasses = useMemo(() => sizes[size], [size])
 
@@ -33,6 +34,7 @@ const CloseButton = ({
 			size={size}
 			title={title}
 			disabled={disabled}
+			hoverScale={hoverScale}
 			id='close'
 		>
 			<HiMiniXMark className={`h-auto w-full`} />

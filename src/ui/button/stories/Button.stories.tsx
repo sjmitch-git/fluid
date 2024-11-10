@@ -94,20 +94,7 @@ import { Button } from '@smitch/fluid'
   Click Me!
 </Button>
 \`\`\`
-
-### Props:
-
-- \`size\` (string, optional): Defines the size of the button. Options: \`'xs'\`, \`'sm'\`, \`'md'\`, \`'lg'\`, \`'xl'\`. Defaults to \`'md'\`.
-- \`background\` (string, optional): Sets the background color of the button. Options: \`'primary'\`, \`'secondary'\`, \`'light'\`, etc.
-- \`color\` (string, optional): Sets the text color of the button. Options: \`'light'\`, \`'dark'\`, \`'danger'\`, etc.
-- \`layout\` (string, optional): Controls the button's layout. Options: \`'default'\`, \`'rounded'\`, \`'pill'\`, \`'circle'\`, etc.
-- \`outline\` (boolean, optional): Whether the button should have an outline. Defaults to \`false\`.
-- \`outlineColor\` (string, optional): Specifies the color of the outline if \`outline\` is true. Defaults to \`'current'\`.
-- \`shadow\` (string, optional): Adds shadow effects to the button. Options: \`'none'\`, \`'sm'\`, \`'md'\`, \`'lg'\`.
-- \`isBold\` (boolean, optional): If true, the button text is bold. Defaults to \`false\`.
-- \`onClick\` (function, optional): Function to handle button click events.
-
-        `,
+`,
 			},
 		},
 	},
@@ -120,6 +107,7 @@ export const Default: Story = {
 	name: 'Text',
 	args: {
 		children: 'Click!',
+		hoverScale: true,
 	},
 }
 
@@ -143,6 +131,7 @@ export const Icon: Story = {
 				<span className='sr-only'>Add Item</span>
 			</>
 		),
+		hoverScale: true,
 		layout: 'circle',
 	},
 }
@@ -155,11 +144,19 @@ export const TextAndIcon: Story = {
 				Add Item
 			</>
 		),
+		hoverScale: true,
 		layout: 'pill',
 	},
 }
 
 export const DeleteButton: Story = {
+	argTypes: {
+		children: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 	args: {
 		children: (
 			<>
@@ -167,6 +164,7 @@ export const DeleteButton: Story = {
 				<span className='sr-only'>Delete Item</span>
 			</>
 		),
+		hoverScale: true,
 		layout: 'circle',
 		background: 'warning',
 		color: 'danger',

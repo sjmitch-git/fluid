@@ -4,7 +4,6 @@ import React, { useRef, useEffect, useCallback, useMemo, useState } from 'react'
 import VideoTracks from './VideoTracks'
 import { twMerge } from 'tailwind-merge'
 import { Loading, Alert } from '..'
-import { aspects } from '../@styles'
 
 import { VideoProps } from './types'
 
@@ -17,6 +16,15 @@ const grayscaleClasses = {
 	none: '',
 	grayscale: 'grayscale',
 	sepia: 'sepia',
+}
+
+const aspects = {
+	square: 'aspect-square',
+	phone: 'aspect-[9/16]',
+	video: 'aspect-video',
+	television: 'aspect-[4/3]',
+	cinema: 'aspect-[21/9]',
+	ultrawide: 'aspect-[12/5]',
 }
 
 const Video = ({

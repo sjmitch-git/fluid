@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Fieldset } from '..'
+import Fieldset from '../Fieldset'
 import { TextInput } from '../..'
 
 const meta: Meta = {

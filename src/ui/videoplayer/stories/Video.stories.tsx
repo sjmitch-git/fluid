@@ -150,8 +150,6 @@ Yes, he's in - in a bad humor
 Somebody must've stolen the crown jewels
 \`\`\`
 
-This configuration enables viewers to select subtitle tracks in their preferred language, enhancing accessibility and user experience.
-
         `,
 			},
 		},

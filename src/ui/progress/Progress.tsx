@@ -32,7 +32,7 @@ const Progress = ({
 	}, [totalSize, downloadedSize, onDone, done])
 
 	return (
-		<div className='progress-wrapper min-w-96'>
+		<div className='progress-wrapper min-w-60'>
 			<progress
 				className={twMerge(`progress w-full h-4`, className)}
 				style={style}

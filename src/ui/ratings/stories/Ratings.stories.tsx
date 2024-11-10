@@ -76,18 +76,7 @@ ${emojiIconExample}
 - You can pass a custom icon using the \`customIcon\` prop.
 - The component allows setting the total range of icons (e.g., 5 for a 5-star rating system) via the \`range\` prop.
 - Easily change the appearance using props like \`size\`, \`color\`, and \`background\`.
-
-### Props:
-- \`rating\` (number): The current rating value. Determines how many icons will be filled in.
-- \`range\` (number, optional): The total number of icons displayed (e.g., 5 for 5 stars). Defaults to \`5\`.
-- \`icon\` ('star' | 'smiley' | 'thumb' | 'heart' | 'check' | 'thumbdown' | 'frown'): Specifies the icon to use for the rating.
-- \`customIcon\` (React.ReactNode, optional): Allows you to pass a custom icon for the rating, overriding the default icons.
-- \`size\` ('sm' | 'md' | 'lg' | 'inherit', optional): Sets the size of the rating icons.
-- \`color\` (string, optional): Specifies the color for the filled icons.
-- \`background\` (string, optional): Specifies the background color of the icons.
-- \`spacing\` ('0' | '1' | '2', optional): Controls the spacing between the icons.
-- \`shape\` ('square' | 'circle' | 'rounded', optional): Defines the shape of each icon's background (e.g., circle for a rounded appearance).
-        `,
+`,
 			},
 		},
 	},

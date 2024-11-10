@@ -36,16 +36,7 @@ import { ButtonGroup } from '@/components/ButtonGroup';
 </ButtonGroup>
 \`\`\`
 
-### Props:
-
-- \`layout\` (string, optional): Defines the layout of the button group. Options: \`'horizontal'\`, \`'vertical'\`. Defaults to \`'horizontal'\`.
-- \`rounded\` (boolean, optional): Determines if the button group should have rounded corners. Defaults to \`true\`.
-- \`outline\` (string, optional): Sets the outline style for the button group. Options: \`'none'\`, \`'thin'\`, \`'thick'\`. Defaults to \`'none'\`.
-- \`outlineColor\` (string, optional): Sets the color of the outline if \`outline\` is used. Options: \`'light'\`, \`'dark'\`, \`'grey'\`, etc. Defaults to \`'light'\`.
-- \`className\` (string, optional): Additional custom classes for styling the button group.
-- \`label\` (string, optional): Accessible label for the button group.
-
-        `,
+ `,
 			},
 		},
 	},

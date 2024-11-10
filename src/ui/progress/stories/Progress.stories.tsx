@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import Progress from '../Progress'
+import { Progress } from '..'
 import { Dialog } from '../..'
 
 const codeExample = `<Progress

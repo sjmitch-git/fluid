@@ -33,6 +33,10 @@ const RatingsExample = `<Heading level={3} align="left" weight="light" transform
 const meta: Meta = {
 	title: 'Fluid UI/Typography/Heading',
 	component: Heading,
+	subcomponents: {
+		Badge: Badge as React.ComponentType<unknown>,
+		Ratings: Ratings as React.ComponentType<unknown>,
+	},
 	parameters: {
 		docs: {
 			description: {
@@ -58,6 +62,13 @@ import { Heading } from '@smitch/fluid'
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-0 dark:text-light'>
+				<Story />
+			</div>
+		),
+	],
 	tags: ['autodocs'],
 } satisfies Meta<typeof Heading>
 
@@ -81,7 +92,6 @@ export const Default: Story = {
 }
 
 export const HeadingWithBadge: Story = {
-	decorators: Default.decorators,
 	parameters: {
 		docs: {
 			source: {
@@ -107,7 +117,6 @@ export const HeadingWithBadge: Story = {
 }
 
 export const HeadingWithRatings: Story = {
-	decorators: Default.decorators,
 	parameters: {
 		docs: {
 			source: {
@@ -135,11 +144,3 @@ export const HeadingWithRatings: Story = {
 		),
 	},
 }
-
-Default.decorators = [
-	(Story) => (
-		<div className='bg-light dark:bg-transparent dark:text-light p-4'>
-			<Story />
-		</div>
-	),
-]

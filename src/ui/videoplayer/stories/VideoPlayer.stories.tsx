@@ -121,21 +121,6 @@ export const Default: Story = {
 	},
 }
 
-/* export const WithError: Story = {
-	args: {
-		src: 'https://media.w3.org/2010/05/sintel/undefined.mp4',
-		poster: undefined,
-		muted: false,
-		autoplay: true,
-		defaultError: 'Video cannot be loaded.',
-	},
-	parameters: {
-		docs: {
-			disable: true,
-		},
-	},
-} */
-
 export const Subtitles: Story = {
 	args: {
 		...Default.args,

@@ -59,19 +59,18 @@ ${textInputExample}
 // Email Input Example
 ${emailInputExample}
 \`\`\`
-
-### Props:
-- \`label\` (string): The label text for the form element.
-- \`layout\` ('col' | 'row', optional): Layout direction of the label and form element. Defaults to \`col\`.
-- \`required\` (boolean, optional): Marks the form element as required. Defaults to false.
-- \`type\` ('text' | 'password' | 'number' | 'email' | 'tel' | 'date' | 'checkbox' | 'radio' | 'file' | 'button' | 'color' | 'range' | 'search' | 'url' | 'datetime-local' | 'time' | 'month' | 'week', optional): The type of form control associated with the label. Defaults to \`text\`.
-- \`size\` ('sm' | 'md' | 'lg' | 'xl', optional): The size of the label.
-- \`isBold\` (boolean, optional): If \`true\`, makes the label text bold. Defaults to \`true\`.
-        `,
+`,
 			},
 		},
 	},
 	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<div className='text-dark bg-light dark:text-light dark:bg-transparent p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof Label>
 
 export default meta
@@ -109,13 +108,6 @@ export const Default: Story = {
 		size: 'md',
 		isBold: true,
 	},
-	decorators: [
-		(Story) => (
-			<div className='text-dark bg-light dark:text-light dark:bg-transparent p-4'>
-				<Story />
-			</div>
-		),
-	],
 }
 
 export const EmailInput: Story = {
@@ -148,7 +140,6 @@ export const EmailInput: Story = {
 		label: 'e-Mail:',
 		required: true,
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const passwordPattern = '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}'
@@ -184,7 +175,6 @@ export const PasswordInput: Story = {
 		label: 'Password:',
 		required: true,
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const checkboxInputExample = `<Label label='I agree to Terms & Conditions' type='checkbox' layout='row_reverse'>
@@ -225,7 +215,6 @@ export const CheckboxInput: Story = {
 		layout: 'row_reverse',
 		isBold: false,
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const radioInputExample = `<Label label='18-64 years' type='radio' layout='row_reverse'>
@@ -267,7 +256,6 @@ export const RadioInput: Story = {
 		layout: 'row_reverse',
 		isBold: false,
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const colorInputExample = `<Label label='Set Color' type='color' layout='row_reverse'>
@@ -366,7 +354,6 @@ export const DatesAndTimeInput: Story = {
 		type: 'date',
 		label: 'Enter Value:',
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const urlInputExample = `<Label label='Blog Link:' type='url' layout='col'>
@@ -414,7 +401,6 @@ export const UrlInput: Story = {
 		label: 'Blog Link:',
 		type: 'url',
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const numberInputExample = `<Label label='Number:' type='number' layout='col'>
@@ -466,7 +452,6 @@ export const NumberInput: Story = {
 		label: 'Number:',
 		type: 'number',
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const telInputExample = `<Label label='Mobile:' type='tel' layout='col'>
@@ -513,7 +498,6 @@ export const TelephoneInput: Story = {
 		type: 'tel',
 		required: false,
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const searchInputExample = `<Label label='Search:' type='search' layout='row'>
@@ -556,7 +540,6 @@ export const SearchInput: Story = {
 		type: 'search',
 		layout: 'row',
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const fileInputExample = `<Label label='Upload an image' type='file'>
@@ -605,7 +588,6 @@ export const FileInput: Story = {
 		type: 'file',
 		layout: 'col',
 	},
-	decorators: [...(Default.decorators || [])],
 }
 
 const months = [
@@ -666,5 +648,4 @@ export const SelectDropdown: Story = {
 		label: 'Month:',
 		layout: 'col',
 	},
-	decorators: [...(Default.decorators || [])],
 }

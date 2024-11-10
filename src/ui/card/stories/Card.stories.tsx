@@ -54,7 +54,6 @@ import { Card, CardHeader, CardBody, CardImage, CardFooter } from '@smitch/fluid
 </Card>
 \`\`\`
 
-This example shows a Card with an image, header, description, and footer link. The layout is a column with a medium shadow, large rounded corners, and an outlined border.
 `,
 			},
 		},

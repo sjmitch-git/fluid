@@ -54,6 +54,13 @@ import { ScatterChart } from '@smitch/fluid';
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof ScatterChart>
 
 export default meta

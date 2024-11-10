@@ -17,7 +17,7 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 	rounded?: 'none' | 'md' | 'lg' | 'xl'
 	gallery?: boolean
 	rtl?: boolean
-	aspect?: 'landscape' | 'portrait' | 'square' | 'video' | 'circle' | 'phone'
+	aspect?: 'landscape' | 'portrait' | 'square' | 'video' | 'circle'
 	buttonLayout?: 'rounded' | 'square' | 'circle'
 	buttonsPosition?: 'top' | 'middle' | 'bottom'
 	buttonIcon?: 'arrow' | 'chevron'

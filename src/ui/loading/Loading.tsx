@@ -2,8 +2,6 @@ import React, { Suspense, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { colors } from '../@styles'
-
 const Bars = React.lazy(() => import('./spinners/Bars'))
 const Clock = React.lazy(() => import('./spinners/Clock'))
 const Dots = React.lazy(() => import('./spinners/Dots'))
@@ -17,6 +15,18 @@ const sizeToWidth = {
 	md: 40,
 	lg: 60,
 	xl: 80,
+}
+
+const colors = {
+	info: 'text-info',
+	success: 'text-success',
+	warning: 'text-warning',
+	danger: 'text-error',
+	primary: 'text-primary',
+	secondary: 'text-secondary',
+	dark: 'text-dark',
+	light: 'text-light',
+	current: 'text-current',
 }
 
 const layouts = {

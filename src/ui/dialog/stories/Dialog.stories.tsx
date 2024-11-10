@@ -98,15 +98,7 @@ import { Dialog } from '@smitch/fluid'
 // simple dialog
 ${codeExample}
 \`\`\`
-
-### Props:
-- \`open\` (boolean): Whether the dialog is open or closed.
-- \`modal\` (boolean, optional): Whether the dialog is modal (blocks background interaction). Defaults to true.
-- \`title\` (string, optional): The title of the dialog.
-- \`titleSize\` ('sm' | 'md' | 'lg' | 'xl', optional): The size of the dialog title. Defaults to 'lg'.
-- \`titleBold\` (boolean, optional): Whether the dialog title is bold. Defaults to false.
-- \`onClose\` (function): A callback function that fires when the dialog is closed.
-        `,
+`,
 			},
 		},
 	},

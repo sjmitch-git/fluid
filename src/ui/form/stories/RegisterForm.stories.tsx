@@ -46,21 +46,7 @@ import { RegisterForm } from '@smitch/fluid'
   cancelLabel="Cancel"
 />
 \`\`\`
-
-### Props:
-
-- \`onsubmit\` (function, required): Callback function for form submission, receiving form data.
-- \`onCancel\` (function, optional): Callback function to handle cancel action.
-- \`actionsLayout\` (string, optional): Layout for action buttons. Options: \`'row'\`, \`'row-reverse'\`, \`'col'\`, \`'col-reverse'\`.
-- \`submitLabel\` (string, optional): Text for the submit button. Defaults to \`'Register'\`.
-- \`cancelLabel\` (string, optional): Text for the cancel button. Defaults to \`'Cancel'\`.
-- \`submitBackground\` (string, optional): Background color for the submit button.
-- \`submitColor\` (string, optional): Text color for the submit button.
-- \`buttonTextcase\` (string, optional): Controls the text case of button labels. Options: \`'uppercase'\`, \`'lowercase'\`, \`'capitalize'\`, \`'normal-case'\`.
-- \`inputsLayout\` (string, optional): Layout for the form inputs. Options: \`'row'\`, \`'col'\`.
-- \`inputsRounded\` (string, optional): Controls input border rounding. Options: \`'none'\`, \`'sm'\`, \`'md'\`, \`'lg'\`.
-- \`passwordPattern\` (string, optional): Pattern for password validation.
-        `,
+`,
 			},
 		},
 	},

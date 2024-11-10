@@ -39,35 +39,6 @@ import { Alert } from '@smitch/fluid'
 \`\`\`tsx
 ${defaultCode}
 \`\`\`
-
-### Props:
-
-- \`status\` (string, required): Defines the alert's status, which typically controls the alert's color and icon. Available options:
-  - \`'info'\`: For informational alerts (default).
-  - \`'success'\`: For success messages.
-  - \`'warning'\`: For warnings.
-  - \`'error'\`: For errors and critical alerts.
-
-- \`title\` (string | null, optional): The title of the alert. This is a short, bold heading that provides a quick summary of the alert's message. If not provided, the alert will not have a title.
-
-- \`message\` (string, required): The main content of the alert. This can be a simple string or HTML content. It supports rich text formatting, such as \`<strong>\`, \`<a>\`, \`<p>\`, and \`<code>\` tags.
-
-- \`layout\` (\`'default'\` | \`'solid'\` | \`'outline'\`, optional): The visual style of the alert. Determines how the alert's background and borders are styled.
-  - \`'default'\`: Standard alert with a light background.
-  - \`'solid'\`: Solid background color for the alert, matching the \`status\`.
-  - \`'outline'\`: Alert with no background, just a colored border.
-
-- \`dismissable\` (boolean, optional): If \`true\`, the alert will have a close button, allowing users to dismiss it. Defaults to \`false\`.
-
-- \`onClick\` (function, optional): Callback function that will be triggered when the dismiss button is clicked. Only applicable if \`dismissable\` is \`true\`.
-
-- \`badge\` (React.ReactNode, optional): A badge (icon or text) that will appear next to the alert title. Useful for adding emphasis to the alert.
-
-- \`badgeBackground\` (\`'dark'\` | \`'light'\` | \`'info'\` | \`'success'\` | \`'warning'\` | \`'danger'\` | \`'transparent'\`, optional): The background color of the badge.
-
-- \`badgeColor\` (\`'dark'\` | \`'light'\` | \`'info'\` | \`'success'\` | \`'warning'\` | \`'danger'\`, optional): The text or icon color of the badge.
-
-al): Callback function that will be triggered when the dismiss button is clicked. Only applicable if \`dismissable\` is \`true\`.
 `,
 			},
 		},

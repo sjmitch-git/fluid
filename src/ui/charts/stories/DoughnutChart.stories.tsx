@@ -60,6 +60,13 @@ data = {
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof DoughnutChart>
 
 export default meta

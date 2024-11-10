@@ -44,32 +44,7 @@ return (
   </>
 )
 \`\`\`
-
-### Props:
-
-- \`open\` (boolean, required): Controls whether the toast is open or closed.
-
-- \`body\` (React.ReactNode, required): The content displayed inside the toast.
-
-- \`onClose\` (function, required): Function called when the toast is closed either by auto-hide or manual interaction.
-
-- \`autohide\` (boolean, optional): If true, the toast will automatically close after the \`autohideDuration\`. Defaults to \`true\`.
-
-- \`autohideDuration\` (number, optional): Duration in milliseconds before the toast auto-hides. Defaults to \`3000\`.
-
-- \`horizontal\` (string, optional): Defines the horizontal position of the toast. Options: \`'left'\`, \`'center'\`, \`'right'\`. Defaults to \`'center'\`.
-
-- \`vertical\` (string, optional): Defines the vertical position of the toast. Options: \`'top'\`, \`'middle'\`, \`'bottom'\`. Defaults to \`'top'\`.
-
-- \`background\` (string, optional): Sets the background color of the toast. Options: \`'info'\`, \`'success'\`, \`'warning'\`, \`'danger'\`, \`'primary'\`, \`'secondary'\`. Defaults to \`'warning'\`.
-
-- \`color\` (string, optional): Sets the text color. Options: \`'dark'\`, \`'light'\`. Defaults to \`'light'\`.
-
-- \`rounded\` (string, optional): Controls the corner rounding of the toast. Options: \`'none'\`, \`'md'\`, \`'lg'\`, \`'xl'\`, \`'full'\`. Defaults to \`'md'\`.
-
-- \`closeOnBlur\` (boolean, optional): If true, the toast will close when it loses focus. Defaults to \`true\`.
-
-        `,
+`,
 			},
 		},
 	},
@@ -126,7 +101,11 @@ export const Default: Story = (args: ToastProps) => {
 
 Default.args = {
 	open: false,
-	body: 'Simple string message',
+	body: (
+		<p>
+			Simple <code>HTML</code> <em>message</em>
+		</p>
+	),
 	horizontal: 'center',
 	vertical: 'middle',
 	rounded: 'md',
