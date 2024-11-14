@@ -8,8 +8,8 @@ const PipControl = (onPIP: any, duration: number) => {
 			<Button
 				title='Toggle Picture in Picture'
 				onClick={onPIP}
-				background='transparent'
-				color='light'
+				btnBackground='transparent'
+				btnColor='light'
 				size='sm'
 				className='lg:-ml-2'
 				disabled={duration === 0}

@@ -212,8 +212,8 @@ const Carousel = ({
 								className={`m-auto opacity-30 hover:opacity-100 disabled:hidden`}
 								disabled={index === 0}
 								layout={buttonLayout}
-								background={buttonBackground}
-								color={buttonColor}
+								btnBackground={buttonBackground}
+								btnColor={buttonColor}
 								outline={buttonOutline}
 							>
 								{buttonIcon === 'arrow' ? (
@@ -230,8 +230,8 @@ const Carousel = ({
 								className={`m-auto opacity-30 hover:opacity-100 disabled:hidden`}
 								disabled={index === data.length - 1}
 								layout={buttonLayout}
-								background={buttonBackground}
-								color={buttonColor}
+								btnBackground={buttonBackground}
+								btnColor={buttonColor}
 								outline={buttonOutline}
 							>
 								{buttonIcon === 'arrow' ? (

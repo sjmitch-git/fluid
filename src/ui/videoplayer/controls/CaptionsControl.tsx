@@ -20,8 +20,8 @@ const CaptionsControl = (handleCaptionChange: any, tracks: string[], srcLangs: s
 			<Button
 				title='Toggle caption options'
 				onClick={() => setShowSelect(!showSelect)}
-				background='transparent'
-				color='light'
+				btnBackground='transparent'
+				btnColor='light'
 				size='sm'
 				className='lg:-ml-2'
 			>

@@ -8,8 +8,8 @@ const FullscreenControl = (fullscreen: boolean, onFullscreen: any, duration: num
 			<Button
 				title={fullscreen ? 'Exit Fullscreen' : 'View Fullscreen'}
 				onClick={onFullscreen}
-				background='transparent'
-				color='light'
+				btnBackground='transparent'
+				btnColor='light'
 				size='sm'
 				disabled={duration === 0}
 			>

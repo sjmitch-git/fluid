@@ -95,7 +95,7 @@ export const TwitterEmbed = ({
 			{loading && (
 				<div className='loading-spinner text-info flex w-full justify-center mb-8'>
 					<Loading
-						color='info'
+						loadingColor='info'
 						size='md'
 						spinner='dots'
 						caption='Loading'

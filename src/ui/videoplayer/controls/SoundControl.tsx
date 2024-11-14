@@ -17,8 +17,8 @@ const SoundControl = (
 			<Button
 				title={muted ? 'Unmute Sound' : 'Mute Sound'}
 				onClick={onMute}
-				background='transparent'
-				color='light'
+				btnBackground='transparent'
+				btnColor='light'
 				size='sm'
 			>
 				{muted ? <FaVolumeMute /> : <FaVolumeUp />}

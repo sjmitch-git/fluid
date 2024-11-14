@@ -88,8 +88,8 @@ const VideoControls = ({
 					<Button
 						title={play ? 'Pause' : 'Play'}
 						onClick={togglePlay}
-						background='transparent'
-						color='light'
+						btnBackground='transparent'
+						btnColor='light'
 						size='sm'
 					>
 						{play ? <FaPause /> : <FaPlay />}
@@ -145,7 +145,7 @@ const VideoControls = ({
 									default:
 										return null
 								}
-						  })
+							})
 						: null}
 				</div>
 			</div>
