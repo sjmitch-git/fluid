@@ -93,10 +93,10 @@ export const Default: Story = {
 	},
 }
 
-Default.decorators = [
+/* Default.decorators = [
 	(Story) => (
 		<div className='bg-light dark:bg-transparent dark:text-light p-4'>
 			<Story />
 		</div>
 	),
-]
+] */

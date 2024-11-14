@@ -102,6 +102,13 @@ ${codeExample}
 			},
 		},
 	},
+	/* decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	], */
 	tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>
 
@@ -169,6 +176,11 @@ SimpleDialog.argTypes = {
 			disable: true,
 		},
 	},
+	showClose: {
+		table: {
+			disable: true,
+		},
+	},
 }
 
 const ModalDialogComponent = (args: DialogProps) => {
@@ -202,6 +214,7 @@ const ModalDialogComponent = (args: DialogProps) => {
 					minimalTabs={true}
 					contentBorder={false}
 					defaultActiveId='tab1'
+					className='px-4'
 				>
 					<div
 						id='tab1'
@@ -263,4 +276,9 @@ export const ModalDialog: Story = {
 
 ModalDialog.argTypes = {
 	...SimpleDialog.argTypes,
+	/* onClose: {
+		table: {
+			disable: false,
+		},
+	}, */
 }

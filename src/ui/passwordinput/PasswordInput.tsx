@@ -66,8 +66,8 @@ const PasswordInput = ({
 				className='absolute right-2 top-4 !p-0'
 				size={size}
 				layout='circle'
-				background='transparent'
-				color='info'
+				btnBackground='transparent'
+				btnColor='info'
 				title='Toggle password visiblity'
 			>
 				{type !== 'password' ? <FaEye /> : <FaEyeSlash />}

@@ -4,6 +4,35 @@ import { SearchInput } from '..'
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Search Input',
 	component: SearchInput,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **SearchInput** component is a versatile input field designed for search functionalities. It includes an optional submit button and customization options for various UI needs.
+
+### Key Features:
+- **Customizable Button**: Adjust shape, color, and background for the submit button.
+- **Responsive Sizes**: Available in multiple sizes (\`sm\`, \`md\`, \`lg\`, \`xl\`).
+- **Accessibility Options**: Includes \`autocomplete\`, \`spellcheck\`, and \`autocorrect\` for improved usability.
+- **Icon Integration**: Option to include an icon for better user experience.
+
+### Import:
+\`\`\`jsx
+import { SearchInput } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<SearchInput
+    label="Search"
+    placeholder="Type to search..."
+    onButtonSubmit={(value) => console.log('Search submitted:', value)}
+/>
+\`\`\`
+        `,
+			},
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof SearchInput>
 

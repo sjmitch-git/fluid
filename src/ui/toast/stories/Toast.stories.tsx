@@ -35,7 +35,7 @@ return (
       open={open}
       body="Notification message goes here"
       onClose={() => setOpen(false)}
-      background="info"
+      toastBackground="info"
       autohide={true}
       autohideDuration={3000}
       horizontal="center"
@@ -109,8 +109,8 @@ Default.args = {
 	horizontal: 'center',
 	vertical: 'middle',
 	rounded: 'md',
-	background: 'info',
-	color: 'dark',
+	toastBackground: 'info',
+	toastColor: 'dark',
 	closeBackground: 'info',
 	closeColor: 'light',
 	autohide: true,

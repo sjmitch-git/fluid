@@ -13,7 +13,7 @@ const BarChart = ({
 	style,
 	className,
 	layout,
-	gridColor = '#444',
+	gridColor = '#444444',
 }: BarChartProps) => {
 	return (
 		<ChartWrap

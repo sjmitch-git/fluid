@@ -3,7 +3,7 @@ export interface ButtonProps {
 	style?: React.CSSProperties
 	children?: React.ReactNode
 	size?: 'sm' | 'md' | 'lg' | 'xl'
-	background?:
+	btnBackground?:
 		| 'dark'
 		| 'light'
 		| 'info'
@@ -13,7 +13,7 @@ export interface ButtonProps {
 		| 'primary'
 		| 'secondary'
 		| 'transparent'
-	color?:
+	btnColor?:
 		| 'dark'
 		| 'light'
 		| 'info'

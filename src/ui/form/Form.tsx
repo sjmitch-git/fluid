@@ -109,8 +109,8 @@ const Form = ({
 							<Button
 								type='button'
 								className={`!justify-center flex-grow`}
-								background={cancelBackground}
-								color={cancelColor}
+								btnBackground={cancelBackground}
+								btnColor={cancelColor}
 								outline={cancelOutline}
 								outlineColor={cancelOutlineColor}
 								textcase={buttonTextcase}
@@ -124,8 +124,8 @@ const Form = ({
 						<Button
 							type='submit'
 							className={`!justify-center flex-grow`}
-							background={submitBackground}
-							color={submitColor}
+							btnBackground={submitBackground}
+							btnColor={submitColor}
 							outline={submitOutline}
 							outlineColor={submitOutlineColor}
 							textcase={buttonTextcase}

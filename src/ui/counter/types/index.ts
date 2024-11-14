@@ -12,7 +12,7 @@ export interface CounterProps extends React.HTMLAttributes<HTMLLabelElement> {
 	onCountChange: (count: number) => void
 	inputStyles?: string
 	btnShape?: 'square' | 'circle' | 'rounded'
-	btnBackground?: 'dark' | 'light' | 'transparent'
+	btnBackground?: 'info' | 'primary' | 'dark' | 'light' | 'transparent'
 	btnColor?: 'dark' | 'light' | 'current'
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	spacing?: '0' | '1' | '2' | '4'

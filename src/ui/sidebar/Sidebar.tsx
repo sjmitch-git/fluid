@@ -8,12 +8,12 @@ import { CloseButton } from '..'
 import { SidebarProps } from './types'
 
 const positions = {
-	left: 'left-0 md:border-r',
+	left: 'left-0',
 	right: 'right-0',
 }
 
 const sidebarClasses =
-	'fixed top-0 z-100  max-w-md h-full overflow-y-auto bg-light text-dark dark:bg-dark dark:text-light duration-500 border-neutral'
+	'fixed top-0 z-100  max-w-md h-full overflow-y-auto bg-light text-dark dark:bg-dark dark:text-light duration-500'
 
 const Sidebar = ({
 	open = false,
@@ -71,7 +71,7 @@ const Sidebar = ({
 		<>
 			{backdrop && (
 				<div
-					className={`backdrop bg-dark fixed top-0 right-0 bottom-0 left-0 w-full ${
+					className={`backdrop bg-dark dark:bg-neutral fixed top-0 right-0 bottom-0 left-0 w-full ${
 						show ? 'block opacity-50' : 'hidden opacity-0'
 					} transition-opacity`}
 					onClick={close}
@@ -83,8 +83,8 @@ const Sidebar = ({
 						show
 							? 'translate-x-0'
 							: position === 'right'
-							? 'translate-x-full'
-							: '-translate-x-full'
+								? 'translate-x-full'
+								: '-translate-x-full'
 					}`,
 					className
 				)}

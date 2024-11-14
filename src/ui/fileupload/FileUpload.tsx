@@ -70,7 +70,7 @@ const FileUpload = ({
 			className={twMerge(`fileupload group overflow-hidden ${sizeClasses}`, className)}
 			data-testid='fileupload'
 		>
-			<div className='flex flex-row gap-2 mb-4'>
+			<div className='flex flex-row gap-2'>
 				<Label
 					label={icon ? <FaUpload title={label} /> : label}
 					layout='col'

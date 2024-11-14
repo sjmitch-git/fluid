@@ -4,17 +4,23 @@ import type { Preview } from '@storybook/react'
 import '../src/styles/index.css'
 
 const preview: Preview = {
+	globalTypes: {
+		darkMode: {
+			defaultValue: false,
+		},
+		className: {
+			defaultValue: 'dark',
+		},
+	},
 	decorators: [
 		(Story) => (
-			<div className='preview-decorator'>
+			<div className='preview-decorator bg-white dark:bg-dark text-dark dark:text-light p-4'>
 				<Story />
 			</div>
 		),
 	],
 	parameters: {
-		docs: {
-			theme: 'dark',
-		},
+		actions: { argTypesRegex: '^on[A-Z].*' },
 		viewport: {
 			defaultViewport: 'mobile1',
 			defaultOrientation: 'portrait',
@@ -25,10 +31,6 @@ const preview: Preview = {
 				color: /(background|color)$/i,
 				date: /Date$/,
 			},
-		},
-		darkMode: {
-			current: 'dark',
-			stylePreview: true,
 		},
 	},
 }

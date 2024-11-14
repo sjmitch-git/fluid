@@ -28,8 +28,8 @@ const CloseButton = ({
 				className
 			)}
 			onClick={onClick}
-			background='transparent'
-			color='current'
+			btnBackground='transparent'
+			btnColor='current'
 			layout={layout}
 			size={size}
 			title={title}

@@ -9,7 +9,7 @@ const BubbleChart = ({
 	options,
 	title,
 	legendPosition,
-	gridColor = '#444',
+	gridColor = '#444444',
 	style,
 	className,
 }: BubbleChartProps) => {

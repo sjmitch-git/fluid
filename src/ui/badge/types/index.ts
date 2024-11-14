@@ -4,7 +4,7 @@ export interface BadgeProps {
 	children: React.ReactNode
 	layout?: 'square' | 'circle' | 'rounded' | 'pill'
 	position?: 'inline' | 'left' | 'right'
-	background?:
+	badgeBackground?:
 		| 'dark'
 		| 'light'
 		| 'info'
@@ -16,7 +16,7 @@ export interface BadgeProps {
 		| 'accent'
 		| 'neutral'
 		| 'transparent'
-	color?:
+	badgeColor?:
 		| 'dark'
 		| 'light'
 		| 'info'

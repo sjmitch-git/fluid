@@ -23,7 +23,7 @@ const Files = ({ files, deleteFile }: FileProps) => {
 	}
 
 	return (
-		<div>
+		<div className='pt-2'>
 			{files.length > 0 ? (
 				<ul className='fileslist flex flex-col gap-4'>
 					{Array.from(files).map((file, index) => (
@@ -38,8 +38,8 @@ const Files = ({ files, deleteFile }: FileProps) => {
 								<Button
 									className='!p-0'
 									size='sm'
-									background='transparent'
-									color='danger'
+									btnBackground='transparent'
+									btnColor='danger'
 									onClick={() => deleteFile(file)}
 								>
 									Delete?

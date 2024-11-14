@@ -26,8 +26,8 @@ const Ratings = ({
 	spacing = '0',
 	shape = 'circle',
 	size = 'md',
-	background = 'info',
-	color = 'dark',
+	ratingsBackground = 'info',
+	ratingsColor = 'dark',
 }: RatingsProps) => {
 	rating = round(rating)
 	if (rating === 0) rating = 1
@@ -42,8 +42,8 @@ const Ratings = ({
 					<Badge
 						layout={shape}
 						size={size}
-						background={background}
-						color={color}
+						badgeBackground={ratingsBackground}
+						badgeColor={ratingsColor}
 						key={index}
 						className={`static ${rating <= index ? 'grayscale' : ''}`}
 					>

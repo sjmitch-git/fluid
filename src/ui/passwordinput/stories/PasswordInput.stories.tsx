@@ -6,6 +6,37 @@ const passwordPattern = '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}'
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Password Input',
 	component: PasswordInput,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **PasswordInput** component provides a user-friendly input field specifically designed for password entries. It includes a visibility toggle to switch between masked and plain text input for enhanced usability.
+
+### Key Features:
+- **Visibility Toggle**: Switch between password masking and plain text for easy viewing.
+- **Custom Styling**: Customize with \`rounded\`, \`size\`, and \`inputStyles\` props.
+- **Validation**: Option to include \`pattern\` for enforcing password rules.
+- **Accessibility**: \`aria-label\`, \`title\`, and \`hint\` for better accessibility.
+- **Responsive Design**: Supports column or row layouts for flexible form designs.
+
+### Import:
+\`\`\`jsx
+import { PasswordInput } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<PasswordInput
+    label="Password"
+    placeholder="Enter your password"
+    pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}"
+    title="Password must be 8-12 characters long, include at least one digit, one uppercase letter, and one symbol."
+/>
+\`\`\`
+        `,
+			},
+		},
+	},
 	tags: ['autodocs'],
 	argTypes: {
 		onChange: {

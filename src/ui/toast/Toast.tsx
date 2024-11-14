@@ -43,8 +43,8 @@ const roundeds = {
 }
 
 const Toast = ({
-	background = 'warning',
-	color = 'light',
+	toastBackground = 'warning',
+	toastColor = 'light',
 	rounded = 'md',
 	open = false,
 	body,
@@ -90,12 +90,12 @@ const Toast = ({
 	const otherClasses = useMemo(() => {
 		const horizontalClasses = horizontals[horizontal]
 		const verticalClasses = verticals[vertical]
-		const backgroundClasses = backgrounds[background]
-		const colorClasses = colors[color]
+		const backgroundClasses = backgrounds[toastBackground]
+		const colorClasses = colors[toastColor]
 		const roundedClasses = roundeds[rounded]
 
 		return `${horizontalClasses} ${verticalClasses} ${backgroundClasses} ${colorClasses} ${roundedClasses}`
-	}, [horizontal, vertical, background, color, rounded])
+	}, [horizontal, vertical, toastColor, toastBackground, rounded])
 
 	const handleClick = onClick || onClose
 

@@ -72,12 +72,12 @@ const Loading = ({
 	customSpinner,
 	customAnimate = 'spin',
 	size = 'md',
-	color = 'current',
+	loadingColor = 'current',
 	layout = 'col',
 }: LoadingProps) => {
 	const SpinnerIcon = useMemo(() => getSpinnerComponent(spinner), [spinner])
 	const width = useMemo(() => sizeToWidth[size], [size])
-	const colorClasses = useMemo(() => colors[color], [color])
+	const colorClasses = useMemo(() => colors[loadingColor], [loadingColor])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
 	const animateClasses = useMemo(() => animates[customAnimate], [customAnimate])
 

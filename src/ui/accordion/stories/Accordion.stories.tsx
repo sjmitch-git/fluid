@@ -51,7 +51,7 @@ export const Default: Story = {
 	args: {
 		data: Data,
 		icon: 'symbol',
-		layout: 'flush',
+		layout: 'default',
 		opened: '1',
 		size: 'md',
 	},

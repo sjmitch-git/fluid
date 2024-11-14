@@ -9,8 +9,8 @@ const codeExample = `
   range={5}
   icon="star"
   size="md"
-  background="transparent"
-  color="accent"
+  ratingsBackground="transparent"
+  ratingsColor="accent"
 />
 `
 
@@ -22,8 +22,8 @@ import { FaDiamond } from 'react-icons/fa6'
   range={5}
   customIcon={<FaDiamond />}
   size="md"
-  background="transparent"
-  color="accent"
+  ratingsBackground="transparent"
+  ratingsColor="accent"
 />
 `
 
@@ -33,7 +33,7 @@ const emojiIconExample = `
   range={5}
   customIcon="🙂"
   size="md"
-  background="transparent"
+  ratingsColor="transparent"
 />
 `
 
@@ -100,8 +100,8 @@ export const Default: Story = {
 		spacing: '0',
 		shape: 'square',
 		size: 'md',
-		background: 'transparent',
-		color: 'accent',
+		ratingsBackground: 'transparent',
+		ratingsColor: 'accent',
 	},
 }
 
@@ -125,8 +125,8 @@ export const CustomIcon: Story = {
 	},
 	args: {
 		customIcon: <FaDiamond />,
-		background: 'transparent',
-		color: 'accent',
+		ratingsBackground: 'transparent',
+		ratingsColor: 'accent',
 		rating: 3,
 		range: 5,
 		spacing: '0',
@@ -147,8 +147,8 @@ export const EmojiCustomIcon: Story = {
 	args: {
 		...CustomIcon.args,
 		customIcon: '🙂',
-		background: 'transparent',
-		color: 'accent',
+		ratingsBackground: 'transparent',
+		ratingsColor: 'accent',
 	},
 	argTypes: {
 		customIcon: {

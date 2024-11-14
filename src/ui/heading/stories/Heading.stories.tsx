@@ -33,10 +33,6 @@ const RatingsExample = `<Heading level={3} align="left" weight="light" transform
 const meta: Meta = {
 	title: 'Fluid UI/Typography/Heading',
 	component: Heading,
-	subcomponents: {
-		Badge: Badge as React.ComponentType<unknown>,
-		Ratings: Ratings as React.ComponentType<unknown>,
-	},
 	parameters: {
 		docs: {
 			description: {
@@ -64,7 +60,7 @@ import { Heading } from '@smitch/fluid'
 	},
 	decorators: [
 		(Story) => (
-			<div className='p-0 dark:text-light'>
+			<div className='p-4'>
 				<Story />
 			</div>
 		),
@@ -101,13 +97,14 @@ export const HeadingWithBadge: Story = {
 	},
 	args: {
 		...Default.args,
+		level: 2,
 		children: (
 			<>
 				Heading text{' '}
 				<Badge
 					size='inherit'
-					color='accent'
-					background='transparent'
+					badgeColor='accent'
+					badgeBackground='transparent'
 				>
 					<FaStar />
 				</Badge>
@@ -137,8 +134,8 @@ export const HeadingWithRatings: Story = {
 					range={5}
 					icon='heart'
 					size='inherit'
-					background='transparent'
-					color='info'
+					ratingsBackground='transparent'
+					ratingsColor='info'
 				/>
 			</>
 		),

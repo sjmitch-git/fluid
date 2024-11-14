@@ -83,8 +83,8 @@ const Pagination = ({
 					onClick={() => handleOnClick('1')}
 					disabled={page === '1'}
 					size={size}
-					background={btnBackground}
-					color={btnColor}
+					btnBackground={btnBackground}
+					btnColor={btnColor}
 				>
 					{icons ? (
 						<>
@@ -100,8 +100,8 @@ const Pagination = ({
 					onClick={() => handleOnClick(`${Number(selectValue) - 1}`)}
 					disabled={Number(selectValue) === 1}
 					size={size}
-					background={btnBackground}
-					color={btnColor}
+					btnBackground={btnBackground}
+					btnColor={btnColor}
 				>
 					{icons ? (
 						<>
@@ -127,8 +127,8 @@ const Pagination = ({
 					onClick={() => handleOnClick(`${Number(selectValue) + 1}`)}
 					disabled={Number(selectValue) === totalPages}
 					size={size}
-					background={btnBackground}
-					color={btnColor}
+					btnBackground={btnBackground}
+					btnColor={btnColor}
 				>
 					{icons ? (
 						<>
@@ -145,8 +145,8 @@ const Pagination = ({
 					onClick={() => handleOnClick(totalPages.toString())}
 					disabled={Number(selectValue) === totalPages}
 					size={size}
-					background={btnBackground}
-					color={btnColor}
+					btnBackground={btnBackground}
+					btnColor={btnColor}
 				>
 					{icons ? (
 						<>

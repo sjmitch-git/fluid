@@ -24,8 +24,8 @@ const AccordionHead = ({ icon = 'symbol', id, open, setopen, title, name }: Acco
 				className='shadow-none !p-0'
 				layout='circle'
 				onClick={() => setopen(`${open === id ? '' : id}`)}
-				background='transparent'
-				color='primary'
+				btnBackground='transparent'
+				btnColor='primary'
 			>
 				<>
 					{open === id ? (

@@ -117,8 +117,8 @@ export const Default: Story = {
 		links: links,
 		size: 'md',
 		buttonLayout: 'circle',
-		buttonBackground: 'transparent',
-		buttonColor: 'current',
+		buttonBackground: 'info',
+		buttonColor: 'light',
 	},
 }
 
@@ -127,17 +127,9 @@ export const Styled: Story = {
 		links: links,
 		size: 'lg',
 		buttonLayout: 'circle',
-		buttonBackground: 'primary',
+		buttonBackground: 'info',
 		buttonColor: 'light',
 		className:
 			'bg-dark text-light dark:bg-light dark:text-dark rounded-full py-3 ps-6 pe-4 border-2 border-accent',
 	},
 }
-
-Default.decorators = [
-	(Story) => (
-		<div className='bg-light dark:bg-transparent dark:text-light p-4'>
-			<Story />
-		</div>
-	),
-]

@@ -10,7 +10,6 @@ interface PlayerParamsProps {
 	fs?: 0 | 1
 	cc_load_policy?: 0 | 1
 	playsinline?: 0 | 1
-	color?: 'red' | 'white'
 }
 
 interface IFrameProps {

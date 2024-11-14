@@ -38,7 +38,7 @@ import { Loading } from '@smitch/fluid'
   spinner="spinner"
   caption="Loading"
   size="md"
-  color="warning"
+  loadingColor="warning"
   layout="col"
 />
 \`\`\`
@@ -58,7 +58,7 @@ export const Default: Story = {
 		spinner: 'spinner',
 		caption: 'Loading',
 		size: 'md',
-		color: 'warning',
+		loadingColor: 'warning',
 		layout: 'col',
 	},
 	argTypes: {
@@ -97,7 +97,7 @@ export const CustomIcons: Story = {
 		customAnimate: 'bounce',
 		caption: 'Downloading',
 		size: 'lg',
-		color: 'warning',
+		loadingColor: 'warning',
 		layout: 'col',
 	},
 }
@@ -112,7 +112,7 @@ export const CustomEmoji: Story = {
 		customAnimate: 'pulse',
 		caption: 'Incoming Call',
 		size: 'lg',
-		color: 'warning',
+		loadingColor: 'danger',
 		layout: 'col',
 	},
 }

@@ -77,8 +77,8 @@ const Alert = ({
 				>
 					{badge && (
 						<Badge
-							background={badgeBackground}
-							color={badgeColor}
+							badgeBackground={badgeBackground}
+							badgeColor={badgeColor}
 							size='md'
 							layout='circle'
 							position='left'

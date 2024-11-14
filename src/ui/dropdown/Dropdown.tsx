@@ -80,8 +80,8 @@ const Dropdown = ({
 									onClick={(e) => handleClick(e, link.label)}
 									onBlur={(e) => handleBlur(e)}
 									title='Toggle Menu'
-									background={buttonBackground}
-									color={buttonColor}
+									btnBackground={buttonBackground}
+									btnColor={buttonColor}
 									size={size}
 									layout={buttonLayout}
 								>

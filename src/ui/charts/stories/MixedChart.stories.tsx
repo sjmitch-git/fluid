@@ -96,7 +96,7 @@ export const Default: Story = {
 					label: 'Monthly Sales',
 					data: [60, 30, 20, 45, 50, 40, 35, 77],
 					type: 'bar',
-					backgroundColor: '#ccc',
+					backgroundColor: '#cccccc',
 				},
 			],
 			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],

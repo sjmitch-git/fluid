@@ -272,13 +272,13 @@ export const Default: Story = {
 	},
 }
 
-Default.decorators = [
+/* Default.decorators = [
 	(Story) => (
 		<div className='bg-white dark:bg-transparent dark:text-light py-1'>
 			<Story />
 		</div>
 	),
-]
+] */
 
 export const WithEmojis: Story = {
 	argTypes: {
@@ -318,7 +318,7 @@ export const LoginRegister: Story = {
 		minimalTabs: true,
 		contentBorder: false,
 	},
-	decorators: Default.decorators,
+	// decorators: Default.decorators,
 	parameters: {
 		actions: {
 			argTypesRegex: '^on.*',

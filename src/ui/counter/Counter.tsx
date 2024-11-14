@@ -20,10 +20,10 @@ const Counter = ({
 	step = 1,
 	onCountChange,
 	btnShape = 'circle',
-	btnBackground = 'dark',
+	btnBackground = 'info',
 	btnColor = 'light',
 	size = 'md',
-	spacing = '0',
+	spacing = '2',
 	label,
 	labelIsBold = true,
 	layout = 'col',
@@ -83,8 +83,8 @@ const Counter = ({
 					id='minus'
 					layout={btnShape}
 					size={size}
-					background={btnBackground}
-					color={btnColor}
+					btnBackground={btnBackground}
+					btnColor={btnColor}
 				>
 					<FaMinus />
 					<span className='sr-only'>Minus</span>
@@ -113,8 +113,8 @@ const Counter = ({
 					id='plus'
 					layout={btnShape}
 					size={size}
-					background={btnBackground}
-					color={btnColor}
+					btnBackground={btnBackground}
+					btnColor={btnColor}
 				>
 					<FaPlus />
 					<span className='sr-only'>Add</span>

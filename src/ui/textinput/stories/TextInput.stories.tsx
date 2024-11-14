@@ -4,6 +4,53 @@ import { TextInput } from '..'
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Text Input',
 	component: TextInput,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **TextInput** component is a versatile input field designed for various text entry needs. It offers flexibility in customization, accessibility features, and layout configuration to fit a range of use cases in modern UI development.
+
+### Key Features:
+- **Multiple Input Types**: Supports \`text\`, \`password\`, \`email\`, \`tel\`, \`url\`, and more for different input requirements.
+- **Layout Options**: Choose between \`col\` and \`row\` layout to arrange the label and input field for optimal space usage.
+- **Customizable Styles**: Adjust size, border styles, and corner rounding with properties like \`size\`, \`inputStyles\`, and \`rounded\`.
+- **Accessibility Support**: Includes properties like \`placeholder\`, \`required\`, and \`autocomplete\` to meet accessibility standards.
+- **Validation and Patterns**: Use \`pattern\` for regex-based input validation, especially useful for inputs like phone numbers or custom formats.
+
+### Import:
+\`\`\`jsx
+import { TextInput } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<TextInput
+    label="Full Name"
+    placeholder="Enter your name"
+    type="text"
+    size="md"
+    rounded="lg"
+    onInputChange={(value) => console.log('Input changed:', value)}
+    required={true}
+    autocomplete="name"
+/>
+\`\`\`
+
+### Accessibility and Best Practices:
+- **Use \`label\`**: Always use a descriptive label to ensure clarity and accessibility.
+- **\`autocomplete\`**: Use the \`autocomplete\` attribute to help browsers fill in known information, enhancing user experience.
+- **Validation Patterns**: Apply \`pattern\` for specific formats (e.g., phone numbers) to guide user input and reduce errors.
+
+### Input Types and Examples:
+- **Text**: General input for plain text (e.g., names, addresses).
+- **Email**: Validates and formats as an email address.
+- **Tel**: Ideal for phone number entry, with support for patterns.
+- **URL**: Input for web addresses with automatic validation.
+      `,
+			},
+		},
+	},
+
 	tags: ['autodocs'],
 } satisfies Meta<typeof TextInput>
 

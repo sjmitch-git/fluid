@@ -64,18 +64,7 @@ ${modalExample}
 - The component dynamically updates the progress value based on the \`downloadedSize\` and \`totalSize\` props.
 - It can display a custom completion message using the \`doneMessage\` prop when the task is finished.
 - You can customize the appearance using Tailwind CSS via the \`className\` props. (However, progress element styling is quite limited).
-
-### Props:
-- \`totalSize\` (number): The total size of the task (e.g., file size in MB).
-- \`downloadedSize\` (number): The current downloaded amount (e.g., MB).
-- \`unit\` ('kb' | 'mb' | 'gb'): The unit of measurement for the downloaded and total size values. Defaults to 'mb'.
-- \`doneMessage\` (string): A message to display when the task is complete.
-- \`className\` (string, optional): Additional class names for styling the progress element.
-- \`feedbackClasses\` (string, optional): Additional class names for styling the feedback message.
-- \`style\` (object, optional): Inline styles for custom appearance.
-- \`onDone\` (function, optional): A callback function that gets triggered when the download or task completes. It fires once the progress reaches 100%.
-- \`onCancel\` (function, optional): A callback function that gets triggered when the user clicks the **Cancel** button, allowing the task or download to be interrupted.
-        `,
+`,
 			},
 		},
 	},
@@ -98,6 +87,13 @@ ${modalExample}
 			},
 		},
 	},
+	decorators: [
+		(Story) => (
+			<div className='p-4'>
+				<Story />
+			</div>
+		),
+	],
 	tags: ['autodocs'],
 }
 

@@ -78,7 +78,9 @@ export const Default: Story = (args: DrawerProps) => {
 				onClose={handleClose}
 			>
 				<div>
-					<p>Some simple HTML content</p>
+					<p>
+						Some simple <strong className='text-accent'>HTML</strong> content
+					</p>
 				</div>
 			</Drawer>
 		</>
@@ -90,6 +92,11 @@ export const WithForm: Story = (args: DrawerProps) => {
 
 	const handleClose = () => {
 		setOpen(false)
+	}
+
+	const handleSubmit = (data: any) => {
+		console.log('form data', data)
+		handleClose()
 	}
 
 	return (
@@ -108,6 +115,7 @@ export const WithForm: Story = (args: DrawerProps) => {
 				<Form
 					{...NewsletterForm.args}
 					className='max-w-2xl pb-4 mx-auto'
+					onsubmit={handleSubmit}
 				>
 					{NewsletterForm.args?.children}
 				</Form>
@@ -118,12 +126,12 @@ export const WithForm: Story = (args: DrawerProps) => {
 
 Default.args = {
 	backdrop: true,
-	position: 'top',
+	position: 'bottom',
 	open: false,
 }
 
 WithForm.args = {
 	backdrop: true,
-	position: 'top',
+	position: 'bottom',
 	open: false,
 }

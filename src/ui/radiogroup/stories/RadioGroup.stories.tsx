@@ -4,6 +4,39 @@ import { RadioGroup } from '..'
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Radio Group',
 	component: RadioGroup,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **RadioGroup** component allows users to select one option from a group of choices. It supports a flexible layout, custom icons, and additional styling to create a visually appealing and user-friendly selection interface.
+
+### Key Features:
+- **Customizable Layout**: Arrange radio buttons in columns or rows.
+- **Icon Support**: Display custom icons or emojis alongside options.
+- **Accessibility**: Includes support for \`legend\` and \`aria\` properties for better accessibility.
+- **Responsive Design**: Adapts to different screen sizes with configurable spacing and styles.
+
+### Import:
+\`\`\`jsx
+import { RadioGroup } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<RadioGroup
+    legend="Credit Card"
+    data={[
+        { id: 'visa', name: 'Visa' },
+        { id: 'mastercard', name: 'MasterCard' },
+    ]}
+    name="cc"
+    onChange={(e) => console.log('Selected:', e.target.value)}
+/>
+\`\`\`
+        `,
+			},
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof RadioGroup>
 

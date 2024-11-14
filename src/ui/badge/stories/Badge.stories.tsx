@@ -61,19 +61,14 @@ export const Default: Story = {
 		position: 'inline',
 		size: 'inherit',
 		layout: 'circle',
-		background: 'info',
-		color: 'dark',
+		badgeBackground: 'info',
+		badgeColor: 'dark',
 	},
 }
 
 Default.decorators = [
 	(Story) => (
-		<div
-			style={{
-				position: 'relative',
-			}}
-			className='bg-light dark:bg-transparent dark:text-light p-4'
-		>
+		<div className='relative px-4'>
 			<Heading
 				level={2}
 				className='relative'
@@ -92,12 +87,12 @@ export const Emoji: Story = {
 				disable: true,
 			},
 		},
-		color: {
+		badgeColor: {
 			table: {
 				disable: true,
 			},
 		},
-		background: {
+		badgeBackground: {
 			table: {
 				disable: true,
 			},
@@ -108,7 +103,7 @@ export const Emoji: Story = {
 		position: 'inline',
 		children: '🙂',
 		layout: 'circle',
-		background: 'transparent',
+		badgeBackground: 'transparent',
 		className: 'p-0',
 	},
 }
@@ -132,8 +127,8 @@ export const Text: Story = {
 		...Default.args,
 		children: 'New',
 		layout: 'rounded',
-		background: 'accent',
-		color: 'dark',
+		badgeBackground: 'accent',
+		badgeColor: 'dark',
 	},
 }
 
@@ -156,8 +151,8 @@ export const TextAndIcon: Story = {
 			</>
 		),
 		layout: 'rounded',
-		background: 'success',
-		color: 'dark',
+		badgeBackground: 'success',
+		badgeColor: 'light',
 	},
 }
 
@@ -170,7 +165,7 @@ export const Empty: Story = {
 		position: {
 			options: ['inline', 'left', 'right'],
 		},
-		color: {
+		badgeColor: {
 			table: {
 				disable: true,
 			},
@@ -179,7 +174,7 @@ export const Empty: Story = {
 	args: {
 		position: 'inline',
 		layout: 'circle',
-		background: 'warning',
+		badgeBackground: 'warning',
 		size: 'inherit',
 	},
 }

@@ -6,7 +6,7 @@ export interface LoadingProps {
 	customAnimate?: 'spin' | 'pulse' | 'bounce' | 'ping'
 	size?: 'sm' | 'md' | 'lg' | 'xl'
 	layout?: 'col' | 'col_reverse' | 'row' | 'row_reverse'
-	color?:
+	loadingColor?:
 		| 'dark'
 		| 'light'
 		| 'info'

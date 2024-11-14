@@ -29,6 +29,36 @@ const months = [
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Select',
 	component: Select,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Select** component provides a dropdown menu for choosing from a list of options. It supports customization in appearance and size, making it a versatile choice for various input needs.
+
+### Key Features:
+- **Flexible Options**: Accepts arrays of strings, numbers, or objects with \`value\` and \`label\` properties.
+- **Customizable Appearance**: Adjust size, border styles, and caret visibility.
+- **Accessibility Options**: Includes support for \`placeholder\`, \`required\`, and more.
+
+### Import:
+\`\`\`jsx
+import { Select } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Select
+    placeholder="Select an option"
+    options={months}
+    name="monthSelector"
+    dropdownSize="md"
+    onChange={(e) => console.log('Selected value:', e.target.value)}
+/>
+\`\`\`
+        `,
+			},
+		},
+	},
 	tags: ['autodocs'],
 	argTypes: {
 		onChange: {

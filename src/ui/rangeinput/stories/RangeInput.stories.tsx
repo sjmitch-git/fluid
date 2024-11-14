@@ -6,6 +6,40 @@ import { RangeInputProps } from '../types'
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Range Input',
 	component: RangeInput,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **RangeInput** component is a slider-style input that lets users select a value within a defined range. It offers customization options such as labels, colors, and step increments, making it suitable for a variety of interactive interfaces.
+
+### Key Features:
+- **Customizable Appearance**: Control the active range color, background color, and thumbnail color/shape.
+- **Labels and Layouts**: Flexible label display with bold and regular options, arranged in columns or rows.
+- **Accessibility and Hints**: Includes hints, \`aria\` properties, and titles for better accessibility.
+- **Responsive Design**: Adjustable size and layout for seamless integration into different UI designs.
+
+### Import:
+\`\`\`jsx
+import { RangeInput } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<RangeInput
+    label="Volume"
+    min={0}
+    max={100}
+    step="5"
+    defaultValue={50}
+    rangeActive="#ff5733"
+    rangeBackground="#ccc"
+    onChange={(value) => console.log('Selected value:', value)}
+/>
+\`\`\`
+`,
+			},
+		},
+	},
 	argTypes: {
 		layout: {
 			options: ['col', 'row'],
@@ -58,7 +92,7 @@ Default.args = {
 	step: '1',
 	defaultValue: 50,
 	rangeActive: '#ffa500',
-	rangeBackground: '#ccc',
+	rangeBackground: '#cccccc',
 	thumbnailColor: '#ffa500',
 	thumbnailShape: 'circle',
 	rounded: true,

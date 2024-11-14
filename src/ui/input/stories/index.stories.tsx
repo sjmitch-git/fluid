@@ -4,6 +4,39 @@ import { Input } from '..'
 const meta: Meta = {
 	title: 'Fluid UI/Inputs/Input',
 	component: Input,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+The **Input** component is a versatile form element designed for various input types, including text, email, password, number, and more. It supports different sizes, autocomplete options, and custom styles to fit various UI needs.
+
+### Key Features:
+- **Multiple Input Types**: Supports \`text\`, \`email\`, \`password\`, \`number\`, and more.
+- **Custom Styling**: Easily style with \`rounded\`, \`size\`, and \`className\` props.
+- **Accessibility**: \`aria-label\`, \`title\`, and \`hint\` for enhanced accessibility.
+- **Validation Patterns**: Option to include \`pattern\` for input validation.
+- **Responsive Design**: Adjustable size and responsive input controls.
+
+### Import:
+\`\`\`jsx
+import { Input } from '@smitch/fluid-ui';
+\`\`\`
+
+### Example Usage:
+\`\`\`jsx
+<Input
+    type="text"
+    placeholder="Enter your text"
+    size="md"
+    title="Input Field"
+    hint={true}
+    rounded="md"
+/>
+\`\`\`
+        `,
+			},
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Input>
 

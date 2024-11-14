@@ -5,9 +5,9 @@ type ColorOption = 'dark' | 'light'
 export interface ToastProps {
 	className?: string
 	style?: React.CSSProperties
-	background?: BackgroundOption
+	toastColor?: ColorOption
+	toastBackground?: BackgroundOption
 	closeBackground?: BackgroundOption
-	color?: ColorOption
 	body: React.ReactNode
 	open: boolean
 	autohideDuration?: number

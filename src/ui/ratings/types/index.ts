@@ -6,7 +6,7 @@ export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 	range?: number
 	spacing?: '0' | '1' | '2'
 	shape?: 'square' | 'circle' | 'rounded'
-	background?:
+	ratingsBackground?:
 		| 'dark'
 		| 'light'
 		| 'info'
@@ -18,7 +18,7 @@ export interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 		| 'accent'
 		| 'neutral'
 		| 'transparent'
-	color?:
+	ratingsColor?:
 		| 'dark'
 		| 'light'
 		| 'info'

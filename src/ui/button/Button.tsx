@@ -78,8 +78,8 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		size = 'md',
 		className = '',
 		style,
-		background = 'primary',
-		color = 'light',
+		btnBackground = 'primary',
+		btnColor = 'light',
 		layout = 'default',
 		outline = false,
 		outlineColor = 'current',
@@ -98,8 +98,8 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		children,
 	} = props
 	const sizeClasses = useMemo(() => sizes[size], [size])
-	const backgroundClasses = useMemo(() => backgrounds[background], [background])
-	const colorClasses = useMemo(() => colors[color], [color])
+	const backgroundClasses = useMemo(() => backgrounds[btnBackground], [btnBackground])
+	const colorClasses = useMemo(() => colors[btnColor], [btnColor])
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
 	const shadowClasses = useMemo(() => shadows[shadow], [shadow])
 	const outlineStyles = useMemo(

@@ -69,8 +69,8 @@ const SearchInput = ({
 			<Button
 				layout={btnShape}
 				size={size}
-				background={btnBackground}
-				color={btnColor}
+				btnBackground={btnBackground}
+				btnColor={btnColor}
 				onClick={handleClick}
 				disabled={disabled}
 				title='Submit'

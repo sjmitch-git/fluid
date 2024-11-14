@@ -5,13 +5,6 @@ const meta: Meta = {
 	title: 'Fluid UI/Inputs/Checkbox',
 	component: Checkbox,
 	tags: ['autodocs'],
-	decorators: [
-		(Story) => (
-			<div className='bg-light dark:bg-transparent dark:text-light p-4'>
-				<Story />
-			</div>
-		),
-	],
 	parameters: {
 		docs: {
 			description: {
@@ -40,8 +33,6 @@ import { Checkbox } from '@smitch/fluid-ui';
     labelIsBold={true}
 />
 \`\`\`
-
-In this example, the Checkbox component includes a medium size, a bold label, and hint text. The required property is set to false, making it optional for the user.
 `,
 			},
 		},
@@ -81,11 +72,4 @@ export const Default: Story = {
 			argTypesRegex: '^on.*',
 		},
 	},
-	decorators: [
-		(Story) => (
-			<div className='bg-light dark:bg-transparent dark:text-light p-4'>
-				<Story />
-			</div>
-		),
-	],
 }

@@ -9,8 +9,8 @@ const meta: Meta = {
 		layout: 'default',
 		textcase: 'capitalize',
 		isBold: false,
-		background: 'primary',
-		color: 'light',
+		btnBackground: 'primary',
+		btnColor: 'light',
 		size: 'lg',
 		outline: false,
 		outlineColor: 'secondary',
@@ -85,8 +85,6 @@ import { Button } from '@smitch/fluid'
 \`\`\`tsx
 <Button
   size="lg"
-  background="primary"
-  color="light"
   layout="pill"
   isBold={true}
   onClick={() => alert('Button clicked!')}
@@ -166,8 +164,8 @@ export const DeleteButton: Story = {
 		),
 		hoverScale: true,
 		layout: 'circle',
-		background: 'warning',
-		color: 'danger',
+		btnBackground: 'warning',
+		btnColor: 'danger',
 		outline: false,
 		size: 'lg',
 		title: 'Delete Item?',

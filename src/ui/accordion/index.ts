@@ -1,2 +1,2 @@
 export { default as Accordion } from './Accordion'
-export { AccordionItem } from './atoms'
+export { AccordionItem, AccordionCard } from './atoms'

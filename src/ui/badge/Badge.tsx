@@ -56,15 +56,15 @@ const Badge = ({
 	className = '',
 	style,
 	layout = 'circle',
-	background = 'info',
-	color = 'dark',
+	badgeBackground = 'info',
+	badgeColor = 'dark',
 	position = 'inline',
 	children,
 	size = 'inherit',
 }: BadgeProps) => {
 	const layoutClasses = useMemo(() => layouts[layout], [layout])
-	const backgroundClasses = useMemo(() => backgrounds[background], [background])
-	const colorClasses = useMemo(() => colors[color], [color])
+	const backgroundClasses = useMemo(() => backgrounds[badgeBackground], [badgeBackground])
+	const colorClasses = useMemo(() => colors[badgeColor], [badgeColor])
 	const positionClasses = useMemo(() => positions[position], [position])
 	const sizeClasses = useMemo(() => sizes[size], [size])
 
