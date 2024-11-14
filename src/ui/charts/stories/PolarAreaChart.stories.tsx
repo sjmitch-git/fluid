@@ -109,6 +109,7 @@ export const Default: Story = {
 		},
 		title: 'Category Breakdown',
 		legendPosition: 'bottom',
+		gridColor: '#a7a7a7',
 		options: {
 			scales: {
 				r: {

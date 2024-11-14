@@ -86,6 +86,7 @@ export const Default: Story = {
 		title: 'Weekly Temperature Ranges',
 		legendPosition: 'bottom',
 		layout: 'vertical',
+		gridColor: '#a7a7a7',
 	},
 	argTypes: {
 		data: {
@@ -128,6 +129,7 @@ export const HorizontalBars: Story = {
 		title: 'Weekly Temperature Ranges',
 		legendPosition: 'bottom',
 		layout: 'horizontal',
+		gridColor: '#a7a7a7',
 	},
 	argTypes: {
 		...Default.argTypes,

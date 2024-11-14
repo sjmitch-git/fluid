@@ -29,19 +29,21 @@ const ChartWrap = <T extends ChartTypes>({
 	className,
 	style,
 }: ChartWrapProps<T>) => {
-	const defaultOptions = {
-		responsive: true,
-		maintainAspectRatio: false,
-		plugins: {
-			legend: {
-				position: legendPosition,
+	const defaultOptions = useMemo(() => {
+		return {
+			responsive: true,
+			maintainAspectRatio: false,
+			plugins: {
+				legend: {
+					position: legendPosition,
+				},
+				title: {
+					display: !!title,
+					text: title,
+				},
 			},
-			title: {
-				display: !!title,
-				text: title,
-			},
-		},
-	}
+		}
+	}, [legendPosition, title])
 
 	const chartComponents: Record<ChartTypes, React.ElementType> = {
 		bubble: Bubble,

@@ -84,6 +84,7 @@ export const Default: Story = {
 		},
 		title: 'Athlete Performance Comparison',
 		legendPosition: 'bottom',
+		gridColor: '#a7a7a7',
 		options: {
 			scales: {
 				r: {

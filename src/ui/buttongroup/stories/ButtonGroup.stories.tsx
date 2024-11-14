@@ -82,19 +82,19 @@ export const Icons: Story = {
 		children: (
 			<>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='lg'
 				>
 					<FaPlay />
 				</Button>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='lg'
 				>
 					<FaPause />
 				</Button>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='lg'
 				>
 					<FaStop />
@@ -109,19 +109,19 @@ export const IconsWithText: Story = {
 		children: (
 			<>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='md'
 				>
 					<FaPlay /> Play
 				</Button>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='md'
 				>
 					<FaPause /> Pause
 				</Button>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='md'
 				>
 					<FaStop /> Stop
@@ -138,19 +138,19 @@ export const Outlines: Story = {
 		children: (
 			<>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='lg'
 				>
 					<FaPlay /> Play
 				</Button>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='lg'
 				>
 					<FaPause /> Pause
 				</Button>
 				<Button
-					background='dark'
+					btnBackground='dark'
 					size='lg'
 				>
 					<FaStop /> Stop

@@ -103,6 +103,7 @@ export const Default: Story = {
 		},
 		title: 'Monthly Sales Data (GBP)',
 		legendPosition: 'bottom',
+		gridColor: '#a7a7a7',
 	},
 	argTypes: {
 		data: {

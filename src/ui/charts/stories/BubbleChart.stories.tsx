@@ -101,6 +101,7 @@ export const Default: Story = {
 		},
 		title: 'Startup Growth Over Time',
 		legendPosition: 'bottom',
+		gridColor: '#a7a7a7',
 		options: {
 			scales: {
 				x: {

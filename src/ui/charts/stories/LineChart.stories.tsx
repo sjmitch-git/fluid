@@ -93,6 +93,7 @@ export const Default: Story = {
 		},
 		title: 'Monthly Sales Data for 2023',
 		legendPosition: 'top',
+		gridColor: '#a7a7a7',
 		options: {
 			scales: {
 				y: {
@@ -154,6 +155,7 @@ export const MultiLine: Story = {
 		},
 		title: 'Monthly Sales Data Comparison (2019-2023)',
 		legendPosition: 'bottom',
+		gridColor: '#a7a7a7',
 	},
 	argTypes: {
 		...Default.argTypes,

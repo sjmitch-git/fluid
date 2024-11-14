@@ -95,6 +95,7 @@ export const Default: Story = {
 		},
 		title: 'Data Points Comparison',
 		legendPosition: 'top',
+		gridColor: '#a7a7a7',
 		options: {
 			scales: {
 				x: {
