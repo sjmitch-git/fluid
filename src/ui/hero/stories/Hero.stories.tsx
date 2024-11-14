@@ -69,8 +69,8 @@ const htmlCopy = `<ul><li>- Dolor sit amet</li><li>- Aut ipsa voluptatem</li><li
 const buttons = () => {
 	return (
 		<div className='flex gap-4 justify-around items-center flex-grow'>
-			<Button background='primary'>Primary</Button>
-			<Button background='info'>Info</Button>
+			<Button btnBackground='primary'>Primary</Button>
+			<Button btnBackground='info'>Info</Button>
 		</div>
 	)
 }

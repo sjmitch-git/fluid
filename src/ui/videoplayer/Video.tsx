@@ -115,7 +115,7 @@ const Video = ({
 			node.currentTime = 0
 		}
 		if (playEnded) playEnded()
-	}, [playEnded])
+	}, [playEnded, loop])
 
 	const handleTime = useCallback(() => {
 		if (videoRef.current && setTime) setTime(videoRef.current.currentTime)
