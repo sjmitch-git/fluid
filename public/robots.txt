@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /iframe.html
 User-agent: amazonbot
 Disallow: /
 
