@@ -19,7 +19,11 @@
 	}
 </style>
 
-<link
-	rel="canonical"
-	href="<%= window.location.href %>"
-/>
+<script>
+	;(function () {
+		var canonical = document.createElement('link')
+		canonical.rel = 'canonical'
+		canonical.href = window.location.href
+		document.head.appendChild(canonical)
+	})()
+</script>
