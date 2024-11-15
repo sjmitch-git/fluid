@@ -21,9 +21,10 @@
 
 <script>
 	;(function () {
+		var parentUrl = window.parent.location.href
 		var canonical = document.createElement('link')
 		canonical.rel = 'canonical'
-		canonical.href = window.location.href
+		canonical.href = parentUrl
 		document.head.appendChild(canonical)
 	})()
 </script>
