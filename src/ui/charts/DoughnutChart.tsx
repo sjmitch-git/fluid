@@ -9,8 +9,9 @@ const DoughnutChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	border = false,
+	aspect = 'portrait',
 	style,
 	className,
 }: DoughnutChartProps) => {
@@ -22,8 +23,9 @@ const DoughnutChart = ({
 				borderWidth: border ? 2 : 0,
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='doughnut'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

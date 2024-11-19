@@ -8,8 +8,9 @@ const MixedChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	gridColor = '#444444',
+	aspect = 'portrait',
 	style,
 	className,
 }: MixedChartProps) => {
@@ -20,20 +21,25 @@ const MixedChart = ({
 				...options,
 				scales: {
 					x: {
+						...options?.scales?.x,
 						grid: {
+							...options?.scales?.x?.grid,
 							color: gridColor,
 						},
 					},
 					y: {
+						...options?.scales?.x,
 						grid: {
+							...options?.scales?.y?.grid,
 							color: gridColor,
 						},
 					},
 				},
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='bar'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

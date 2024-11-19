@@ -29,15 +29,13 @@ import { PieChart } from '@smitch/fluid'
         {
             label: 'Product Sales Distribution',
             data: [120, 150, 100, 80, 50],
-            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
         },
     ],
   }}
   title="Sales Distribution by Category"
-  legendPosition="bottom"
-  options = {
-	borderWidth: 0,
-  }
+  legendposition="bottom"
+  aspect="portrait"
+  border={false}
 />
 \`\`\`
 
@@ -80,15 +78,13 @@ export const Default: Story = {
 				{
 					label: 'Product Sales Distribution',
 					data: [120, 150, 100, 80, 50],
-					backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
 				},
 			],
 		},
 		title: 'Product Sales by Category',
-		legendPosition: 'bottom',
-		options: {
-			borderWidth: 0,
-		},
+		legendposition: 'bottom',
+		aspect: 'portrait',
+		border: false,
 	},
 	argTypes: {
 		data: {
@@ -100,6 +96,28 @@ export const Default: Story = {
 			table: {
 				disable: true,
 			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		legendposition: {
+			options: ['top', 'bottom'],
+		},
+	},
+}
+
+export const PieChartInline: Story = {
+	args: {
+		...Default.args,
+		legendposition: 'left',
+		aspect: 'landscape',
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['left', 'right'],
 		},
 	},
 }

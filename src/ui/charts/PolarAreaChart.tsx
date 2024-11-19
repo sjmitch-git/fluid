@@ -9,8 +9,9 @@ const PolarAreaChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	gridColor = '#444444',
+	aspect = 'portrait',
 	style,
 	className,
 }: PolarAreaChartProps) => {
@@ -21,15 +22,18 @@ const PolarAreaChart = ({
 				...options,
 				scales: {
 					r: {
+						...options?.scales?.r,
 						grid: {
+							...options?.scales?.r?.grid,
 							color: gridColor,
 						},
 					},
 				},
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='polarArea'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

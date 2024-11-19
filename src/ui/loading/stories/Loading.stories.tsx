@@ -75,16 +75,7 @@ export const Default: Story = {
 	},
 }
 
-Default.decorators = [
-	(Story) => (
-		<div className='bg-light dark:bg-transparent dark:text-light py-8'>
-			<Story />
-		</div>
-	),
-]
-
 export const CustomIcons: Story = {
-	decorators: Default.decorators,
 	argTypes: {
 		spinner: {
 			table: {
@@ -103,7 +94,6 @@ export const CustomIcons: Story = {
 }
 
 export const CustomEmoji: Story = {
-	decorators: Default.decorators,
 	argTypes: {
 		...CustomIcons.argTypes,
 	},

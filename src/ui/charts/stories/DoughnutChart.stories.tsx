@@ -14,7 +14,7 @@ The **DoughnutChart** component is a circular chart divided into slices to illus
 ### Key Features:
 - **Responsive Design**: Automatically adjusts size and layout for any screen size.
 - **Chart.js Configuration**: Options can be passed to customize appearance and behavior.
-- **Legend Positioning**: Customizable legend position with the \`legendPosition\` prop.
+- **Legend Positioning**: Customizable legend position with the \`legendposition\` prop.
 
 ### Import:
 \`\`\`jsx
@@ -30,12 +30,11 @@ import { DoughnutChart } from '@smitch/fluid'
         {
             label: 'Product Sales Distribution',
             data: [120, 150, 100, 80, 50],
-            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
         },
     ],
   }}
   title="Sales Distribution by Category"
-  legendPosition="bottom"
+  legendposition="bottom"
   options = {
 	borderWidth: 0,
   }
@@ -62,7 +61,7 @@ data = {
 	},
 	decorators: [
 		(Story) => (
-			<div className='p-4'>
+			<div className=''>
 				<Story />
 			</div>
 		),
@@ -81,15 +80,13 @@ export const Default: Story = {
 				{
 					label: 'Product Sales Distribution',
 					data: [120, 150, 100, 80, 50],
-					backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
 				},
 			],
 		},
 		title: 'Product Sales by Category',
-		legendPosition: 'bottom',
-		options: {
-			borderWidth: 0,
-		},
+		legendposition: 'bottom',
+		border: false,
+		aspect: 'portrait',
 	},
 	argTypes: {
 		data: {
@@ -101,6 +98,104 @@ export const Default: Story = {
 			table: {
 				disable: true,
 			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		legendposition: {
+			options: ['top', 'bottom'],
+		},
+	},
+}
+
+export const DoughnutInline: Story = {
+	args: {
+		...Default.args,
+		legendposition: 'left',
+		aspect: 'landscape',
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['left', 'right'],
+		},
+	},
+}
+
+export const SemiCircle: Story = {
+	args: {
+		data: {
+			labels: ['England', 'Rep. Ireland'],
+			datasets: [
+				{
+					label: 'Possession Percentage',
+					data: [73.7, 26.3],
+					backgroundColor: ['rgba(255, 219, 40, 1)', 'rgba(20, 20, 20, 1)'],
+				},
+			],
+		},
+		title: 'Overall Possession',
+		legendposition: 'bottom',
+		aspect: 'auto',
+		border: true,
+		options: {
+			rotation: -90,
+			circumference: 180,
+			plugins: {
+				tooltip: {
+					callbacks: {
+						label: (tooltipItem: { raw: number }) => {
+							return `${tooltipItem.raw}% possession`
+						},
+					},
+				},
+			},
+		},
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['top', 'bottom'],
+		},
+	},
+}
+
+export const SemiCircleInline: Story = {
+	args: {
+		data: {
+			labels: ['England', 'Rep. Ireland'],
+			datasets: [
+				{
+					label: 'Possession Percentage',
+					data: [73.7, 26.3],
+					backgroundColor: ['rgba(255, 219, 40, 1)', 'rgba(20, 20, 20, 1)'],
+				},
+			],
+		},
+		title: 'Overall Possession',
+		legendposition: 'left',
+		aspect: 'auto',
+		border: true,
+		options: {
+			rotation: -90,
+			circumference: 180,
+			plugins: {
+				tooltip: {
+					callbacks: {
+						label: (tooltipItem: { raw: number }) => {
+							return `${tooltipItem.raw}% possession`
+						},
+					},
+				},
+			},
+		},
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['left', 'right'],
 		},
 	},
 }

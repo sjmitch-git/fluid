@@ -15,6 +15,7 @@ const aspects = {
 	video: 'aspect-video',
 	ultrawide: 'aspect-[12/5]',
 	phone: 'aspect-[9/16]',
+	auto: 'aspect-auto',
 }
 
 const Figure = ({

@@ -8,8 +8,9 @@ const ScatterChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	gridColor = '#444444',
+	aspect = 'portrait',
 	style,
 	className,
 }: ScatterChartProps) => {
@@ -20,20 +21,25 @@ const ScatterChart = ({
 				...options,
 				scales: {
 					x: {
+						...options?.scales?.x,
 						grid: {
+							...options?.scales?.x?.grid,
 							color: gridColor,
 						},
 					},
 					y: {
+						...options?.scales?.y,
 						grid: {
+							...options?.scales?.y?.grid,
 							color: gridColor,
 						},
 					},
 				},
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='scatter'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

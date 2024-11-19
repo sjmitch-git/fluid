@@ -7,8 +7,9 @@ const Clock = React.lazy(() => import('./spinners/Clock'))
 const Dots = React.lazy(() => import('./spinners/Dots'))
 const Pulse = React.lazy(() => import('./spinners/Pulse'))
 const Spindots = React.lazy(() => import('./spinners/Spindots'))
-const Spinner = React.lazy(() => import('./spinners/Spinner'))
 const Wifi = React.lazy(() => import('./spinners/Wifi'))
+
+import Spinner from './spinners/Spinner'
 
 const sizeToWidth = {
 	sm: 20,

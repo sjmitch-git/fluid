@@ -9,8 +9,9 @@ const LineChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	gridColor = '#444444',
+	aspect = 'square',
 	style,
 	className,
 }: LineChartProps) => {
@@ -21,20 +22,25 @@ const LineChart = ({
 				...options,
 				scales: {
 					x: {
+						...options?.scales?.x,
 						grid: {
+							...options?.scales?.x?.grid,
 							color: gridColor,
 						},
 					},
 					y: {
+						...options?.scales?.y,
 						grid: {
+							...options?.scales?.y?.grid,
 							color: gridColor,
 						},
 					},
 				},
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='line'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

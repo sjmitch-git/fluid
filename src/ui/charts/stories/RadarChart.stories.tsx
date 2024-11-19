@@ -43,7 +43,7 @@ import { RadarChart } from '@smitch/fluid';
         ],
     }}
     title="Athlete Performance Comparison"
-    legendPosition="bottom"
+    legendposition="bottom"
 />
 \`\`\`
 `,
@@ -52,7 +52,7 @@ import { RadarChart } from '@smitch/fluid';
 	},
 	decorators: [
 		(Story) => (
-			<div className='p-4'>
+			<div className=''>
 				<Story />
 			</div>
 		),
@@ -83,8 +83,9 @@ export const Default: Story = {
 			],
 		},
 		title: 'Athlete Performance Comparison',
-		legendPosition: 'bottom',
+		legendposition: 'bottom',
 		gridColor: '#a7a7a7',
+		aspect: 'square',
 		options: {
 			scales: {
 				r: {
@@ -112,6 +113,14 @@ export const Default: Story = {
 			table: {
 				disable: true,
 			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		legendposition: {
+			options: ['top', 'bottom'],
 		},
 	},
 }

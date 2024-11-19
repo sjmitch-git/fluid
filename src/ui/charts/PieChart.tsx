@@ -9,8 +9,9 @@ const PieChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	border = false,
+	aspect = 'portrait',
 	style,
 	className,
 }: PieChartProps) => {
@@ -22,8 +23,9 @@ const PieChart = ({
 				borderWidth: border ? 2 : 0,
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='pie'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

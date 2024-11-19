@@ -13,7 +13,7 @@ The **MixedChart** component is ideal for displaying two or more different chart
 
 ### Key Features:
 - **Responsive Design**: Adapts to different screen sizes.
-- **Legend Positioning**: Adjustable legend position using the \`legendPosition\` prop.
+- **Legend Positioning**: Adjustable legend position using the \`legendposition\` prop.
 - **Chart.js Options**: Extensive customization via the \`options\` prop.
 
 ### Import:
@@ -51,7 +51,7 @@ import { MixedChart } from '@smitch/fluid';
     ],
     labels: ['January','February','March','April','May','June','July','August']
   }}
-  legendPosition="bottom"
+  legendposition="bottom"
   title="Monthly Sales Data (GBP)"
 />
 \`\`\`
@@ -102,8 +102,9 @@ export const Default: Story = {
 			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
 		},
 		title: 'Monthly Sales Data (GBP)',
-		legendPosition: 'bottom',
+		legendposition: 'bottom',
 		gridColor: '#a7a7a7',
+		aspect: 'portrait',
 	},
 	argTypes: {
 		data: {
@@ -115,6 +116,14 @@ export const Default: Story = {
 			table: {
 				disable: true,
 			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		legendposition: {
+			options: ['top', 'bottom'],
 		},
 	},
 }

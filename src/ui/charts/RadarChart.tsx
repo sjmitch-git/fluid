@@ -9,8 +9,9 @@ const RadarChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	gridColor = '#444444',
+	aspect = 'square',
 	style,
 	className,
 }: RadarChartProps) => {
@@ -21,15 +22,18 @@ const RadarChart = ({
 				...options,
 				scales: {
 					r: {
+						...options?.scales?.r,
 						grid: {
+							...options?.scales?.r?.grid,
 							color: gridColor,
 						},
 					},
 				},
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='radar'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>

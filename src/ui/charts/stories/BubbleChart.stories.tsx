@@ -14,7 +14,7 @@ The **BubbleChart** component displays data points with varying sizes, making it
 ### Key Features:
 - **Responsive Design**: Adjusts to fit different screen sizes.
 - **Dynamic Bubble Sizes**: Allows variable sizes for each bubble, representing a third dimension.
-- **Legend Positioning**: Customizable legend position with the \`legendPosition\` prop.
+- **Legend Positioning**: Customizable legend position with the \`legendposition\` prop.
 - **Chart.js Options**: Additional customization via the \`options\` prop.
 - **Title Customization**: Display a title with the \`title\` prop for context.
 
@@ -42,7 +42,7 @@ import { BubbleChart } from '@smitch/fluid'
         ],
     }}
     title="Product Popularity by Region"
-    legendPosition="bottom"
+    legendposition="bottom"
 	options: {
 		scales: {
 			y: {
@@ -58,7 +58,7 @@ import { BubbleChart } from '@smitch/fluid'
 	},
 	decorators: [
 		(Story) => (
-			<div className='p-4'>
+			<div className=''>
 				<Story />
 			</div>
 		),
@@ -81,31 +81,31 @@ export const Default: Story = {
 				},
 				{
 					label: '2020',
-					data: [{ x: 2020, y: 80, r: 18 }],
+					data: [{ x: 2020, y: 65, r: 12 }],
 					backgroundColor: 'rgba(75, 192, 192, 0.5)',
 					borderColor: 'rgba(75, 192, 192, 1)',
 				},
 				{
 					label: '2021',
-					data: [{ x: 2021, y: 65, r: 30 }],
+					data: [{ x: 2021, y: 80, r: 18 }],
 					backgroundColor: 'rgba(255, 99, 132, 0.5)',
 					borderColor: 'rgba(255, 99, 132, 1)',
 				},
 				{
 					label: '2022',
-					data: [{ x: 2022, y: 90, r: 40 }],
+					data: [{ x: 2022, y: 90, r: 22 }],
 					backgroundColor: 'rgba(255, 159, 64, 0.5)',
 					borderColor: 'rgba(255, 159, 64, 1)',
 				},
 			],
 		},
 		title: 'Startup Growth Over Time',
-		legendPosition: 'bottom',
+		legendposition: 'bottom',
 		gridColor: '#a7a7a7',
+		aspect: 'portrait',
 		options: {
 			scales: {
 				x: {
-					// type: 'linear',
 					ticks: {
 						stepSize: 1,
 						callback: (value: string) => Number(value).toFixed(0),
@@ -142,6 +142,14 @@ export const Default: Story = {
 			table: {
 				disable: true,
 			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		legendposition: {
+			options: ['top', 'bottom'],
 		},
 	},
 }

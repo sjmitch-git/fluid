@@ -13,7 +13,7 @@ The **PolarAreaChart** component displays data in a circular format, where each 
 
 ### Key Features:
 - **Responsive Design**: Fits different screen sizes and maintains aspect ratio.
-- **Customizable Legend Position**: Adjust the legend position with the \`legendPosition\` prop.
+- **Customizable Legend Position**: Adjust the legend position with the \`legendposition\` prop.
 - **Chart.js Options**: Customize further with the \`options\` prop.
 - **Title Support**: Display context with the \`title\` prop.
 
@@ -52,7 +52,7 @@ import { PolarAreaChart } from '@smitch/fluid'
         ],
     }}
     title="Category Breakdown"
-    legendPosition="bottom"
+    legendposition="bottom"
     options={{
         scales: {
             r: {
@@ -68,7 +68,7 @@ import { PolarAreaChart } from '@smitch/fluid'
 	},
 	decorators: [
 		(Story) => (
-			<div className='p-4'>
+			<div className=''>
 				<Story />
 			</div>
 		),
@@ -82,38 +82,45 @@ export const Default: Story = {
 	name: 'Polar Area Chart',
 	args: {
 		data: {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			labels: ['Electronics', 'Furniture', 'Clothing', 'Groceries', 'Books'],
 			datasets: [
 				{
-					label: 'Category Breakdown',
-					data: [11, 16, 7, 3, 14, 9],
+					label: 'Sales Distribution',
+					data: [300, 200, 150, 400, 100],
 					backgroundColor: [
-						'rgba(255, 99, 132, 0.2)',
-						'rgba(54, 162, 235, 0.2)',
-						'rgba(255, 206, 86, 0.2)',
-						'rgba(75, 192, 192, 0.2)',
-						'rgba(153, 102, 255, 0.2)',
-						'rgba(255, 159, 64, 0.2)',
-					],
-					borderColor: [
-						'rgba(255, 99, 132, 1)',
-						'rgba(54, 162, 235, 1)',
-						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)',
-						'rgba(153, 102, 255, 1)',
-						'rgba(255, 159, 64, 1)',
+						'rgba(54, 162, 235, 0.6)', // Electronics
+						'rgba(255, 99, 132, 0.6)', // Furniture
+						'rgba(75, 192, 192, 0.6)', // Clothing
+						'rgba(255, 206, 86, 0.6)', // Groceries
+						'rgba(153, 102, 255, 0.6)', // Books
 					],
 					borderWidth: 1,
 				},
 			],
 		},
-		title: 'Category Breakdown',
-		legendPosition: 'bottom',
+		title: 'Sales Distribution by Product Category',
+		legendposition: 'bottom',
+		aspect: 'portrait',
 		gridColor: '#a7a7a7',
 		options: {
 			scales: {
 				r: {
-					beginAtZero: true,
+					grid: {
+						color: '#a7a7a7',
+					},
+					ticks: {
+						display: true,
+						backdropColor: 'transparent',
+					},
+				},
+			},
+			plugins: {
+				tooltip: {
+					callbacks: {
+						label: (tooltipItem: { raw: any }) => {
+							return `Sales: $${tooltipItem.raw}`
+						},
+					},
 				},
 			},
 		},
@@ -128,6 +135,28 @@ export const Default: Story = {
 			table: {
 				disable: true,
 			},
+		},
+		aspect: {
+			table: {
+				disable: true,
+			},
+		},
+		legendposition: {
+			options: ['top', 'bottom'],
+		},
+	},
+}
+
+export const PolarAreaLandscape: Story = {
+	args: {
+		...Default.args,
+		legendposition: 'left',
+		aspect: 'landscape',
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['left', 'right'],
 		},
 	},
 }

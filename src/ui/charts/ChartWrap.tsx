@@ -1,8 +1,26 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, Suspense, lazy } from 'react'
 import { Chart as ChartJS, registerables } from 'chart.js'
 import { twMerge } from 'tailwind-merge'
-import { Bubble, Line, Bar, Pie, Radar, PolarArea, Scatter, Doughnut } from 'react-chartjs-2'
 import { ChartDataMap, ChartOptionsMap } from './types'
+
+const LazyBubble = lazy(() =>
+	import('react-chartjs-2').then((module) => ({ default: module.Bubble }))
+)
+const LazyLine = lazy(() => import('react-chartjs-2').then((module) => ({ default: module.Line })))
+const LazyBar = lazy(() => import('react-chartjs-2').then((module) => ({ default: module.Bar })))
+const LazyPie = lazy(() => import('react-chartjs-2').then((module) => ({ default: module.Pie })))
+const LazyDoughnut = lazy(() =>
+	import('react-chartjs-2').then((module) => ({ default: module.Doughnut }))
+)
+const LazyRadar = lazy(() =>
+	import('react-chartjs-2').then((module) => ({ default: module.Radar }))
+)
+const LazyPolarArea = lazy(() =>
+	import('react-chartjs-2').then((module) => ({ default: module.PolarArea }))
+)
+const LazyScatter = lazy(() =>
+	import('react-chartjs-2').then((module) => ({ default: module.Scatter }))
+)
 
 const merge = require('deepmerge')
 
@@ -12,30 +30,41 @@ type ChartTypes = keyof ChartDataMap
 
 interface ChartWrapProps<T extends ChartTypes> {
 	title?: string
-	legendPosition?: string
+	legendposition?: string
 	data: ChartDataMap[T]
 	options?: ChartOptionsMap[T]
 	chartType: T
 	className?: string
 	style?: React.CSSProperties
+	aspect?: 'landscape' | 'portrait' | 'square' | 'auto'
+}
+
+const aspects = {
+	landscape: 'aspect-[4/3]',
+	portrait: 'aspect-[3/4]',
+	square: 'aspect-square',
+	auto: 'aspect-auto',
 }
 
 const ChartWrap = <T extends ChartTypes>({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
 	chartType,
+	aspect = 'auto',
 	className,
 	style,
 }: ChartWrapProps<T>) => {
+	const aspectClasses = useMemo(() => aspects[aspect], [aspect])
+
 	const defaultOptions = useMemo(() => {
 		return {
 			responsive: true,
 			maintainAspectRatio: false,
 			plugins: {
 				legend: {
-					position: legendPosition,
+					position: legendposition,
 				},
 				title: {
 					display: !!title,
@@ -43,18 +72,18 @@ const ChartWrap = <T extends ChartTypes>({
 				},
 			},
 		}
-	}, [legendPosition, title])
+	}, [legendposition, title])
 
 	const chartComponents: Record<ChartTypes, React.ElementType> = {
-		bubble: Bubble,
-		line: Line,
-		bar: Bar,
-		pie: Pie,
-		doughnut: Doughnut,
-		radar: Radar,
-		polarArea: PolarArea,
-		scatter: Scatter,
-		mixed: Bar,
+		bubble: LazyBubble,
+		line: LazyLine,
+		bar: LazyBar,
+		pie: LazyPie,
+		doughnut: LazyDoughnut,
+		radar: LazyRadar,
+		polarArea: LazyPolarArea,
+		scatter: LazyScatter,
+		mixed: LazyBar,
 	}
 
 	const ChartComponent = chartComponents[chartType] as React.ElementType
@@ -65,17 +94,18 @@ const ChartWrap = <T extends ChartTypes>({
 	}, [defaultOptions, options])
 
 	return (
-		<div
-			className={twMerge(`chart-wrap min-h-[350px] lg:min-h-[450px]`, className)}
-			style={style}
-		>
-			<ChartComponent
-				data={data}
-				options={combinedOptions}
-				title={title}
-				legendPosition={legendPosition}
-			/>
-		</div>
+		<figure className={twMerge(`chart-wrap h-auto min-w-full ${aspectClasses}`, className)}>
+			<Suspense fallback={<div className='text-center text-sm italic'>Loading Chart</div>}>
+				<ChartComponent
+					data={data}
+					options={combinedOptions}
+					title={title}
+					legendposition={legendposition}
+					// aspect={aspect}
+					style={style}
+				/>
+			</Suspense>
+		</figure>
 	)
 }
 

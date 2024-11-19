@@ -2,7 +2,8 @@ import { ChartData, ChartOptions } from 'chart.js'
 
 interface ChartComponentProps {
 	title?: string
-	legendPosition?: 'top' | 'bottom' | 'left' | 'right'
+	legendposition?: 'top' | 'bottom' | 'left' | 'right'
+	aspect?: 'landscape' | 'portrait' | 'square' | 'auto'
 	className?: string
 	style?: React.CSSProperties
 }

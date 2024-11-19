@@ -9,7 +9,8 @@ const BarChart = ({
 	data,
 	options,
 	title,
-	legendPosition,
+	legendposition,
+	aspect = 'portrait',
 	style,
 	className,
 	layout,
@@ -23,20 +24,25 @@ const BarChart = ({
 				indexAxis: layout === 'horizontal' ? 'y' : 'x',
 				scales: {
 					x: {
+						...options?.scales?.x,
 						grid: {
+							...options?.scales?.x?.grid,
 							color: gridColor,
 						},
 					},
 					y: {
+						...options?.scales?.y,
 						grid: {
+							...options?.scales?.y?.grid,
 							color: gridColor,
 						},
 					},
 				},
 			}}
 			title={title}
-			legendPosition={legendPosition}
+			legendposition={legendposition}
 			chartType='bar'
+			aspect={aspect}
 			className={className}
 			style={style}
 		/>
