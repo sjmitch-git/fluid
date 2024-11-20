@@ -101,7 +101,6 @@ const ChartWrap = <T extends ChartTypes>({
 					options={combinedOptions}
 					title={title}
 					legendposition={legendposition}
-					// aspect={aspect}
 					style={style}
 				/>
 			</Suspense>

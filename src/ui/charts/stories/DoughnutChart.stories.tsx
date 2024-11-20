@@ -138,7 +138,7 @@ export const SemiCircle: Story = {
 		},
 		title: 'Overall Possession',
 		legendposition: 'bottom',
-		aspect: 'auto',
+		aspect: 'landscape',
 		border: true,
 		options: {
 			rotation: -90,
@@ -176,7 +176,7 @@ export const SemiCircleInline: Story = {
 		},
 		title: 'Overall Possession',
 		legendposition: 'left',
-		aspect: 'auto',
+		aspect: 'landscape',
 		border: true,
 		options: {
 			rotation: -90,
