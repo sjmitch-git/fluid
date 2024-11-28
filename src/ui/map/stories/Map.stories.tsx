@@ -175,8 +175,9 @@ export const CustomMarkers: Story = {
 				{...args}
 				bounds={bounds}
 			>
-				{airports.map((airport, _index) => (
+				{airports.map((airport, index) => (
 					<MapMarker
+						key={index}
 						position={[airport.latlon[0], airport.latlon[1]]}
 						popupContent={`${airport.name} (${airport.iata})`}
 						iconId='8771'

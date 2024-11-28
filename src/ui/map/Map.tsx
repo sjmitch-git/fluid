@@ -14,11 +14,10 @@ interface ClickHandlerProps {
 const { BaseLayer } = LayersControl
 
 const ClickHandler = ({ onDblClick, dragging }: ClickHandlerProps) => {
-	if (!dragging) return
-
 	const map = useMap()
 
 	useEffect(() => {
+		if (!dragging) return
 		const handleDoubleClick = (e: L.LeafletMouseEvent) => {
 			setTimeout(() => {
 				map.setView(e.latlng, map.getZoom())
@@ -34,7 +33,7 @@ const ClickHandler = ({ onDblClick, dragging }: ClickHandlerProps) => {
 		return () => {
 			map.off('dblclick', handleDoubleClick)
 		}
-	}, [map, onDblClick])
+	}, [map, onDblClick, dragging])
 
 	return null
 }

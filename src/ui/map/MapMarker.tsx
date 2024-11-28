@@ -27,7 +27,7 @@ const MapMarker = ({
 		return () => {
 			if (draggable) map.off('dblclick', handleDoubleClick)
 		}
-	}, [map])
+	}, [map, draggable])
 
 	const icon = iconName
 		? UseCustomIcon({ iconName, size: iconSize, color: iconColor })
