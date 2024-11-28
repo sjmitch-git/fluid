@@ -21,6 +21,7 @@ A Next.js/React UI component library.
 		- [Media](#media)
 		- [Typography](#typography)
 		- [Data Visualization](#data-visualization)
+        - [Map](#map)
 	- [Author](#author)
 
 ## Overview
@@ -33,7 +34,6 @@ Fluid UI is a comprehensive library of reusable UI components for Next.js/React 
 -   Built with React
 -   Easy to integrate
 -   Supports TypeScript
--   Storybook for component documentation
 
 ## Getting Started
 
@@ -252,6 +252,9 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-radar-chart--docs'>Radar Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-polar-area-chart--docs'>PolarArea Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-scatter-chart--docs'>Scatter Chart</a>
+
+### Map
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-map--docs'>Map</a>
 
 ## Author
 

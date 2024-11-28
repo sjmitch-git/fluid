@@ -23,7 +23,7 @@ const Pictogram = ({
 		>
 			{caption ? (
 				<caption
-					className={`${captionSideClasses[captionSide]} ${captionSide === 'top' ? 'pb-2' : 'pt-2'} font-semibold`}
+					className={`${captionSideClasses[captionSide]} ${captionSide === 'top' ? 'pb-2' : 'pt-2'} px-2 whitespace-nowrap font-semibold`}
 				>
 					{caption}
 				</caption>
@@ -32,7 +32,7 @@ const Pictogram = ({
 				{labels.map((label, index) => (
 					<tr key={index}>
 						<th className='font-semibold text-left p-2'>{label}</th>
-						<td className='p-2 w-full'>
+						<td className='p-2'>
 							{tally[index] > 0
 								? Array.from({ length: tally[index] }, (_, i) => (
 										<span

@@ -1,6 +1,6 @@
 {
 	"name": "@smitch/fluid",
-	"version": "2.0.8",
+	"version": "2.1.8",
 	"description": "A React ui-component libray.",
 	"main": "index.js",
 	"keywords": [
@@ -29,6 +29,8 @@
 		"prismjs": "^1.29.0",
 		"react-chartjs-2": "^5.2.0",
 		"react-icons": "^4.11.0",
+		"react-leaflet": "^4.2.1",
+		"react-leaflet-fullscreen": "^4.1.1",
 		"tailwind-merge": "^2.5.2"
 	}
 }

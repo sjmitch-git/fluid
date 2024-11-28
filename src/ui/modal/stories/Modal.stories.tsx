@@ -128,7 +128,6 @@ export const ImageModal: Story = {
 	},
 }
 
-// You can also add argTypes if needed
 ImageModal.argTypes = {
 	src: {
 		control: 'text',

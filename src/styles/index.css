@@ -10,6 +10,8 @@
 @import 'tailwindcss/utilities';
 @import './utilities/index.css';
 
+@import 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+
 ::-webkit-scrollbar {
 	width: 0px;
 	height: 4px;
