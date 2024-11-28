@@ -168,4 +168,7 @@
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-scatter-chart--docs</loc>
     </url>
+     <url>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-map--docs</loc>
+    </url>
 </urlset>
