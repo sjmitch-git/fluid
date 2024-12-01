@@ -29,14 +29,6 @@ in a flexible and responsive interface.
   <MapMarker position={[51.505, -0.09]} popupContent="Hello World!" />
 </Map>
 \`\`\`
-
-### Adding Custom Markers with Icons8
-Use icons from [Icons8](https://icons8.com/icons/) for map markers.
-
-#### Steps:
-1. Visit [Icons8](https://icons8.com/icons/) and select an icon.
-2. Obtain the \`iconId\` or \`iconName\`.
-3. Pass the \`iconId\` or \`iconName\` as a prop to create a custom marker.
         `,
 			},
 		},
@@ -164,6 +156,17 @@ export const CustomMarkers: Story = {
 	args: {
 		tileIndex: 1,
 		style: { height: '400px', width: '100%' },
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: `Use icons from [Icons8](https://icons8.com/icons/) for map markers.
+
+1. Visit [Icons8](https://icons8.com/icons/) and select an icon.
+2. Obtain the \`iconId\` or \`iconName\`.
+3. Pass the \`iconId\` or \`iconName\` as a prop to create a custom marker.`,
+			},
+		},
 	},
 	render: (args) => {
 		const bounds = L.latLngBounds(
