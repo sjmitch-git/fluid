@@ -114,6 +114,9 @@
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-hero--docs</loc>
     </url>
+     <url>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-icon--docs</loc>
+    </url>
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-modal--docs</loc>
     </url>

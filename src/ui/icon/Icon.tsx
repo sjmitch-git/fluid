@@ -2,11 +2,6 @@ import React from 'react'
 import { twMerge } from 'tailwind-merge'
 import { IconProps } from './types'
 
-/* const isValidColor = (color: string): boolean => {
-	const icons8ColorRegex = /^$|^([a-fA-F0-9]{6})(,[a-fA-F0-9]{6})?$/
-	return icons8ColorRegex.test(color)
-} */
-
 const flipClasses = {
 	flipX: 'scale-x-[-1]',
 	flipY: 'scale-y-[-1]',
@@ -23,6 +18,8 @@ const rotateClasses = {
 	315: 'rotate-[315deg]',
 }
 
+const baseUrl = 'https://img.icons8.com'
+
 const Icon = ({
 	iconName,
 	iconId,
@@ -36,14 +33,11 @@ const Icon = ({
 	className,
 	style,
 }: IconProps) => {
-	/* if (iconColor && !isValidColor(iconColor)) {
-		console.warn(`Invalid iconColor value: ${iconColor}. Expected hex format.`)
-		iconColor = undefined
-	} */
-
-	const baseUrl = 'https://img.icons8.com'
-
-	const colorPath = iconStyle ? iconStyle : iconColor ? `${iconColor.replace('#', '')}` : ''
+	const colorPath = iconStyle
+		? `${iconStyle}/`
+		: iconColor
+			? `${iconColor.replace('#', '')}/`
+			: ''
 
 	const queryParams = new URLSearchParams({
 		size: iconSize.toString(),
@@ -54,8 +48,7 @@ const Icon = ({
 
 	let iconUrl = ''
 	if (iconName) {
-		iconUrl = `${baseUrl}/${colorPath}/${iconSize}/${iconName}.png`
-		console.log(iconUrl)
+		iconUrl = `${baseUrl}/${colorPath}${iconSize}/${iconName}.png`
 	} else {
 		iconUrl = `${baseUrl}?${queryParams.toString()}`
 	}

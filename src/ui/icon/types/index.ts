@@ -1,10 +1,8 @@
-type HexColor = `#${string}`
-
 export interface IconProps {
 	iconName?: string
 	iconId?: string
 	iconSize?: number
-	iconColor?: HexColor
+	iconColor?: string
 	iconStyle?: 'color' | 'fluency'
 	flipX?: boolean
 	flipY?: boolean
