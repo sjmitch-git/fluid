@@ -21,7 +21,7 @@ A Next.js/React UI component library.
 		- [Media](#media)
 		- [Typography](#typography)
 		- [Data Visualization](#data-visualization)
-        - [Map](#map)
+		- [Map](#map)
 	- [Author](#author)
 
 ## Overview
@@ -227,6 +227,7 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-figure--docs'>Figure</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-gallery--docs'>Gallery</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-hero--docs'>Hero</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-icon--docs'>Icon</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-modal--docs'>Modal</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs'>Twitter Embed</a>
     -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs#twitter-timeline'>Twitter Timeline</a>
