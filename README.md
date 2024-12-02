@@ -253,7 +253,7 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-radar-chart--docs'>Radar Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-polar-area-chart--docs'>PolarArea Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-scatter-chart--docs'>Scatter Chart</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-statbar--docs'>Stat Bar</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-stat-bar--docs'>Stat Bar</a>
 
 ### Map
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-map--docs'>Map</a>
