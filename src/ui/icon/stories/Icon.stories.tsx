@@ -30,6 +30,11 @@ const meta: Meta<typeof Icon> = {
 The **Icon** component fetches icons from [Icons8](https://icons8.com/) and allows customization
 through various props like \`iconName\`, \`iconId\`, \`iconSize\`, and \`iconColor\`.
 
+### Import:
+\`\`\`jsx
+import { Icon } from '@smitch/fluid-ui';
+\`\`\`
+
 ### Example Usage
 
 #### Icon Name
