@@ -28,6 +28,11 @@ const meta: Meta<typeof StatBar> = {
 The **StatBar** component is used to display a visual representation of statistics (e.g., possession, goals) as a horizontal progress bar.
 The bar dynamically adjusts to represent the data proportions as percentages.
 
+### Import:
+\`\`\`tsx
+import { StatBar } from '@smitch/fluid'
+\`\`\`
+
 ### Example Usage
 
 \`\`\`tsx

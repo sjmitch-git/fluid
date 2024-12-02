@@ -51,3 +51,10 @@ export interface MapCircleProps {
 	stroke?: boolean
 	popupContent?: string
 }
+
+export interface MapPolygonProps {
+	positions: LatLngExpression[] | LatLngExpression[][]
+	fill?: string
+	stroke?: boolean
+	popupContent?: string
+}

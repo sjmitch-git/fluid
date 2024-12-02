@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { LatLngExpression } from 'leaflet'
 import L from 'leaflet'
-import { Map, MapMarker, MapCircle } from '..'
+import { Map, MapMarker, MapCircle, MapPolygon } from '..'
 import { States } from '@/data/states'
 
 const meta: Meta<typeof Map> = {
@@ -117,6 +117,35 @@ export const DefaultMarkers: Story = {
 			<MapMarker position={[51.51, -0.1]} />
 		</Map>
 	),
+}
+
+export const Polygon: Story = {
+	args: {
+		tileIndex: 1,
+		style: { height: '400px', width: '100%' },
+	},
+	render: (args) => {
+		const polygonPositions: L.LatLngExpression[] = [
+			[52.4668, -1.8936],
+			[52.4692, -1.8844],
+			[52.4656, -1.8829],
+		]
+
+		const bounds = L.latLngBounds(polygonPositions)
+
+		return (
+			<Map
+				{...args}
+				bounds={bounds}
+			>
+				<MapPolygon
+					positions={polygonPositions}
+					popupContent='Balti Triangle, Birmingham'
+					fill='#ff6600'
+				/>
+			</Map>
+		)
+	},
 }
 
 const airports = [
