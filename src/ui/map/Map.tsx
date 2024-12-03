@@ -42,7 +42,13 @@ const Map = ({
 	center,
 	bounds,
 	zoom,
+	zoomControl = true,
+	fullscreenControl = true,
+	tilesControl = true,
+	attributionControl = true,
 	dragging = true,
+	scrollWheelZoom = true,
+	doubleClickZoom = true,
 	geojson,
 	layerColor = 'white',
 	layerFillColor = 'blue',
@@ -113,7 +119,11 @@ const Map = ({
 			center={center}
 			bounds={bounds}
 			zoom={zoom}
+			zoomControl={zoomControl}
+			attributionControl={attributionControl}
 			dragging={dragging}
+			scrollWheelZoom={scrollWheelZoom}
+			doubleClickZoom={doubleClickZoom}
 			className={className}
 			style={style}
 			ref={(ref) => {
@@ -123,23 +133,33 @@ const Map = ({
 			}}
 		>
 			<>
-				<LayersControl position='topright'>
-					{tileOptions &&
-						tileOptions.map((tile, index) => (
-							<BaseLayer
-								key={index}
-								name={tile.name}
-								checked={index === tileIndex}
-							>
-								<TileLayer
-									url={tile.url}
-									attribution={tile.attribution}
-									{...(tile.subdomains && { subdomains: tile.subdomains })}
-								/>
-							</BaseLayer>
-						))}
-				</LayersControl>
-				<FullscreenControl position='topleft' />
+				{tilesControl ? (
+					<LayersControl position='topright'>
+						{tileOptions &&
+							tileOptions.map((tile, index) => (
+								<BaseLayer
+									key={index}
+									name={tile.name}
+									checked={index === tileIndex}
+								>
+									<TileLayer
+										url={tile.url}
+										attribution={tile.attribution}
+										{...(tile.subdomains && { subdomains: tile.subdomains })}
+									/>
+								</BaseLayer>
+							))}
+					</LayersControl>
+				) : (
+					<TileLayer
+						url={tileOptions[tileIndex].url}
+						attribution={tileOptions[tileIndex].attribution}
+						{...(tileOptions[tileIndex].subdomains && {
+							subdomains: tileOptions[tileIndex].subdomains,
+						})}
+					/>
+				)}
+				{fullscreenControl ? <FullscreenControl position='topleft' /> : null}
 				<ClickHandler
 					onDblClick={onDblClick}
 					dragging={dragging}

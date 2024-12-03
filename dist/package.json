@@ -1,6 +1,6 @@
 {
 	"name": "@smitch/fluid",
-	"version": "2.3.13",
+	"version": "2.3.14",
 	"description": "A React ui-component libray.",
 	"main": "index.js",
 	"keywords": [

@@ -14,9 +14,15 @@ export interface MapProps {
 	center?: LatLngExpression
 	bounds?: LatLngBoundsExpression
 	zoom?: number
+	zoomControl?: boolean
+	fullscreenControl?: boolean
+	tilesControl?: boolean
 	tileIndex?: number
+	attributionControl?: boolean
 	customTiles?: TileLayerOptions[]
 	dragging?: boolean
+	scrollWheelZoom?: boolean
+	doubleClickZoom?: boolean
 	geojson?: GeoJsonObject
 	layerColor?: string
 	layerFillColor?: string
@@ -49,6 +55,8 @@ export interface MapCircleProps {
 	radius: number
 	fill?: string
 	stroke?: boolean
+	fillOpacity?: number
+	opacity?: number
 	popupContent?: string
 }
 
@@ -56,5 +64,20 @@ export interface MapPolygonProps {
 	positions: LatLngExpression[] | LatLngExpression[][]
 	fill?: string
 	stroke?: boolean
+	popupContent?: string
+}
+
+export interface MapLineProps {
+	positions: LatLngExpression[]
+	color?: string
+	weight?: number
+	dashArray?: string
+	popupContent?: string
+}
+
+export interface MapRectangleProps {
+	bounds: LatLngBoundsExpression
+	color?: string
+	fillColor?: string
 	popupContent?: string
 }

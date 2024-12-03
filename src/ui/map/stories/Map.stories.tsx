@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { LatLngExpression } from 'leaflet'
 import L from 'leaflet'
-import { Map, MapMarker, MapCircle, MapPolygon } from '..'
+import { Map, MapMarker, MapCircle, MapPolygon, MapLine, MapRectangle } from '..'
 import { States } from '@/data/states'
 
 const meta: Meta<typeof Map> = {
@@ -102,6 +102,22 @@ export const Default: Story = {
 	},
 }
 
+export const StaticMap: Story = {
+	args: {
+		center: [51.505, -0.09],
+		zoom: 16,
+		zoomControl: false,
+		fullscreenControl: false,
+		tilesControl: false,
+		tileIndex: 0,
+		attributionControl: false,
+		dragging: false,
+		scrollWheelZoom: false,
+		doubleClickZoom: false,
+		style: { height: '400px', width: '100%' },
+	},
+}
+
 export const DefaultMarkers: Story = {
 	args: {
 		center: [51.505, -0.09],
@@ -146,6 +162,84 @@ export const Polygon: Story = {
 			</Map>
 		)
 	},
+}
+
+export const Line: Story = {
+	args: {
+		tileIndex: 1,
+		style: { height: '400px', width: '100%' },
+	},
+	render: (args) => {
+		const linePositions: L.LatLngExpression[] = [
+			[51.5281, -0.1336], // London Euston
+			[51.6637, -0.396], // Watford Junction
+			[52.0346, -0.7748], // Milton Keynes Central
+			[52.3704, -1.265], // Rugby
+			[52.8056, -2.1164], // Stafford
+			[53.089, -2.431], // Crewe
+			[53.7632, -2.7031], // Preston
+			[54.89, -2.9341], // Carlisle
+			[55.859, -4.2576], // Glasgow Central Station
+		]
+
+		const bounds = L.latLngBounds(linePositions)
+
+		return (
+			<Map
+				{...args}
+				bounds={bounds.pad(0.5)}
+			>
+				<MapCircle
+					position={[51.5281, -0.1336]}
+					radius={100}
+					fill='blue'
+					stroke={false}
+					fillOpacity={1}
+					popupContent='London Euston'
+				/>
+				<MapCircle
+					position={[55.859, -4.2576]}
+					radius={100}
+					fill='blue'
+					stroke={false}
+					fillOpacity={1}
+					popupContent='Glasgow Central Station'
+				/>
+				<MapLine
+					positions={linePositions}
+					popupContent='London Euston to Glasgow Central'
+					color='blue'
+					weight={3}
+					dashArray='10, 5'
+				/>
+			</Map>
+		)
+	},
+}
+
+const rectangle: L.LatLngExpression[] = [
+	[51.49, -0.08],
+	[51.5, -0.06],
+]
+
+const rectangleBounds = L.latLngBounds(rectangle)
+
+export const Rectangle: Story = {
+	args: {
+		center: [51.505, -0.09],
+		style: { height: '400px', width: '100%' },
+	},
+	render: (args) => (
+		<Map
+			{...args}
+			bounds={rectangleBounds.pad(0.5)}
+		>
+			<MapRectangle
+				bounds={rectangleBounds}
+				popupContent='Popup in rectangle'
+			/>
+		</Map>
+	),
 }
 
 const airports = [
@@ -327,6 +421,7 @@ export const BubbleMarkers: Story = {
 						position={[city.latlon[0], city.latlon[1]]}
 						radius={modifyRadius(city.population)}
 						fill='rgba(150,0,50, 0.8)'
+						fillOpacity={0.5}
 						stroke={false}
 						popupContent={`${city.city} (${city.population.toLocaleString()})`}
 					/>
