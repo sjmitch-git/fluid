@@ -124,7 +124,7 @@ export const DoughnutInline: Story = {
 	},
 }
 
-export const SemiCircle: Story = {
+export const HalfDoughnut: Story = {
 	args: {
 		data: {
 			labels: ['England', 'Rep. Ireland'],
@@ -132,7 +132,7 @@ export const SemiCircle: Story = {
 				{
 					label: 'Possession Percentage',
 					data: [73.7, 26.3],
-					backgroundColor: ['rgba(255, 219, 40, 1)', 'rgba(20, 20, 20, 1)'],
+					backgroundColor: ['rgba(235, 40, 40, 1)', 'rgba(20, 200, 20, 1)'],
 				},
 			],
 		},
@@ -162,7 +162,7 @@ export const SemiCircle: Story = {
 	},
 }
 
-export const SemiCircleInline: Story = {
+export const HalfDoughnutInline: Story = {
 	args: {
 		data: {
 			labels: ['England', 'Rep. Ireland'],
@@ -170,13 +170,13 @@ export const SemiCircleInline: Story = {
 				{
 					label: 'Possession Percentage',
 					data: [73.7, 26.3],
-					backgroundColor: ['rgba(255, 219, 40, 1)', 'rgba(20, 20, 20, 1)'],
+					backgroundColor: ['rgba(255, 20, 20, 1)', 'rgba(20, 200, 20, 1)'],
 				},
 			],
 		},
 		title: 'Overall Possession',
 		legendposition: 'left',
-		aspect: 'landscape',
+		aspect: 'auto',
 		border: true,
 		options: {
 			rotation: -90,

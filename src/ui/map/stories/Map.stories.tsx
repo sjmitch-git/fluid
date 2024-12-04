@@ -332,7 +332,7 @@ export const DraggableMarker: Story = {
 				position={[51.505, -0.09]}
 				iconId='8200'
 				iconSize={50}
-				iconColor='ff0000'
+				iconColor='000000'
 				draggable
 				onDragEnd={handleDragEnd}
 			/>

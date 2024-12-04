@@ -172,7 +172,7 @@ const profileContent = (handleCancel: () => void) => {
 				id='tab1'
 				title='Log-in'
 			>
-				<div>
+				<div className='px-4'>
 					{
 						<Form
 							{...LoginForm.args}
@@ -185,7 +185,7 @@ const profileContent = (handleCancel: () => void) => {
 				id='tab2'
 				title='Register'
 			>
-				<div>
+				<div className='px-4'>
 					{
 						<RegisterForm
 							{...Register.args}

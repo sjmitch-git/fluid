@@ -40,7 +40,9 @@ const MapMarker = ({
 		const marker = event.target
 		const newPosition = marker.getLatLng()
 		setMarkerPosition(newPosition)
-		map.setView(newPosition, map.getZoom())
+		setTimeout(() => {
+			map.setView(newPosition, map.getZoom() + 1)
+		}, 500)
 		if (onDragEnd) onDragEnd(newPosition)
 	}
 

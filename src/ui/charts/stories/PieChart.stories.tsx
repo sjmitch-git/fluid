@@ -121,3 +121,53 @@ export const PieChartInline: Story = {
 		},
 	},
 }
+
+export const HalfPie: Story = {
+	args: {
+		data: {
+			labels: ['England', 'Rep. Ireland'],
+			datasets: [
+				{
+					label: 'Possession Percentage',
+					data: [73.7, 26.3],
+				},
+			],
+		},
+		title: 'Ball Possession',
+		legendposition: 'bottom',
+		aspect: 'landscape',
+		options: {
+			rotation: -90,
+			circumference: 180,
+			plugins: {
+				tooltip: {
+					callbacks: {
+						label: (tooltipItem: { raw: number }) => {
+							return `${tooltipItem.raw}% possession`
+						},
+					},
+				},
+			},
+		},
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['bottom', 'top'],
+		},
+	},
+}
+
+export const HalfPieInline: Story = {
+	args: {
+		...HalfPie.args,
+		legendposition: 'left',
+		aspect: 'auto',
+	},
+	argTypes: {
+		...Default.argTypes,
+		legendposition: {
+			options: ['left', 'right'],
+		},
+	},
+}
