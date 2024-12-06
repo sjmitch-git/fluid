@@ -230,6 +230,7 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-hero--docs'>Hero</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-icon--docs'>Icon</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-modal--docs'>Modal</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-placeholder--docs'>PlaceHolder</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs'>Twitter Embed</a>
     -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs#twitter-timeline'>Twitter Timeline</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-video--docs'>Video</a>
