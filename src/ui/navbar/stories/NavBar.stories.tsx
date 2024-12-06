@@ -128,77 +128,7 @@ export const WithLogin: Story = {
 			},
 		},
 	},
-	render: (args) => {
-		const [open, setOpen] = useState(false)
-		const handleClose = () => {
-			setOpen(false)
-		}
-
-		return (
-			<NavBarComponent {...args}>
-				<Button
-					btnBackground={args.btnBackground}
-					layout={args.btnLayout}
-					size={args.btnSize}
-					btnColor={args.btnColor}
-					onClick={() => setOpen(!open)}
-					title='Your Account'
-				>
-					<FaUser />
-				</Button>
-				<Dialog
-					open={open}
-					modal={true}
-					title='Your Account'
-					onClose={handleClose}
-				>
-					<Tabs
-						tabSize='md'
-						minimalTabs={true}
-						contentBorder={false}
-						defaultActiveId='tab1'
-						className='px-0'
-					>
-						<div
-							id='tab1'
-							title='Log-in'
-						>
-							<div>
-								{
-									<Form
-										{...LoginForm.args}
-										onCancel={handleClose}
-										onsubmit={handleClose}
-										className='px-4'
-									/>
-								}
-							</div>
-						</div>
-						<div
-							id='tab2'
-							title='Register'
-						>
-							<div>
-								{
-									<RegisterForm
-										{...Register.args}
-										legendText='Register'
-										userLabel='e-Mail'
-										passwordLabel='Password'
-										confirmLabel='Confirm'
-										checkLabel='Terms & Conditions'
-										onCancel={handleClose}
-										onsubmit={handleClose}
-										className='px-4'
-									/>
-								}
-							</div>
-						</div>
-					</Tabs>
-				</Dialog>
-			</NavBarComponent>
-		)
-	},
+	render: (args) => <NavBarWithLogin {...args} />,
 	args: {
 		brand: 'My Brand',
 		brandSrc: '/brand.png',
@@ -214,4 +144,70 @@ export const WithLogin: Story = {
 		],
 		className: '',
 	},
+}
+
+const NavBarWithLogin = (args: NavBarProps) => {
+	const [open, setOpen] = useState(false)
+	const handleClose = () => setOpen(false)
+
+	return (
+		<NavBarComponent {...args}>
+			<Button
+				btnBackground={args.btnBackground}
+				layout={args.btnLayout}
+				size={args.btnSize}
+				btnColor={args.btnColor}
+				onClick={() => setOpen(!open)}
+				title='Your Account'
+			>
+				<FaUser />
+			</Button>
+			<Dialog
+				open={open}
+				modal={true}
+				title='Your Account'
+				onClose={handleClose}
+			>
+				<Tabs
+					tabSize='md'
+					minimalTabs={true}
+					contentBorder={false}
+					defaultActiveId='tab1'
+					className='px-0'
+				>
+					<div
+						id='tab1'
+						title='Log-in'
+					>
+						<div>
+							<Form
+								{...LoginForm.args}
+								onCancel={handleClose}
+								onsubmit={handleClose}
+								className='px-4'
+							/>
+						</div>
+					</div>
+					<div
+						id='tab2'
+						title='Register'
+					>
+						<div>
+							<RegisterForm
+								{...Register.args}
+								legendText='Register'
+								userLabel='e-Mail'
+								passwordLabel='Password'
+								confirmLabel='Confirm'
+								checkLabel='Terms & Conditions'
+								onCancel={handleClose}
+								onsubmit={handleClose}
+								className='px-4'
+							/>
+						</div>
+					</div>
+				</Tabs>
+			</Dialog>
+		</NavBarComponent>
+	)
 }
