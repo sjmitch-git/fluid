@@ -207,6 +207,7 @@ export default App
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-carousel--docs'>Carousel</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-drawer--docs'>Drawer</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-dropdown--docs'>Dropdown</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-navbar--docs'>NavBar</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-pagination--docs'>Pagination</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-sidebar--docs'>Sidebar</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-menus-tabs--docs'>Tabs</a>

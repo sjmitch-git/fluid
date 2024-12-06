@@ -51,7 +51,7 @@ const Dialog = ({
 		<dialog
 			id='dialog'
 			ref={dialog}
-			className={`dialog backdrop:bg-black dark:backdrop:bg-neutral backdrop:opacity-60 border-none ${
+			className={`dialog backdrop:bg-black backdrop:opacity-60 border-none ${
 				modal
 					? 'shadow-none dark:bg-dark dark:text-light'
 					: 'shadow-md shadow-dark dark:shadow-light bg-dark text-light dark:bg-light dark:text-dark rounded-md'
