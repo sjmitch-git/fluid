@@ -32,6 +32,10 @@ const preview: Preview = {
 				date: /Date$/,
 			},
 		},
+		/* design: {
+			type: 'figma',
+			url: 'https://www.figma.com/file/SQOHzbPMKkZg0XgdnWGXl5',
+		}, */
 	},
 }
 

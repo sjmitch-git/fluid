@@ -19,22 +19,22 @@
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-counter--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-fileupload--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-file-upload--docs</loc>
     </url>
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-input--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-passwordinput--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-password-input--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-radiogroup--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-radio-group--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-rangeinput--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-range-input--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-searchinput--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-search-input--docs</loc>
     </url>
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-select--docs</loc>
@@ -46,7 +46,7 @@
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-textarea--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-textinput--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-text-input--docs</loc>
     </url>
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-forms-fieldset--docs</loc>
@@ -151,7 +151,7 @@
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-typography-heading--docs</loc>
     </url>
     <url>
-        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-datatable--docs</loc>
+        <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-data-table--docs</loc>
     </url>
     <url>
         <loc>https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-line-chart--docs</loc>

@@ -183,16 +183,16 @@ export default App
     </a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-checkbox--docs'>Checkbox</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-counter--docs'>Counter</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-fileupload--docs'>File Upload</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-file-upload--docs'>File Upload</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-input--docs'>Input</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-passwordinput--docs'>Password Input</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-radiogroup--docs'>Radio Group</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-rangeinput--docs'>Range Input</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-searchinput--docs'>Search Input</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-password-input--docs'>Password Input</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-radiog-roup--docs'>Radio Group</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-range-input--docs'>Range Input</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-search-input--docs'>Search Input</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-select--docs'>Select</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-switch--docs'>Switch</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-textarea--docs'>Textarea</a>
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-textinput--docs'>Text Input</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-inputs-text-input--docs'>Text Input</a>
 
 ### Forms
 
@@ -245,7 +245,7 @@ export default App
 
 ### Data Visualization
 
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-datatable--docs'>Data Table</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-data-table--docs'>Data Table</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-pictogram--docs'>Pictogram</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-line-chart--docs'>Line Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-bar-chart--docs'>Bar Chart</a>
