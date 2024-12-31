@@ -41,7 +41,7 @@ const Heading = ({
 	return (
 		<Tag
 			className={twMerge(
-				`${headingStyles[level]} ${headingWeights[weight]} text-${align} ${headingCase[transform]}`,
+				`${headingStyles[level]} ${headingWeights[weight]} text-${align} ${headingCase[transform]} mb-[.5em]`,
 				className
 			)}
 			role='heading'

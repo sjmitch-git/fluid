@@ -1,6 +1,8 @@
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 	className?: string
+	textAreaStyles?: string
 	name?: string
+	value?: string
 	placeholder?: string
 	onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 	rows?: number

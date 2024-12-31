@@ -15,14 +15,16 @@ const sizes = {
 
 const TextArea = ({
 	className = '',
+	textAreaStyles = '',
 	label,
 	layout,
 	required,
 	name = 'textarea',
+	value,
 	placeholder,
 	size = 'md',
 	onChange,
-	rows = 4,
+	rows = 2,
 	resize = true,
 	maxLength,
 	disabled = false,
@@ -39,11 +41,15 @@ const TextArea = ({
 			data-testid={`label-${name}`}
 		>
 			<textarea
-				className={`form-textarea w-full dark:bg-dark dark:text-light color-scheme:light dark:[color-scheme:dark] border-neutral disabled:bg-neutral disabled:cursor-default disabled:text-dark ${className} ${sizeClasses} ${
-					resize ? 'resize' : 'resize-none'
-				}`}
+				className={twMerge(
+					`form-textarea font-normal w-full dark:bg-dark dark:text-light color-scheme:light dark:[color-scheme:dark] border-neutral disabled:bg-neutral disabled:cursor-default disabled:text-dark ${className} ${sizeClasses} ${
+						resize ? 'resize' : 'resize-none'
+					}`,
+					textAreaStyles
+				)}
 				name={name}
 				id={name}
+				value={value}
 				placeholder={placeholder}
 				onChange={onChange}
 				rows={rows}

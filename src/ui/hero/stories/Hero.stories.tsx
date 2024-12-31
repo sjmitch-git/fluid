@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Hero } from '..'
-import { Button, Form } from '@/ui'
+import { Button, Form } from '../..'
 import { NewsletterForm } from '../../form/stories/Form.stories'
 
 const meta: Meta = {

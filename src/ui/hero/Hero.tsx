@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { HeroProps } from './types'
 
-import { Heading } from '@/ui'
+import { Heading } from '..'
 
 const themeClasses = {
 	responsive: 'bg-white text-dark dark:bg-dark dark:text-light',

@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import { MapContainer, TileLayer, LayersControl, useMap, GeoJSON } from 'react-leaflet'
 import { FullscreenControl } from 'react-leaflet-fullscreen'
-import 'react-leaflet-fullscreen/styles.css'
+import './styles/fullscreen.css'
 import { tileOptions as defaultTileOptions } from './tileOptions'
 import { MapProps } from './types'
 
