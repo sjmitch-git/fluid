@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Polyline, Popup } from 'react-leaflet'
 import { MapLineProps } from './types'

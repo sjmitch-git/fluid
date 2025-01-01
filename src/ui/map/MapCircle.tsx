@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Circle, Popup } from 'react-leaflet'
 import { MapCircleProps } from './types'

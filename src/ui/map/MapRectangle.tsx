@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Rectangle, Popup } from 'react-leaflet'
 import { MapRectangleProps } from './types'

@@ -1,3 +1,5 @@
+'use client'
+
 import L from 'leaflet'
 
 import { CustomIconProps } from './types'

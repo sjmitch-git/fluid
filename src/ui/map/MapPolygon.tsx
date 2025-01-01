@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Polygon, Popup } from 'react-leaflet'
 import { MapPolygonProps } from './types'

@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import { MapContainer, TileLayer, LayersControl, useMap, GeoJSON } from 'react-leaflet'
 import { FullscreenControl } from 'react-leaflet-fullscreen'
-import './styles/fullscreen.css'
 import { tileOptions as defaultTileOptions } from './tileOptions'
 import { MapProps } from './types'
 
@@ -161,7 +160,35 @@ const Map = ({
 						})}
 					/>
 				)}
-				{fullscreenControl ? <FullscreenControl position='topleft' /> : null}
+				{fullscreenControl ? (
+					<>
+						<style>
+							{`
+          .fullscreen-icon {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAQAAAADQ4RFAAAAUklEQVR4AWOgGhgF/8HwPIrYeYgoIU0OKGIOxGm6jyJ2n5Cm8wwOQEUGKGIGQBEHoAwB0AA0FwEbSAgOBBwWmggHBOVBTjhyKU9GhBMslcAoAABPu2Hh6JIyeQAAAABJRU5ErkJggg==);
+          }
+          .leaflet-retina .fullscreen-icon {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAQAAABvcdNgAAAAnklEQVR4Ae2WVQEDMRAFn4RIi8OVtBIiIQ7KzO3dlN+8z4MJbEDGGPPXTA+SukQevTlKlCq6RFFSor7RXFR1qkehawTRo9uqIOaoPyTqQ0Wporh76GJdFg+zqbS4odm8s6nAkVQ1Tc+kqQqkano5pKpdFTVhTG8EwyKLwPLmF+xHbkH8psofEx918PFHOX85+YbrFn+B5K/Ef4wxxswAnU97CHDaZQMAAAAASUVORK5CYII=);
+            background-size: 26px 26px;
+          }
+          .leaflet-container:fullscreen {
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 99999;
+          }
+          .leaflet-pseudo-fullscreen {
+            position: fixed !important;
+            width: 100% !important;
+            height: 100% !important;
+            top: 0px !important;
+            left: 0px !important;
+            z-index: 99999;
+          }
+        `}
+						</style>
+						<FullscreenControl position='topleft' />
+					</>
+				) : null}
 				<ClickHandler
 					onDblClick={onDblClick}
 					dragging={dragging}

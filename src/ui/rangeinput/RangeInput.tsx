@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useMemo } from 'react'
-
+import { twMerge } from 'tailwind-merge'
 import { Input, Label } from '..'
 import { RangeInputProps } from './types'
 
@@ -64,13 +64,13 @@ const RangeInput = ({
 			isBold={labelIsBold}
 			required={required}
 			type='range'
-			className={className}
+			className={twMerge(`range-label items-baseline`, className)}
 			style={style}
 		>
 			<Input
 				name={name}
 				type='range'
-				value={50}
+				value={value}
 				min={min}
 				max={max}
 				step={step}
