@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react'
 import { Marker, Popup, useMap } from 'react-leaflet'
 import { LeafletMouseEvent, Icon, DragEndEvent } from 'leaflet'
 
-import UseCustomIcon from './CustomIcon'
-import { MapMarkerProps } from './types'
+import { MapMarkerProps, CustomIconProps } from './types'
+
+const baseUrl = 'https://img.icons8.com/'
 
 const LazyMapMarker = ({
 	position,
@@ -77,3 +78,27 @@ const LazyMapMarker = ({
 }
 
 export default LazyMapMarker
+
+export const UseCustomIcon = ({ iconName, iconId, size = 40, color }: CustomIconProps): Icon => {
+	const colorPath = color ? `${color}` : ''
+
+	const queryParams = new URLSearchParams({
+		size: size.toString(),
+		id: iconId || 'oStMNsdYhXTS',
+		format: 'png',
+		color: color || '000000',
+	})
+
+	let iconUrl = ''
+
+	iconName
+		? (iconUrl = `${baseUrl}${colorPath}/${size}/${iconName}.png`)
+		: (iconUrl = `${baseUrl}?${queryParams.toString()}`)
+
+	return new Icon({
+		iconUrl,
+		iconSize: [size, size],
+		iconAnchor: [size / 2, size],
+		popupAnchor: [0, -size / 2],
+	})
+}
