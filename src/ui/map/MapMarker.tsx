@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Marker, Popup, useMap } from 'react-leaflet'
-import L from 'leaflet'
+import { LeafletMouseEvent, Icon, DragEndEvent } from 'leaflet'
 import UseCustomIcon from './CustomIcon'
 import { MapMarkerProps } from './types'
 
@@ -20,7 +20,7 @@ const MapMarker = ({
 	const map = useMap()
 
 	useEffect(() => {
-		const handleDoubleClick = (e: L.LeafletMouseEvent) => {
+		const handleDoubleClick = (e: LeafletMouseEvent) => {
 			setMarkerPosition(e.latlng)
 		}
 
@@ -35,9 +35,9 @@ const MapMarker = ({
 		? UseCustomIcon({ iconName, size: iconSize, color: iconColor })
 		: iconId
 			? UseCustomIcon({ iconId, size: iconSize, color: iconColor })
-			: new L.Icon.Default()
+			: new Icon.Default()
 
-	const handleDragEnd = (event: L.DragEndEvent) => {
+	const handleDragEnd = (event: DragEndEvent) => {
 		if (!draggable) return
 		const marker = event.target
 		const newPosition = marker.getLatLng()

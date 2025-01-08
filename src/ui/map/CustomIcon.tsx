@@ -1,12 +1,12 @@
 'use client'
 
-import L from 'leaflet'
+import { Icon } from 'leaflet'
 
 import { CustomIconProps } from './types'
 
 const baseUrl = 'https://img.icons8.com/'
 
-const UseCustomIcon = ({ iconName, iconId, size = 40, color }: CustomIconProps): L.Icon => {
+const UseCustomIcon = ({ iconName, iconId, size = 40, color }: CustomIconProps): Icon => {
 	const colorPath = color ? `${color}` : ''
 
 	const queryParams = new URLSearchParams({
@@ -22,7 +22,7 @@ const UseCustomIcon = ({ iconName, iconId, size = 40, color }: CustomIconProps):
 		? (iconUrl = `${baseUrl}${colorPath}/${size}/${iconName}.png`)
 		: (iconUrl = `${baseUrl}?${queryParams.toString()}`)
 
-	return new L.Icon({
+	return new Icon({
 		iconUrl,
 		iconSize: [size, size],
 		iconAnchor: [size / 2, size],
