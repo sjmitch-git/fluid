@@ -1,26 +1,15 @@
 'use client'
 
-import React from 'react'
-import { Rectangle, Popup } from 'react-leaflet'
+import dynamic from 'next/dynamic'
+
+const DynamicMapRectangle = dynamic(() => import('./LazyMapRectangle'), {
+	ssr: false,
+})
+
 import { MapRectangleProps } from './types'
 
-const MapRectangle = ({
-	bounds,
-	color = '#3388ff',
-	fillColor,
-	popupContent,
-}: MapRectangleProps) => {
-	return (
-		<Rectangle
-			bounds={bounds}
-			pathOptions={{
-				color,
-				fillColor,
-			}}
-		>
-			{popupContent && <Popup>{popupContent}</Popup>}
-		</Rectangle>
-	)
+const MapRectangle = ({ ...rest }: MapRectangleProps) => {
+	return <DynamicMapRectangle {...rest} />
 }
 
 export default MapRectangle
