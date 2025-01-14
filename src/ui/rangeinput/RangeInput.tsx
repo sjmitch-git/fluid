@@ -26,6 +26,7 @@ const RangeInput = ({
 	rangeActive = '#f59e0b',
 	rangeBackground = '#9e9e9e',
 	thumbnailColor = '#f59e0b',
+	thumbnailActiveColor = '#ff0000',
 	thumbnailShape = 'circle',
 	rounded = true,
 	style,
@@ -35,6 +36,7 @@ const RangeInput = ({
 	const [value, setValue] = useState(defaultValue)
 	const [scrubRange, setScrubRange] = useState(defaultValue)
 	const [modifier, setModifier] = useState(1)
+	const [isFocused, setIsFocused] = useState(false)
 
 	useEffect(() => {
 		setModifier(100 / max)
@@ -49,11 +51,19 @@ const RangeInput = ({
 		if (onChange) onChange(newValue)
 	}
 
+	const handleFocus = () => {
+		setIsFocused(true)
+	}
+
+	const handleBlur = () => {
+		setIsFocused(false)
+	}
+
 	let scrubStyle = {
 		backgroundImage: `linear-gradient(to right, ${rangeActive} 0%, ${rangeActive} ${
 			scrubRange * modifier
 		}%, ${rangeBackground} ${scrubRange * modifier}%, ${rangeBackground} 100%)`,
-		color: `${thumbnailColor}`,
+		color: `${isFocused ? thumbnailActiveColor : thumbnailColor}`,
 	}
 
 	return (
@@ -78,6 +88,8 @@ const RangeInput = ({
 				title={`${title} ${value}`}
 				onChange={handleChange}
 				onInput={handleChange}
+				onFocus={handleFocus}
+				onBlur={handleBlur}
 				size={size}
 				rounded={`${rounded ? 'md' : 'none'}`}
 				className={`${shapeClasses}`}

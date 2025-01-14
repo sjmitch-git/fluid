@@ -2,7 +2,7 @@ interface LabelProps {
 	layout?: 'col' | 'row' | 'row_reverse'
 	size?: 'md' | 'lg' | 'xl'
 	label: string | React.ReactNode
-	labelIsBold?: boolean,
+	labelIsBold?: boolean
 	required?: boolean
 }
 
@@ -17,6 +17,7 @@ interface InputProps {
 	rangeActive?: string
 	rangeBackground?: string
 	thumbnailColor?: string
+	thumbnailActiveColor?: string
 	thumbnailShape?: 'circle' | 'square'
 	onChange?: (value: number) => void
 }

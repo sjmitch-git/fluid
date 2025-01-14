@@ -23,16 +23,16 @@ const typeClasses = (type: string) => {
 	return type === 'checkbox'
 		? `form-checkbox rounded-md w-[1.5em] h-[1.5em] cursor-pointer !check:dark:bg-dark !text-info border-neutral border-2`
 		: type === 'radio'
-		? 'form-radio w-[1.5em] h-[1.5em] cursor-pointer bg-transparent !text-info border-2'
-		: type === 'color'
-		? 'form-color cursor-pointer aspect-square w-[2em] h-[2em] border-neutral border-2'
-		: type === 'number'
-		? `form-input text-center ${darkthemeClasses} [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none me-4`
-		: type === 'file'
-		? 'hidden'
-		: type === 'range'
-		? 'appearance-none h-[.5em] w-full [&&::-webkit-slider-thumb]:cursor-grab [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:h-[1em] [&&::-webkit-slider-thumb]:w-[1em] [&&::-webkit-slider-thumb]:bg-current'
-		: `form-input w-full border-neutral ${darkthemeClasses} read-only:cursor-default read-only:bg-transparent read-only:!border-none`
+			? 'form-radio w-[1.5em] h-[1.5em] cursor-pointer bg-transparent !text-info border-2'
+			: type === 'color'
+				? 'form-color cursor-pointer aspect-square w-[2em] h-[2em] border-neutral border-2'
+				: type === 'number'
+					? `form-input text-center ${darkthemeClasses} [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none me-4`
+					: type === 'file'
+						? 'hidden'
+						: type === 'range'
+							? 'appearance-none h-[.5em] w-full [&&::-webkit-slider-thumb]:cursor-grab [&&::-webkit-slider-thumb]:appearance-none [&&::-webkit-slider-thumb]:h-[1em] [&&::-webkit-slider-thumb]:w-[1em] [&&::-webkit-slider-thumb]:bg-current'
+							: `form-input w-full border-neutral ${darkthemeClasses} read-only:cursor-default read-only:bg-transparent read-only:!border-none`
 }
 
 const styles = {
@@ -67,6 +67,8 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 		placeholder,
 		list,
 		onChange,
+		onFocus,
+		onBlur,
 		hidden,
 		ariaLabel,
 		autocorrect,
@@ -110,6 +112,8 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 				disabled={disabled}
 				onChange={onChange}
 				onInput={onChange}
+				onFocus={onFocus}
+				onBlur={onBlur}
 				data-testid={id || name}
 				aria-label={ariaLabel}
 				autoCorrect={autocorrect}
