@@ -14,6 +14,7 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
 	required?: boolean
 	nocaret?: boolean
 	className?: string
+	style?: React.CSSProperties
 	dropdownSize?: 'sm' | 'md' | 'lg' | 'xl'
 	rounded?: 'none' | 'md' | 'lg' | 'full'
 	rows?: number

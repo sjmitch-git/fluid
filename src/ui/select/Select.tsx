@@ -26,6 +26,7 @@ const Select = ({
 	defaultValue = '',
 	rounded = 'none',
 	nocaret,
+	style,
 }: SelectProps) => {
 	const [value, setValue] = useState<string | number>()
 
@@ -72,6 +73,7 @@ const Select = ({
 				}`,
 				className
 			)}
+			style={style}
 			aria-label='select'
 		>
 			children ? {children} :
