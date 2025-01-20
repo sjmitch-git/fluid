@@ -25,6 +25,11 @@ const Pagination = ({
 	page = '1',
 	feedback = true,
 	feedbackLabel = 'Page',
+	feedbackSeparator = 'of',
+	firstPageLabel = 'First Page',
+	lastPageLabel = 'Last Page',
+	prevPageLabel = 'Previous Page',
+	nextPageLabel = 'Next Page',
 	range,
 	results,
 	size = 'md',
@@ -79,7 +84,7 @@ const Pagination = ({
 			>
 				<Button
 					className={`${minimal ? 'hidden' : ''}`}
-					title='First Page'
+					title={firstPageLabel}
 					onClick={() => handleOnClick('1')}
 					disabled={page === '1'}
 					size={size}
@@ -89,14 +94,14 @@ const Pagination = ({
 					{icons ? (
 						<>
 							<HiChevronDoubleLeft className='mx-auto' />
-							<span className='sr-only'>First Page</span>
+							<span className='sr-only'>{firstPageLabel}</span>
 						</>
 					) : (
 						'First'
 					)}
 				</Button>
 				<Button
-					title='Previous Page'
+					title={prevPageLabel}
 					onClick={() => handleOnClick(`${Number(selectValue) - 1}`)}
 					disabled={Number(selectValue) === 1}
 					size={size}
@@ -106,14 +111,13 @@ const Pagination = ({
 					{icons ? (
 						<>
 							<HiChevronLeft className='mx-auto' />
-							<span className='sr-only'>Previous Page</span>
+							<span className='sr-only'>{prevPageLabel}</span>
 						</>
 					) : (
 						'Prev'
 					)}
 				</Button>
 				<Select
-					title='Select Page'
 					dropdownSize={size}
 					className={`${size} border-none min-w-16 w-full text-center bg-dark text-light dark:bg-light dark:text-dark`}
 					defaultValue={selectValue}
@@ -123,7 +127,7 @@ const Pagination = ({
 					rounded='none'
 				/>
 				<Button
-					title='Next Page'
+					title={nextPageLabel}
 					onClick={() => handleOnClick(`${Number(selectValue) + 1}`)}
 					disabled={Number(selectValue) === totalPages}
 					size={size}
@@ -133,7 +137,7 @@ const Pagination = ({
 					{icons ? (
 						<>
 							<HiChevronRight className='mx-auto' />
-							<span className='sr-only'>Next Page</span>
+							<span className='sr-only'>{nextPageLabel}</span>
 						</>
 					) : (
 						'Next'
@@ -151,7 +155,7 @@ const Pagination = ({
 					{icons ? (
 						<>
 							<HiChevronDoubleRight className='mx-auto' />
-							<span className='sr-only'>Last Page</span>
+							<span className='sr-only'>{lastPageLabel}</span>
 						</>
 					) : (
 						'Last'
@@ -160,7 +164,7 @@ const Pagination = ({
 			</ButtonGroup>
 			{feedback ? (
 				<div className={`feedback mt-1 ${sizeClasses}`}>
-					{feedbackLabel} {selectValue} of {totalPages}
+					{feedbackLabel} {selectValue} {feedbackSeparator} {totalPages}
 				</div>
 			) : null}
 		</nav>

@@ -35,11 +35,6 @@ const meta: Meta = {
 				disable: true,
 			},
 		},
-		rtl: {
-			table: {
-				disable: true,
-			},
-		},
 	},
 	parameters: {
 		docs: {
@@ -51,7 +46,6 @@ The **Carousel** component provides a flexible and visually appealing way to dis
 - **Configurable Aspect Ratio:** Choose aspect ratios such as \`landscape\`, \`portrait\`, or \`circle\`.
 - **Button Customization:** Position, shape, and styling options for navigation buttons.
 - **Autoplay Control:** Enable autoplay with customizable duration.
-- **RTL Support:** Toggle Right-to-Left mode for language-specific layouts.
 - **Gallery Mode:** Activate gallery view for a visually rich, interactive display.
 
 ### Import:
@@ -125,27 +119,3 @@ export const Custom: Story = {
 		)),
 	},
 }
-
-export const RTL: Story = {
-	args: {
-		...Custom.args,
-		buttonsPosition: 'bottom',
-		rtl: true,
-	},
-	argTypes: {
-		...Custom.argTypes,
-		gallery: {
-			table: {
-				disable: false,
-			},
-		},
-	},
-}
-
-RTL.decorators = [
-	(Story) => (
-		<div dir='rtl'>
-			<Story />
-		</div>
-	),
-]

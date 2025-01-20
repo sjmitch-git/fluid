@@ -37,10 +37,16 @@ const RangeInput = ({
 	const [scrubRange, setScrubRange] = useState(defaultValue)
 	const [modifier, setModifier] = useState(1)
 	const [isFocused, setIsFocused] = useState(false)
+	const [position, setPosition] = useState('right')
 
 	useEffect(() => {
 		setModifier(100 / max)
 	}, [max])
+
+	useEffect(() => {
+		const isRTL = document.documentElement.getAttribute('dir') === 'rtl'
+		isRTL ? setPosition('left') : setPosition('right')
+	}, [])
 
 	const shapeClasses = useMemo(() => thumbnailShapes[thumbnailShape], [thumbnailShape])
 
@@ -60,7 +66,7 @@ const RangeInput = ({
 	}
 
 	let scrubStyle = {
-		backgroundImage: `linear-gradient(to right, ${rangeActive} 0%, ${rangeActive} ${
+		backgroundImage: `linear-gradient(to ${position}, ${rangeActive} 0%, ${rangeActive} ${
 			scrubRange * modifier
 		}%, ${rangeBackground} ${scrubRange * modifier}%, ${rangeBackground} 100%)`,
 		color: `${isFocused ? thumbnailActiveColor : thumbnailColor}`,

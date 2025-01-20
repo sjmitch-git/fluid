@@ -51,7 +51,6 @@ const Carousel = ({
 	outline = 'medium',
 	gallery = true,
 	className = '',
-	rtl = false,
 	aspect = 'landscape',
 	rounded = 'none',
 	buttonsPosition = 'middle',
@@ -65,6 +64,7 @@ const Carousel = ({
 }: CarouselProps) => {
 	const [index, setIndex] = useState(0)
 	const [position, setPosition] = useState(0)
+	const [rtl, setRtl] = useState(false)
 	const [touchPosition, setTouchPosition] = useState<number>(null!)
 	const [innerWidth, setInnerWidth] = useState<number>(286)
 	const inner = useRef<HTMLDivElement>(null!)
@@ -93,13 +93,17 @@ const Carousel = ({
 				setTimeout(checkInnerWidth, 100)
 			}
 		}
-
 		checkInnerWidth()
 	}, [inner])
 
+	useEffect(() => {
+		const isRTL = document.documentElement.getAttribute('dir') === 'rtl'
+		isRTL ? setRtl(true) : setRtl(false)
+	}, [])
+
 	const style = useMemo(() => {
 		return rtl ? { right: `${position}px` } : { left: `${position}px` }
-	}, [rtl, position])
+	}, [position, rtl])
 
 	const heightStyle = useMemo(() => {
 		const aspectRatios: Record<string, number> = {
@@ -206,7 +210,7 @@ const Carousel = ({
 				</div>
 				{!autoplay && (
 					<>
-						<div className={`absolute z-10 left-2 ${buttonsPositionClasses}`}>
+						<div className={`absolute z-10 start-2 ${buttonsPositionClasses}`}>
 							<Button
 								onClick={(e) => clickPrevious(e)}
 								className={`m-auto opacity-30 hover:opacity-100 disabled:hidden`}
@@ -224,7 +228,7 @@ const Carousel = ({
 							</Button>
 						</div>
 
-						<div className={`absolute z-10 right-2 ${buttonsPositionClasses}`}>
+						<div className={`absolute z-10 end-2 ${buttonsPositionClasses}`}>
 							<Button
 								onClick={(e) => clickNext(e)}
 								className={`m-auto opacity-30 hover:opacity-100 disabled:hidden`}

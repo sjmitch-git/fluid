@@ -5,6 +5,11 @@ export interface PaginationProps {
 	results: number
 	feedback?: boolean
 	feedbackLabel?: string
+	feedbackSeparator?: string
+	firstPageLabel?: string
+	lastPageLabel?: string
+	prevPageLabel?: string
+	nextPageLabel?: string
 	vertical?: boolean
 	icons?: boolean
 	minimal?: boolean

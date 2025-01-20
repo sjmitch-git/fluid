@@ -114,7 +114,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 	return (
 		<button
 			className={twMerge(
-				`button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100 focus:text-accent ${sizeClasses} p-[.5em] ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${isBold ? 'font-semibold' : 'font-normal'} ${hoverScale ? 'hover:scale-105' : ''}`,
+				`button group flex gap-2 items-center justify-center group-[.flex-col]:justify-start scale-100 focus:text-accent ${sizeClasses} p-[.5em] ${textcase} ${backgroundClasses} ${colorClasses} ${layoutClasses} ${outlineClasses} ${shadowClasses} ${stateStyles} ${isBold ? 'font-semibold' : 'font-normal'} ${hoverScale ? 'hover:scale-105 disabled:hover:scale-100' : ''}`,
 				className
 			)}
 			style={style}
