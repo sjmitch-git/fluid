@@ -145,7 +145,7 @@ const Pagination = ({
 				</Button>
 				<Button
 					className={`${minimal ? 'hidden' : ''}`}
-					title='Last Page'
+					title={lastPageLabel}
 					onClick={() => handleOnClick(totalPages.toString())}
 					disabled={Number(selectValue) === totalPages}
 					size={size}
