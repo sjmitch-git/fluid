@@ -44,8 +44,10 @@ const TabBar = ({
 					))}
 				</ul>
 			) : (
-				<div className='mb-4 w-8 text-info'>
-					<Spinner />
+				<div className='mb-4 w-full flex justify-center text-info'>
+					<div className='w-12'>
+						<Spinner />
+					</div>
 				</div>
 			)}
 		</nav>

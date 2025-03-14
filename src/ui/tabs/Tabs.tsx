@@ -89,8 +89,8 @@ const Tabs = ({
 			/>
 			<div
 				ref={content}
-				className={`tabwrapper bg-light dark:bg-dark ${
-					contentBorder ? 'border p-4 rounded' : 'border-t py-4'
+				className={`tabwrapper bg-light dark:bg-dark p-0 ${
+					contentBorder ? 'border rounded' : 'border-t'
 				} border-neutral`}
 			>
 				{children}

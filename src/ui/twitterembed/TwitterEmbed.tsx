@@ -4,7 +4,7 @@ import React, { useCallback, useState, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Loading, Alert } from '..'
+import { Loading } from '..'
 import { TwitterEmbedProps } from './types'
 
 declare global {
@@ -34,15 +34,12 @@ export const TwitterEmbed = ({
 	style,
 }: TwitterEmbedProps) => {
 	const [loading, setLoading] = useState(true)
-	const [error, setError] = useState(false)
 
 	const chrome = useMemo(() => {
 		return `${!header ? 'noheader' : ''} ${!borders ? 'noborders' : ''} ${
 			transparent ? 'transparent' : ''
 		} ${!scrollbars ? 'noscrollbars' : ''}`
 	}, [header, borders, transparent, scrollbars])
-
-	const errorMessage = 'Something went wrong. Please try again later!'
 
 	const embedRef = useCallback((embedRefNode: any) => {
 		if (embedRefNode) {
@@ -55,17 +52,13 @@ export const TwitterEmbed = ({
 						window.twttr.widgets.load(embedRefNode)
 						window.twttr.events.bind('rendered', () => {
 							setLoading(false)
-							setError(false)
 						})
 					} else {
 						setLoading(false)
-						setError(true)
 					}
 				}
 				script.onerror = () => {
-					console.log('error', script.onerror)
 					setLoading(false)
-					setError(true)
 				}
 
 				document.body.appendChild(script)
@@ -74,11 +67,9 @@ export const TwitterEmbed = ({
 					window.twttr.widgets.load(embedRefNode)
 					window.twttr.events.bind('rendered', () => {
 						setLoading(false)
-						setError(false)
 					})
 				} else {
 					setLoading(false)
-					setError(true)
 				}
 			}
 		}
@@ -93,21 +84,12 @@ export const TwitterEmbed = ({
 			style={style}
 		>
 			{loading && (
-				<div className='loading-spinner text-info flex w-full justify-center mb-8'>
+				<div className='loading-spinner py-8 text-info flex w-full justify-center mb-8'>
 					<Loading
 						loadingColor='info'
 						size='md'
 						spinner='dots'
 						caption='Loading'
-					/>
-				</div>
-			)}
-			{error && (
-				<div className='error flex w-full justify-center mb-8'>
-					<Alert
-						message={errorMessage}
-						status='error'
-						layout='solid'
 					/>
 				</div>
 			)}
@@ -128,7 +110,7 @@ export const TwitterEmbed = ({
 					</>
 				) : (
 					<a
-						className='twitter-timeline mx-auto'
+						className='twitter-timeline p-4 mx-auto'
 						href={`https://twitter.com/${handle}`}
 						data-chrome={chrome}
 						data-theme={theme}
