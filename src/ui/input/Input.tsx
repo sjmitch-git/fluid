@@ -57,7 +57,7 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 		min,
 		max,
 		minLength,
-		maxLength
+		maxLength,
 		step,
 		pattern,
 		title,
