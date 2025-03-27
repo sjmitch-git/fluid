@@ -48,5 +48,5 @@ export interface ButtonProps {
 	isBold?: boolean
 	shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
 	hoverScale?: boolean
-	surpressHydrationWarning?: boolean
+	suppressHydrationWarning?: boolean
 }

@@ -85,8 +85,8 @@ export interface InputProps {
 	tabindex?: number
 	min?: string | number
 	max?: string | number
-	maxLength?: string | number
-	minLength?: string | number
+	maxLength?: number
+	minLength?: number
 	step?: string
 	accept?: string
 	multiple?: boolean
@@ -100,5 +100,5 @@ export interface InputProps {
 	autocorrect?: 'on' | 'off'
 	spellcheck?: boolean
 	rounded?: 'none' | 'md' | 'lg' | 'full'
-	surpressHydrationWarning?: boolean
+	suppressHydrationWarning?: boolean
 }
