@@ -48,12 +48,5 @@ export interface ButtonProps {
 	isBold?: boolean
 	shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
 	hoverScale?: boolean
-	[key: string]:
-		| string
-		| number
-		| boolean
-		| React.ReactNode
-		| React.CSSProperties
-		| ((e: any) => void)
-		| undefined
+	surpressHydrationWarning?: boolean
 }

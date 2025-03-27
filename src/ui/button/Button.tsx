@@ -95,6 +95,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 		textcase = 'capitalize',
 		isBold = false,
 		hoverScale = false,
+		surpressHydrationWarning = false,
 		children,
 	} = props
 	const sizeClasses = useMemo(() => sizes[size], [size])
@@ -128,6 +129,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>(function Button(props, ref) {
 			onBlur={onBlur}
 			ref={ref}
 			role={role}
+			surpressHydrationWarning={surpressHydrationWarning}
 		>
 			{children}
 		</button>

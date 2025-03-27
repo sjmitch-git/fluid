@@ -56,6 +56,8 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 		tabindex,
 		min,
 		max,
+		minLength,
+		maxLength
 		step,
 		pattern,
 		title,
@@ -73,6 +75,7 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 		ariaLabel,
 		autocorrect,
 		spellcheck,
+		surpressHydrationWarning = false
 	} = props
 
 	const sizeClasses = useMemo(() => sizes[size], [size])
@@ -99,6 +102,8 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 				ref={ref}
 				min={min}
 				max={max}
+				minLength={minLength}
+				maxLength={maxLength}
 				step={step}
 				pattern={pattern}
 				title={title}
@@ -118,6 +123,7 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 				aria-label={ariaLabel}
 				autoCorrect={autocorrect}
 				spellCheck={spellcheck}
+				surpressHydrationWarning={surpressHydrationWarning}
 			/>
 			{hint && (
 				<p className='hint text-sm font-normal mt-[.5em] dark:text-light peer-invalid:decoration-accent peer-invalid:underline decoration-wavy underline-offset-4 inline-block'>
