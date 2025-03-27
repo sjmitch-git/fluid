@@ -168,6 +168,26 @@ const App = () => (
 export default App
 ```
 
+## Optimized Usage
+
+To ensure an optimized CSS build, create file `fluid.ts` and export components like so:
+
+```jsx
+export {
+  Heading,
+  Loading,
+  Pagination,
+  Alert,
+  Input,
+  Select,
+} from "@smitch/fluid";
+```
+Import into component:
+
+```jsx
+import { Loading, Alert } from "@/lib/fluid";
+```
+
 ## Components
 
 ### Buttons

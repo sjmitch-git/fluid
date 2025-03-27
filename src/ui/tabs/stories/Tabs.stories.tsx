@@ -141,25 +141,25 @@ const defaultContent = () => {
 				id='tab1'
 				title='Tab 1'
 			>
-				<div>Tab 1 content</div>
+				<div className='p-4'>Tab 1 content</div>
 			</div>
 			<div
 				id='tab2'
 				title='Tab 2'
 			>
-				<div>Tab 2 content</div>
+				<div className='p-4'>Tab 2 content</div>
 			</div>
 			<div
 				id='tab3'
 				title='Tab 3'
 			>
-				<div>Tab 3 content</div>
+				<div className='p-4'>Tab 3 content</div>
 			</div>
 			<div
 				id='tab4'
 				title='Tab 4'
 			>
-				<div>Tab 4 content</div>
+				<div className='p-4'>Tab 4 content</div>
 			</div>
 		</>
 	)
@@ -172,7 +172,7 @@ const profileContent = (handleCancel: () => void) => {
 				id='tab1'
 				title='Log-in'
 			>
-				<div className='px-4'>
+				<div className='p-2'>
 					{
 						<Form
 							{...LoginForm.args}
@@ -185,7 +185,7 @@ const profileContent = (handleCancel: () => void) => {
 				id='tab2'
 				title='Register'
 			>
-				<div className='px-4'>
+				<div className='p-2'>
 					{
 						<RegisterForm
 							{...Register.args}
@@ -209,6 +209,7 @@ const emojisContent = () => {
 			id={`tab${index}`}
 			key={`tab${index}`}
 			title={item.emoji}
+			className='p-4'
 		>
 			<h3 className='uppercase font-bold text-lg mb-2'>{item.name}</h3>
 			<div dangerouslySetInnerHTML={{ __html: item.body }} />
@@ -222,6 +223,7 @@ const techContent = () => {
 			id={`tab${index}`}
 			key={`tab${index}`}
 			title={item.name}
+			className='p-4'
 		>
 			<h3 className='uppercase font-bold text-lg mb-2'>{item.name}</h3>
 			<div dangerouslySetInnerHTML={{ __html: item.body }} />

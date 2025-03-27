@@ -98,4 +98,12 @@ export interface InputProps {
 	autocorrect?: 'on' | 'off'
 	spellcheck?: boolean
 	rounded?: 'none' | 'md' | 'lg' | 'full'
+	[key: string]:
+		| string
+		| number
+		| boolean
+		| React.ReactNode
+		| React.CSSProperties
+		| ((e: any) => void)
+		| undefined
 }
