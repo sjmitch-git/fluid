@@ -20,7 +20,6 @@ const Autocomplete = ({
 	layout = 'row',
 	rounded,
 	suppressHydrationWarning = false,
-	noarrow,
 }: AutocompleteProps) => {
 	return (
 		<Label
@@ -35,10 +34,7 @@ const Autocomplete = ({
 				required={required}
 				name={name || list}
 				onChange={onChange}
-				className={twMerge(
-					`autocomplete group ${noarrow ? 'bg-none pr-3' : 'bg-right'})}`,
-					className
-				)}
+				className={twMerge(`autocomplete group`, className)}
 				size={size}
 				autocomplete={autocomplete}
 				data-testid={name || list}

@@ -13,5 +13,4 @@ export interface AutocompleteProps {
 	layout?: 'col' | 'row'
 	rounded?: 'none' | 'md' | 'lg' | 'full'
 	suppressHydrationWarning?: boolean
-	noarrow?: boolean
 }
