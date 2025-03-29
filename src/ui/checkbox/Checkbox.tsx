@@ -17,6 +17,7 @@ const Checkbox = ({
 	labelIsBold = false,
 	hint,
 	onChange,
+	suppressHydrationWarning = false,
 }: CheckboxProps) => {
 	return (
 		<div className={`text-${size}`}>
@@ -42,6 +43,7 @@ const Checkbox = ({
 					rounded={rounded}
 					required={required}
 					onChange={onChange}
+					suppressHydrationWarning={suppressHydrationWarning}
 				/>
 			</Label>
 			{hint && (

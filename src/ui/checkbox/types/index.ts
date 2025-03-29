@@ -9,4 +9,5 @@ export interface CheckboxProps {
 	rounded?: 'none' | 'full'
 	hint?: React.ReactNode
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+	suppressHydrationWarning?: boolean
 }

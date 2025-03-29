@@ -12,4 +12,6 @@ export interface AutocompleteProps {
 	label: string
 	layout?: 'col' | 'row'
 	rounded?: 'none' | 'md' | 'lg' | 'full'
+	suppressHydrationWarning?: boolean
+	noarrow?: boolean
 }
