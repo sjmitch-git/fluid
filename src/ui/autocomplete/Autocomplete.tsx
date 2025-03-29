@@ -34,7 +34,10 @@ const Autocomplete = ({
 				required={required}
 				name={name || list}
 				onChange={onChange}
-				className={twMerge(`autocomplete group`, className)}
+				className={twMerge(
+					`autocomplete group [&::-webkit-calendar-picker-indicator]:opacity-0`,
+					className
+				)}
 				size={size}
 				autocomplete={autocomplete}
 				data-testid={name || list}
