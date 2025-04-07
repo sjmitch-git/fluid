@@ -24,6 +24,7 @@ const NavLinks = ({
 				title='Menu'
 				className='lg:hidden focus:outline-none'
 				onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+				suppressHydrationWarning={true}
 			>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
