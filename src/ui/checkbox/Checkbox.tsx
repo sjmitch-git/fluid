@@ -14,6 +14,7 @@ const Checkbox = ({
 	size = 'md',
 	rounded = 'none',
 	required = false,
+	checked = false,
 	labelIsBold = false,
 	hint,
 	onChange,
@@ -42,6 +43,7 @@ const Checkbox = ({
 					size={size}
 					rounded={rounded}
 					required={required}
+					checked={checked}
 					onChange={onChange}
 					suppressHydrationWarning={suppressHydrationWarning}
 				/>

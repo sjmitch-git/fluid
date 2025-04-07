@@ -5,6 +5,7 @@ export interface CheckboxProps {
 	label: string
 	labelIsBold?: boolean
 	required?: boolean
+	checked?: boolean
 	name?: string
 	rounded?: 'none' | 'full'
 	hint?: React.ReactNode
