@@ -13,6 +13,7 @@ const Dialog = ({
 	onClose,
 	title,
 	titleSize = 'lg',
+	closeBtnSize = 'md',
 	titleBold = false,
 	children,
 }: DialogProps) => {
@@ -53,7 +54,7 @@ const Dialog = ({
 			ref={dialog}
 			className={`dialog backdrop:bg-black backdrop:opacity-60 border-none ${
 				modal
-					? 'shadow-none dark:bg-dark dark:text-light'
+					? 'shadow-none bg-light dark:bg-dark dark:text-light'
 					: 'shadow-md shadow-dark dark:shadow-light bg-dark text-light dark:bg-light dark:text-dark rounded-md'
 			}`}
 		>
@@ -71,7 +72,7 @@ const Dialog = ({
 					<CloseButton
 						onClick={onClose}
 						layout='circle'
-						size='md'
+						size={closeBtnSize}
 						className={`${modal ? 'fixed right-3 top-3' : 'absolute right-1 top-1'}`}
 					/>
 				)}

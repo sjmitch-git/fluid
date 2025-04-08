@@ -8,6 +8,7 @@ const sizes = {
 	sm: 'w-',
 	md: 'w-6',
 	lg: 'w-8',
+	xl: 'w-12',
 }
 
 const CloseButton = ({

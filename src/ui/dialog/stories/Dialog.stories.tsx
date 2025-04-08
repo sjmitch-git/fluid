@@ -220,7 +220,7 @@ const ModalDialogComponent = (args: DialogProps) => {
 						id='tab1'
 						title='Log-in'
 					>
-						<div>
+						<div className='py-4'>
 							{
 								<Form
 									{...LoginForm.args}
@@ -234,7 +234,7 @@ const ModalDialogComponent = (args: DialogProps) => {
 						id='tab2'
 						title='Register'
 					>
-						<div>
+						<div className='py-4'>
 							{
 								<RegisterForm
 									{...Register.args}
@@ -271,6 +271,7 @@ export const ModalDialog: Story = {
 		open: false,
 		modal: true,
 		onClose: () => console.log('Dialog closed'),
+		closeBtnSize: 'md',
 	},
 }
 
