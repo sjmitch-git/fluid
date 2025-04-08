@@ -55,7 +55,7 @@ import { NavBar } from '@smitch/fluid'
 			},
 		},
 	},
-	argTypes: {
+	/* argTypes: {
 		brand: {
 			description: 'The text or logo displayed as the brand.',
 			control: 'text',
@@ -64,7 +64,7 @@ import { NavBar } from '@smitch/fluid'
 			description: 'Array of navigation links.',
 			control: 'object',
 		},
-		className: {
+		navStyles: {
 			description: 'Additional CSS classes for styling.',
 			control: 'text',
 		},
@@ -72,7 +72,7 @@ import { NavBar } from '@smitch/fluid'
 			action: 'link clicked',
 			description: 'Callback function triggered on link click.',
 		},
-	},
+	}, */
 	tags: ['autodocs'],
 } satisfies Meta<typeof NavBar>
 
@@ -95,8 +95,8 @@ export const Default: Story = {
 		brand: 'My Brand',
 		brandSrc: '/brand.png',
 		brandStyles: '',
-		btnBackground: 'secondary',
-		btnColor: 'current',
+		btnBackground: 'info',
+		btnColor: 'light',
 		btnLayout: 'square',
 		btnSize: 'lg',
 		links: [
@@ -104,7 +104,7 @@ export const Default: Story = {
 			{ name: 'About', href: '#' },
 			{ name: 'Contact', href: '#' },
 		],
-		className: '',
+		navStyles: '',
 	},
 }
 
@@ -115,7 +115,7 @@ Default.argTypes = {
 	links: {
 		control: 'object',
 	},
-	className: {
+	navStyles: {
 		control: 'text',
 	},
 }
@@ -133,8 +133,8 @@ export const WithLogin: Story = {
 		brand: 'My Brand',
 		brandSrc: '/brand.png',
 		brandStyles: '',
-		btnBackground: 'secondary',
-		btnColor: 'current',
+		btnBackground: 'info',
+		btnColor: 'light',
 		btnLayout: 'circle',
 		btnSize: 'lg',
 		links: [
@@ -142,7 +142,7 @@ export const WithLogin: Story = {
 			{ name: 'About', href: '#' },
 			{ name: 'Contact', href: '#' },
 		],
-		className: '',
+		navStyles: '',
 	},
 }
 
