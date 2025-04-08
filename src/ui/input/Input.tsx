@@ -62,7 +62,6 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 		pattern,
 		title,
 		value,
-		checked,
 		defaultChecked,
 		accept,
 		multiple,
@@ -109,7 +108,6 @@ const Input = forwardRef<InputRef, InputProps>(function Input(props, ref) {
 				title={title}
 				placeholder={placeholder}
 				defaultValue={value}
-				checked={checked}
 				defaultChecked={defaultChecked}
 				accept={accept}
 				multiple={multiple}

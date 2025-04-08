@@ -171,6 +171,7 @@ const contactContent = () => {
 
 export const ContactForm: Story = {
 	args: {
+		name: 'contact-form',
 		children: contactContent(),
 		actionsLayout: 'row',
 		actionsSpacing: '0',
@@ -363,6 +364,7 @@ export const AddressForm: Story = {
 		submitColor: 'dark',
 		buttonIsBold: true,
 		buttonTextcase: 'uppercase',
+		name: 'address-form',
 	},
 }
 
@@ -376,6 +378,7 @@ export const NewsletterForm: Story = {
 		submitLabel: 'Sign-up',
 		submitColor: 'light',
 		buttonIsBold: true,
+		name: 'newsletter-form',
 	},
 }
 

@@ -43,7 +43,7 @@ const Checkbox = ({
 					size={size}
 					rounded={rounded}
 					required={required}
-					checked={checked}
+					defaultChecked={checked}
 					onChange={onChange}
 					suppressHydrationWarning={suppressHydrationWarning}
 				/>

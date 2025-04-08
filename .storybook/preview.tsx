@@ -14,7 +14,7 @@ const preview: Preview = {
 	},
 	decorators: [
 		(Story) => (
-			<div className='preview-decorator bg-white dark:bg-dark text-dark dark:text-light p-4'>
+			<div className='preview-decorator bg-light dark:bg-dark text-dark dark:text-light p-4'>
 				<Story />
 			</div>
 		),
