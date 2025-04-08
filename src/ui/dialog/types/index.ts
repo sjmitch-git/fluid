@@ -5,7 +5,7 @@ export interface DialogProps extends React.HTMLAttributes<HTMLDialogElement> {
 	onClose: () => void
 	submit?: (e: React.FormEvent<HTMLFormElement>) => void
 	title?: string
-	titleSize: 'sm' | 'md' | 'lg' | 'xl'
+	titleSize?: 'sm' | 'md' | 'lg' | 'xl'
 	closeBtnSize?: 'sm' | 'md' | 'lg' | 'xl'
 	titleBold?: boolean
 	children: React.ReactNode
