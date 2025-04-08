@@ -6,7 +6,8 @@ import { NavLinkProps } from './types'
 
 const NavLinks = ({
 	links,
-	btnBackground = 'transparent',
+	linkStyles = 'lg:text-dark dark:lg:text-light',
+	btnBackground,
 	btnColor = 'light',
 	btnLayout = 'square',
 	btnSize = 'md',
@@ -43,9 +44,9 @@ const NavLinks = ({
 			</Button>
 			<div
 				className={twMerge(
-					'flex gap-4 lg:flex-row lg:static lg:top-auto lg:bg-transparent lg:w-auto lg:h-auto',
+					'menu flex gap-4 lg:flex-row lg:static lg:top-auto lg:bg-transparent lg:w-auto lg:h-auto shadow-none',
 					isMobileMenuOpen
-						? 'absolute top-full left-0 dark:bg-white bg-dark w-full flex-col h-auto py-4 shadow-lg'
+						? 'absolute top-full left-0 dark:bg-slate-200 bg-slate-600 w-full flex-col h-auto py-4 shadow-lg'
 						: 'hidden lg:flex'
 				)}
 			>
@@ -53,7 +54,10 @@ const NavLinks = ({
 					<Link
 						key={link.name}
 						href={link.href}
-						className='navbar-link text-light dark:text-dark lg:text-light dark:lg:text-light px-4 py-0 lg:px-2 lg:py-0 lg:text-xl'
+						className={twMerge(
+							'navbar-link px-4 py-0 lg:px-2 lg:py-0 lg:text-xl text-light dark:text-dark',
+							linkStyles
+						)}
 						onClick={() => {
 							setIsMobileMenuOpen(false)
 							onLinkClick?.(link.name)

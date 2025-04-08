@@ -5,16 +5,13 @@ type ButtonBackground = colors | 'transparent'
 type ButtonSize = 'sm' | 'md' | 'lg'
 type ButtonLayout = 'rounded' | 'square' | 'circle'
 
-interface BaseProps {
-	className?: string
-	style?: React.CSSProperties
-}
-
-export interface NavBarProps extends BaseProps {
+export interface NavBarProps {
+	navStyles?: string
 	brand?: string
 	brandSrc?: string
 	brandStyles?: string
 	links: NavLink[]
+	linkStyles?: string
 	btnBackground?: ButtonBackground
 	btnColor?: ButtonColor
 	btnLayout?: ButtonLayout
@@ -23,8 +20,9 @@ export interface NavBarProps extends BaseProps {
 	onLinkClick?: (name: string) => void
 }
 
-export interface NavLinkProps extends BaseProps {
+export interface NavLinkProps {
 	links: NavLink[]
+	linkStyles?: string
 	btnBackground?: ButtonBackground
 	btnColor?: ButtonColor
 	btnLayout?: ButtonLayout
@@ -32,9 +30,10 @@ export interface NavLinkProps extends BaseProps {
 	onLinkClick?: (name: string) => void
 }
 
-export interface NavBrandProps extends BaseProps {
+export interface NavBrandProps {
 	brand?: string
 	src?: string
+	brandStyles?: string
 }
 
 export interface NavLink {
