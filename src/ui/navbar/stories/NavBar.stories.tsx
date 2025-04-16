@@ -81,6 +81,39 @@ type Story = StoryObj<typeof NavBar>
 
 const NavBarComponent = (args: NavBarProps) => <NavBar {...args} />
 
+const ExampleContent = () => {
+	return (
+		<article className='p-4 mb-12'>
+			<h1 className='font-semibold text-4xl mb-4'>Page Example</h1>
+			<p className='mb-8'>
+				Bacon ipsum dolor amet pork loin excepteur pork, jerky ground round shank burgdoggen
+				strip steak kielbasa biltong cupim aliquip dolore. Tongue meatball in enim cow
+				consectetur. Tenderloin veniam meatball chuck consequat, pork belly duis nostrud
+				magna do culpa cupim pig shank ut. Doner cupim nisi swine, jowl reprehenderit dolor
+				ipsum chislic meatball lorem corned beef turducken sausage.
+			</p>
+			<h2 className='font-semibold text-3xl mb-4'>More Content</h2>
+			<p className='mb-4'>
+				Picanha cupim buffalo tongue shoulder laborum consectetur nostrud aute turkey. Beef
+				ribs voluptate fatback elit. Non pork chop exercitation, frankfurter brisket cillum
+				dolore ham hock capicola chuck cupim ea. Ex in deserunt ad. Shankle dolor occaecat,
+				nulla adipisicing ham lorem jowl laboris short loin anim fugiat ut. Voluptate beef
+				ribs ipsum, ut brisket leberkas ullamco landjaeger. Bresaola drumstick et fatback
+				meatball qui lorem nisi pariatur fugiat turkey occaecat non reprehenderit nostrud.
+			</p>
+			<h2 className='font-semibold text-3xl mb-4'>Some More Content</h2>
+			<p className='mb-4'>
+				Picanha cupim buffalo tongue shoulder laborum consectetur nostrud aute turkey. Beef
+				ribs voluptate fatback elit. Non pork chop exercitation, frankfurter brisket cillum
+				dolore ham hock capicola chuck cupim ea. Ex in deserunt ad. Shankle dolor occaecat,
+				nulla adipisicing ham lorem jowl laboris short loin anim fugiat ut. Voluptate beef
+				ribs ipsum, ut brisket leberkas ullamco landjaeger. Bresaola drumstick et fatback
+				meatball qui lorem nisi pariatur fugiat turkey occaecat non reprehenderit nostrud.
+			</p>
+		</article>
+	)
+}
+
 export const Default: Story = {
 	name: 'Basic',
 	parameters: {
@@ -90,8 +123,14 @@ export const Default: Story = {
 			},
 		},
 	},
-	render: (args) => <NavBarComponent {...args} />,
+	render: (args) => (
+		<div className='relative -top-4 -left-0'>
+			<NavBarComponent {...args} />
+			<ExampleContent />
+		</div>
+	),
 	args: {
+		placement: 'top',
 		brand: 'My Brand',
 		brandSrc: '/brand.png',
 		brandStyles: '',
@@ -104,7 +143,7 @@ export const Default: Story = {
 			{ name: 'About', href: '#' },
 			{ name: 'Contact', href: '#' },
 		],
-		navStyles: '',
+		navStyles: 'bg-slate-300 dark:bg-slate-700',
 	},
 }
 
@@ -128,12 +167,18 @@ export const WithLogin: Story = {
 			},
 		},
 	},
-	render: (args) => <NavBarWithLogin {...args} />,
+	render: (args) => (
+		<div className='relative -top-4 -left-0'>
+			<NavBarWithLogin {...args} />
+			<ExampleContent />
+		</div>
+	),
 	args: {
+		placement: 'top',
 		brand: 'My Brand',
 		brandSrc: '/brand.png',
 		brandStyles: '',
-		btnBackground: 'info',
+		btnBackground: 'dark',
 		btnColor: 'light',
 		btnLayout: 'circle',
 		btnSize: 'lg',
@@ -142,7 +187,7 @@ export const WithLogin: Story = {
 			{ name: 'About', href: '#' },
 			{ name: 'Contact', href: '#' },
 		],
-		navStyles: '',
+		navStyles: 'bg-slate-300 dark:bg-slate-700',
 	},
 }
 
@@ -211,3 +256,19 @@ const NavBarWithLogin = (args: NavBarProps) => {
 		</NavBarComponent>
 	)
 }
+
+Default.decorators = [
+	(Story) => (
+		<div className='-mx-4'>
+			<Story />
+		</div>
+	),
+]
+
+WithLogin.decorators = [
+	(Story) => (
+		<div className='-mx-4'>
+			<Story />
+		</div>
+	),
+]

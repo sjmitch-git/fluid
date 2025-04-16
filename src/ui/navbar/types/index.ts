@@ -18,6 +18,7 @@ export interface NavBarProps {
 	btnSize?: ButtonSize
 	children?: React.ReactNode
 	onLinkClick?: (name: string) => void
+	placement?: 'top' | 'bottom'
 }
 
 export interface NavLinkProps {
@@ -28,6 +29,7 @@ export interface NavLinkProps {
 	btnLayout?: ButtonLayout
 	btnSize?: ButtonSize
 	onLinkClick?: (name: string) => void
+	placement?: 'top' | 'bottom'
 }
 
 export interface NavBrandProps {

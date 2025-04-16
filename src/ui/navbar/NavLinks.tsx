@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
 import { Button } from '..'
 import { NavLinkProps } from './types'
+
+const placements = {
+	top: 'top-full',
+	bottom: 'bottom-full',
+}
 
 const NavLinks = ({
 	links,
@@ -11,9 +16,11 @@ const NavLinks = ({
 	btnColor = 'light',
 	btnLayout = 'square',
 	btnSize = 'md',
+	placement = 'top',
 	onLinkClick,
 }: NavLinkProps) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+	const placementClasses = useMemo(() => placements[placement], [placement])
 
 	return (
 		<div>
@@ -25,6 +32,9 @@ const NavLinks = ({
 				title='Menu'
 				className='lg:hidden focus:outline-none'
 				onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+				onBlur={() => {
+					setIsMobileMenuOpen(false)
+				}}
 				suppressHydrationWarning={true}
 			>
 				<svg
@@ -44,9 +54,9 @@ const NavLinks = ({
 			</Button>
 			<div
 				className={twMerge(
-					'menu flex gap-4 lg:flex-row lg:static lg:top-auto lg:bg-transparent lg:w-auto lg:h-auto shadow-none',
+					'menu flex gap-4 lg:flex-row lg:static lg:top-auto lg:bg-transparent lg:w-auto lg:h-auto',
 					isMobileMenuOpen
-						? 'absolute top-full left-0 dark:bg-slate-200 bg-slate-600 w-full flex-col h-auto py-4 shadow-lg'
+						? `absolute ${placementClasses} left-0 dark:bg-slate-200 bg-slate-600 w-full flex-col h-auto py-4`
 						: 'hidden lg:flex'
 				)}
 			>
