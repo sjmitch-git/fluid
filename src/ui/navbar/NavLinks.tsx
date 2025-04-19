@@ -22,6 +22,12 @@ const NavLinks = ({
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	const placementClasses = useMemo(() => placements[placement], [placement])
 
+	const onblur = () => {
+		setTimeout(() => {
+			setIsMobileMenuOpen(false)
+		}, 100)
+	}
+
 	return (
 		<div>
 			<Button
@@ -32,9 +38,7 @@ const NavLinks = ({
 				title='Menu'
 				className='lg:hidden focus:outline-none'
 				onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-				onBlur={() => {
-					setIsMobileMenuOpen(false)
-				}}
+				onBlur={() => onblur()}
 				suppressHydrationWarning={true}
 			>
 				<svg
