@@ -18,4 +18,5 @@ export interface ToastProps {
 	onClose: () => void
 	onClick?: () => void
 	closeOnBlur?: boolean
+	dismissable?: boolean
 }

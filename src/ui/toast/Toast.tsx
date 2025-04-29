@@ -43,7 +43,7 @@ const roundeds = {
 }
 
 const Toast = ({
-	toastBackground = 'warning',
+	toastBackground = 'info',
 	toastColor = 'light',
 	rounded = 'md',
 	open = false,
@@ -57,6 +57,7 @@ const Toast = ({
 	onClose,
 	onClick,
 	closeOnBlur = true,
+	dismissable = false,
 }: ToastProps) => {
 	const [show, setShow] = useState<boolean>(false)
 	const toastRef = useRef<HTMLElement>(null)
@@ -102,7 +103,7 @@ const Toast = ({
 	return (
 		<aside
 			className={twMerge(
-				`toast fixed z-100 min-w-80 py-4 px-6 ${className} ${otherClasses} ${animationClasses}`,
+				`toast fixed z-50 py-4 px-6 ${className} ${otherClasses} ${animationClasses}`,
 				className
 			)}
 			style={style}
@@ -118,7 +119,7 @@ const Toast = ({
 			}}
 		>
 			<div className='toast-body whitespace-nowrap'>{body}</div>
-			{!autohide && (
+			{dismissable && (
 				<CloseButton
 					layout='circle'
 					size='md'
