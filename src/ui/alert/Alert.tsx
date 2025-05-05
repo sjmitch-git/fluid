@@ -6,15 +6,16 @@ import { AlertProps } from './types'
 
 import { CloseButton, Heading, Badge } from '..'
 
-const defaultStyles = 'border-s-8'
-const outlineStyles = 'border-0 outline outline-2 md:outline-4'
+const defaultStyles = 'border-s-8 bg-white text-dark dark:bg-black dark:text-light'
+const outlineStyles =
+	'border-0 outline outline-2 md:outline-4 bg-white text-dark dark:bg-black dark:text-light'
 const solidStyles = `solid border-none`
 
 const statuses = {
-	info: 'border-info bg-info-dark outline-info',
-	success: 'border-success bg-success-dark outline-success',
-	warning: 'border-warning bg-warning-dark outline-warning',
-	error: 'border-error bg-error-dark outline-error',
+	info: 'border-info outline-info',
+	success: 'border-success outline-success',
+	warning: 'border-warning outline-warning',
+	error: 'border-error outline-error',
 }
 
 const solidStatuses = {
