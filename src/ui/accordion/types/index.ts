@@ -17,6 +17,7 @@ export interface AccordionProps {
 	opened?: string
 	layout?: 'default' | 'flush' | 'spaced'
 	icon?: 'symbol' | 'arrow'
+	iconPosition?: 'left' | 'right'
 }
 
 export interface AccordionHeadProps {
@@ -26,6 +27,8 @@ export interface AccordionHeadProps {
 	setopen: (id: string) => void
 	title?: string
 	name?: string
+	iconPosition?: 'left' | 'right'
+	layout?: 'default' | 'flush' | 'spaced'
 }
 
 export interface AccordionCardProps {
@@ -45,6 +48,8 @@ export interface AccordionItemProps {
 	id: string
 	title: string
 	icon?: 'symbol' | 'arrow'
+	iconPosition?: 'left' | 'right'
+	layout?: 'default' | 'flush' | 'spaced'
 	open: string
 	setOpen: (id: string) => void
 }

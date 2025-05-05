@@ -28,6 +28,7 @@ const Accordion = ({
 	opened,
 	layout = 'default',
 	icon = 'symbol',
+	iconPosition = 'right',
 	children,
 }: AccordionProps) => {
 	const [open, setOpen] = useState<string>('')
@@ -56,6 +57,8 @@ const Accordion = ({
 							name={item.name}
 							title={item.title}
 							icon={icon}
+							iconPosition={iconPosition}
+							layout={layout}
 							open={open}
 							setopen={setOpen}
 						/>

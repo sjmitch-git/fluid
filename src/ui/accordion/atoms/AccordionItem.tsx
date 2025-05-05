@@ -13,6 +13,8 @@ const AccordionItem = ({
 	id,
 	title,
 	icon = 'symbol',
+	iconPosition = 'right',
+	layout = 'default',
 	open,
 	setOpen,
 	children,
@@ -26,6 +28,8 @@ const AccordionItem = ({
 				id={id}
 				title={title}
 				icon={icon}
+				iconPosition={iconPosition}
+				layout={layout}
 				open={open}
 				setopen={setOpen}
 			/>
