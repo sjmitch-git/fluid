@@ -12,6 +12,7 @@ A Next.js/React UI component library.
 			- [2. Configure `tailwind.config.js`](#2-configure-tailwindconfigjs)
 	- [Installation](#installation)
 	- [Basic Usage](#basic-usage)
+	- [Optimized Usage](#optimized-usage)
 	- [Components](#components)
 		- [Buttons](#buttons)
 		- [Inputs](#inputs)
@@ -240,6 +241,7 @@ import { Loading, Alert } from "@/lib/fluid";
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-loading--docs'>Loading</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-progress--docs'>Progress</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-ratings--docs'>Ratings</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-ticker--docs'>Ticker</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-feedback-toast--docs'>Toast</a>
 
 ### Media
