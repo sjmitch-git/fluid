@@ -23,19 +23,23 @@ The **Accordion** component provides a collapsible section interface, useful for
 
 ### Import:
 \`\`\`jsx
-import { Accordion, AccordionItem, Label, Input } from '@smitch/fluid-ui';
+import { Accordion, AccordionItem } from '@smitch/fluid-ui';
 \`\`\`
 
 ### Example Usage:
 \`\`\`jsx
-<Accordion layout="flush" icon="symbol" size="md">
-  <AccordionItem id="1" title="Category 1">
+const [open, setOpen] = useState("1");
+
+return (
+<Accordion layout="flush" size="md" opened={open}>
+  <AccordionItem id="1" title="Category 1" open={open} setOpen={setOpen} icon="arrow" layout="flush">
     <p>Content for Category 1</p>
   </AccordionItem>
-  <AccordionItem id="2" title="Category 2">
+  <AccordionItem id="2" title="Category 2" open={open} setOpen={setOpen} icon="arrow" layout="flush">
     <p>Content for Category 2</p>
   </AccordionItem>
 </Accordion>
+)
 \`\`\`
 
 `,
