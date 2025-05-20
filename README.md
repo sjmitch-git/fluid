@@ -22,6 +22,7 @@ A Next.js/React UI component library.
 		- [Media](#media)
 		- [Typography](#typography)
 		- [Data Visualization](#data-visualization)
+		- [Time](#time)
 		- [Map](#map)
 	- [Author](#author)
 
@@ -278,6 +279,9 @@ import { Loading, Alert } from "@/lib/fluid";
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-polar-area-chart--docs'>PolarArea Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-charts-scatter-chart--docs'>Scatter Chart</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-data-visualization-stat-bar--docs'>Stat Bar</a>
+
+### Time
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-time-clock--docs'>Clock</a>
 
 ### Map
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-map--docs'>Map</a>
