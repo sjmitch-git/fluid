@@ -255,7 +255,7 @@ import { Loading, Alert } from "@/lib/fluid";
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-modal--docs'>Modal</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-placeholder--docs'>PlaceHolder</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs'>Twitter Embed</a>
-    -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs#twitter-timeline'>Twitter Timeline</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-twitter-embed--docs#twitter-timeline'>Twitter Timeline</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-video--docs'>Video</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-video-player--docs'>Video Player</a>
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-media-youtube-embed--docs'>YouTube Embed</a>
