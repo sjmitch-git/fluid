@@ -21,7 +21,7 @@ const AccordionItem = ({
 }: AccordionItemProps) => {
 	return (
 		<div
-			className={`${layoutClasses} ${themeClasses}`}
+			className={`accordion-item ${layoutClasses} ${themeClasses}`}
 			key={id}
 		>
 			<AccordionHead

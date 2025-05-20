@@ -11,7 +11,7 @@ const AccordionCard = ({ src, title, description, link }: AccordionCardProps) =>
 		<AccordionSection>
 			<Card
 				layout='row'
-				className='p-2'
+				className='accordion-card p-2'
 				outline={false}
 			>
 				{src && (

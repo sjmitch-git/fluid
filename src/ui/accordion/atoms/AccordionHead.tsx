@@ -35,7 +35,7 @@ const AccordionHead = ({
 	const layoutnClasses = useMemo(() => layoutStyles[layout], [layout])
 	return (
 		<h3
-			className={`accordion-header ${iconPositionClasses} ${layoutnClasses} gap-1 peer font-semibold opacity-90 m-0 flex cursor-pointer items-center  text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize ${
+			className={`accordion-head ${iconPositionClasses} ${layoutnClasses} gap-1 peer font-semibold opacity-90 m-0 flex cursor-pointer items-center  text-xl group-[.text-sm]:text-lg group-[.text-lg]:text-2xl p-2 capitalize ${
 				open === id ? 'open' : ''
 			}`}
 			onClick={() => setopen(`${open === id ? '' : id}`)}

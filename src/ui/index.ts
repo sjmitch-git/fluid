@@ -20,6 +20,7 @@ export {
 	MixedChart,
 } from './charts'
 export { Checkbox } from './checkbox'
+export { Clock } from './clock'
 export { Codeblock } from './codeblock'
 export { Counter } from './counter'
 export { DataTable } from './datatable'

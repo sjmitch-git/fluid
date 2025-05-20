@@ -49,7 +49,7 @@ const Accordion = ({
 			{data ? (
 				data.map((item) => (
 					<div
-						className={`${layoutClasses} bg-light text-dark dark:bg-dark dark:text-light border-neutral`}
+						className={`accordion-wrapper ${layoutClasses} bg-light text-dark dark:bg-dark dark:text-light border-neutral`}
 						key={item.id}
 					>
 						<AccordionHead
@@ -72,7 +72,7 @@ const Accordion = ({
 					</div>
 				))
 			) : (
-				<div>{children}</div>
+				<div className='accordion-children'>{children}</div>
 			)}
 		</div>
 	)
