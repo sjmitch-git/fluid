@@ -103,7 +103,7 @@ const Toast = ({
 	return (
 		<aside
 			className={twMerge(
-				`toast fixed z-50 py-4 px-6 ${className} ${otherClasses} ${animationClasses}`,
+				`toast fixed z-50 py-4 px-6 max-w-64 shadow-lg ${className} ${otherClasses} ${animationClasses}`,
 				className
 			)}
 			style={style}
@@ -118,7 +118,7 @@ const Toast = ({
 				onClose && onClose()
 			}}
 		>
-			<div className='toast-body whitespace-nowrap'>{body}</div>
+			<div className='toast-body text-center'>{body}</div>
 			{dismissable && (
 				<CloseButton
 					layout='circle'
@@ -127,7 +127,7 @@ const Toast = ({
 						setShow(false)
 						onClose && onClose()
 					}}
-					className='absolute top-1 right-1'
+					className='toast-close absolute top-1 right-1'
 				/>
 			)}
 		</aside>

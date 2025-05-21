@@ -103,17 +103,18 @@ Default.args = {
 	open: false,
 	body: (
 		<p>
-			Simple <code>HTML</code> <em>message</em>
+			Some simple <code>HTML</code> <em>message</em>
 		</p>
 	),
 	horizontal: 'center',
 	vertical: 'middle',
 	rounded: 'md',
-	toastBackground: 'info',
+	toastBackground: 'success',
 	toastColor: 'dark',
 	closeBackground: 'info',
 	closeColor: 'light',
 	autohide: true,
 	autohideDuration: 3000,
 	closeOnBlur: false,
+	dismissable: false,
 }
