@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useCallback, useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect, useRef } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { Loading } from '..'
+import { Loading, Alert } from '..'
 import { TwitterEmbedProps } from './types'
 
 declare global {
@@ -20,6 +20,28 @@ declare global {
 	}
 }
 
+const loadTwitterScript = () => {
+	return new Promise<void>((resolve, reject) => {
+		if (window.twttr && window.twttr.widgets) {
+			resolve()
+			return
+		}
+
+		if (document.querySelector('script[src="https://platform.twitter.com/widgets.js"]')) {
+			resolve()
+			return
+		}
+
+		const script = document.createElement('script')
+		script.src = 'https://platform.twitter.com/widgets.js'
+		script.id = 'twitter-wjs'
+		script.async = true
+		script.onload = () => resolve()
+		script.onerror = () => reject(new Error('Failed to load X script'))
+		document.body.appendChild(script)
+	})
+}
+
 export const TwitterEmbed = ({
 	handle,
 	lang = 'en',
@@ -29,67 +51,99 @@ export const TwitterEmbed = ({
 	borders = false,
 	transparent = false,
 	scrollbars = false,
-	height,
+	height = 450,
 	className = '',
 	style,
 }: TwitterEmbedProps) => {
 	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState<string | null>(null)
+	const embedRef = useRef<HTMLDivElement>(null)
+	const renderedCallbackRef = useRef<() => void>()
 
 	const chrome = useMemo(() => {
-		return `${!header ? 'noheader' : ''} ${!borders ? 'noborders' : ''} ${
-			transparent ? 'transparent' : ''
-		} ${!scrollbars ? 'noscrollbars' : ''}`
+		return [
+			!header ? 'noheader' : '',
+			!borders ? 'noborders' : '',
+			transparent ? 'transparent' : '',
+			!scrollbars ? 'noscrollbars' : '',
+		]
+			.filter(Boolean)
+			.join(' ')
 	}, [header, borders, transparent, scrollbars])
 
-	const embedRef = useCallback((embedRefNode: any) => {
-		if (embedRefNode) {
-			if (!document.querySelector('script[src="https://platform.twitter.com/widgets.js"]')) {
-				const script = document.createElement('script')
-				script.src = 'https://platform.twitter.com/widgets.js'
-				script.defer = true
-				script.onload = () => {
-					if (window.twttr) {
-						window.twttr.widgets.load(embedRefNode)
-						window.twttr.events.bind('rendered', () => {
-							setLoading(false)
-						})
-					} else {
-						setLoading(false)
-					}
-				}
-				script.onerror = () => {
-					setLoading(false)
-				}
+	useEffect(() => {
+		let isMounted = true
+		let timeout: NodeJS.Timeout
 
-				document.body.appendChild(script)
-			} else {
-				if (window.twttr) {
-					window.twttr.widgets.load(embedRefNode)
-					window.twttr.events.bind('rendered', () => {
-						setLoading(false)
-					})
+		const initializeWidget = async () => {
+			try {
+				await loadTwitterScript()
+
+				if (!isMounted) return
+
+				if (window.twttr && window.twttr.widgets && embedRef.current) {
+					renderedCallbackRef.current = () => {
+						if (isMounted) {
+							setLoading(false)
+							clearTimeout(timeout)
+						}
+					}
+					window.twttr.events.bind('rendered', renderedCallbackRef.current)
+
+					window.twttr.widgets.load(embedRef.current)
 				} else {
+					setError('Widget not available')
+					clearTimeout(timeout)
 					setLoading(false)
 				}
+			} catch (err) {
+				if (isMounted) {
+					setError('Failed to load widget. Try the link below.')
+					clearTimeout(timeout)
+					setLoading(false)
+				}
+			}
+		}
+
+		initializeWidget()
+
+		timeout = setTimeout(() => {
+			if (isMounted && loading) {
+				setError('Widget took too long to load. Try the link below.')
+				setLoading(false)
+			}
+		}, 12000)
+
+		return () => {
+			isMounted = false
+			clearTimeout(timeout)
+			if (window.twttr && window.twttr.events && renderedCallbackRef.current) {
+				window.twttr.events.bind('rendered', renderedCallbackRef.current)
 			}
 		}
 	}, [])
 
 	return (
 		<div
-			className={twMerge(
-				`twitter-wrap flex flex-col justify-center w-full max-w-lg`,
-				className
-			)}
+			className={twMerge(`twitter-wrap flex flex-col justify-center w-full`, className)}
 			style={style}
 		>
-			{loading && (
+			{loading && !error && (
 				<div className='loading-spinner py-8 text-info flex w-full justify-center mb-8'>
 					<Loading
 						loadingColor='info'
 						size='md'
 						spinner='dots'
 						caption='Loading'
+					/>
+				</div>
+			)}
+			{error && (
+				<div className='py-8 mb-8'>
+					<Alert
+						status='error'
+						message={error}
+						title='Oops!'
 					/>
 				</div>
 			)}
@@ -105,7 +159,13 @@ export const TwitterEmbed = ({
 							data-lang={lang}
 							data-chrome={chrome}
 						>
-							<a href={`https://twitter.com/${handle}/status/${status}`}>@{handle}</a>
+							<a
+								href={`https://twitter.com/${handle}/status/${status}`}
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								@{handle}
+							</a>
 						</blockquote>
 					</>
 				) : (
@@ -116,8 +176,11 @@ export const TwitterEmbed = ({
 						data-theme={theme}
 						data-lang={lang}
 						data-height={height}
+						data-tweet-limit='6'
+						target='_blank'
+						rel='noopener noreferrer'
 					>
-						Tweets from @{handle}
+						Posts from @{handle}
 					</a>
 				)}
 			</div>
