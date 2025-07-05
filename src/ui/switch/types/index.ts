@@ -5,7 +5,26 @@ export interface SwitchProps extends React.HTMLAttributes<HTMLElement> {
 	labelSize?: 'base' | 'lg' | 'xl'
 	className?: string
 	style?: React.CSSProperties
-	switchColor?: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'secondary' | 'current'
+	switchOffContent?: string
+	switchOnContent?: string
+	switchOffColor?:
+		| 'info'
+		| 'success'
+		| 'warning'
+		| 'danger'
+		| 'primary'
+		| 'secondary'
+		| 'current'
+		| 'neutral'
+	switchOnColor?:
+		| 'info'
+		| 'success'
+		| 'warning'
+		| 'danger'
+		| 'primary'
+		| 'secondary'
+		| 'current'
+		| 'neutral'
 	thin?: boolean
 	required?: boolean
 	checked?: boolean

@@ -15,7 +15,18 @@ const sizes = {
 	xl: 'text-2xl',
 }
 
-const colors = {
+const unCheckedColors = {
+	info: 'bg-info',
+	success: 'bg-success',
+	warning: 'bg-warning',
+	danger: 'bg-danger',
+	primary: 'bg-primary',
+	secondary: 'bg-secondary',
+	current: 'bg-current',
+	neutral: 'bg-neutral',
+}
+
+const checkedColors = {
 	info: 'peer-checked:bg-info',
 	success: 'peer-checked:bg-success',
 	warning: 'peer-checked:bg-warning',
@@ -23,6 +34,7 @@ const colors = {
 	primary: 'peer-checked:bg-primary',
 	secondary: 'peer-checked:bg-secondary',
 	current: 'peer-checked:bg-current',
+	neutral: 'peer-checked:bg-neutral',
 }
 
 const Switch = ({
@@ -37,7 +49,10 @@ const Switch = ({
 	name,
 	shape = 'circle',
 	required = false,
-	switchColor = 'info',
+	switchOffContent = '',
+	switchOnContent = '',
+	switchOffColor = 'neutral',
+	switchOnColor = 'info',
 	thin = false,
 	disabled,
 	showHint = false,
@@ -45,11 +60,12 @@ const Switch = ({
 }: SwitchProps) => {
 	const checkbox = useRef<HTMLInputElement>(null!)
 
-	const colorClasses = useMemo(() => colors[switchColor], [switchColor])
+	const unCheckedColorClasses = useMemo(() => unCheckedColors[switchOffColor], [switchOffColor])
+	const checkedColorClasses = useMemo(() => checkedColors[switchOnColor], [switchOnColor])
 	const sizeClasses = useMemo(() => sizes[labelSize], [labelSize])
 
 	const sliderBeforeClasses = useMemo(() => {
-		return `before:absolute before:h-8 before:w-8 before:transition-transform before:content-[''] ${
+		return `before:flex before:justify-center before:items-center before:text-lg before:font-bold before:absolute before:h-8 before:w-8 before:transition-transform ${
 			thin
 				? 'before:left-0 before:-top-3 before:bg-inherit'
 				: 'before:left-1 before:bottom-1 before:bg-white dark:before:bg-dark'
@@ -66,14 +82,14 @@ const Switch = ({
 	}
 
 	return (
-		<div className='switch-container'>
+		<div className='switch'>
 			<label
 				className={twMerge(
 					`switch-label group relative ${sizeClasses} ${
 						labelIsBold ? 'font-semibold' : 'font-normal'
 					} ${
 						disabled ? 'cursor-default text-neutral' : 'cursor-pointer'
-					} h-8 w-auto flex-row-reverse items-center gap-4 flex row-reverse`,
+					} h-8 w-auto flex-row-reverse items-center ${label ? 'gap-4' : 'gap-0'} flex row-reverse`,
 					className
 				)}
 				style={style}
@@ -87,7 +103,7 @@ const Switch = ({
 					id={name}
 					type='checkbox'
 					data-testid={`input-${name}`}
-					className={`checkbox peer absolute opacity-0 -left-96`}
+					className={`checkbox hidden peer`}
 					required={required}
 					disabled={disabled}
 					onChange={handleChange}
@@ -96,11 +112,13 @@ const Switch = ({
 					ref={checkbox}
 				/>
 				<span
-					className={`slider block relative bg-neutral bottom-0 left-0 right-0 top-0 ${
+					className={`slider block relative ${unCheckedColorClasses} bottom-0 left-0 right-0 top-0 ${
 						thin ? 'h-2 w-[60px]' : 'h-10 w-[67px]'
-					} ${disabled ? 'cursor-default' : 'cursor-pointer'} transition-transform ${
+					} ${disabled ? 'cursor-default bg-neutral opacity-60' : 'cursor-pointer'} transition-transform ${
 						shape === 'circle' ? 'rounded-full before:rounded-full' : ''
-					} ${sliderBeforeClasses} peer-checked:before:translate-x-7 ${colorClasses}`}
+					} ${sliderBeforeClasses} before:content-[attr(data-off)] peer-checked:before:content-[attr(data-on)] before:translate-x-0 peer-checked:before:translate-x-7 ${checkedColorClasses}`}
+					data-off={switchOffContent}
+					data-on={switchOnContent}
 				></span>
 			</label>
 			{showHint && <p className={`hint text-sm font-normal mt-4 dark:text-light`}>{hint}</p>}
