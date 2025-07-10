@@ -14,12 +14,12 @@ export interface PaginationProps {
 	icons?: boolean
 	minimal?: boolean
 	layout?: 'horizontal' | 'vertical'
+	gap?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
 	rounded?: boolean
-	outline?: 'none' | 'thin' | 'thick'
-	outlineColor?: 'light' | 'dark' | 'grey'
 	onChange: (e: any) => void
 	className?: string
 	style?: React.CSSProperties
+	btnShape?: 'default' | 'rounded' | 'square' | 'circle'
 	btnBackground?:
 		| 'dark'
 		| 'light'

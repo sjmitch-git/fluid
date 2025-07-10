@@ -34,13 +34,13 @@ const Pagination = ({
 	results,
 	size = 'md',
 	layout = 'horizontal',
+	gap = 'none',
 	rounded = true,
-	outline = 'none',
-	outlineColor = 'dark',
 	icons = true,
 	minimal = false,
 	btnBackground,
 	btnColor,
+	btnShape = 'default',
 	onChange,
 	className = '',
 	style,
@@ -76,11 +76,10 @@ const Pagination = ({
 			aria-label='pagination'
 		>
 			<ButtonGroup
-				className={`pagination-buttons mb-1`}
+				className={`pagination-buttons mb-1 ${btnShape === 'circle' ? 'items-center' : ''}`}
 				layout={layout}
 				rounded={rounded}
-				outline={outline}
-				outlineColor={outlineColor}
+				gap={gap}
 			>
 				<Button
 					className={`${minimal ? 'hidden' : ''}`}
@@ -90,6 +89,7 @@ const Pagination = ({
 					size={size}
 					btnBackground={btnBackground}
 					btnColor={btnColor}
+					layout={btnShape}
 				>
 					{icons ? (
 						<>
@@ -107,6 +107,7 @@ const Pagination = ({
 					size={size}
 					btnBackground={btnBackground}
 					btnColor={btnColor}
+					layout={btnShape}
 				>
 					{icons ? (
 						<>
@@ -119,7 +120,7 @@ const Pagination = ({
 				</Button>
 				<Select
 					dropdownSize={size}
-					className={`${size} border-none min-w-16 w-full text-center bg-light text-dark dark:bg-black dark:text-light`}
+					className={`${size} border-none min-w-16 w-full text-center bg-white text-dark dark:bg-black dark:text-light`}
 					defaultValue={selectValue}
 					onChange={handleChange}
 					nocaret={true}
@@ -133,6 +134,7 @@ const Pagination = ({
 					size={size}
 					btnBackground={btnBackground}
 					btnColor={btnColor}
+					layout={btnShape}
 				>
 					{icons ? (
 						<>
@@ -151,6 +153,7 @@ const Pagination = ({
 					size={size}
 					btnBackground={btnBackground}
 					btnColor={btnColor}
+					layout={btnShape}
 				>
 					{icons ? (
 						<>

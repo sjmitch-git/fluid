@@ -65,9 +65,9 @@ export const Default: Story = (args: PaginationProps) => {
 Default.args = {
 	layout: 'horizontal',
 	rounded: true,
-	outline: 'none',
-	outlineColor: 'dark',
 	size: 'md',
+	gap: 'none',
+	btnShape: 'default',
 	btnBackground: 'info',
 	btnColor: 'dark',
 	results: 69,

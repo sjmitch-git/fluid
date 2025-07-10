@@ -7,4 +7,5 @@ export interface ButtonGroupProps {
 	rounded?: boolean
 	outline?: 'none' | 'thin' | 'thick'
 	outlineColor?: 'none' | 'light' | 'dark' | 'grey'
+	gap?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
 }
