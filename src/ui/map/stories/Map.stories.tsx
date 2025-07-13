@@ -6,7 +6,7 @@ import { Map, MapMarker, MapCircle, MapPolygon, MapLine, MapRectangle } from '..
 import { States } from '@/data/states'
 
 const meta: Meta<typeof Map> = {
-	title: 'Fluid UI/Map',
+	title: 'Fluid UI/Maps/Map',
 	component: Map,
 	parameters: {
 		docs: {
