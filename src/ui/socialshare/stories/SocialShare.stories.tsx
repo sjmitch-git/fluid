@@ -32,7 +32,7 @@ const meta: Meta<typeof SocialShare> = {
 The **SocialShare** component displays a row or column of social sharing buttons.
 You can control which buttons appear, their order, shape, and spacing.
 
-**Example usage:**
+### Example Usage:
 \`\`\`jsx
 <SocialShare
   text="Check out this awesome site!"
@@ -42,7 +42,7 @@ You can control which buttons appear, their order, shape, and spacing.
   layout="horizontal"
 />
 \`\`\`
-                `,
+`,
 			},
 		},
 	},
