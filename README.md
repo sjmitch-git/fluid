@@ -24,6 +24,7 @@ A Next.js/React UI component library.
 		- [Data Visualization](#data-visualization)
 		- [Time](#time)
 		- [Map](#map)
+		- [Social Media](#social-media)
 	- [Author](#author)
 
 ## Overview
@@ -57,7 +58,7 @@ When prompted:
 Next.js will then generate the necessary configuration for both **TypeScript** and **Tailwind CSS**, including `tsconfig.json`, `tailwind.config.js`, and PostCSS setup.
 
 
-### 2. Configure Tailwind
+### 2. Configure Tailwind 3
 
 To ensure that **Fluid UI** works correctly, you need to configure **Tailwind CSS** and install the **Tailwind Forms** plugin. Follow the steps below:
 
@@ -284,7 +285,10 @@ import { Loading, Alert } from "@/lib/fluid";
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-time-clock--docs'>Clock</a>
 
 ### Map
--   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-map--docs'>Map</a>
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-maps-map--docs'>Map</a>
+
+### Social Media
+-   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-social-socialshare--docs'>Social Media Share</a>
 
 ## Author
 
