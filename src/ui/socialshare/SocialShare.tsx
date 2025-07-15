@@ -49,6 +49,7 @@ const SocialShare = ({
 	size = 'md',
 	gap = 'none',
 	layout = 'horizontal',
+	grayscale = false,
 	className = '',
 	style,
 }: SocialShareProps) => {
@@ -58,7 +59,7 @@ const SocialShare = ({
 	return (
 		<div
 			className={twMerge(
-				`social-share w-fit flex items-center ${layoutClasses} ${gapClasses}`,
+				`social-share w-fit flex items-center ${layoutClasses} ${gapClasses} ${grayscale ? 'grayscale' : ''}`,
 				className
 			)}
 			style={style}

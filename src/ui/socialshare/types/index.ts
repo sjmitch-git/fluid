@@ -10,6 +10,7 @@ export interface SocialShareProps extends btnProps {
 	text: string
 	buttons: string[]
 	gap?: 'none' | 'sm' | 'md' | 'lg'
+	grayscale?: boolean
 }
 
 export interface XButtonProps extends btnProps {

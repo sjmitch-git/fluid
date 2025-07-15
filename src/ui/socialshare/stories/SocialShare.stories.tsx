@@ -22,6 +22,7 @@ const meta: Meta<typeof SocialShare> = {
 		size: 'lg',
 		gap: 'sm',
 		layout: 'vertical',
+		grayscale: false,
 		className: '',
 		style: {},
 	},
