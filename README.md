@@ -284,7 +284,7 @@ import { Loading, Alert } from "@/lib/fluid";
 ### Time
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-time-clock--docs'>Clock</a>
 
-### Map
+### Maps
 -   <a href='https://fluid-ui.vercel.app/?path=/docs/fluid-ui-maps-map--docs'>Map</a>
 
 ### Social Media

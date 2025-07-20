@@ -51,7 +51,18 @@ export { Tabs } from './tabs'
 export { SearchInput } from './searchinput'
 export { Select } from './select'
 export { Sidebar } from './sidebar'
-export { SocialShare } from './socialshare'
+export {
+	SocialShare,
+	FacebookButton,
+	RedditButton,
+	LinkedinButton,
+	PinterestButton,
+	SlackButton,
+	TelegramButton,
+	WhatsAppButton,
+	XButton,
+	BlueskyButton,
+} from './socialshare'
 export { StatBar } from './statbar'
 export { Switch } from './switch'
 export { TextInput } from './textinput'

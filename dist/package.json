@@ -1,6 +1,6 @@
 {
 	"name": "@smitch/fluid",
-	"version": "3.0.44",
+	"version": "3.0.45",
 	"description": "A Next/React ui-component libray.",
 	"main": "index.js",
 	"keywords": [
@@ -29,7 +29,7 @@
 		"deepmerge": "^4.3.1",
 		"prismjs": "^1.29.0",
 		"react-chartjs-2": "^5.2.0",
-		"react-icons": "^4.11.0",
+		"react-icons": "^5.5.0",
 		"react-leaflet": "^4.2.1",
 		"react-leaflet-fullscreen": "^4.1.1",
 		"screenfull": "^6.0.2",
