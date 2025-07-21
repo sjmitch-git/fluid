@@ -3,12 +3,24 @@ export interface btnProps {
 	size?: 'md' | 'lg' | 'xl'
 }
 
+export type SocialShareButton =
+	| 'X'
+	| 'Facebook'
+	| 'LinkedIn'
+	| 'Slack'
+	| 'WhatsApp'
+	| 'Reddit'
+	| 'Pinterest'
+	| 'Telegram'
+	| 'Email'
+	| 'Bluesky'
+
 export interface SocialShareProps extends btnProps {
 	className?: string
 	style?: React.CSSProperties
 	layout?: 'horizontal' | 'vertical'
 	text: string
-	buttons: string[]
+	buttons: SocialShareButton[]
 	gap?: 'none' | 'sm' | 'md' | 'lg'
 	grayscale?: boolean
 }

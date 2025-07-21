@@ -17,11 +17,10 @@ const EmailButton = ({ text, btnShape, size }: XButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='info'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share via Email'
-			className='focus:border-info focus-visible:outline-info bg-[#0072C6]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#0072C6]'
 		>
 			<MdEmail />
 			<span className='sr-only'>Share via Email</span>

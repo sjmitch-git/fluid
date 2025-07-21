@@ -19,11 +19,10 @@ const FacebookButton = ({ btnShape, size }: FacebookButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='primary'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share on Facebook'
-			className='focus:border-info focus-visible:outline-info bg-[#1877F2]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#1877F2]'
 		>
 			<FaFacebook />
 			<span className='sr-only'>Share on Facebook</span>

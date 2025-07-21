@@ -21,11 +21,10 @@ const XButton = ({ text, btnShape, size }: XButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='primary'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share on X'
-			className='focus:border-info focus-visible:outline-info bg-[#000000]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#000000]'
 		>
 			<FaXTwitter />
 			<span className='sr-only'>Share on X</span>

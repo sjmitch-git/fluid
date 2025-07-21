@@ -21,11 +21,10 @@ const BlueskyButton = ({ text, btnShape, size }: XButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='info'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share on Bluesky'
-			className='focus:border-info focus-visible:outline-info bg-[#0097FF]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#0097FF]'
 		>
 			<FaBluesky />
 			<span className='sr-only'>Share on Bluesky</span>

@@ -21,11 +21,10 @@ const PinterestButton = ({ text, btnShape, size }: XButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='danger'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share on Pinterest'
-			className='focus:border-danger focus-visible:outline-danger bg-[#E60023]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#E60023]'
 		>
 			<FaPinterestP />
 			<span className='sr-only'>Share on Pinterest</span>

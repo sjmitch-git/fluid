@@ -16,6 +16,7 @@ const meta: Meta<typeof SocialShare> = {
 			'Reddit',
 			'Pinterest',
 			'Telegram',
+			'Bluesky',
 			'Email',
 		],
 		btnShape: 'circle',
@@ -33,6 +34,11 @@ const meta: Meta<typeof SocialShare> = {
 The **SocialShare** component displays a row or column of social sharing buttons.
 You can control which buttons appear, their order, shape, and spacing.
 
+### Import:
+\`\`\`jsx
+import { SocialShare } from '@smitch/fluid-ui';
+\`\`\`
+
 ### Example Usage:
 \`\`\`jsx
 <SocialShare
@@ -40,9 +46,21 @@ You can control which buttons appear, their order, shape, and spacing.
   buttons={['X', 'Facebook', 'LinkedIn', 'Slack', 'WhatsApp']}
   btnShape="circle"
   gap="md"
-  layout="horizontal"
+  layout="vertical"
 />
 \`\`\`
+
+#### Buttons Options:
+- \`'X'\`
+- \`'Facebook'\`
+- \`'LinkedIn'\`
+- \`'Slack'\`
+- \`'WhatsApp'\`
+- \`'Reddit'\`
+- \`'Pinterest'\`
+- \`'Telegram'\`
+- \`'Email'\`
+- \`'Bluesky'\`
 `,
 			},
 		},

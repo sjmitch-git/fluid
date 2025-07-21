@@ -19,11 +19,10 @@ const WhatsAppButton = ({ text, btnShape, size }: WhatsAppButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='primary'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share on WhatsApp'
-			className='focus:border-info focus-visible:outline-info bg-[#25D366]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#25D366]'
 		>
 			<FaWhatsapp />
 			<span className='sr-only'>Share on WhatsApp</span>

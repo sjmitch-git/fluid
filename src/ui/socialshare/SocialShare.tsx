@@ -14,6 +14,7 @@ const RedditButton = dynamic(() => import('./buttons/RedditButton'), { ssr: fals
 const PinterestButton = dynamic(() => import('./buttons/PinterestButton'), { ssr: false })
 const TelegramButton = dynamic(() => import('./buttons/TelegramButton'), { ssr: false })
 const EmailButton = dynamic(() => import('./buttons/EmailButton'), { ssr: false })
+const BlueskyButton = dynamic(() => import('./buttons/BlueskyButton'), { ssr: false })
 
 import { SocialShareProps } from './types'
 
@@ -27,6 +28,7 @@ const buttonComponents: Record<string, React.ComponentType<any>> = {
 	Pinterest: PinterestButton,
 	Telegram: TelegramButton,
 	Email: EmailButton,
+	Bluesky: BlueskyButton,
 }
 
 const gapSpacing = {

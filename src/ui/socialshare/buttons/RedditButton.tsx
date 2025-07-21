@@ -21,11 +21,10 @@ const RedditButton = ({ text, btnShape, size }: XButtonProps) => {
 			onClick={handleShareClick}
 			btnBackground='danger'
 			btnColor='light'
-			hoverScale
 			layout={btnShape}
 			size={size}
 			title='Share on Reddit'
-			className='focus:border-danger focus-visible:outline-danger bg-[#FF4500]'
+			className='hover:opacity-80 focus:text-light focus-visible:outline-accent bg-[#FF4500]'
 		>
 			<FaRedditAlien />
 			<span className='sr-only'>Share on Reddit</span>
