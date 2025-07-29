@@ -42,7 +42,7 @@ const TextArea = ({
 		>
 			<textarea
 				className={twMerge(
-					`form-textarea font-normal w-full dark:bg-dark dark:text-light color-scheme:light dark:[color-scheme:dark] border-neutral disabled:bg-neutral disabled:cursor-default disabled:text-dark ${className} ${sizeClasses} ${
+					`form-textarea font-normal w-full invalid:!border-accent dark:bg-dark dark:text-light color-scheme:light dark:[color-scheme:dark] border-neutral disabled:bg-neutral disabled:cursor-default disabled:text-dark ${className} ${sizeClasses} ${
 						resize ? 'resize' : 'resize-none'
 					}`,
 					textAreaStyles
@@ -55,6 +55,7 @@ const TextArea = ({
 				rows={rows}
 				maxLength={maxLength}
 				disabled={disabled}
+				required={required}
 			/>
 		</Label>
 	)
