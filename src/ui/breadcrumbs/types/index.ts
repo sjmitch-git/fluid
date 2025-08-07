@@ -3,5 +3,6 @@ export interface BreadcrumbsProps {
 	style?: React.CSSProperties
 	size?: 'sm' | 'md' | 'lg'
 	homeLabel?: string
+	activeLabel?: string
 	separator?: 'slash' | 'arrow' | 'pipe' | 'dot'
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
@@ -28,6 +28,7 @@ const Breadcrumbs = ({
 	size = 'md',
 	homeLabel = 'Home',
 	separator = 'slash',
+	activeLabel,
 }: BreadcrumbsProps) => {
 	const sizeClasses = useMemo(() => sizes[size], [size])
 	const separartorContent = useMemo(() => separators[separator], [separator])
@@ -60,7 +61,10 @@ const Breadcrumbs = ({
 		<nav></nav>
 	) : (
 		<nav
-			className={twMerge(`breadcrumbs group mx-auto w-full text-dark dark:text-light ${sizeClasses}`, className)}
+			className={twMerge(
+				`breadcrumbs group mx-auto w-full text-dark dark:text-light ${sizeClasses}`,
+				className
+			)}
 			style={style}
 			aria-label='breadcrumb'
 			data-testid='breadcrumbs'
@@ -81,7 +85,7 @@ const Breadcrumbs = ({
 								<Link href='/'>{homeLabel}</Link>
 							)
 						) : index === paths.length - 1 ? (
-							displayPath(path)
+							displayPath(activeLabel || path)
 						) : (
 							<Link href={buildHref(path)}>{displayPath(path)}</Link>
 						)}

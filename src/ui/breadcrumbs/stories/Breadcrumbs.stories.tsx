@@ -9,7 +9,7 @@ const meta: Meta = {
 		nextjs: {
 			appDirectory: true,
 			navigation: {
-				pathname: '/components/breadcrumbs',
+				pathname: '/fluid/components/breadcrumbs',
 			},
 		},
 		docs: {
@@ -57,18 +57,9 @@ export const Default: Story = {
 		size: 'md',
 		homeLabel: 'Home',
 		separator: 'slash',
+		activeLabel: 'Current Page',
 	},
 }
-
-/* Default.decorators = [
-	(Story) => (
-		<div
-			className='relative'
-		>
-			<Story />
-		</div>
-	),
-] */
 
 export const RTL: Story = {
 	args: {
